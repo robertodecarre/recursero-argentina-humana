@@ -340,7 +340,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <div class="chk" data-val="pension_disc" onclick="toggleChk(this)"><div class="chk-box">✓</div><div class="chk-txt">Pensión no contributiva por discapacidad</div></div>
       <div class="chk" data-val="ciudadania" onclick="toggleChk(this)"><div class="chk-box">✓</div><div class="chk-txt">Ciudadanía Porteña</div></div>
       <div class="chk" data-val="ticket" onclick="toggleChk(this)"><div class="chk-box">✓</div><div class="chk-txt">Ticket Social CABA</div></div>
-      <div class="chk" data-val="subsidio690" onclick="toggleChk(this)"><div class="chk-box">✓</div><div class="chk-txt">Subsidio habitacional 690</div></div>
+      <div class="chk" data-val="apoyo_habitacional_ley6935" onclick="toggleChk(this)"><div class="chk-box">✓</div><div class="chk-txt">Programa de Apoyo Habitacional - Ley 6935</div></div>
       <div class="chk" data-val="vivircasa" onclick="toggleChk(this)"><div class="chk-box">✓</div><div class="chk-txt">Vivir en Casa</div></div>
       <div class="chk" data-val="alimentar" onclick="toggleChk(this)"><div class="chk-box">✓</div><div class="chk-txt">Tarjeta Alimentar</div></div>
       <div class="chk" data-val="progresar" onclick="toggleChk(this)"><div class="chk-box">✓</div><div class="chk-txt">Beca Progresar</div></div>
@@ -1012,23 +1012,23 @@ const PROGS = [
     acceso:'Online: buenosaires.gob.ar/tramites/postulacion-al-subsidio-vivir-en-casa · Telefónico: 4342-8587 (lun a vie 9 a 15 hs) · Presencial: Av. Belgrano 858 PB o cualquier Sede de Atención Social.',
     links:[{l:'Formulario online',u:'https://buenosaires.gob.ar/tramites/postulacion-al-subsidio-vivir-en-casa',t:'p'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
     cont:['vivirencasa@buenosaires.gob.ar','4342-8587 — Lun a vie 9 a 15 hs','Av. Belgrano 858 PB'],
-    incomp_con:['subsidio690'],
-    nota_incompat:'Este programa no es compatible con el Subsidio 690. Comparar cual cubre mejor la situación.',
+    incomp_con:['apoyo_habitacional_ley6935'],
+    nota_incompat:'Este programa no es compatible con el Programa de Apoyo Habitacional - Ley 6935. Comparar cual cubre mejor la situación.',
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2 && d.edad>=60; }
   },
   {
-    id:'subsidio_690', nombre:'Subsidio Habitacional 690', amb:'caba',
-    desc_c:'Apoyo económico del GCBA para personas en situación de calle o emergencia habitacional.',
-    desc_l:'El Subsidio 690 (Decreto 690/2006 y modificatorias) otorga apoyo económico exclusivamente habitacional a personas o familias en situación de calle o riesgo inminente de desamparo. El monto actual es de hasta $150.000 por mes durante 12 meses (renovable por única vez). El beneficiario rinde comprobantes mensualmente. Primer recibo: Entre Ríos 1492. Rendiciones siguientes: por Boti o presencial. ⚠️ Requisito de ingresos: el decreto exige ingresos menores a la línea de pobreza del INDEC. Para una persona sola, $700.000 probablemente supera ese límite. Para una familia con hijos, puede no superarlo. El criterio lo evalúa un/a trabajador/a social en el informe social.',
-    reqs:['Situación de calle o riesgo inminente de desamparo habitacional','Residencia de 2 años en CABA (DNI o informe social)','Ingresos menores a la línea de pobreza del INDEC. Valores marzo 2026: persona sola $464.228 · familia de 3 $1.142.000 · familia de 4 $1.434.464 (lo evalúa el/la trabajador/a social según composición familiar)','Informe social de trabajador/a social matriculado/a','Sin otro subsidio habitacional activo'],
+    id:'apoyo_habitacional_ley6935', nombre:'Programa de Apoyo Habitacional - Ley 6935', amb:'caba',
+    desc_c:'Apoyo habitacional por ley con actualizaciones automáticas y pagos únicos.',
+    desc_l:'El Programa de Apoyo Habitacional - Ley 6935 es un derecho por ley, con actualización semestral automática (Abril/Octubre) según el índice IDECBA. Monto 2026: Hasta $2.724.000 anuales según el grupo familiar. Novedad - Pago Único: Se puede solicitar el cobro adelantado de cuotas para pagar depósitos y gastos de ingreso a un nuevo alquiler. Novedad - Pago de Emergencia: Acceso inmediato para gente en calle efectiva, con 60 días para completar papeles. Prioridad: Personas en calle, familias con menores, discapacidad, adultos mayores y víctimas de violencia.',
+    reqs:['Situación de calle o riesgo inminente de desamparo habitacional','Residencia de 2 años en CABA (DNI o informe social)','Ingresos menores a la línea de pobreza del INDEC','Informe social de trabajador/a social matriculado/a','Sin otro subsidio habitacional activo'],
     docs:['DNI de todos los integrantes','Partidas de nacimiento de menores','Vacunas al día de menores','Certificado de escolaridad de menores','Negativa de ANSES','Presupuesto del hotel o documentación de vivienda','Residencia Precaria para extranjeros sin DNI'],
-    acceso:'Presencial en Av. Entre Ríos 1492 CABA, lun a vie de 9 a 15 hs. También por mail a atencioninmediata@buenosaires.gob.ar. El informe social lo puede hacer una trabajadora social del GCBA o de una organización. Rendición mensual: Boti (escribir "Subsidio habitacional 690") o presencial.',
-    links:[{l:'Info oficial GCBA',u:'https://buenosaires.gob.ar/desarrollohumanoyhabitat/inclusion-social-y-atencion-inmediata/asistencia-habitacional',t:'p'},{l:'Guía paso a paso (ACIJ)',u:'https://accesoaderechos.acij.org.ar/habitat/situacion-de-calle/',t:'p'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
+    acceso:'Presencial en Av. Entre Ríos 1492 CABA, lun a vie de 9 a 15 hs. También por mail a atencioninmediata@buenosaires.gob.ar. El informe social lo puede hacer una trabajadora social del GCBA o de una organización.',
+    links:[{l:'Info oficial GCBA',u:'https://buenosaires.gob.ar/desarrollohumanoyhabitat/inclusion-social-y-atencion-inmediata/asistencia-habitacional',t:'p'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
     cont:['Av. Entre Ríos 1492 CABA — Lun a vie 9 a 15 hs','atencioninmediata@buenosaires.gob.ar','108 (emergencias calle 24 hs)','147'],
     incomp_con:['vivircasa'],
     nota_incompat:'No compatible con Vivir en Casa. Consultar cuál programa se adapta mejor.',
-    validado:'15 de abril de 2026',
+    validado:'16 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2 && (d.vivienda==='calle' || d.vivienda==='inquilinato'); }
   },
   {
