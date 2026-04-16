@@ -900,40 +900,24 @@ function renderTodos() {
     tit.textContent = titulo;
     lista.appendChild(tit);
     
-    // Agregar botón de acceso rápido para CABA
     if (esCaba) {
       var btnAcceso = document.createElement('a');
       btnAcceso.href = 'https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346';
       btnAcceso.target = '_blank';
+      btnAcceso.className = 'btn-lnk';
+      btnAcceso.style.background = 'linear-gradient(135deg, #00aeef, #009fd8)';
       btnAcceso.style.display = 'block';
-      btnAcceso.style.background = 'linear-gradient(135deg, #00aeef 0%, #009fd8 100%)';
-      btnAcceso.style.color = '#fff';
-      btnAcceso.style.padding = '14px 16px';
-      btnAcceso.style.borderRadius = '8px';
       btnAcceso.style.marginBottom = '12px';
-      btnAcceso.style.textDecoration = 'none';
-      btnAcceso.style.fontFamily = '"Barlow Condensed", sans-serif';
-      btnAcceso.style.fontSize = '0.95rem';
-      btnAcceso.style.fontWeight = '800';
-      btnAcceso.style.fontStyle = 'italic';
-      btnAcceso.style.textTransform = 'uppercase';
-      btnAcceso.style.letterSpacing = '0.3px';
-      btnAcceso.style.textAlign = 'center';
-      btnAcceso.style.transition = 'all 0.15s';
-      btnAcceso.style.border = 'none';
-      btnAcceso.style.cursor = 'pointer';
-      btnAcceso.innerHTML = '📅 Turnera Central SAS (Sedes de Atención Social)';
-      btnAcceso.onmouseover = function(){ this.style.background = 'linear-gradient(135deg, #009fd8 0%, #0089b0 100%)'; this.style.transform = 'translateY(-2px)'; this.style.boxShadow = '0 8px 20px rgba(0,174,239,0.3)'; };
-      btnAcceso.onmouseout = function(){ this.style.background = 'linear-gradient(135deg, #00aeef 0%, #009fd8 100%)'; this.style.transform = 'translateY(0)'; this.style.boxShadow = 'none'; };
+      btnAcceso.textContent = '📅 Turnera Central SAS (Sedes de Atención Social)';
       lista.appendChild(btnAcceso);
       
       var nota = document.createElement('p');
       nota.style.fontSize = '0.72rem';
       nota.style.color = '#5a5a5a';
       nota.style.marginBottom = '14px';
-      nota.style.lineHeight = '1.5';
       nota.style.marginTop = '0';
-      nota.innerHTML = '<em>Desde aquí se sacan turnos para Subsidio Habitacional, Ciudadanía Porteña y otros trámites territoriales. En caso de emergencia o situación de calle efectiva, acudir sin turno de 09 a 14 hs.</em>';
+      nota.style.lineHeight = '1.5';
+      nota.textContent = 'Desde aquí se sacan turnos para Subsidio Habitacional, Ciudadanía Porteña y otros trámites territoriales. En caso de emergencia o situación de calle efectiva, acudir sin turno de 09 a 14 hs.';
       lista.appendChild(nota);
     }
     
@@ -1034,7 +1018,7 @@ const PROGS = [
   {
     id:'nuestras_familias', nombre:'Nuestras Familias', amb:'caba',
     desc_c:'Apoyo económico del GCBA para familias con hijos en vulnerabilidad. Puente hacia la AUH para quienes aún no califican al sistema nacional.',
-    desc_l:'Nuestras Familias es un apoyo económico del GCBA para familias con hijos menores de 18 o embarazadas en situación de vulnerabilidad. Su rol principal es ser una RED DE ENTRADA para familias que todavía no pueden acceder a la AUH nacional.\n\n¿CUÁNDO CORRESPONDE ESTE PROGRAMA Y NO LA AUH?\n\n1. Familia migrante con 2 años en CABA pero menos de 2 en Argentina: la AUH exige 2 años de residencia legal en el país. Con 2 años en CABA ya califica para Nuestras Familias aunque todavía no llegue al requisito nacional.\n\n2. Documentación incompleta: si el DNI del menor está en trámite, la partida de nacimiento está pendiente, o hay una situación de guarda no formalizada, ANSES no puede procesar la AUH. La SAS (Sede de Atención Social) puede otorgar Nuestras Familias como medida de emergencia mientras se regulariza.\n\n3. Situación de emergencia detectada por trabajo social: el programa puede otorgarse por derivación directa de las SAS (Sedes de Atención Social) ante situaciones de crisis.\n\nIMPORTANTE: una vez que la familia regulariza su situación y puede tramitar la AUH, conviene hacer el cambio. La AUH sumada a la Tarjeta Alimentar suele representar un ingreso mayor que Nuestras Familias.',"
+    desc_l:'Nuestras Familias es un apoyo económico del GCBA para familias con hijos menores de 18 o embarazadas en situación de vulnerabilidad. Su rol principal es ser una RED DE ENTRADA para familias que todavía no pueden acceder a la AUH nacional.\n\n¿CUÁNDO CORRESPONDE ESTE PROGRAMA Y NO LA AUH?\n\n1. Familia migrante con 2 años en CABA pero menos de 2 en Argentina: la AUH exige 2 años de residencia legal en el país. Con 2 años en CABA ya califica para Nuestras Familias aunque todavía no llegue al requisito nacional.\n\n2. Documentación incompleta: si el DNI del menor está en trámite, la partida de nacimiento está pendiente, o hay una situación de guarda no formalizada, ANSES no puede procesar la AUH. La SAS (Sede de Atención Social) puede otorgar Nuestras Familias como medida de emergencia mientras se regulariza.\n\n3. Situación de emergencia detectada por trabajo social: el programa puede otorgarse por derivación directa de las SAS (Sedes de Atención Social) ante situaciones de crisis.\n\nIMPORTANTE: una vez que la familia regulariza su situación y puede tramitar la AUH, conviene hacer el cambio. La AUH sumada a la Tarjeta Alimentar suele representar un ingreso mayor que Nuestras Familias.',
     reqs:['Hijos menores de 18 o embarazo','Residencia en CABA de 2 años o más','Situación de vulnerabilidad o riesgo social','No cobrar AUH nacional'],
     docs:['DNI y CUIL del solicitante y grupo familiar','Partidas de nacimiento de menores de 18 (o constancia de trámite si está pendiente)','Certificados de escolaridad hasta 18 años','Documentación de la situación que motivó la solicitud (informe social, constancia de trámite pendiente, etc.)','CUD si corresponde'],
     acceso:'Online: buenosaires.gob.ar/tramites/inscripcion-en-el-programa-nuestras-familias · Presencial: cualquier Sede de Atención Social (lun a vie 9:30 a 15:30 hs). En situaciones de emergencia, el ingreso puede ser por derivación directa de la SAS (Sede de Atención Social) de la comuna.',
