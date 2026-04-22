@@ -263,8 +263,17 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 <div id="p-form" class="pant">
   <div class="card">
     <h2><span class="ic">👤</span>Datos de la persona</h2>
-    <label>Edad</label>
-    <input type="number" id="edad" min="0" max="120" placeholder="Ej: 34">
+    <label>Rango etario</label>
+    <select id="edad_rango">
+      <option value="">— Seleccionar —</option>
+      <option value="menor18">Menor de 18 años</option>
+      <option value="18a24">18 a 24 años</option>
+      <option value="25a34">25 a 34 años</option>
+      <option value="35a49">35 a 49 años</option>
+      <option value="50a59">50 a 59 años</option>
+      <option value="60a64">60 a 64 años</option>
+      <option value="65mas">65 años o más</option>
+    </select>
     <label>Nacionalidad</label>
     <div class="rg">
       <div class="rb"><input type="radio" name="nac" id="nac_arg" value="arg" onchange="filtrarResidencia()"><label for="nac_arg">🇦🇷 Argentina</label></div>
@@ -1003,8 +1012,8 @@ const PROGS = [
   },
   {
     id:'ticket_social', nombre:'Ticket Social CABA', amb:'caba',
-    desc_c:'Apoyo económico alimentario del GCBA. Puerta de entrada a Ciudadanía Porteña.',
-    desc_l:'El Ticket Social otorga una tarjeta para compra de alimentos. Es la puerta de entrada al programa Ciudadanía Porteña, que duplica o triplica su monto según la composición familiar. Se recomienda consultar si ya califica para Ciudadanía Porteña directamente.',
+    desc_c:'Apoyo económico alimentario del GCBA. Puerta de entrada a Ciudadanía Porteña. ⚠️ El GCBA no publica el monto — consultarlo en sede o por ticketsocial@buenosaires.gob.ar.',
+    desc_l:'El Ticket Social otorga una tarjeta para compra de alimentos. Es la puerta de entrada al programa Ciudadanía Porteña, que duplica o triplica su monto según la composición familiar. Se recomienda consultar si ya califica para Ciudadanía Porteña directamente.\n\n⚠️ MONTO: El GCBA no publica el monto actualizado en su web. Consultarlo en la sede (Av. Entre Ríos 1492 PB) o por mail a ticketsocial@buenosaires.gob.ar antes de informarlo.',
     reqs:['Residencia en CABA de 2 años o más','Situación de vulnerabilidad socioeconómica — ingresos del hogar por debajo de la línea de pobreza. Valores marzo 2026: persona sola $464.228 · familia de 3 $1.142.000 · familia de 4 $1.434.464'],
     docs:['DNI y CUIL de todos los integrantes','Partidas de nacimiento de menores','Certificado de domicilio','Certificado médico si hay riesgo nutricional'],
     acceso:'Online: tramitesdigitales.buenosaires.gob.ar/formulario/formularioTemplate/ticketSocial · Presencial: Sede de Atención Social de la comuna (lun a vie 9:30 a 15:30 hs) · Sede Central: Av. Entre Ríos 1492 PB.',
@@ -1017,7 +1026,7 @@ const PROGS = [
   },
   {
     id:'nuestras_familias', nombre:'Nuestras Familias', amb:'caba',
-    desc_c:'Apoyo económico del GCBA para familias con hijos en vulnerabilidad. Puente hacia la AUH para quienes aún no califican al sistema nacional.',
+    desc_c:'Apoyo económico del GCBA para familias con hijos en vulnerabilidad. Puente hacia la AUH. ⚠️ El GCBA no publica el monto — consultarlo en nuestrasfamilias@buenosaires.gob.ar.',
     desc_l:'Nuestras Familias es un apoyo económico del GCBA para familias con hijos menores de 18 o embarazadas en situación de vulnerabilidad. Su rol principal es ser una RED DE ENTRADA para familias que todavía no pueden acceder a la AUH nacional.\n\n¿CUÁNDO CORRESPONDE ESTE PROGRAMA Y NO LA AUH?\n\n1. Familia migrante con 2 años en CABA pero menos de 2 en Argentina: la AUH exige 2 años de residencia legal en el país. Con 2 años en CABA ya califica para Nuestras Familias aunque todavía no llegue al requisito nacional.\n\n2. Documentación incompleta: si el DNI del menor está en trámite, la partida de nacimiento está pendiente, o hay una situación de guarda no formalizada, ANSES no puede procesar la AUH. La SAS (Sede de Atención Social) puede otorgar Nuestras Familias como medida de emergencia mientras se regulariza.\n\n3. Situación de emergencia detectada por trabajo social: el programa puede otorgarse por derivación directa de las SAS (Sedes de Atención Social) ante situaciones de crisis.\n\nIMPORTANTE: una vez que la familia regulariza su situación y puede tramitar la AUH, conviene hacer el cambio. La AUH sumada a la Tarjeta Alimentar suele representar un ingreso mayor que Nuestras Familias.',
     reqs:['Hijos menores de 18 o embarazo','Residencia en CABA de 2 años o más','Situación de vulnerabilidad o riesgo social','No cobrar AUH nacional'],
     docs:['DNI y CUIL del solicitante y grupo familiar','Partidas de nacimiento de menores de 18 (o constancia de trámite si está pendiente)','Certificados de escolaridad hasta 18 años','Documentación de la situación que motivó la solicitud (informe social, constancia de trámite pendiente, etc.)','CUD si corresponde'],
@@ -1031,8 +1040,8 @@ const PROGS = [
   },
   {
     id:'vivir_en_casa', nombre:'Vivir en Casa', amb:'caba',
-    desc_c:'Subsidio del GCBA para alquiler, para personas de 60 años o más en riesgo habitacional.',
-    desc_l:'Vivir en Casa es un apoyo económico del GCBA para gastos de alquiler, expensas y servicios, destinado a personas mayores de 60 años en riesgo habitacional que no tienen el beneficio por obra social.',
+    desc_c:'Subsidio del GCBA para alquiler para personas de 60 años o más en riesgo habitacional. ⚠️ El GCBA no publica el monto — consultarlo en vivirencasa@buenosaires.gob.ar o al 5030-9740.',
+    desc_l:'Vivir en Casa es un apoyo económico del GCBA para gastos de alquiler, expensas y servicios, destinado a personas mayores de 60 años en riesgo habitacional que no tienen el beneficio por obra social.\n\n⚠️ MONTO: El GCBA no publica el monto actualizado en su web. Consultarlo en vivirencasa@buenosaires.gob.ar o llamando al 5030-9740 int. 1076 antes de informarlo.',
     reqs:['60 años o más','Residencia en CABA de 2 años o más','Ser autovalido o con leve nivel de dependencia','No alquilar a un familiar responsable','No recibir otro subsidio habitacional'],
     docs:['DNI','Recibo de haberes por pensión, jubilación o sueldo','Comprobantes de pago de alquiler, expensas y servicios','Certificado de domicilio'],
     acceso:'Online: buenosaires.gob.ar/tramites/postulacion-al-subsidio-vivir-en-casa · Telefónico: 4342-8587 (lun a vie 9 a 15 hs) · Presencial: Av. Belgrano 858 PB o cualquier Sede de Atención Social.',
@@ -1041,7 +1050,7 @@ const PROGS = [
     incomp_con:['apoyo_habitacional_ley6935'],
     nota_incompat:'Este programa no es compatible con el Programa de Apoyo Habitacional - Ley 6935. Comparar cual cubre mejor la situación.',
     validado:'15 de abril de 2026',
-    elegible:function(d){ return d.res_caba>=2 && d.edad>=60; }
+    elegible:function(d){ return d.res_caba>=2 && d.edadMin>=60; }
   },
   {
     id:'apoyo_habitacional_ley6935', nombre:'Programa de Apoyo Habitacional - Ley 6935', amb:'caba',
@@ -1059,7 +1068,7 @@ const PROGS = [
   },
   {
     id:'auh', nombre:'AUH - Asignación Universal por Hijo', amb:'nacional',
-    desc_c:'Prestación mensual de ANSES por cada hijo/a menor de 18 para familias sin empleo formal.',
+    desc_c:'$136.666 por hijo/mes (80% mensual + 20% anual al acreditar escolaridad y salud) · Abril 2026.',
     desc_l:'La AUH es una prestación mensual de ANSES por cada hijo/a menor de 18 (sin límite con discapacidad) para personas desocupadas o del sector informal. El 80% se cobra mensualmente; el 20% al presentar el certificado de escolaridad y control de salud anual. La Tarjeta Alimentar se asigna automáticamente si hay menores de 14.\n\nSi la familia NO puede acceder a la AUH todavía (por residencia insuficiente o documentación incompleta) y está en CABA, ver el programa NUESTRAS FAMILIAS del GCBA, que funciona como puente mientras se regulariza la situación.',
     reqs:['Hijos/as menores de 18 (o con discapacidad sin límite de edad)','Sin empleo formal registrado','Sin otra asignación familiar','Ingresos por debajo del salario mínimo','Menores escolarizados y con vacunas al día','Extranjeros/as: 2 años de residencia legal en Argentina'],
     docs:['DNI del titular y de los hijos/as','Partida de nacimiento de los hijos/as','CUIL','CBU o CVU a nombre del titular'],
@@ -1073,7 +1082,7 @@ const PROGS = [
   },
   {
     id:'alimentar', nombre:'Tarjeta Alimentar', amb:'nacional',
-    desc_c:'Tarjeta para compra de alimentos para quienes cobran AUH con hijos menores de 14.',
+    desc_c:'Tarjeta alimentaria automática para quienes cobran AUH. $52.250 (1 hijo) · $81.936 (2) · $108.062 (3+) · Abril 2026.',
     desc_l:'La Tarjeta Alimentar es un complemento automatico de la AUH para familias con al menos un/a hijo/a menor de 14 años o con discapacidad. Se acredita en una tarjeta específica solo para comprar alimentos. Si ya se cobra AUH y no llegó la tarjeta, consultar en Mi ANSES o al 130.',
     reqs:['Cobrar AUH','Al menos un/a hijo/a menor de 14 o con discapacidad','Se asigna automaticamente'],
     docs:['No requiere documentación adicional si ya se cobra AUH'],
@@ -1086,7 +1095,7 @@ const PROGS = [
   },
   {
     id:'aue', nombre:'AUE - Asignación Universal por Embarazo', amb:'nacional',
-    desc_c:'Prestación de ANSES para personas embarazadas desde la semana 12 hasta el nacimiento.',
+    desc_c:'$136.666/mes desde semana 12 hasta el parto (80% mensual + 20% al acreditar controles) · Abril 2026.',
     desc_l:'La AUE es una prestación mensual de ANSES desde la semana 12 de gestación hasta el parto, para personas desocupadas o del sector informal. El 80% se cobra mensualmente y el 20% al presentar los controles del embarazo.',
     reqs:['Embarazo desde semana 12','Sin empleo formal','Sin otra asignación familiar'],
     docs:['DNI','Certificado de embarazo con fecha de gestación','CUIL','CBU o CVU'],
@@ -1099,16 +1108,16 @@ const PROGS = [
   },
   {
     id:'progresar', nombre:'Beca Progresar', amb:'nacional',
-    desc_c:'Beca educativa para jovenes que cursan secundario, terciario o universitario.',
-    desc_l:'Las Becas Progresar acompañan a jovenes para terminar la secundaria, cursar estudios superiores o formarse laboralmente. Lineas: Obligatorio (16-24 años, secundario), Superior (hasta 35 años), Trabajo (18-40 años). Inscripción 100% online. Primera convocatoria 2026 abierta hasta fines de abril.',
-    reqs:['Progresar Obligatorio: 16 a 24 años, cursando secundario','Progresar Superior: hasta 35 años, terciario/universidad en curso','Progresar Trabajo: 18 a 40 años sin empleo formal','Ingresos familiares no superiores a 3 SMVM','Argentino/a o extranjero/a con 2 años de residencia legal'],
+    desc_c:'Beca educativa de $35.000/mes. Inscripción abierta: Obligatorio (secundario, cierra 24/4), Superior (terciario/universidad, cierra 30/4) y Formación Profesional (cursos INET, abierto hasta nov).',
+    desc_l:'Las Becas Progresar tienen tres líneas activas en 2026. Monto: $35.000 mensuales (80% mensual, 20% al acreditar cursada regular al fin de año).\n\n⚠️ ESTADO DE INSCRIPCIÓN (abril 2026):\n· Progresar Obligatorio (secundario, 16-24 años): cierra el 24 de abril — aún abierto por pocos días.\n· Progresar Superior (terciario/universidad, hasta 35 años): cierra el 30 de abril — aún abierto.\n· Progresar Formación Profesional (cursos INET, 18-35 años): abierto hasta el 27 de noviembre de 2026.\n\n⚠️ OBLIGACIÓN NUEVA 2026: los/as beneficiarios/as deben notificar cualquier cambio académico, laboral, familiar o patrimonial dentro de los 30 días. Se hace por la plataforma Progresar (cambios educativos), ANSES (cambios económicos) o Mi Argentina (cambio de domicilio). El incumplimiento puede dar de baja el beneficio.',
+    reqs:['Progresar Obligatorio: 16 a 24 años, cursando secundario incompleto','Progresar Superior: hasta 35 años, terciario o universidad en curso','Progresar Formación Profesional: 18 a 35 años, inscripto/a en curso validado por INET, sin empleo formal','Ingresos del grupo familiar no superiores a 3 SMVM','Argentino/a nativo/a o naturalizado/a, o extranjero/a con 2 años de residencia legal con DNI'],
     docs:['Cuenta validada en Mi Argentina','CUIL y clave Mi Argentina','CBU o CVU propio','Datos actualizados en ANSES'],
-    acceso:'Inscripción 100% online en becasprogresar.educacion.gob.ar. Requiere cuenta validada en la app Mi Argentina.',
+    acceso:'Inscripción 100% online en becasprogresar.educacion.gob.ar. Requiere cuenta validada en la app Mi Argentina. Formación Profesional: abierto hasta el 27 de noviembre de 2026.',
     links:[{l:'Plataforma Progresar',u:'https://becasprogresar.educacion.gob.ar/',t:'p'},{l:'Mi Argentina',u:'https://mi.argentina.gob.ar/',t:'p'}],
     cont:['0800-999-1066 (opción 1)'],
     incomp_con:[],
-    validado:'15 de abril de 2026',
-    elegible:function(d){ return d.edad>=16 && d.edad<=40 && (d.educacion==='sec_inc'||d.educacion==='ter_inc') && (!d.formal || d.ingresos==='menos1' || d.ingresos==='1a3') && (d.nac==='arg' || d.res_arg>=2); }
+    validado:'22 de abril de 2026',
+    elegible:function(d){ return d.edadMax>=16 && d.edadMin<=35 && (d.educacion==='sec_inc'||d.educacion==='ter_inc') && (!d.formal || d.ingresos==='menos1' || d.ingresos==='1a3') && (d.nac==='arg' || d.res_arg>=2); }
   },
   {
     id:'pas', nombre:'Programa de Acompañamiento Social', amb:'nacional',
@@ -1122,11 +1131,11 @@ const PROGS = [
     incomp_con:['jubilacion','puam'],
     nota_incompat:'Este programa no es compatible con cobrar jubilación o PUAM.',
     validado:'15 de abril de 2026',
-    elegible:function(d){ return d.edad>=50 && !d.cobra.includes('jubilacion') && !d.cobra.includes('puam') && (!d.formal || d.ingresos==='menos1') && (d.nac==='arg' || d.res_arg>=1); }
+    elegible:function(d){ return d.edadMin>=50 && !d.cobra.includes('jubilacion') && !d.cobra.includes('puam') && (!d.formal || d.ingresos==='menos1') && (d.nac==='arg' || d.res_arg>=1); }
   },
   {
     id:'puam', nombre:'PUAM - Prestación Universal Adulto Mayor', amb:'nacional',
-    desc_c:'Prestación de ANSES para mayores de 65 sin jubilación. Extranjeros necesitan 20 años de residencia.',
+    desc_c:'$304.243/mes (80% del haber mínimo) · Incluye PAMI · Extranjeros/as necesitan 20 años de residencia · Abril 2026.',
     desc_l:'La PUAM es una prestación del 80% del haber minimo para personas de 65 años o mas sin jubilación ni pensión contributiva. Para argentinos/as no requiere aportes previos. Para extranjeros/as se requieren 20 años de residencia legal en Argentina. Incluye cobertura de PAMI.',
     reqs:['65 años o mas','Sin jubilación ni pensión contributiva','Argentino/a: sin requisito especial de residencia','Extranjero/a: 20 años de residencia legal en Argentina','Sin bienes ni ingresos que superen el minimo'],
     docs:['DNI vigente','Declaración jurada de situación económica','Negativa de ANSES','Para extranjeros: documentación de 20 años de residencia'],
@@ -1136,11 +1145,11 @@ const PROGS = [
     incomp_con:['pas'],
     nota_incompat:'La PUAM no es compatible con el Programa de Acompañamiento Social. La PUAM incluye ademas cobertura de PAMI.',
     validado:'15 de abril de 2026',
-    elegible:function(d){ return d.edad>=65 && !d.cobra.includes('jubilacion') && (d.nac==='arg' || d.res_arg>=20); }
+    elegible:function(d){ return d.edadMin>=65 && !d.cobra.includes('jubilacion') && (d.nac==='arg' || d.res_arg>=20); }
   },
   {
     id:'pension_disc', nombre:'Pensión No Contributiva por Discapacidad', amb:'nacional',
-    desc_c:'Pensión mensual de ANSES para personas con CUD sin otros ingresos ni empleo formal.',
+    desc_c:'$336.223/mes (incluye bono) para personas con CUD sin otros ingresos ni empleo formal · Abril 2026.',
     desc_l:'Pensión mensual para personas con Certificado Único de Discapacidad (CUD) vigente que no tienen otros ingresos ni empleo formal. No requiere aportes previos al sistema previsional.',
     reqs:['CUD (Certificado Unico de Discapacidad) vigente','Sin jubilación ni pensión contributiva','Sin empleo formal','Sin bienes ni ingresos que superen el minimo'],
     docs:['DNI','CUD vigente','Negativa de ANSES','Declaración jurada económica'],
@@ -1183,8 +1192,13 @@ const PROGS = [
 // CONSULTAR
 function consultar() {
   var cobra = getCobra();
+  var RANGOS = {menor18:{min:0,max:17},'18a24':{min:18,max:24},'25a34':{min:25,max:34},'35a49':{min:35,max:49},'50a59':{min:50,max:59},'60a64':{min:60,max:64},'65mas':{min:65,max:120}};
+  var rango = gv('edad_rango');
+  var edadMin = rango && RANGOS[rango] ? RANGOS[rango].min : 0;
+  var edadMax = rango && RANGOS[rango] ? RANGOS[rango].max : 0;
   var d = {
-    edad: parseInt(gv('edad')) || 0,
+    edadMin: edadMin,
+    edadMax: edadMax,
     nac: gr('nac'),
     res_arg: parseInt(gv('res_arg')) || 0,
     res_caba: parseInt(gv('res_caba')) || 0,
