@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recursero Social · Argentina Humana</title>
+<title>Asistente Social · Argentina Humana · CABA 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Barlow:ital,wght@0,400;0,500;0,600;1,600;1,700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -179,6 +179,12 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .acord-nota{font-size:.73rem;color:var(--gris-txt);font-style:italic;margin-bottom:10px;padding:6px 10px;background:var(--gris-fondo);border-radius:5px;}
 /* TARJETAS HOSPITAL */
 .hosp-card{background:var(--gris-fondo);border-radius:7px;padding:12px;margin-bottom:8px;border-left:3px solid var(--celeste);}
+.hosp-card.hc-oculto{display:none;}
+.cf-wrap{margin-bottom:10px;}
+.cf-scroll{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:2px;}
+
+.cf-btn{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:800;font-style:italic;text-transform:uppercase;padding:6px 10px;border-radius:5px;border:1.5px solid var(--negro);background:var(--blanco);color:var(--negro);cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.cf-btn.activo{background:var(--negro);color:var(--blanco);}
 .hosp-nom{font-family:"Barlow Condensed",sans-serif;font-size:.98rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.2px;margin-bottom:3px;}
 .hosp-dir{font-size:.78rem;color:#444;margin-bottom:6px;}
 .hosp-datos{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:8px;font-size:.78rem;}
@@ -212,8 +218,8 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     </div>
     <div class="hdr-divider"></div>
     <div class="hdr-txt">
-      <h1>Recursero Social</h1>
-      <p id="hdr-sub">CABA · 2026</p>
+      <h1>Asistente Social</h1>
+      <p id="hdr-sub">Argentina Humana · CABA 2026</p>
     </div>
   </div>
 </header>
@@ -222,8 +228,8 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 <div id="p-inicio" class="pant activa">
   <div class="inicio-hero">
     <div class="ih-banner">
-      <div class="ih-banner-tit">Recursero Social</div>
-      <div class="ih-banner-sub">Argentina Humana · CABA 2025</div>
+      <div class="ih-banner-tit">Asistente Social</div>
+      <div class="ih-banner-sub">Argentina Humana · CABA 2026</div>
     </div>
     <div class="ih-body">
       <div class="ih-titulo">¿Qué<br>necesitás?</div>
@@ -243,7 +249,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     </div>
     <div class="ib" onclick="navIr('p-salud')" style="grid-column:span 2">
       <div class="ib-icon">🏥</div>
-      <div class="ib-tit">Gestión de Derechos y Salud</div>
+      <div class="ib-tit">Salud</div>
       <div class="ib-sub">Hospitales públicos de CABA · Red de salud gratuita</div>
     </div>
   </div>
@@ -423,11 +429,32 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 <div id="p-salud" class="pant">
   <div class="inicio-hero" style="margin-bottom:10px">
     <div class="ih-banner">
-      <div class="ih-banner-tit">Gestión de Derechos y Salud</div>
+      <div class="ih-banner-tit">Salud</div>
       <div class="ih-banner-sub">Red de salud pública gratuita · CABA</div>
     </div>
     <div class="ih-body" style="padding:12px 18px 14px">
       <div class="ih-sub" style="border:none;padding:0">Guardia 24 hs los 365 días en todos los hospitales. Atención gratuita para toda persona que viva o transite CABA, independientemente de la obra social o lugar de residencia.</div>
+    </div>
+  </div>
+
+  <div class="cf-wrap">
+    <div class="cf-scroll" id="filtro-salud">
+      <button class="cf-btn activo" onclick="filtrarComuna(0)" data-c="0">Todas</button>
+      <button class="cf-btn" onclick="filtrarComuna(1)" data-c="1">C1</button>
+      <button class="cf-btn" onclick="filtrarComuna(2)" data-c="2">C2</button>
+      <button class="cf-btn" onclick="filtrarComuna(3)" data-c="3">C3</button>
+      <button class="cf-btn" onclick="filtrarComuna(4)" data-c="4">C4</button>
+      <button class="cf-btn" onclick="filtrarComuna(5)" data-c="5">C5</button>
+      <button class="cf-btn" onclick="filtrarComuna(6)" data-c="6">C6</button>
+      <button class="cf-btn" onclick="filtrarComuna(7)" data-c="7">C7</button>
+      <button class="cf-btn" onclick="filtrarComuna(8)" data-c="8">C8</button>
+      <button class="cf-btn" onclick="filtrarComuna(9)" data-c="9">C9</button>
+      <button class="cf-btn" onclick="filtrarComuna(10)" data-c="10">C10</button>
+      <button class="cf-btn" onclick="filtrarComuna(11)" data-c="11">C11</button>
+      <button class="cf-btn" onclick="filtrarComuna(12)" data-c="12">C12</button>
+      <button class="cf-btn" onclick="filtrarComuna(13)" data-c="13">C13</button>
+      <button class="cf-btn" onclick="filtrarComuna(14)" data-c="14">C14</button>
+      <button class="cf-btn" onclick="filtrarComuna(15)" data-c="15">C15</button>
     </div>
   </div>
 
@@ -440,7 +467,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <div class="acord-body">
       <p class="acord-nota">Guardia 24 hs · 365 días · Atención gratuita · Sin turno para guardia</p>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="7">
         <div class="hosp-nom">Hospital Álvarez</div>
         <div class="hosp-dir">Aranguren 2701, Flores</div>
         <div class="hosp-datos">
@@ -452,7 +479,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="4">
         <div class="hosp-nom">Hospital Argerich</div>
         <div class="hosp-dir">Almirante Brown 240, La Boca</div>
         <div class="hosp-datos">
@@ -464,7 +491,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="6">
         <div class="hosp-nom">Hospital Durand</div>
         <div class="hosp-dir">Díaz Vélez 5044, Caballito</div>
         <div class="hosp-datos">
@@ -476,7 +503,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="14">
         <div class="hosp-nom">Hospital Fernández</div>
         <div class="hosp-dir">Cerviño 3356, Palermo</div>
         <div class="hosp-datos">
@@ -488,7 +515,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="8">
         <div class="hosp-nom">Hospital Grierson</div>
         <div class="hosp-dir">Av. Fernández de la Cruz 4402, Villa Lugano</div>
         <div class="hosp-datos">
@@ -498,7 +525,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="4">
         <div class="hosp-nom">Hospital Penna</div>
         <div class="hosp-dir">Pedro Chutro 3380, Parque Patricios</div>
         <div class="hosp-datos">
@@ -510,7 +537,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="7">
         <div class="hosp-nom">Hospital Piñero</div>
         <div class="hosp-dir">Varela 1301, Flores</div>
         <div class="hosp-datos">
@@ -520,7 +547,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="12">
         <div class="hosp-nom">Hospital Pirovano</div>
         <div class="hosp-dir">Monroe 3555, Coghlan</div>
         <div class="hosp-datos">
@@ -530,7 +557,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="3">
         <div class="hosp-nom">Hospital Ramos Mejía</div>
         <div class="hosp-dir">Gral. Urquiza 609, Balvanera</div>
         <div class="hosp-datos">
@@ -540,7 +567,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="2">
         <div class="hosp-nom">Hospital Rivadavia</div>
         <div class="hosp-dir">Av. Las Heras 2670, Recoleta</div>
         <div class="hosp-datos">
@@ -552,7 +579,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="9">
         <div class="hosp-nom">Hospital Santojanni</div>
         <div class="hosp-dir">Pilar 950, Mataderos</div>
         <div class="hosp-datos">
@@ -562,7 +589,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="15">
         <div class="hosp-nom">Hospital Tornú</div>
         <div class="hosp-dir">Combatientes de Malvinas 3002, Parque Chas</div>
         <div class="hosp-datos">
@@ -574,7 +601,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="10">
         <div class="hosp-nom">Hospital Vélez Sarsfield</div>
         <div class="hosp-dir">Calderón de la Barca 1550, Monte Castro</div>
         <div class="hosp-datos">
@@ -586,7 +613,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="11">
         <div class="hosp-nom">Hospital Zubizarreta</div>
         <div class="hosp-dir">Nueva York 3952, Villa Devoto</div>
         <div class="hosp-datos">
@@ -609,7 +636,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <div class="acord-body">
       <p class="acord-nota">Atención exclusiva para niños/as y adolescentes · Guardia 24 hs</p>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="1">
         <div class="hosp-nom">Hospital Garrahan</div>
         <div class="hosp-barrio" style="font-size:.72rem;color:var(--gris-txt);margin-bottom:3px">Nacional · Alta complejidad pediátrica</div>
         <div class="hosp-dir">Combate de los Pozos 1881 (ingreso pacientes: Pichincha 1913), Constitución</div>
@@ -622,7 +649,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="2">
         <div class="hosp-nom">Hospital de Niños Dr. Ricardo Gutiérrez</div>
         <div class="hosp-barrio" style="font-size:.72rem;color:var(--gris-txt);margin-bottom:3px">CABA · Referente en cardiología pediátrica y trasplantes</div>
         <div class="hosp-dir">Gallo 1330, Recoleta</div>
@@ -635,7 +662,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
+      <div class="hosp-card" data-comuna="1">
         <div class="hosp-nom">Hospital de Niños Dr. Pedro de Elizalde</div>
         <div class="hosp-barrio" style="font-size:.72rem;color:var(--gris-txt);margin-bottom:3px">CABA · El más antiguo de pediatría del país</div>
         <div class="hosp-dir">Av. Montes de Oca 40, Constitución</div>
@@ -653,50 +680,1129 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
   <!-- ACORDEÓN: CESAC -->
   <div class="acord-grupo">
     <div class="acord-hdr" onclick="toggleAcord(this)">
-      <span>🏥 Centros de Salud y Acción Comunitaria (CESAC) (3)</span>
+      <span>🏥 Centros de Salud y Acción Comunitaria (CESAC) (50)</span>
       <span class="acord-ico">▼</span>
     </div>
     <div class="acord-body">
       <p class="acord-nota">Atención primaria gratuita · Lunes a viernes 8:00 a 20:00 · Sin turno para consulta general</p>
 
-      <div class="hosp-card">
-        <div class="hosp-nom">CeSAC N° 8</div>
-        <div class="hosp-dir">Osvaldo Cruz 3485, Barracas</div>
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 1 · Barracas</div>
+        <div class="hosp-dir">Av. Vélez Sarsfield 1271, Barracas</div>
         <div class="hosp-datos">
-          <a href="tel:+541128213608" class="hosp-tel">📞 2821-3608</a>
+          <a href="tel:+541128213601" class="hosp-tel">📞 2821-3601</a>
           <span class="hosp-sep">·</span>
-          <span class="hosp-guardia">Horarios: Lun-Vie 8-20 hs</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Osvaldo+Cruz+3485+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
-        <div class="hosp-validado">✔ Validado: Abril 2026</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+1+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
       </div>
 
-      <div class="hosp-card">
-        <div class="hosp-nom">CeSAC N° 5</div>
+      <div class="hosp-card" data-comuna="12">
+        <div class="hosp-nom">CeSAC N° 2 · Villa Pueyrredón</div>
+        <div class="hosp-dir">Terrada 5850, Barrio Albarellos, Villa Pueyrredón</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213602" class="hosp-tel">📞 2821-3602</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+2+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 3 · Villa Lugano</div>
+        <div class="hosp-dir">Soldado de la Frontera 5144, Villa Lugano</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213603" class="hosp-tel">📞 2821-3603</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+3+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="9">
+        <div class="hosp-nom">CeSAC N° 4 · Mataderos</div>
+        <div class="hosp-dir">Av. Juan B. Alberdi y Pilar, Mataderos</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213604" class="hosp-tel">📞 2821-3604</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+4+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 5 · Villa Lugano</div>
         <div class="hosp-dir">Piedra Buena Av. 3140, Villa Lugano</div>
         <div class="hosp-datos">
           <a href="tel:+541128213605" class="hosp-tel">📞 2821-3605</a>
           <span class="hosp-sep">·</span>
-          <span class="hosp-guardia">Horarios: Lun-Vie 8-20 hs</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Piedra+Buena+Av.+3140+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+5+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
       </div>
 
-      <div class="hosp-card">
-        <div class="hosp-nom">CeSAC N° 37</div>
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 6 · Villa Soldati</div>
+        <div class="hosp-dir">Mariano Acosta 3673, Villa Soldati</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213606" class="hosp-tel">📞 2821-3606</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+6+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 7 · Villa Lugano</div>
+        <div class="hosp-dir">2 de Abril de 1982 y Montiel, Barrio Piedrabuena, Villa Lugano</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213607" class="hosp-tel">📞 2821-3607</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+7+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 8 · Barracas</div>
+        <div class="hosp-dir">Osvaldo Cruz y Luna, Barrio 21-24, Barracas</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213608" class="hosp-tel">📞 2821-3608</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+8+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Validado: Abril 2026</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 9 · La Boca</div>
+        <div class="hosp-dir">Irala 1254, La Boca</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213609" class="hosp-tel">📞 2821-3609</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+9+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 10 · Parque Patricios</div>
+        <div class="hosp-dir">Amancio Alcorta 1402, Parque Patricios</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213610" class="hosp-tel">📞 2821-3610</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+10+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">CeSAC N° 11 · Balvanera</div>
+        <div class="hosp-dir">Agüero 940, Balvanera</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213611" class="hosp-tel">📞 2821-3611</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+11+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="12">
+        <div class="hosp-nom">CeSAC N° 12 · Villa Urquiza</div>
+        <div class="hosp-dir">Olazábal 3960, Villa Urquiza</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213612" class="hosp-tel">📞 2821-3612</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+12+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="9">
+        <div class="hosp-nom">CeSAC N° 13 · Parque Avellaneda</div>
+        <div class="hosp-dir">Directorio 4210, Parque Avellaneda</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213613" class="hosp-tel">📞 2821-3613</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+13+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="9">
+        <div class="hosp-nom">CeSAC N° 14 · Villa Lugano</div>
+        <div class="hosp-dir">Saravia 2486, Villa Lugano</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213614" class="hosp-tel">📞 2821-3614</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+14+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="1">
+        <div class="hosp-nom">CeSAC N° 15 · San Telmo</div>
+        <div class="hosp-dir">Humberto 1° 470, Barrio Rodrigo Bueno, San Telmo</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213615" class="hosp-tel">📞 2821-3615</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+15+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 16 · Barracas</div>
+        <div class="hosp-dir">Osvaldo Cruz 2055, Barracas</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213616" class="hosp-tel">📞 2821-3616</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+16+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="14">
+        <div class="hosp-nom">CeSAC N° 17 · Palermo</div>
+        <div class="hosp-dir">El Salvador 4087, Palermo</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213617" class="hosp-tel">📞 2821-3617</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+17+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 18 · Villa Lugano</div>
+        <div class="hosp-dir">Corvalán y Av. Gral. F. Fernández de la Cruz, Barrio 20, Villa Lugano</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213618" class="hosp-tel">📞 2821-3618</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+18+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CeSAC N° 19 · Flores</div>
+        <div class="hosp-dir">Curapaligüe 1905, Flores</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213619" class="hosp-tel">📞 2821-3619</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+19+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CeSAC N° 20 · Flores</div>
+        <div class="hosp-dir">Ana María Janer y Charrúa 2330, Flores</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213620" class="hosp-tel">📞 2821-3620</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+20+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="1">
+        <div class="hosp-nom">CeSAC N° 21 · Retiro (Barrio 31)</div>
+        <div class="hosp-dir">Gendarmería Nacional Av. y Ulla Ulla, Barrio Padre Mugica, Retiro</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213621" class="hosp-tel">📞 2821-3621</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+21+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="15">
+        <div class="hosp-nom">CeSAC N° 22 · La Paternal</div>
+        <div class="hosp-dir">Fragata Pres. Sarmiento 2152, La Paternal</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213622" class="hosp-tel">📞 2821-3622</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+22+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="10">
+        <div class="hosp-nom">CeSAC N° 23 · Villa Luro</div>
+        <div class="hosp-dir">Bacacay 5640, Villa Luro</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213623" class="hosp-tel">📞 2821-3623</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+23+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 24 · Villa Soldati</div>
+        <div class="hosp-dir">Pasaje L 2300, Villa Soldati</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213624" class="hosp-tel">📞 2821-3624</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+24+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="1">
+        <div class="hosp-nom">CeSAC N° 25 · Retiro</div>
+        <div class="hosp-dir">Palo Santo y Vicuña, Barrio Padre Mugica, Retiro</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213625" class="hosp-tel">📞 2821-3625</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+25+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="14">
+        <div class="hosp-nom">CeSAC N° 26 · Palermo</div>
+        <div class="hosp-dir">Gurruchaga 1939, Palermo</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213626" class="hosp-tel">📞 2821-3626</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+26+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="12">
+        <div class="hosp-nom">CeSAC N° 27 · Saavedra</div>
+        <div class="hosp-dir">Arias 3781, Saavedra</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213627" class="hosp-tel">📞 2821-3627</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+27+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 28 · Villa Lugano</div>
+        <div class="hosp-dir">Santander 5955, Villa Lugano</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213628" class="hosp-tel">📞 2821-3628</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+28+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 29 · Villa Lugano</div>
+        <div class="hosp-dir">Los Álamos y Av. Gral. Paz, Villa Lugano</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213629" class="hosp-tel">📞 2821-3629</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+29+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 30 · Barracas</div>
+        <div class="hosp-dir">Av. Amancio Alcorta 3100, Barracas</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213630" class="hosp-tel">📞 2821-3630</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+30+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CeSAC N° 31 · Flores</div>
+        <div class="hosp-dir">Agustín de Vedia y Ana María Janer, Flores</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213631" class="hosp-tel">📞 2821-3631</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+31+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 32 · Nueva Pompeya</div>
+        <div class="hosp-dir">Charrúa 2900, Nueva Pompeya</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213632" class="hosp-tel">📞 2821-3632</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+32+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="14">
+        <div class="hosp-nom">CeSAC N° 33 · Palermo</div>
+        <div class="hosp-dir">Córdoba 5741, Palermo</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213633" class="hosp-tel">📞 2821-3633</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+33+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="11">
+        <div class="hosp-nom">CeSAC N° 34 · Villa del Parque</div>
+        <div class="hosp-dir">Gral. José G. Artigas 2262, La Paternal</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213634" class="hosp-tel">📞 2821-3634</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+34+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 35 · Barracas</div>
+        <div class="hosp-dir">Osvaldo Cruz y Zavaleta, Barracas</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213635" class="hosp-tel">📞 2821-3635</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+35+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="10">
+        <div class="hosp-nom">CeSAC N° 36 · Floresta</div>
+        <div class="hosp-dir">Mercedes 1371/79, Floresta</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213636" class="hosp-tel">📞 2821-3636</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+36+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="9">
+        <div class="hosp-nom">CeSAC N° 37 · Mataderos</div>
         <div class="hosp-dir">De Los Corrales Av. 6999, Mataderos</div>
         <div class="hosp-datos">
           <a href="tel:+541128213637" class="hosp-tel">📞 2821-3637</a>
           <span class="hosp-sep">·</span>
-          <span class="hosp-guardia">Horarios: Lun-Vie 8-20 hs</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=De+Los+Corrales+Av.+6999+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+37+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="5">
+        <div class="hosp-nom">CeSAC N° 38 · Almagro</div>
+        <div class="hosp-dir">Av. Medrano 350, Almagro</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213638" class="hosp-tel">📞 2821-3638</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+38+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 39 · Parque Patricios</div>
+        <div class="hosp-dir">24 de Noviembre 1679, Parque Patricios</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213639" class="hosp-tel">📞 2821-3639</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+39+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CeSAC N° 40 · Flores</div>
+        <div class="hosp-dir">Esteban Bonorino 1729, Flores</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213640" class="hosp-tel">📞 2821-3640</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+40+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 41 · La Boca</div>
+        <div class="hosp-dir">Ministro Brin 843, La Boca</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213641" class="hosp-tel">📞 2821-3641</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+41+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 42 · Nueva Pompeya</div>
+        <div class="hosp-dir">La Plata Av. 2241, Nueva Pompeya</div>
+        <div class="hosp-datos">
+          <span class="hosp-guardia">Sin teléfono en el dataset oficial</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+42+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 43 · Villa Lugano</div>
+        <div class="hosp-dir">Fonrouge 4377, Villa Lugano</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213643" class="hosp-tel">📞 2821-3643</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+43+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CeSAC N° 44 · Villa Lugano</div>
+        <div class="hosp-dir">Saraza 4202, Villa Lugano</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213644" class="hosp-tel">📞 2821-3644</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+44+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">CeSAC N° 45 · San Cristóbal</div>
+        <div class="hosp-dir">Cochabamba 2622, San Cristóbal</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213645" class="hosp-tel">📞 2821-3645</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+45+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 46 · La Boca</div>
+        <div class="hosp-dir">Av. Regimiento de Patricios 1941, La Boca</div>
+        <div class="hosp-datos">
+          <a href="tel:+541143025950" class="hosp-tel">📞 4302-5950</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+46+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="1">
+        <div class="hosp-nom">CeSAC N° 47 · Retiro (Barrio 31)</div>
+        <div class="hosp-dir">Alpaca 620, Barrio 31, Retiro</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213647" class="hosp-tel">📞 2821-3647</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+47+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CeSAC N° 48 · Flores</div>
+        <div class="hosp-dir">Av. Gral. Francisco Fernández de la Cruz 1753, Flores</div>
+        <div class="hosp-datos">
+          <a href="tel:+541128213648" class="hosp-tel">📞 2821-3648</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Lun-Vie 8-20 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+48+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CeSAC N° 49 · Barracas</div>
+        <div class="hosp-dir">Camino de Sirga s/n y Agustín Magaldi, Barracas</div>
+        <div class="hosp-datos">
+          <span class="hosp-guardia">Sin teléfono en el dataset oficial</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+49+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="11">
+        <div class="hosp-nom">CeSAC N° 50 · Villa Devoto</div>
+        <div class="hosp-dir">Av. Lastra 4180, Villa Devoto</div>
+        <div class="hosp-datos">
+          <span class="hosp-guardia">Sin teléfono en el dataset oficial</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CeSAC+50+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
       </div>
     </div>
   </div>
 
+
+  <!-- ACORDEÓN: HOSPITALES ESPECIALIZADOS -->
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>🔬 Hospitales Especializados CABA (9)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <p class="acord-nota">Atención gratuita · GCBA · Consultar turnos según especialidad</p>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Hospital de Gastroenterología Dr. B. Udaondo</div>
+        <div class="hosp-dir">Caseros 2061, Barracas</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Gastroenterología · Hepatología</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Caseros+2061+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="6">
+        <div class="hosp-nom">Hospital Municipal de Oncología María Curie</div>
+        <div class="hosp-dir">Patricias Argentinas 750, Caballito</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Oncología</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Patricias+Argentinas+750+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Hospital de Rehabilitación Respiratoria M. Ferrer</div>
+        <div class="hosp-dir">Dr. Enrique Finochietto 849, Barracas</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Enfermedades respiratorias</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Finochietto+849+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Hospital de Infecciosas Dr. Francisco J. Muñiz</div>
+        <div class="hosp-dir">Uspallata 2272, Parque Patricios</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Infectología · VIH · Tuberculosis · Guardia 24 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Uspallata+2272+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="6">
+        <div class="hosp-nom">Hospital de Quemados Dr. Arturo U. Illia</div>
+        <div class="hosp-dir">Pedro Goyena 369, Caballito</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Quemados · Guardia 24 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Pedro+Goyena+369+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="10">
+        <div class="hosp-nom">Hospital de Rehabilitación Manuel Rocca</div>
+        <div class="hosp-dir">Segurola 1949, Monte Castro</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Rehabilitación motora y neurológica</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Segurola+1949+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Hospital Materno Infantil Ramón Sardá</div>
+        <div class="hosp-dir">Esteban de Luca 2151, Parque Patricios</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Maternidad · Guardia 24 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Esteban+de+Luca+2151+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">Hospital de Oftalmología Santa Lucía</div>
+        <div class="hosp-dir">San Juan 2024, San Cristóbal</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Oftalmología</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=San+Juan+2024+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="10">
+        <div class="hosp-nom">Hospital Oftalmológico Dr. Pedro Lagleyze</div>
+        <div class="hosp-dir">Juan B. Justo 4151, Villa Gral. Mitre</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Oftalmología</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Juan+B+Justo+4151+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACORDEÓN: SALUD MENTAL -->
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>🧠 Salud Mental (7)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <p class="acord-nota">Hospitales GCBA y Nacional · Guardia 24 hs · Atención gratuita sin turno en guardia</p>
+
+      <div class="hosp-card" data-comuna="15">
+        <div class="hosp-nom">Hospital de Emergencias Psiquiátricas Torcuato de Alvear</div>
+        <div class="hosp-dir">Warnes 2630, Agronomía</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Guardia 24 hs · Adultos · GCBA</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Warnes+2630+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Hospital de Salud Mental Braulio Moyano</div>
+        <div class="hosp-dir">Brandsen 2570, Barracas</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Mujeres adultas · GCBA</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Brandsen+2570+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Hospital de Salud Mental José T. Borda</div>
+        <div class="hosp-dir">Dr. Ramón Carrillo 375, Barracas</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Varones adultos · GCBA</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Ramon+Carrillo+375+Barracas+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Hospital Infanto Juvenil Carolina Tobar García</div>
+        <div class="hosp-dir">Dr. Ramón Carrillo 315, Barracas</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Niños y adolescentes · GCBA</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Ramon+Carrillo+315+Barracas+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">Hospital Nacional en Red Lic. Laura Bonaparte</div>
+        <div class="hosp-dir">Combate de los Pozos 2133, San Cristóbal</div>
+        <div class="hosp-datos">
+          <a href="tel:+541143046353" class="hosp-tel">📞 4304-6353</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Guardia 24 hs · Nación</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Combate+de+los+Pozos+2133+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: argentina.gob.ar</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="13">
+        <div class="hosp-nom">Centro de Salud Mental N° 1 Dr. Hugo Rosarios</div>
+        <div class="hosp-dir">Manuela Pedraza 1558, Núñez</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Con turno · GCBA</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Manuela+Pedraza+1558+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">Centro de Salud Mental N° 3 Dr. Arturo Ameghino</div>
+        <div class="hosp-dir">Córdoba 3120, Balvanera</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Con turno · GCBA</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Cordoba+3120+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACORDEÓN: ODONTOLOGÍA -->
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>🦷 Odontología gratuita (5)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <p class="acord-nota">Atención odontológica gratuita · GCBA · Con turno previo</p>
+
+      <div class="hosp-card" data-comuna="5">
+        <div class="hosp-nom">Hospital de Odontología Infantil y del Adulto José Dueñas</div>
+        <div class="hosp-dir">Muñiz 15, Almagro</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Adultos e infanto-juvenil</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Muniz+15+Almagro+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="2">
+        <div class="hosp-nom">Hospital de Odontología Dr. Ramón Carrillo</div>
+        <div class="hosp-dir">Sánchez de Bustamante 2529, Recoleta</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Adultos</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Sanchez+de+Bustamante+2529+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Hospital de Odontología Infantil Don Benito Quinquela Martín</div>
+        <div class="hosp-dir">Don Pedro de Mendoza 1795, La Boca</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Niños</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Pedro+de+Mendoza+1795+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="9">
+        <div class="hosp-nom">Centro Odontológico Infantil N° 1</div>
+        <div class="hosp-dir">De los Corrales y Carhue, Mataderos</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Niños</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=De+los+Corrales+y+Carhue+Mataderos+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">Centro Odontológico Infantil N° 4</div>
+        <div class="hosp-dir">Amancio Alcorta 1402, Parque Patricios</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Niños</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Amancio+Alcorta+1402+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACORDEÓN: HOSPITAL NACIONAL -->
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>🏛️ Hospitales Nacionales en CABA (1)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <p class="acord-nota">Dependencia nacional (Ministerio de Salud / UBA) · Atención gratuita</p>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">Hospital de Clínicas José de San Martín (UBA)</div>
+        <div class="hosp-dir">Av. Córdoba 2351, Balvanera</div>
+        <div class="hosp-datos">
+          <a href="tel:+541159508000" class="hosp-tel">📞 5950-8000</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Urgencias: 5950-8500 · 24 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hospital+Clinicas+UBA+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: hospitaldeclinicas.uba.ar</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ACORDEÓN: CMB -->
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>🏠 Centros Médicos Barriales (32)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <p class="acord-nota">Policonsultorios barriales gratuitos de GCBA con clínicos, pediatras y tocoginecólogos. Atienden consultas de medicina general, controles de salud y enfermedades frecuentes. Más pequeños que los CeSAC: no tienen trabajo social ni equipo interdisciplinario. · Lun-Vie 8-20 hs</p>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CMB N° 1</div>
+        <div class="hosp-dir">Las Palmas 2479, Nueva Pompeya</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Las+Palmas+2479+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CMB N° 2</div>
+        <div class="hosp-dir">Emilio Lamarca 1022, Villa Santa Rita</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Emilio+Lamarca+1022+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="9">
+        <div class="hosp-nom">CMB N° 3</div>
+        <div class="hosp-dir">Av. Juan B. Justo 9668, Liniers</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Juan+B+Justo+9668+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CMB N° 4</div>
+        <div class="hosp-dir">Av. Carabobo 801, Flores</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Carabobo+801+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="10">
+        <div class="hosp-nom">CMB N° 5</div>
+        <div class="hosp-dir">Nogoyá 4302, Monte Castro</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Nogoya+4302+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">CMB N° 6</div>
+        <div class="hosp-dir">Estados Unidos 1936, San Cristóbal</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Estados+Unidos+1936+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="10">
+        <div class="hosp-nom">CMB N° 7</div>
+        <div class="hosp-dir">Martiniano Leguizamón 230, Villa Luro</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Martiniano+Leguizamon+230+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CMB N° 8</div>
+        <div class="hosp-dir">La Capital 1131, Parque Chacabuco</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=La+Capital+1131+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CMB N° 9</div>
+        <div class="hosp-dir">Albariño 3512, Villa Lugano</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Albarino+3512+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CMB N° 10</div>
+        <div class="hosp-dir">Av. Martín García 612, La Boca</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Martin+Garcia+612+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="12">
+        <div class="hosp-nom">CMB N° 11</div>
+        <div class="hosp-dir">Gregoria Pérez 3434, Colegiales</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Gregoria+Perez+3434+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CMB N° 12</div>
+        <div class="hosp-dir">Páez 2283, Flores</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Paez+2283+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CMB N° 13</div>
+        <div class="hosp-dir">Camarones 2834, Villa Santa Rita</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Camarones+2834+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CMB N° 18</div>
+        <div class="hosp-dir">Carlos María Ramírez 1445, Nueva Pompeya</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Carlos+Maria+Ramirez+1445+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="10">
+        <div class="hosp-nom">CMB N° 19</div>
+        <div class="hosp-dir">Virgilio 2502, Villa Real</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Virgilio+2502+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="6">
+        <div class="hosp-nom">CMB N° 23</div>
+        <div class="hosp-dir">Tejedor 251, Caballito</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Tejedor+251+Caballito+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CMB N° 24</div>
+        <div class="hosp-dir">Brasil 2867, Parque Patricios</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Brasil+2867+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="9">
+        <div class="hosp-nom">CMB N° 25</div>
+        <div class="hosp-dir">Martínez Castro 1375, Parque Avellaneda</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Martinez+Castro+1375+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="13">
+        <div class="hosp-nom">CMB N° 26</div>
+        <div class="hosp-dir">Guayra 2193, Belgrano</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Guayra+2193+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="15">
+        <div class="hosp-nom">CMB N° 27</div>
+        <div class="hosp-dir">Antezana 340, Villa Crespo</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Antezana+340+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CMB N° 28</div>
+        <div class="hosp-dir">Echeandia 5567, Villa Lugano</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Echeandia+5567+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">CMB N° 29</div>
+        <div class="hosp-dir">Saavedra 205, Balvanera</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Saavedra+205+Balvanera+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CMB N° 30</div>
+        <div class="hosp-dir">Arzobispo Espinosa 1211, Barracas</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Arzobispo+Espinosa+1211+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="7">
+        <div class="hosp-nom">CMB N° 31</div>
+        <div class="hosp-dir">Avelino Díaz 1971, Parque Chacabuco</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Avelino+Diaz+1971+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="10">
+        <div class="hosp-nom">CMB N° 32</div>
+        <div class="hosp-dir">Calderón de la Barca 1198, Vélez Sarsfield</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Calderon+de+la+Barca+1198+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="12">
+        <div class="hosp-nom">CMB N° 33</div>
+        <div class="hosp-dir">Cramer 4354, Saavedra</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Cramer+4354+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CMB N° 35</div>
+        <div class="hosp-dir">Salvador M. del Carril 2956, Villa Soldati</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Salvador+del+Carril+2956+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="15">
+        <div class="hosp-nom">CMB N° 36</div>
+        <div class="hosp-dir">Burela 1604, Chacarita</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Burela+1604+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="4">
+        <div class="hosp-nom">CMB N° 37</div>
+        <div class="hosp-dir">Isabel La Católica 1492, Barracas</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Isabel+La+Catolica+1492+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="9">
+        <div class="hosp-nom">CMB N° 38</div>
+        <div class="hosp-dir">Moreto 1581, Parque Avellaneda</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Moreto+1581+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="8">
+        <div class="hosp-nom">CMB N° 39</div>
+        <div class="hosp-dir">Varela 3395, Villa Soldati</div>
+        <div class="hosp-datos"><span class="hosp-guardia">Lun-Vie 8-20 hs</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Varela+3395+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: GCBA oficial</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="card" style="margin-bottom:12px">
+    <h2><span class="ic">🧊</span>Vacunas y prevención invernal</h2>
+    <div style="display:grid;gap:10px;margin-top:14px">
+      <div style="background:#edf6ff;border-radius:16px;padding:12px;display:grid;gap:6px;">
+        <div style="font-weight:800;font-size:.95rem">💉 Antigripal gratis</div>
+        <div style="font-size:.84rem;line-height:1.4">Para mayores de 65, embarazadas, personas con enfermedades crónicas, personal de salud y convivientes de riesgo.</div>
+      </div>
+      <div style="background:#f7f7f7;border-radius:16px;padding:12px;display:grid;gap:6px;">
+        <div style="font-weight:800;font-size:.95rem">🦠 Neumocócica (neumonía)</div>
+        <div style="font-size:.84rem;line-height:1.4">Protege contra neumonía, meningitis y otras infecciones graves por neumococo.</div>
+        <div style="font-size:.81rem;line-height:1.5;color:#555">
+          <strong>Gratis y obligatoria para:</strong> mayores de 65 años · personas con diabetes, insuficiencia renal, VIH u otras inmunodeficiencias · asplenia (sin bazo) · fumadores crónicos.<br>
+          <strong>Dónde:</strong> hospitales públicos y CESAC de CABA. Consultá en el centro de salud más cercano si requiere turno.
+        </div>
+      </div>
+      <div style="background:#edf6ff;border-radius:16px;padding:12px;display:grid;gap:8px;">
+        <div style="font-weight:800;font-size:.95rem">📱 Turnos rápidos</div>
+        <div style="font-size:.84rem;line-height:1.4">Llamá al 147 o escribí a <strong>inmunizaciones@buenosaires.gob.ar</strong>.</div>
+        <a href="https://plan-ciudad.plan-gobierno.org/plan-cuidar-salud-buenos-aires/hospitales-y-establecimientos-de-salud-en-ciudad-de-buenos-aires/" target="_blank" class="btn-lnk">Ver centros de salud</a>
+      </div>
+      <div style="background:#f7f7f7;border-radius:16px;padding:12px;display:grid;gap:6px;">
+        <div style="font-weight:800;font-size:.95rem">🧼 Prevención rápida</div>
+        <div style="font-size:.84rem;line-height:1.4">Ventilá, lavate las manos y usá barbijo si tenés síntomas respiratorios.</div>
+      </div>
+    </div>
+  </div>
   <p class="aviso">Fuente: GCBA · buenosaires.gob.ar/salud · Datos validados en Abril 2026</p>
   <button class="btn-s" onclick="navAtras()">← Volver</button>
 </div>
@@ -879,7 +1985,7 @@ const LABELS = {
   'p-inicio':'CABA · 2026','p-form':'Programas sociales',
   'p-resultados':'Resultados','p-detalle':'Detalle del programa',
   'p-todos':'Todos los programas',
-  'p-salud':'Gestión de Derechos y Salud',
+  'p-salud':'Salud',
   'p-genero':'Violencia de género',
   'p-emerg':'Ayuda urgente','p-dormir':'Donde dormir - CIS',
   'p-comer':'Donde comer','p-ducha':'Donde ducharse','p-ropa':'Ropero comunitario'
@@ -948,6 +2054,26 @@ function toggleAcord(hdr) {
   var abierto = body.classList.contains('visible');
   body.classList.toggle('visible', !abierto);
   hdr.classList.toggle('abierto', !abierto);
+}
+
+function filtrarComuna(n) {
+  document.querySelectorAll('#filtro-salud .cf-btn').forEach(function(b) {
+    b.classList.toggle('activo', +b.dataset.c === n);
+  });
+  document.querySelectorAll('#p-salud .hosp-card').forEach(function(card) {
+    card.classList.toggle('hc-oculto', n !== 0 && +card.dataset.comuna !== n);
+  });
+  document.querySelectorAll('#p-salud .acord-grupo').forEach(function(g) {
+    var cards = Array.from(g.querySelectorAll('.hosp-card'));
+    var visibles = cards.filter(function(c) { return !c.classList.contains('hc-oculto'); });
+    var tieneVisibles = visibles.length > 0;
+    var hdr = g.querySelector('.acord-hdr');
+    var body = g.querySelector('.acord-body');
+    hdr.classList.toggle('abierto', tieneVisibles);
+    body.classList.toggle('visible', tieneVisibles);
+    var span = hdr.querySelector('span:first-child');
+    if (span) span.textContent = span.textContent.replace(/\(\d+\)/, '(' + visibles.length + ')');
+  });
 }
 
 function navIr(id) {
