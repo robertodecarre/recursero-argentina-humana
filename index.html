@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asistente Social · Argentina Humana · CABA 2026</title>
+<title>Asistente Social Virtual · Argentina Humana · CABA 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Barlow:ital,wght@0,400;0,500;0,600;1,600;1,700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -19,7 +19,7 @@
   --azs:#e8f0fb;
   --naranja:#d4700a;
   --naranjas:#fff3e0;
-  --r:8px;
+  --r:0;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:"Barlow",sans-serif;background:var(--gris-fondo);color:var(--negro);min-height:100vh;}
@@ -27,7 +27,7 @@ body{font-family:"Barlow",sans-serif;background:var(--gris-fondo);color:var(--ne
 /* HEADER — negro con logo AH blanco */
 header{background:var(--negro);color:var(--blanco);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);}
 .hdr-i{display:flex;align-items:center;gap:12px;padding:10px 16px;}
-#btn-back{background:rgba(255,255,255,.12);border:none;color:#fff;border-radius:4px;padding:5px 10px;font-size:1rem;cursor:pointer;display:none;flex-shrink:0;}
+#btn-back{background:rgba(255,255,255,.12);border:none;color:#fff;border-radius:0;padding:5px 10px;font-size:1rem;cursor:pointer;display:none;flex-shrink:0;}
 #btn-back:hover{background:rgba(255,255,255,.22);}
 .hdr-logo{flex-shrink:0;line-height:1;}
 .hdr-logo .ah-mark{font-family:"Barlow Condensed",sans-serif;font-size:1.6rem;font-weight:900;font-style:italic;color:var(--blanco);letter-spacing:-2px;line-height:1;}
@@ -43,22 +43,22 @@ header{background:var(--negro);color:var(--blanco);position:sticky;top:0;z-index
 /* CARDS */
 .card{background:var(--blanco);border-radius:var(--r);padding:18px 16px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.07);border:1px solid var(--gris-borde);}
 .card h2{font-family:"Barlow Condensed",sans-serif;font-size:1rem;font-weight:800;font-style:italic;color:var(--negro);text-transform:uppercase;letter-spacing:.3px;margin-bottom:13px;display:flex;align-items:center;gap:8px;}
-.card h2 .ic{background:var(--celeste);color:var(--blanco);border-radius:4px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;font-style:normal;}
+.card h2 .ic{background:var(--celeste);color:var(--blanco);border-radius:0;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;font-style:normal;}
 
 /* FORM */
 label{display:block;font-size:.72rem;font-weight:700;color:var(--gris-txt);margin-bottom:4px;margin-top:12px;text-transform:uppercase;letter-spacing:.4px;}
 label:first-of-type{margin-top:0;}
-select,input[type=number]{width:100%;padding:10px 12px;border:1.5px solid var(--gris-borde);border-radius:6px;font-family:"Barlow",sans-serif;font-size:.9rem;color:var(--negro);background:var(--blanco);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;transition:border-color .15s;}
+select,input[type=number]{width:100%;padding:10px 12px;border:1.5px solid var(--gris-borde);border-radius:0;font-family:"Barlow",sans-serif;font-size:.9rem;color:var(--negro);background:var(--blanco);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;transition:border-color .15s;}
 input[type=number]{background-image:none;}
 select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .rg{display:flex;gap:7px;flex-wrap:wrap;}
 .rb{flex:1;min-width:70px;}
 .rb input[type=radio]{display:none;}
-.rb label{display:flex;align-items:center;justify-content:center;padding:9px 5px;border:1.5px solid var(--gris-borde);border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:600;text-align:center;transition:all .15s;margin:0;color:var(--gris-txt);}
+.rb label{display:flex;align-items:center;justify-content:center;padding:9px 5px;border:1.5px solid var(--gris-borde);border-radius:0;cursor:pointer;font-size:.82rem;font-weight:600;text-align:center;transition:all .15s;margin:0;color:var(--gris-txt);}
 .rb input[type=radio]:checked+label{border-color:var(--celeste);background:var(--celeste-s);color:var(--negro);}
 .checks{display:flex;flex-direction:column;gap:5px;}
-.chk{display:flex;align-items:center;gap:9px;padding:9px 12px;border:1.5px solid var(--gris-borde);border-radius:6px;cursor:pointer;transition:all .15s;}
-.chk-box{width:18px;height:18px;border:2px solid var(--gris-borde);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;transition:all .15s;}
+.chk{display:flex;align-items:center;gap:9px;padding:9px 12px;border:1.5px solid var(--gris-borde);border-radius:0;cursor:pointer;transition:all .15s;}
+.chk-box{width:18px;height:18px;border:2px solid var(--gris-borde);border-radius:0;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;transition:all .15s;}
 .chk.sel .chk-box{background:var(--celeste);border-color:var(--celeste);}
 .chk.sel{border-color:var(--celeste);background:var(--celeste-s);}
 .chk-txt{font-size:.84rem;font-weight:500;}
@@ -69,7 +69,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .btn-p:active{transform:scale(.98);}
 .btn-s{width:100%;padding:12px;background:transparent;color:var(--negro);border:2px solid var(--negro);border-radius:var(--r);font-family:"Barlow Condensed",sans-serif;font-size:1rem;font-weight:800;font-style:italic;cursor:pointer;transition:all .15s;margin-top:8px;letter-spacing:.3px;text-transform:uppercase;}
 .btn-s:hover{background:var(--negro);color:var(--blanco);}
-.btn-lnk{display:block;width:100%;padding:12px 14px;background:var(--celeste);color:var(--blanco);border:none;border-radius:6px;font-family:"Barlow Condensed",sans-serif;font-size:.95rem;font-weight:800;font-style:italic;text-decoration:none;text-align:center;margin-bottom:7px;letter-spacing:.3px;text-transform:uppercase;}
+.btn-lnk{display:block;width:100%;padding:12px 14px;background:var(--celeste);color:var(--blanco);border:none;border-radius:0;font-family:"Barlow Condensed",sans-serif;font-size:.95rem;font-weight:800;font-style:italic;text-decoration:none;text-align:center;margin-bottom:7px;letter-spacing:.3px;text-transform:uppercase;}
 .btn-lnk:hover{background:var(--celeste-o);}
 .btn-lnk.sec{background:transparent;color:var(--negro);border:2px solid var(--negro);}
 .btn-lnk.sec:hover{background:var(--negro);color:var(--blanco);}
@@ -102,8 +102,8 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 /* RESULTADOS */
 .res-hdr{display:flex;align-items:center;gap:9px;margin-bottom:12px;}
 .res-hdr h2{font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px;}
-.badge{background:var(--celeste);color:var(--blanco);font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:.85rem;padding:2px 10px;border-radius:20px;}
-.sec-tit{background:var(--negro);color:var(--blanco);font-family:"Barlow Condensed",sans-serif;font-size:.75rem;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.6px;padding:5px 10px;border-radius:4px;margin:14px 0 8px;display:inline-block;}
+.badge{background:var(--celeste);color:var(--blanco);font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:.85rem;padding:2px 10px;border-radius:0;}
+.sec-tit{background:var(--negro);color:var(--blanco);font-family:"Barlow Condensed",sans-serif;font-size:.75rem;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.6px;padding:5px 10px;border-radius:0;margin:14px 0 8px;display:inline-block;}
 .pc{background:var(--blanco);border-radius:var(--r);padding:13px;margin-bottom:8px;border:1px solid var(--gris-borde);border-left:4px solid var(--celeste);cursor:pointer;transition:all .15s;animation:si .25s ease both;}
 .pc:hover{box-shadow:0 4px 14px rgba(0,174,239,.15);transform:translateX(3px);}
 .pc.nac{border-left-color:var(--az-oscuro);}
@@ -111,7 +111,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 @keyframes si{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 .pc-hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:7px;margin-bottom:5px;}
 .pc-nom{font-family:"Barlow Condensed",sans-serif;font-size:.98rem;font-weight:800;font-style:italic;line-height:1.2;text-transform:uppercase;letter-spacing:.2px;}
-.pc-amb{font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:3px;white-space:nowrap;flex-shrink:0;margin-top:2px;text-transform:uppercase;letter-spacing:.5px;}
+.pc-amb{font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:0;white-space:nowrap;flex-shrink:0;margin-top:2px;text-transform:uppercase;letter-spacing:.5px;}
 .pc:not(.nac):not(.inc) .pc-amb{background:var(--celeste);color:var(--blanco);}
 .pc.nac .pc-amb{background:var(--az-oscuro);color:var(--blanco);}
 .pc.pba .pc-amb{background:#1a7a3c;color:var(--blanco);}
@@ -122,7 +122,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .no-res{background:var(--blanco);border-radius:var(--r);padding:26px 16px;text-align:center;color:var(--gris-txt);font-size:.86rem;border:1px solid var(--gris-borde);}
 
 /* DETALLE */
-.det-badge{display:inline-block;font-size:.62rem;font-weight:900;padding:3px 8px;border-radius:3px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.6px;font-style:italic;}
+.det-badge{display:inline-block;font-size:.62rem;font-weight:900;padding:3px 8px;border-radius:0;margin-bottom:8px;text-transform:uppercase;letter-spacing:.6px;font-style:italic;}
 .det-nom{font-family:"Barlow Condensed",sans-serif;font-size:1.4rem;font-weight:900;font-style:italic;line-height:1.1;margin-bottom:8px;text-transform:uppercase;letter-spacing:.2px;}
 .det-desc{font-size:.84rem;color:#444;line-height:1.6;margin-bottom:14px;}
 .det-sec{margin-bottom:14px;}
@@ -130,9 +130,9 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .det-sec p,.det-sec ul{font-size:.83rem;color:#333;line-height:1.6;}
 .det-sec ul{padding-left:15px;}
 .det-sec ul li{margin-bottom:3px;}
-.inc-ban{background:var(--naranjas);border-radius:6px;padding:12px 13px;margin-bottom:14px;border-left:3px solid var(--naranja);}
+.inc-ban{background:var(--naranjas);border-radius:0;padding:12px 13px;margin-bottom:14px;border-left:3px solid var(--naranja);}
 .inc-ban p{font-size:.82rem;color:#7a4a10;line-height:1.5;}
-.ci{display:flex;align-items:flex-start;gap:9px;font-size:.8rem;padding:9px 11px;background:var(--gris-fondo);border-radius:5px;margin-bottom:6px;line-height:1.4;}
+.ci{display:flex;align-items:flex-start;gap:9px;font-size:.8rem;padding:9px 11px;background:var(--gris-fondo);border-radius:0;margin-bottom:6px;line-height:1.4;}
 .div{height:1px;background:var(--gris-borde);margin:12px 0;}
 
 /* EMERGENCIAS */
@@ -150,40 +150,40 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .l108-t{font-size:.76rem;line-height:1.4;opacity:.85;}
 
 /* LISTADOS */
-.com-tit{font-family:"Barlow Condensed",sans-serif;font-size:.9rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;background:var(--negro);color:var(--blanco);border-radius:5px;padding:7px 13px;margin-bottom:7px;margin-top:14px;}
+.com-tit{font-family:"Barlow Condensed",sans-serif;font-size:.9rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;background:var(--negro);color:var(--blanco);border-radius:0;padding:7px 13px;margin-bottom:7px;margin-top:14px;}
 .sc{background:var(--blanco);border-radius:var(--r);padding:12px 13px;margin-bottom:7px;box-shadow:0 1px 4px rgba(0,0,0,.06);border:1px solid var(--gris-borde);}
 .sc-nom{font-family:"Barlow Condensed",sans-serif;font-size:.93rem;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.2px;margin-bottom:4px;}
-.sc-tag{display:inline-block;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:3px;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
+.sc-tag{display:inline-block;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:0;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
 .sc-inf{font-size:.78rem;color:#444;line-height:1.55;}
 .sc-inf span{display:flex;gap:5px;margin-bottom:2px;}
 .tag-h{background:#5b3f8a;color:#fff;}
 .tag-c{background:var(--celeste);color:#fff;}
 .tag-d{background:var(--az-oscuro);color:#fff;}
 .tag-r{background:#1a7a3c;color:#fff;}
-.cis-pop{font-size:.68rem;background:var(--naranjas);color:var(--naranja);padding:2px 7px;border-radius:3px;display:inline-block;margin-bottom:4px;font-weight:700;}
+.cis-pop{font-size:.68rem;background:var(--naranjas);color:var(--naranja);padding:2px 7px;border-radius:0;display:inline-block;margin-bottom:4px;font-weight:700;}
 .aviso{font-size:.69rem;color:var(--gris-txt);text-align:center;margin-top:16px;line-height:1.5;}
 /* VALIDADO Y MAPS */
-.det-validado{display:inline-flex;align-items:center;gap:5px;font-size:.68rem;font-weight:600;color:#2e7d32;background:#e8f5e9;border-radius:4px;padding:3px 8px;margin-bottom:10px;}
-.btn-maps{display:block;width:100%;padding:10px 14px;background:#fff;color:var(--az-oscuro);border:1.5px solid var(--az-oscuro);border-radius:6px;font-family:"Barlow Condensed",sans-serif;font-size:.88rem;font-weight:700;text-decoration:none;text-align:center;margin-bottom:6px;font-style:italic;text-transform:uppercase;}
+.det-validado{display:inline-flex;align-items:center;gap:5px;font-size:.68rem;font-weight:600;color:#2e7d32;background:#e8f5e9;border-radius:0;padding:3px 8px;margin-bottom:10px;}
+.btn-maps{display:block;width:100%;padding:10px 14px;background:#fff;color:var(--az-oscuro);border:1.5px solid var(--az-oscuro);border-radius:0;font-family:"Barlow Condensed",sans-serif;font-size:.88rem;font-weight:700;text-decoration:none;text-align:center;margin-bottom:6px;font-style:italic;text-transform:uppercase;}
 .btn-maps:hover{background:var(--azs);}
 .ci a{color:var(--celeste-o);font-weight:600;text-decoration:none;}
 .ci a:hover{text-decoration:underline;}
 /* ACORDEONES */
 .acord-grupo{background:var(--blanco);border-radius:var(--r);margin-bottom:8px;border:1px solid var(--gris-borde);overflow:hidden;}
-.acord-hdr{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;cursor:pointer;font-family:"Barlow Condensed",sans-serif;font-size:1rem;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;background:var(--negro);color:var(--blanco);transition:background .15s;}
-.acord-hdr:hover{background:#222;}
+.acord-hdr{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;cursor:pointer;font-family:"Barlow Condensed",sans-serif;font-size:1rem;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;background:var(--celeste);color:var(--negro);transition:background .15s;}
+.acord-hdr:hover{background:var(--celeste-o);}
 .acord-ico{transition:transform .25s;font-style:normal;}
 .acord-hdr.abierto .acord-ico{transform:rotate(180deg);}
 .acord-body{display:none;padding:10px 12px 12px;}
 .acord-body.visible{display:block;}
-.acord-nota{font-size:.73rem;color:var(--gris-txt);font-style:italic;margin-bottom:10px;padding:6px 10px;background:var(--gris-fondo);border-radius:5px;}
+.acord-nota{font-size:.73rem;color:var(--gris-txt);font-style:italic;margin-bottom:10px;padding:6px 10px;background:var(--gris-fondo);border-radius:0;}
 /* TARJETAS HOSPITAL */
-.hosp-card{background:var(--gris-fondo);border-radius:7px;padding:12px;margin-bottom:8px;border-left:3px solid var(--celeste);}
+.hosp-card{background:var(--gris-fondo);border-radius:0;padding:12px;margin-bottom:8px;border-left:3px solid var(--celeste);}
 .hosp-card.hc-oculto{display:none;}
 .cf-wrap{margin-bottom:10px;}
 .cf-scroll{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:2px;}
 
-.cf-btn{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:800;font-style:italic;text-transform:uppercase;padding:6px 10px;border-radius:5px;border:1.5px solid var(--negro);background:var(--blanco);color:var(--negro);cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.cf-btn{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:800;font-style:italic;text-transform:uppercase;padding:6px 10px;border-radius:0;border:1.5px solid var(--negro);background:var(--blanco);color:var(--negro);cursor:pointer;white-space:nowrap;flex-shrink:0;}
 .cf-btn.activo{background:var(--negro);color:var(--blanco);}
 .hosp-nom{font-family:"Barlow Condensed",sans-serif;font-size:.98rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.2px;margin-bottom:3px;}
 .hosp-dir{font-size:.78rem;color:#444;margin-bottom:6px;}
@@ -196,7 +196,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 /* VIOLENCIA DE GÉNERO */
 .e-vg{border-color:#5b3f8a;}.e-vg .eb-tit{color:#5b3f8a;font-family:"Barlow Condensed",sans-serif;font-size:.88rem;font-weight:900;font-style:italic;text-transform:uppercase;}
 .e-vg:hover{background:#5b3f8a;border-color:#5b3f8a;}.e-vg:hover .eb-tit{color:#fff;}.e-vg:hover div{color:rgba(255,255,255,.7)!important;}
-.vg-item{font-size:.83rem;padding:8px 10px 8px 32px;position:relative;margin-bottom:5px;border-radius:5px;line-height:1.4;}
+.vg-item{font-size:.83rem;padding:8px 10px 8px 32px;position:relative;margin-bottom:5px;border-radius:0;line-height:1.4;}
 .vg-si{background:#f0faf4;color:#1a5c30;}.vg-si::before{content:"✓";position:absolute;left:10px;font-weight:700;color:#2d9b6f;}
 .vg-no{background:#fdecea;color:#7a1a1a;}.vg-no::before{content:"✕";position:absolute;left:10px;font-weight:700;color:#c0392b;}
 .vg-paso{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;}
@@ -206,6 +206,11 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .vg-r-titulo{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-style:italic;font-size:.95rem;text-transform:uppercase;letter-spacing:.2px;margin-bottom:3px;}
 .vg-r-desc{font-size:.78rem;color:#555;line-height:1.4;margin-bottom:8px;}
 .vg-r-links{}
+/* MODO COMPATIBILIDAD */
+.modo-compat .pc{cursor:pointer;}
+.modo-compat .pc .pc-arr{display:none;}
+.pc.sel-compat{background:var(--azs);border-left-color:var(--az-oscuro);outline:2px solid var(--az-oscuro);}
+.pc.sel-compat .pc-nom{color:var(--az-oscuro);}
 </style>
 </head>
 <body>
@@ -218,7 +223,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     </div>
     <div class="hdr-divider"></div>
     <div class="hdr-txt">
-      <h1>Asistente Social</h1>
+      <h1>Asistente Social Virtual</h1>
       <p id="hdr-sub">Argentina Humana · CABA 2026</p>
     </div>
   </div>
@@ -228,7 +233,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 <div id="p-inicio" class="pant activa">
   <div class="inicio-hero">
     <div class="ih-banner">
-      <div class="ih-banner-tit">Asistente Social</div>
+      <div class="ih-banner-tit">Asistente Social Virtual</div>
       <div class="ih-banner-sub">Argentina Humana · CABA 2026</div>
     </div>
     <div class="ih-body">
@@ -290,8 +295,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <option value="">— Seleccionar —</option>
       <option value="0">Menos de 1 año</option>
       <option value="1">Entre 1 y 2 años</option>
-      <option value="2">Entre 2 y 5 años</option>
-      <option value="5">Entre 5 y 20 años</option>
+      <option value="2">2 años o más</option>
       <option value="20">20 años o más</option>
       <option value="99">Nació acá</option>
     </select>
@@ -316,8 +320,17 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     </select>
     <label>¿Tiene hijos/as menores de 18 a cargo?</label>
     <div class="rg">
-      <div class="rb"><input type="radio" name="hijos" id="h_si" value="si"><label for="h_si">Sí</label></div>
-      <div class="rb"><input type="radio" name="hijos" id="h_no" value="no"><label for="h_no">No</label></div>
+      <div class="rb"><input type="radio" name="hijos" id="h_si" value="si" onchange="toggleNumHijos()"><label for="h_si">Sí</label></div>
+      <div class="rb"><input type="radio" name="hijos" id="h_no" value="no" onchange="toggleNumHijos()"><label for="h_no">No</label></div>
+    </div>
+    <div id="bloque-num-hijos" style="display:none">
+      <label>¿Cuántos/as?</label>
+      <div class="rg">
+        <div class="rb"><input type="radio" name="num_hijos" id="nh_1" value="1"><label for="nh_1">1</label></div>
+        <div class="rb"><input type="radio" name="num_hijos" id="nh_2" value="2"><label for="nh_2">2</label></div>
+        <div class="rb"><input type="radio" name="num_hijos" id="nh_3" value="3"><label for="nh_3">3</label></div>
+        <div class="rb"><input type="radio" name="num_hijos" id="nh_4" value="4"><label for="nh_4">4 o más</label></div>
+      </div>
     </div>
     <label>¿Está embarazada?</label>
     <div class="rg">
@@ -362,19 +375,6 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     </div>
   </div>
   <div class="card">
-    <h2><span class="ic">🎓</span>Educación</h2>
-    <label>Máximo nivel educativo alcanzado</label>
-    <select id="educacion">
-      <option value="">— Seleccionar —</option>
-      <option value="pri_inc">Primaria incompleta</option>
-      <option value="pri">Primaria completa</option>
-      <option value="sec_inc">Secundaria incompleta</option>
-      <option value="sec">Secundaria completa</option>
-      <option value="ter_inc">Terciario/universitario incompleto</option>
-      <option value="ter">Terciario/universitario completo</option>
-    </select>
-  </div>
-  <div class="card">
     <h2><span class="ic">♿</span>Salud</h2>
     <label>¿Tiene discapacidad certificada (CUD)?</label>
     <div class="rg">
@@ -408,6 +408,24 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 
 <div id="p-todos" class="pant">
   <div class="res-hdr"><h2>Todos los programas</h2><span class="badge" style="background:var(--negro)" id="badge-todos">0</span></div>
+
+  <div id="compat-normal" style="margin-bottom:10px">
+    <button class="btn-s" onclick="activarCompatibilidad()">🔀 Chequear compatibilidad</button>
+  </div>
+
+  <div id="compat-modo" style="display:none;margin-bottom:10px">
+    <div class="card" style="background:var(--azs);border-color:var(--az-oscuro);margin-bottom:8px">
+      <p style="font-size:.84rem;font-weight:700;color:var(--az-oscuro);margin-bottom:5px">Modo selección activo</p>
+      <p style="font-size:.78rem;color:var(--gris-txt)">Tocá los programas que querés cruzar · <span id="compat-contador">Ninguno seleccionado.</span></p>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn-p" onclick="confirmarCompatibilidad()" style="flex:1">✔ Confirmar</button>
+      <button class="btn-s" onclick="cancelarCompatibilidad()" style="flex:1">✕ Cancelar</button>
+    </div>
+  </div>
+
+  <div id="compat-resultados" style="display:none;margin-bottom:10px"></div>
+
   <div id="lista-todos"></div>
   <button class="btn-s" onclick="navAtras()">← Volver</button>
   <p class="aviso">Los resultados son orientativos. Verificar vigencia en los organismos correspondientes.</p>
@@ -461,7 +479,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
   <!-- ACORDEÓN: HOSPITALES DE AGUDOS -->
   <div class="acord-grupo">
     <div class="acord-hdr" onclick="toggleAcord(this)">
-      <span>🏥 Hospitales Generales de Agudos (14)</span>
+      <span>🏥 Hospitales Generales de Agudos (15)</span>
       <span class="acord-ico">▼</span>
     </div>
     <div class="acord-body">
@@ -623,6 +641,18 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
         </div>
         <a href="https://www.google.com/maps/search/?api=1&query=Nueva+York+3952+Villa+Devoto+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
         <div class="hosp-validado">✔ Validado: Abril 2026</div>
+      </div>
+
+      <div class="hosp-card" data-comuna="3">
+        <div class="hosp-nom">Hospital de Clínicas José de San Martín (UBA)</div>
+        <div class="hosp-dir">Av. Córdoba 2351, Balvanera</div>
+        <div class="hosp-datos">
+          <a href="tel:+541159508000" class="hosp-tel">📞 5950-8000</a>
+          <span class="hosp-sep">·</span>
+          <span class="hosp-guardia">Urgencias: 5950-8500 · 24 hs</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hospital+Clinicas+UBA+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+        <div class="hosp-validado">✔ Fuente: hospitaldeclinicas.uba.ar</div>
       </div>
     </div>
   </div>
@@ -1491,29 +1521,6 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     </div>
   </div>
 
-  <!-- ACORDEÓN: HOSPITAL NACIONAL -->
-  <div class="acord-grupo">
-    <div class="acord-hdr" onclick="toggleAcord(this)">
-      <span>🏛️ Hospitales Nacionales en CABA (1)</span>
-      <span class="acord-ico">▼</span>
-    </div>
-    <div class="acord-body">
-      <p class="acord-nota">Dependencia nacional (Ministerio de Salud / UBA) · Atención gratuita</p>
-
-      <div class="hosp-card" data-comuna="3">
-        <div class="hosp-nom">Hospital de Clínicas José de San Martín (UBA)</div>
-        <div class="hosp-dir">Av. Córdoba 2351, Balvanera</div>
-        <div class="hosp-datos">
-          <a href="tel:+541159508000" class="hosp-tel">📞 5950-8000</a>
-          <span class="hosp-sep">·</span>
-          <span class="hosp-guardia">Urgencias: 5950-8500 · 24 hs</span>
-        </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Hospital+Clinicas+UBA+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
-        <div class="hosp-validado">✔ Fuente: hospitaldeclinicas.uba.ar</div>
-      </div>
-
-    </div>
-  </div>
 
 
   <!-- ACORDEÓN: CMB -->
@@ -2001,6 +2008,7 @@ function mostrarPantalla(id) {
   document.getElementById('btn-back').style.display = id === 'p-inicio' ? 'none' : 'block';
   window.scrollTo({top:0,behavior:'smooth'});
   if (id === 'p-todos') renderTodos();
+  else if (compatMode) cancelarCompatibilidad();
 }
 
 function renderTodos() {
@@ -2040,7 +2048,7 @@ function renderTodos() {
       var div = document.createElement('div');
       div.className = 'pc' + (p.amb === 'nacional' ? ' nac' : p.amb === 'pba' ? ' pba' : '');
       div.style.animationDelay = (i * 0.04) + 's';
-      div.onclick = function(){ verDetalle(p.id, false); };
+      div.onclick = function(){ if(compatMode) toggleSeleccionCompat(p.id, div); else verDetalle(p.id, false); };
       div.innerHTML = '<div class="pc-hdr"><div class="pc-nom">' + p.nombre + '</div><span class="pc-amb">' + (p.amb==='caba'?'CABA':p.amb==='pba'?'Pcia. Bs.As.':'Nacional') + '</span></div><div class="pc-desc">' + p.desc_c + '</div><div class="pc-arr">Tocar para ver detalle →</div>';
       lista.appendChild(div);
     });
@@ -2056,6 +2064,74 @@ function toggleAcord(hdr) {
   hdr.classList.toggle('abierto', !abierto);
 }
 
+var compatMode = false;
+var compatSeleccionados = [];
+
+function activarCompatibilidad() {
+  compatMode = true;
+  compatSeleccionados = [];
+  document.getElementById('compat-normal').style.display = 'none';
+  document.getElementById('compat-modo').style.display = 'block';
+  document.getElementById('compat-resultados').style.display = 'none';
+  document.getElementById('lista-todos').classList.add('modo-compat');
+  actualizarContadorCompat();
+}
+
+function cancelarCompatibilidad() {
+  compatMode = false;
+  compatSeleccionados = [];
+  document.getElementById('compat-normal').style.display = 'block';
+  document.getElementById('compat-modo').style.display = 'none';
+  document.querySelectorAll('#lista-todos .pc').forEach(function(el){ el.classList.remove('sel-compat'); });
+  document.getElementById('lista-todos').classList.remove('modo-compat');
+}
+
+function toggleSeleccionCompat(id, el) {
+  var idx = compatSeleccionados.indexOf(id);
+  if (idx === -1) { compatSeleccionados.push(id); el.classList.add('sel-compat'); }
+  else { compatSeleccionados.splice(idx, 1); el.classList.remove('sel-compat'); }
+  actualizarContadorCompat();
+}
+
+function actualizarContadorCompat() {
+  var n = compatSeleccionados.length;
+  document.getElementById('compat-contador').textContent =
+    n === 0 ? 'Ninguno seleccionado.' :
+    n === 1 ? '1 programa seleccionado.' :
+    n + ' programas seleccionados.';
+}
+
+function confirmarCompatibilidad() {
+  if (compatSeleccionados.length < 2) { alert('Seleccioná al menos 2 programas.'); return; }
+  var progs = compatSeleccionados.map(function(id){ return PROGS.find(function(p){ return p.id === id; }); }).filter(Boolean);
+  var incomps = [];
+  for (var i = 0; i < progs.length; i++) {
+    for (var j = i + 1; j < progs.length; j++) {
+      var a = progs[i], b = progs[j], nota = null;
+      if (a.incomp_con && a.incomp_con.indexOf(b.id) !== -1) nota = a.nota_incompat;
+      else if (b.incomp_con && b.incomp_con.indexOf(a.id) !== -1) nota = b.nota_incompat;
+      if (nota) incomps.push({ a: a.nombre, b: b.nombre, nota: nota });
+    }
+  }
+  var nombresSelec = progs.map(function(p){ return p.nombre; }).join(' · ');
+  var html = '<div class="card">';
+  html += '<h2 style="font-size:.95rem;margin-bottom:8px">Resultado del cruce</h2>';
+  html += '<p style="font-size:.72rem;color:var(--gris-txt);margin-bottom:12px">' + nombresSelec + '</p>';
+  if (incomps.length === 0) {
+    html += '<div style="background:#e8f5e9;border-left:3px solid #2e7d32;padding:10px 12px;font-size:.83rem;color:#1a5c30"><strong>✔ Sin incompatibilidades conocidas</strong><br>No se encontraron conflictos entre los programas seleccionados.</div>';
+  } else {
+    incomps.forEach(function(inc){
+      html += '<div class="inc-ban"><p><strong>⚠ ' + inc.a + ' — ' + inc.b + '</strong><br><span style="font-size:.8rem">' + inc.nota + '</span></p></div>';
+    });
+  }
+  html += '</div>';
+  var res = document.getElementById('compat-resultados');
+  res.innerHTML = html;
+  res.style.display = 'block';
+  cancelarCompatibilidad();
+  res.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
 function filtrarComuna(n) {
   document.querySelectorAll('#filtro-salud .cf-btn').forEach(function(b) {
     b.classList.toggle('activo', +b.dataset.c === n);
@@ -2067,10 +2143,11 @@ function filtrarComuna(n) {
     var cards = Array.from(g.querySelectorAll('.hosp-card'));
     var visibles = cards.filter(function(c) { return !c.classList.contains('hc-oculto'); });
     var tieneVisibles = visibles.length > 0;
+    g.style.display = tieneVisibles ? '' : 'none';
     var hdr = g.querySelector('.acord-hdr');
     var body = g.querySelector('.acord-body');
-    hdr.classList.toggle('abierto', tieneVisibles);
-    body.classList.toggle('visible', tieneVisibles);
+    hdr.classList.remove('abierto');
+    body.classList.remove('visible');
     var span = hdr.querySelector('span:first-child');
     if (span) span.textContent = span.textContent.replace(/\(\d+\)/, '(' + visibles.length + ')');
   });
@@ -2102,6 +2179,12 @@ function getCobra() {
 function gv(id) { return document.getElementById(id) ? document.getElementById(id).value : ''; }
 function gr(name) { const e = document.querySelector('input[name="' + name + '"]:checked'); return e ? e.value : ''; }
 
+function toggleNumHijos() {
+  var hijos = gr('hijos');
+  document.getElementById('bloque-num-hijos').style.display = hijos === 'si' ? 'block' : 'none';
+  if (hijos !== 'si') document.querySelectorAll('input[name="num_hijos"]').forEach(function(r){ r.checked = false; });
+}
+
 function toggleIngresos() {
   var formal = gr('formal');
   document.getElementById('bloque-ingresos').style.display = formal === 'si' ? 'block' : 'none';
@@ -2131,8 +2214,8 @@ const PROGS = [
     acceso:'Trámite virtual: enviar mail a inscripcionescp@buenosaires.gob.ar indicando DNI/precaria, CUIL, nombre, fecha de nacimiento y domicilio de cada integrante. Presencial: Se realiza en la SAS de tu comuna (lunes a viernes 9:30 a 15:30 hs) o Sede Central: Salguero 979, Almagro (lun a vie 9 a 15 hs).',
     links:[{l:'Web oficial GCBA',u:'https://buenosaires.gob.ar/desarrollohumanoyhabitat/ciudadania-portena',t:'p'},{l:'Sacar turno en Sede de Atención Social',u:'https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346',t:'p'},{l:'Consultas en Salguero 979 (beneficiarios)',u:'https://buenosaires.gob.ar/desarrollohumanoyhabitat/ciudadania-portena/contacto',t:'s'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
     cont:['inscripcionescp@buenosaires.gob.ar','Salguero 979, Almagro — Lun a vie 9 a 15 hs','Línea 147'],
-    incomp_con:['ticket'],
-    nota_incompat:'Para acceder a Ciudadanía Porteña, que es significativamente mayor, debería darse de baja del Ticket Social (el trámite lo gestiona el mismo equipo).',
+    incomp_con:['ticket_social'],
+    nota_incompat:'Para acceder a Ciudadanía Porteña ($85.000–$115.000 promedio/hogar, Abril 2026), que es significativamente mayor al Ticket Social, debería darse de baja de este último (el trámite lo gestiona el mismo equipo).',
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2; }
   },
@@ -2145,8 +2228,8 @@ const PROGS = [
     acceso:'Online: tramitesdigitales.buenosaires.gob.ar/formulario/formularioTemplate/ticketSocial · Presencial: Sede de Atención Social de la comuna (lun a vie 9:30 a 15:30 hs) · Sede Central: Av. Entre Ríos 1492 PB.',
     links:[{l:'Inscripción online',u:'https://tramitesdigitales.buenosaires.gob.ar/formulario/formularioTemplate/ticketSocial',t:'p'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
     cont:['ticketsocial@buenosaires.gob.ar','Av. Entre Ríos 1492 PB — Lun a vie 9 a 15 hs','Línea 147'],
-    incomp_con:['ciudadania'],
-    nota_incompat:'Ciudadanía Porteña puede duplicar o triplicar este monto. Consultar en la sede por el pase a Ciudadanía Porteña.',
+    incomp_con:['ciudadania_portena'],
+    nota_incompat:'Ciudadanía Porteña ($85.000–$115.000 promedio/hogar, Abril 2026) puede duplicar o triplicar al Ticket Social según composición familiar. Consultar en sede el pase a Ciudadanía Porteña.',
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2; }
   },
@@ -2160,7 +2243,7 @@ const PROGS = [
     links:[{l:'Inscripción online GCBA',u:'https://buenosaires.gob.ar/tramites/inscripcion-en-el-programa-nuestras-familias',t:'p'}],
     cont:['nuestrasfamilias@buenosaires.gob.ar','Av. Entre Ríos 1492 1° piso, oficina 109','4300-9610 / 8674 — Lun a vie 10 a 16 hs'],
     incomp_con:['auh'],
-    nota_incompat:'No compatible con AUH. Si ya cobra AUH conviene quedarse — la AUH + Tarjeta Alimentar suele ser mayor que Nuestras Familias.',
+    nota_incompat:'No compatible con AUH. Si ya puede cobrar AUH ($136.666/hijo/mes), la AUH sumada a la Tarjeta Alimentar ($52.250 con 1 hijo · $81.936 con 2 · $108.062 con 3 o más) generalmente supera a Nuestras Familias. Conviene hacer el cambio si ya cumple los requisitos.',
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2 && (d.hijos==='si' || d.emb==='si') && !d.cobra.includes('auh'); }
   },
@@ -2174,7 +2257,7 @@ const PROGS = [
     links:[{l:'Formulario online',u:'https://buenosaires.gob.ar/tramites/postulacion-al-subsidio-vivir-en-casa',t:'p'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
     cont:['vivirencasa@buenosaires.gob.ar','4342-8587 — Lun a vie 9 a 15 hs','Av. Belgrano 858 PB'],
     incomp_con:['apoyo_habitacional_ley6935'],
-    nota_incompat:'Este programa no es compatible con el Programa de Apoyo Habitacional - Ley 6935. Comparar cual cubre mejor la situación.',
+    nota_incompat:'No compatible con el Apoyo Habitacional Ley 6935 (hasta $227.000/mes, Abril 2026). Comparar cuál cubre mejor la situación según el monto del alquiler. El monto de Vivir en Casa no está publicado — consultarlo en vivirencasa@buenosaires.gob.ar.',
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2 && d.edadMin>=60; }
   },
@@ -2187,8 +2270,8 @@ const PROGS = [
     acceso:'Presencial en Av. Entre Ríos 1492 CABA, lun a vie de 9 a 15 hs. También por mail a atencioninmediata@buenosaires.gob.ar. El informe social lo puede hacer una trabajadora social del GCBA o de una organización.',
     links:[{l:'Info oficial GCBA',u:'https://buenosaires.gob.ar/desarrollohumanoyhabitat/inclusion-social-y-atencion-inmediata/asistencia-habitacional',t:'p'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
     cont:['Av. Entre Ríos 1492 CABA — Lun a vie 9 a 15 hs','atencioninmediata@buenosaires.gob.ar','108 (emergencias calle 24 hs)','147'],
-    incomp_con:['vivircasa'],
-    nota_incompat:'No compatible con Vivir en Casa. Consultar cuál programa se adapta mejor.',
+    incomp_con:['vivir_en_casa'],
+    nota_incompat:'No compatible con Vivir en Casa. El Apoyo Habitacional Ley 6935 cubre hasta $227.000/mes (Abril 2026) con actualización automática cada 6 meses. El monto de Vivir en Casa no está publicado — comparar en sede cuál cubre mejor el alquiler.',
     validado:'16 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2 && (d.vivienda==='calle' || d.vivienda==='inquilinato'); }
   },
@@ -2202,7 +2285,7 @@ const PROGS = [
     links:[{l:'Mi ANSES - Iniciar trámite',u:'https://mi.anses.gob.ar/',t:'p'},{l:'Sacar turno ANSES',u:'https://www.anses.gob.ar/atencion/sacar-turno',t:'p'}],
     cont:['ANSES: 130 (gratuito)','mi.anses.gob.ar'],
     incomp_con:['nuestras_familias'],
-    nota_incompat:'La AUH no es compatible con Nuestras Familias. La AUH además habilita a la Tarjeta Alimentar — conviene pasarse si ya se puede tramitar.',
+    nota_incompat:'La AUH ($136.666/hijo/mes) no es compatible con Nuestras Familias. La AUH además habilita automáticamente a la Tarjeta Alimentar ($52.250 con 1 hijo · $81.936 con 2 · $108.062 con 3 o más) — conviene pasarse si ya se cumplen los requisitos.',
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.hijos==='si' && !d.formal && (d.nac==='arg' || d.res_arg>=2); }
   },
@@ -2217,7 +2300,7 @@ const PROGS = [
     cont:['ANSES: 130 (gratuito)'],
     incomp_con:[],
     validado:'15 de abril de 2026',
-    elegible:function(d){ return d.cobra.includes('auh') && d.hijos==='si'; }
+    elegible:function(d){ return d.hijos==='si' && !d.formal && (d.nac==='arg' || d.res_arg>=2); }
   },
   {
     id:'aue', nombre:'AUE - Asignación Universal por Embarazo', amb:'nacional',
@@ -2236,14 +2319,14 @@ const PROGS = [
     id:'progresar', nombre:'Beca Progresar', amb:'nacional',
     desc_c:'Beca educativa de $35.000/mes. Inscripción abierta: Obligatorio (secundario, cierra 24/4), Superior (terciario/universidad, cierra 30/4) y Formación Profesional (cursos INET, abierto hasta nov).',
     desc_l:'Las Becas Progresar tienen tres líneas activas en 2026. Monto: $35.000 mensuales (80% mensual, 20% al acreditar cursada regular al fin de año).\n\n⚠️ ESTADO DE INSCRIPCIÓN (abril 2026):\n· Progresar Obligatorio (secundario, 16-24 años): cierra el 24 de abril — aún abierto por pocos días.\n· Progresar Superior (terciario/universidad, hasta 35 años): cierra el 30 de abril — aún abierto.\n· Progresar Formación Profesional (cursos INET, 18-35 años): abierto hasta el 27 de noviembre de 2026.\n\n⚠️ OBLIGACIÓN NUEVA 2026: los/as beneficiarios/as deben notificar cualquier cambio académico, laboral, familiar o patrimonial dentro de los 30 días. Se hace por la plataforma Progresar (cambios educativos), ANSES (cambios económicos) o Mi Argentina (cambio de domicilio). El incumplimiento puede dar de baja el beneficio.',
-    reqs:['Progresar Obligatorio: 16 a 24 años, cursando secundario incompleto','Progresar Superior: hasta 35 años, terciario o universidad en curso','Progresar Formación Profesional: 18 a 35 años, inscripto/a en curso validado por INET, sin empleo formal','Ingresos del grupo familiar no superiores a 3 SMVM','Argentino/a nativo/a o naturalizado/a, o extranjero/a con 2 años de residencia legal con DNI'],
+    reqs:['⚠️ Requiere tener estudios en curso o incompletos: secundaria incompleta (Progresar Obligatorio), terciario/universitario incompleto (Progresar Superior), o inscripción en curso INET (Progresar Formación Profesional). No aplica si ya completó todos los niveles educativos.','Progresar Obligatorio: 16 a 24 años, cursando secundario incompleto','Progresar Superior: hasta 35 años, terciario o universidad en curso','Progresar Formación Profesional: 18 a 35 años, inscripto/a en curso validado por INET, sin empleo formal','Ingresos del grupo familiar no superiores a 3 SMVM','Argentino/a nativo/a o naturalizado/a, o extranjero/a con 2 años de residencia legal con DNI'],
     docs:['Cuenta validada en Mi Argentina','CUIL y clave Mi Argentina','CBU o CVU propio','Datos actualizados en ANSES'],
     acceso:'Inscripción 100% online en becasprogresar.educacion.gob.ar. Requiere cuenta validada en la app Mi Argentina. Formación Profesional: abierto hasta el 27 de noviembre de 2026.',
     links:[{l:'Plataforma Progresar',u:'https://becasprogresar.educacion.gob.ar/',t:'p'},{l:'Mi Argentina',u:'https://mi.argentina.gob.ar/',t:'p'}],
     cont:['0800-999-1066 (opción 1)'],
     incomp_con:[],
     validado:'22 de abril de 2026',
-    elegible:function(d){ return d.edadMax>=16 && d.edadMin<=35 && (d.educacion==='sec_inc'||d.educacion==='ter_inc') && (!d.formal || d.ingresos==='menos1' || d.ingresos==='1a3') && (d.nac==='arg' || d.res_arg>=2); }
+    elegible:function(d){ return d.edadMax>=16 && d.edadMin<=35 && (!d.formal || d.ingresos==='menos1' || d.ingresos==='1a3') && (d.nac==='arg' || d.res_arg>=2); }
   },
   {
     id:'pas', nombre:'Programa de Acompañamiento Social', amb:'nacional',
@@ -2255,9 +2338,9 @@ const PROGS = [
     links:[{l:'Info oficial',u:'https://www.argentina.gob.ar/programa-de-acompanamiento-social-0',t:'p'},{l:'Consultas 0800-222-3294',u:'tel:08002223294',t:'s'}],
     cont:['Secretaría de Niñez: 0800-222-3294 (lun a vie 8 a 20 hs)','ANSES: 130 (gratuito)'],
     incomp_con:['jubilacion','puam'],
-    nota_incompat:'Este programa no es compatible con cobrar jubilación o PUAM.',
+    nota_incompat:'El PAS ($78.000/mes) no es compatible con cobrar jubilación ni con la PUAM ($304.243/mes, Abril 2026). Si puede tramitar la PUAM, es significativamente mayor y además incluye cobertura de PAMI.',
     validado:'15 de abril de 2026',
-    elegible:function(d){ return d.edadMin>=50 && !d.cobra.includes('jubilacion') && !d.cobra.includes('puam') && (!d.formal || d.ingresos==='menos1') && (d.nac==='arg' || d.res_arg>=1); }
+    elegible:function(d){ return (d.edadMin>=50 || d.num_hijos>=4) && !d.cobra.includes('jubilacion') && !d.cobra.includes('puam') && (!d.formal || d.ingresos==='menos1') && (d.nac==='arg' || d.res_arg>=1); }
   },
   {
     id:'puam', nombre:'PUAM - Prestación Universal Adulto Mayor', amb:'nacional',
@@ -2269,7 +2352,7 @@ const PROGS = [
     links:[{l:'Mi ANSES - Iniciar tramite',u:'https://mi.anses.gob.ar/',t:'p'},{l:'Sacar turno ANSES',u:'https://www.anses.gob.ar/atencion/sacar-turno',t:'p'}],
     cont:['ANSES: 130 (gratuito)','mi.anses.gob.ar'],
     incomp_con:['pas'],
-    nota_incompat:'La PUAM no es compatible con el Programa de Acompañamiento Social. La PUAM incluye ademas cobertura de PAMI.',
+    nota_incompat:'La PUAM ($304.243/mes, Abril 2026) no es compatible con el PAS ($78.000/mes). La PUAM es significativamente mayor e incluye además cobertura de PAMI.',
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.edadMin>=65 && !d.cobra.includes('jubilacion') && (d.nac==='arg' || d.res_arg>=20); }
   },
@@ -2329,8 +2412,8 @@ function consultar() {
     res_arg: parseInt(gv('res_arg')) || 0,
     res_caba: parseInt(gv('res_caba')) || 0,
     vivienda: gv('vivienda'),
-    educacion: gv('educacion'),
     hijos: gr('hijos'),
+    num_hijos: parseInt(gr('num_hijos')) || 0,
     emb: gr('emb'),
     formal: gr('formal') === 'si',
     ingresos: gv('ingresos'),
