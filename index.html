@@ -1865,20 +1865,56 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <div class="a108-num">108</div>
     <div><strong>Emergencia en calle:</strong> Gratuita · 24 horas · El equipo BAP va al lugar</div>
   </div>
-  <div class="card" style="margin-bottom:10px">
-    <h2><span class="ic">🆘</span>¿Qué necesitás ahora?</h2>
-    <div class="emerg-grid">
-      <div class="eb e-c" onclick="navIr('p-dormir')"><div class="eb-ic">🛏️</div><div class="eb-tit">Dónde dormir</div></div>
-      <div class="eb e-f" onclick="navIr('p-comer')"><div class="eb-ic">🍲</div><div class="eb-tit">Dónde comer</div></div>
-      <div class="eb e-d" onclick="navIr('p-ducha')"><div class="eb-ic">🚿</div><div class="eb-tit">Dónde ducharse</div></div>
-      <div class="eb e-r" onclick="navIr('p-ropa')"><div class="eb-ic">👕</div><div class="eb-tit">Ropero comunitario</div></div>
+  <div class="eb e-vg" style="margin-bottom:10px;width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:16px 14px;" onclick="navIr('p-genero')">
+    <div class="eb-ic" style="font-size:1.5rem;margin:0;flex-shrink:0">💜</div>
+    <div>
+      <div class="eb-tit">Violencia de género</div>
+      <div style="font-size:.71rem;color:var(--gris-txt);margin-top:2px;font-family:'Barlow',sans-serif;font-weight:400">Protocolo de acompañamiento y recursos</div>
     </div>
-    <div class="eb e-vg" style="margin-top:10px;width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:16px 14px;" onclick="navIr('p-genero')">
-      <div class="eb-ic" style="font-size:1.5rem;margin:0;flex-shrink:0">💜</div>
-      <div>
-        <div class="eb-tit">Violencia de género</div>
-        <div style="font-size:.71rem;color:var(--gris-txt);margin-top:2px;font-family:'Barlow',sans-serif;font-weight:400">Protocolo de acompañamiento y recursos</div>
-      </div>
+  </div>
+
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>🛏️ Dónde dormir · CIS (<span id="cnt-dormir">…</span>)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <div class="l108" style="background:#7b5ea7;margin-bottom:8px"><div><div class="l108-n">📞 108</div><div class="l108-t">Para ingresar a un CIS llamar al 108 (24 hs). DIPA: Combate de los Pozos 1280.</div></div></div>
+      <div id="lista-dormir"></div>
+      <p class="aviso" style="margin-top:8px">Fuente: Recursero Defensoría CABA 2026</p>
+    </div>
+  </div>
+
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>🍲 Dónde comer (<span id="cnt-comer">…</span>)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <div id="lista-comer"></div>
+      <p class="aviso" style="margin-top:8px">Fuente: Recursero Defensoría CABA 2026 · mapadeloscomedores.com</p>
+    </div>
+  </div>
+
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>🚿 Dónde ducharse (<span id="cnt-ducha">…</span>)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <div id="lista-ducha"></div>
+      <p class="aviso" style="margin-top:8px">Fuente: Recursero Defensoría CABA 2026</p>
+    </div>
+  </div>
+
+  <div class="acord-grupo">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>👕 Ropero comunitario (<span id="cnt-ropa">…</span>)</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <div id="lista-ropa"></div>
+      <p class="aviso" style="margin-top:8px">Fuente: Recursero Defensoría CABA 2026</p>
     </div>
   </div>
 </div>
@@ -2009,23 +2045,6 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
   <p class="aviso">Esta información no reemplaza el acompañamiento profesional. Ante dudas, llamar al 144.</p>
 </div>
 
-<div id="p-dormir" class="pant">
-  <div class="l108" style="background:#7b5ea7"><div><div class="l108-n">📞 108</div><div class="l108-t">Para ingresar a un CIS llamar al 108 (24 hs). DIPA: Combate de los Pozos 1280.</div></div></div>
-  <div id="lista-dormir"></div>
-  <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
-</div>
-<div id="p-comer" class="pant">
-  <div id="lista-comer"></div>
-  <p class="aviso">Fuente: Recursero Defensoría CABA 2026 · Más info: mapadeloscomedores.com</p>
-</div>
-<div id="p-ducha" class="pant">
-  <div id="lista-ducha"></div>
-  <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
-</div>
-<div id="p-ropa" class="pant">
-  <div id="lista-ropa"></div>
-  <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
-</div>
 
 <footer style="background:#f9f9f9;border-top:1px solid #ddd;padding:16px;margin-top:30px;text-align:center;font-size:.78rem;color:#666;line-height:1.6">
   <strong>Nota importante sobre los montos:</strong> Los montos corresponden a los valores vigentes a Abril de 2026. Los programas nacionales suben por IPC mensual y los de CABA por normativa específica.
@@ -2040,8 +2059,7 @@ const LABELS = {
   'p-todos':'Todos los programas',
   'p-salud':'Salud',
   'p-genero':'Violencia de género',
-  'p-emerg':'Ayuda urgente','p-dormir':'Donde dormir - CIS',
-  'p-comer':'Donde comer','p-ducha':'Donde ducharse','p-ropa':'Ropero comunitario'
+  'p-emerg':'Ayuda urgente'
 };
 var navStack = ['p-inicio'];
 
@@ -2626,7 +2644,138 @@ var COMEDORES = [
   {com:9,bar:'Liniers',nom:'San Cayetano',dir:'Cuzco 110',cont:'Consultar',hora:'Almuerzo y merienda lun a dom. Alimentos no perecederos adultos mayores'},
   {com:10,bar:'Floresta',nom:'Nuestra Señora de la Candelaria',dir:'Bahía Blanca 363',cont:'Consultar',hora:'Consultar'},
   {com:12,bar:'Villa Urquiza',nom:'Estación Urquiza - recorrida',dir:'Línea Mitre, Estación Urquiza',cont:'11 3170-3791',hora:'Recorrida con entrega de viandas'},
-  {com:14,bar:'Palermo',nom:'Fundación Si',dir:'Palermo',cont:'4824-8852',hora:'Recorridas con entrega de viandas'}
+  {com:14,bar:'Palermo',nom:'Fundación Si',dir:'Palermo',cont:'4824-8852',hora:'Recorridas con entrega de viandas'},
+  // C1 — nuevos
+  {com:1,bar:'Retiro',nom:'Centro Barrial Padre Carlos Mugica',dir:'Talampaya 2873',cont:'11 6193-0433',hora:'Des, alm, merienda y cena lun a vie 9-17 hs'},
+  {com:1,bar:'Retiro',nom:"Comunidad Sant'Egidio",dir:'Av. Rivadavia 851 (Casa de la Amistad)',cont:'IG: santegidioarg',hora:'Viandas mié 19 hs, jue 19:30 hs, vie 19 hs'},
+  {com:1,bar:'Retiro',nom:'Nuestra Señora del Socorro - Cáritas',dir:'Juncal 888',cont:'4393-1423',hora:'Des (viandas) lun a vie 8 hs. Alimentos mar 9 hs'},
+  {com:1,bar:'Retiro',nom:'Somos Barrios de Pie - CAAC Retiro',dir:'Alpaca 1409',cont:'11 6737-2339',hora:'Des y alm mar y jue 10-15 hs'},
+  {com:1,bar:'Monserrat',nom:'Fundación Manos Abiertas',dir:'Av. Independencia 1150',cont:'4371-5869',hora:'Consultar'},
+  {com:1,bar:'Constitución',nom:'Santa Elisa - Cáritas',dir:'Salta 2290',cont:'11 6617-7408',hora:'Alm sáb 11:30 hs. Alimentos mié 14-16 hs'},
+  {com:1,bar:'Constitución',nom:'Parroquia Inmaculado Corazón de María',dir:'Constitución 1077',cont:'4305-6552',hora:'Alm y alimentos sáb 12 hs'},
+  {com:1,bar:'Monserrat',nom:'Asamblea Popular San Telmo - Merendero Darío Santillán',dir:'Chacabuco 634',cont:'11 3822-4017',hora:'Merienda lun a vie 16-17 hs'},
+  {com:1,bar:'Constitución',nom:'Santa Catalina de Alejandría - Cáritas',dir:'Brasil 850',cont:'4300-2194',hora:'Merienda y alimentos lun a vie 17 hs'},
+  {com:1,bar:'San Telmo',nom:'Buenos Aires 3D',dir:'Piedras 539',cont:'11 2725-6354',hora:'Cena (olla popular) mar 19 hs'},
+  {com:1,bar:'Monserrat',nom:'Misión Solidaria - Iglesia Metodista Almagro',dir:'Av. Rivadavia 4050',cont:'11 3432-7033',hora:'Cena (viandas Solís y Yrigoyen) dom 20:30-21 hs'},
+  {com:1,bar:'Puerto Madero',nom:'Nuestra Señora de la Esperanza - Cáritas',dir:'Aimé Painé 1698',cont:'11 6285-4848',hora:'Recorrido viandas jue 20 hs'},
+  {com:1,bar:'Constitución',nom:'Inmaculada Concepción (C1) - Cáritas',dir:'Tacuarí 870',cont:'4300-5547',hora:'Alimentos jue 10 hs'},
+  {com:1,bar:'San Telmo',nom:'El Buen Samaritano (comedor)',dir:'Adolfo Alsina 346',cont:'4331-0625',hora:'Cena (viandas) vie 18 hs'},
+  // C2 — nuevos
+  {com:2,bar:'Recoleta',nom:'Santísimo Redentor - Cáritas',dir:'Larrea 1252',cont:'4824-0895',hora:'Des 7-8:30 hs; alm 11 hs lun a vie (Beruti 2352)'},
+  {com:2,bar:'Recoleta',nom:'Comedor Madre Camila',dir:'Azcuénaga 1266',cont:'4822-1897',hora:'Des lun a vie 7-8:30 hs; alm lun a vie 11-12:30 hs'},
+  // C3 — nuevos
+  {com:3,bar:'Balvanera',nom:'Parroquia Nuestra Señora de Balvanera - San Expedito',dir:'Bartolomé Mitre 2411',cont:'4802-5830',hora:'Des sáb 9 hs; alm sáb 12 hs; merienda vie tarde (niños)'},
+  {com:3,bar:'Balvanera',nom:'Fundación Obras de San José',dir:'Moreno 2472',cont:'4308-1829',hora:'Des lun a sáb 3 turnos: 7:45, 8:20 y 8:55 hs'},
+  {com:3,bar:'Balvanera',nom:'MTE Vientos de Libertad',dir:'Bartolomé Mitre 3366',cont:'IG: vientosdelibertad.mte',hora:'Des y alm lun a vie 9-16 hs'},
+  {com:3,bar:'San Cristóbal',nom:'Santa Cruz - Cáritas',dir:'Estados Unidos 3150',cont:'4931-1317',hora:'Merienda vie 18 hs; viandas sáb 11 hs; alimentos lun-mié 15-18 hs'},
+  {com:3,bar:'Balvanera',nom:'Frente Patria Grande (C3)',dir:'Riobamba 86',cont:'IG: patriagrandecomuna3',hora:'Alm lun 12 hs; alimentos jue 16 hs; recorrido mar-jue-vie 15 hs'},
+  {com:3,bar:'Balvanera',nom:'Amigos en el Camino',dir:'Ecuador 462',cont:'11 5608-7175',hora:'Recorridos nocturnos dom a vie 20-00:30 hs'},
+  {com:3,bar:'Balvanera',nom:'Amigos por las Calles',dir:'Av. Belgrano 2719',cont:'11 6961-2094',hora:'Recorrido viandas jue 20-21:30 hs (Balvanera, Almagro, Palermo)'},
+  {com:3,bar:'Balvanera',nom:'Somos Barrios de Pie (C3)',dir:'Plaza Once',cont:'11 3605-1352',hora:'Cena (olla popular) mar 18 hs'},
+  // C4 — nuevos
+  {com:4,bar:'Parque Patricios',nom:'Acción Comunitaria',dir:'Pasaje Guaraní 563',cont:'info@accioncomunitaria.org',hora:'Recorridos "Sopa de Letras" (C1,3,4,5) lun a dom 18:30-22:30 hs'},
+  {com:4,bar:'Pompeya',nom:'Acción Social Sinaí',dir:'Av. Sáenz 541',cont:'11 3013-9726',hora:'Alm dom (3 veces/mes) 12-13 hs; viandas sáb (2 veces/mes) 17:30 hs'},
+  {com:4,bar:'Barracas',nom:'Virgen de los Milagros de Caacupé',dir:'Av. Osvaldo Cruz 3470',cont:'4302-3643',hora:'Des y alm lun a vie 10 y 12:30 hs; alimentos vie 16 hs; recorrido lun 20 hs'},
+  {com:4,bar:'La Boca',nom:'Parroquia San Juan Evangelista (alimentos)',dir:'Olavarría 486',cont:'4301-1155',hora:'Des dom 9-10 hs; alm dom 11:30 hs; viandas dom 10:30 hs; alimentos jue 8-10 hs'},
+  {com:4,bar:'La Boca',nom:'Somos Barrios de Pie (C4)',dir:'Lamadrid 663',cont:'IG: somosbarriosdepie.c4',hora:'Cena (olla popular) vie 18 hs'},
+  {com:4,bar:'Parque Patricios',nom:'Comedor Padre Mugica - Virgen de Luján - Cáritas',dir:'H. Masantonio 3495',cont:'4911-9090',hora:'Alm lun a vie 11:30-13:30 hs'},
+  {com:4,bar:'Barracas',nom:'Santa Lucía Virgen y Mártir - Cáritas',dir:'Av. Montes de Oca 550',cont:'11 2640-2528',hora:'Alimentos y recorrido viandas jue 16:30 hs'},
+  // C5 — nuevos
+  {com:5,bar:'Almagro',nom:'Casa Gatica',dir:'Sánchez de Bustamante 551',cont:'IG: casagatica',hora:'Alm sábados 12 hs'},
+  {com:5,bar:'Almagro',nom:'Club Solidario',dir:'Av. Belgrano 3660',cont:'11 6461-9954',hora:'Des y merienda: mié 16:30-18 hs y vie 9:30-11 hs'},
+  {com:5,bar:'Almagro',nom:'Iglesia Evangélica Metodista de Almagro (C5)',dir:'Av. Rivadavia 4050',cont:'4981-4290',hora:'Des y alm sáb 9:30-13:30 hs (mayores 40); merienda sáb 16:30 hs'},
+  {com:5,bar:'Almagro',nom:'Asamblea Popular Plaza Almagro - Olla Popular',dir:'Presidente Perón y Agüero',cont:'11 6818-4807',hora:'Alimentos todos los días 18 hs'},
+  {com:5,bar:'Almagro',nom:'Parroquia de San Carlos',dir:'Av. H. Yrigoyen 3999',cont:'4981-4741',hora:'Viandas y alimentos lun y jue 10-12 hs; alimentos último mar del mes 15 hs'},
+  {com:5,bar:'Almagro',nom:'Parroquia Betania',dir:'Av. Medrano 752',cont:'4862-0825',hora:'Cena vie 20:30 hs; merienda adultos mayores mié 17 hs'},
+  {com:5,bar:'Almagro',nom:'Frente Patria Grande (C5)',dir:'Castro Barros 957',cont:'IG: patriagrandecomuna5',hora:'Cena (olla popular) mié 19:30 hs'},
+  {com:5,bar:'Almagro',nom:'Espacio Mayos',dir:'Sánchez de Bustamante 631',cont:'IG: espaciomayos',hora:'Cena (olla popular) mié 19:30-20:30 hs'},
+  {com:5,bar:'Almagro',nom:'Iglesia San Antonio',dir:'México 4050',cont:'4931-2139',hora:'Des todos los días 18 hs'},
+  {com:5,bar:'Almagro',nom:'Santa María - Cáritas',dir:'Av. La Plata 286',cont:'4983-7944',hora:'Alimentos no perecederos mar y vie 16 hs'},
+  // C6 — nuevos
+  {com:6,bar:'Caballito',nom:'Peronismo Solidario',dir:'Acoyte y Rivadavia',cont:'IG: peronismosolidario.caballito',hora:'Alm dom 12 hs'},
+  {com:6,bar:'Caballito',nom:'Buen Pastor - Cáritas',dir:'Aranguren 691',cont:'4904-0590',hora:'Des lun y jue 7:30 hs; cena jue 20 hs; alimentos último jue mes 17:30 hs'},
+  {com:6,bar:'Caballito',nom:'Parroquia Nuestra Señora de Caacupé (C6)',dir:'Av. Rivadavia 4879',cont:'4901-1811',hora:'Cena (viandas) lun 20 hs; alimentos una vez por mes'},
+  {com:6,bar:'Villa General Mitre',nom:'Parroquia Nuestra Señora del Consuelo',dir:'Av. Donato Álvarez 2050',cont:'4581-2117',hora:'Alimentos no perecederos jue 14-16:30 hs'},
+  {com:6,bar:'Caballito',nom:'Club Oeste',dir:'José María Moreno 446',cont:'IG: oeste_solidario',hora:'Recorrido viandas lun y mar 21 hs (Caballito y Boedo)'},
+  {com:6,bar:'Caballito',nom:'Kirchner Vuelve',dir:'Ambrosetti 279',cont:'IG: lc_caballito',hora:'Cena (viandas) jue 20 hs'},
+  {com:6,bar:'Caballito',nom:'Plaza Irlanda Solidaria',dir:'Seguí 850',cont:'IG: plazairlandasolidaria',hora:'Cena (viandas) jue 20 hs'},
+  {com:6,bar:'Caballito',nom:'Centro Cultural La Ronda',dir:'Méndez de Andes 614',cont:'IG: rondaollapopular',hora:'Alm dom 12-14 hs; viandas lun 18 hs'},
+  {com:6,bar:'Caballito',nom:'Club Ferrocarril Oeste DDHH y Acción Social',dir:'Rojas y las vías (est. Caballito)',cont:'IG: ferro_ddhh_y_accion_social',hora:'Cena (viandas) último mié del mes 20 hs'},
+  // C7 — nuevos
+  {com:7,bar:'Flores',nom:'Centro Manuel Ugarte',dir:'Av. Juan Bautista Alberdi 2509',cont:'11 6453-8187',hora:'Des y alm (viandas) lun a vie 12-14 hs'},
+  {com:7,bar:'Flores',nom:'MTD (C7) Movimiento de Trabajadores Desocupados',dir:'Miraflores 2278',cont:'11 2136-0302',hora:'Des y alm lun a vie 9-16 hs'},
+  {com:7,bar:'Flores',nom:'Parroquia Santa María Madre del Pueblo',dir:'Av. Perito Moreno y Av. Cruz - Barrio P. Ricciardelli',cont:'4139-0403',hora:'Des 10 hs, alm 12 hs, cena 19 hs lun a vie; recorrido zona 11:30 hs'},
+  {com:7,bar:'Flores',nom:'San José de Flores - Cáritas',dir:'Av. Rivadavia 6950',cont:'4637-1489',hora:'Alm lun a vie 12 hs; cena mujeres/niños lun a vie 16:30 hs; viandas lun a sáb 10 hs'},
+  {com:7,bar:'Floresta',nom:'Nuestra Señora de la Paz - Cáritas',dir:'Pergamino 63',cont:'4611-9463',hora:'Cena y alimentos jue 19:30 hs'},
+  {com:7,bar:'Flores',nom:'Nuestra Señora de la Visitación - Cáritas',dir:'Av. Nazca y Páez',cont:'11 3971-4015',hora:'Viandas un sáb al mes'},
+  {com:7,bar:'Flores',nom:'Frente Patria Grande (C7)',dir:'Esteban Bonorino 1957',cont:'11 4034-9822',hora:'Cena (olla popular) lun y vie 19:30 hs'},
+  // C8 — nuevos
+  {com:8,bar:'Villa Soldati',nom:'Parroquia San Francisco de Asís (Mariano Acosta)',dir:'Mariano Acosta 3501',cont:'11 6137-8923',hora:'Des lun-vie 8 hs; alm lun-vie 12 hs; alimentos último vie mes; recorrido mar 17 hs'},
+  {com:8,bar:'Villa Lugano',nom:'Centro Barrial Don Orione',dir:'Saraza 6135',cont:'11 2650-7250',hora:'Des, alm y merienda lun a vie 11-17 hs'},
+  {com:8,bar:'Villa Lugano',nom:'Nuestra Señora del Rosario del Milagro',dir:'Montiel 3899',cont:'11 7369-7274',hora:'Alm sáb 12:30-13:30 hs'},
+  {com:8,bar:'Villa Lugano',nom:'María Madre de la Esperanza',dir:'Miralla 3838',cont:'4638-5225',hora:'Des 9-12 hs; alm 11-13 hs'},
+  {com:8,bar:'Villa Lugano',nom:'San Juan Diego Cuauhtlatoatzin',dir:'Av. Escalada 2858',cont:'11 7002-3257',hora:'Alimentos no perecederos mar 17-19 hs'},
+  {com:8,bar:'Villa Lugano',nom:'Nuestra Señora del Carmen - Cáritas (C8)',dir:'Eva Perón 6378, manzana 8 casa 1',cont:'4601-0423',hora:'Des lun-vie 10 hs; alm lun-vie 13 hs; merienda lun-vie 16 hs; viandas sáb 11:30 hs'},
+  {com:8,bar:'Villa Soldati',nom:'Nuestra Señora de Fátima',dir:'Av. Mariano Acosta 2929',cont:'11 3017-1091',hora:'Alm y merienda lun-dom 12 y 17 hs; alimentos adultos mayores último vie mes'},
+  {com:8,bar:'Villa Soldati',nom:'Cristo Obrero y San Blas',dir:'Av. Lafuente 3242',cont:'11 5935-1160',hora:'Alm 12 hs; cena 19 hs'},
+  {com:8,bar:'Villa Soldati',nom:'San Francisco de Asís (los Corrales)',dir:'Av. de los Corrales 3420',cont:'11 6137-8923',hora:'Alm lun a vie 11-16 hs'},
+  {com:8,bar:'Villa Soldati',nom:'Virgen Inmaculada (F) - Cáritas',dir:'Martínez Castro y Pasaje C',cont:'11 3963-4990',hora:'Merienda y viandas todos los días; alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs'},
+  {com:8,bar:'Villa Lugano / Villa 20',nom:'MTD (C8) Movimiento de Trabajadores Desocupados',dir:'Lugares rotativos',cont:'11 2136-0302',hora:'Cena (olla popular) jue 19 hs'},
+  {com:8,bar:'Villa Soldati',nom:'Parroquia Virgen Inmaculada - Comedor Los Abuelos',dir:'Manzana 7, Barrio Fátima',cont:'Consultar',hora:'Alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs'},
+  // C9 — nuevos
+  {com:9,bar:'Liniers',nom:'Nuestra Señora de la Misericordia - Cáritas',dir:'Av. Larrazábal 2390',cont:'4635-0605',hora:'Merienda sáb 18 hs; alimentos adultos mayores 2° jue mes 14 hs'},
+  {com:9,bar:'Parque Avellaneda',nom:'Santa María Teresa Goretti - Cáritas',dir:'Av. Escalada 1150',cont:'4635-4012',hora:'Alm (viandas) todos los días 12 hs; cena todos los días 20:30 hs; alimentos 1° sáb mes 8 hs'},
+  {com:9,bar:'Parque Avellaneda',nom:'Virgen de los Desamparados - Cáritas',dir:'José Enrique Rodó 4203',cont:'4671-1255',hora:'Merienda (viandas) mié y dom 16 hs; alimentos mar por la tarde'},
+  {com:9,bar:'Liniers',nom:'Olla Popular Papa Francisco',dir:'Estación Liniers, Av. Rivadavia y Cuzco',cont:'IG: ollapopular_papafrancisco',hora:'Cena (viandas) mar 19-21 hs'},
+  {com:9,bar:'Liniers',nom:'Tránsito de San José - Cáritas',dir:'Av. Emilio Castro 6391',cont:'11 5040-4985',hora:'Alm sáb 12 hs'},
+  {com:9,bar:'Parque Avellaneda',nom:'Ser con Vos',dir:'Olivera 1497',cont:'11 3287-8206',hora:'Recorrido viandas (C7,9,10,11) lun 20-24 hs'},
+  // C10 — nuevos
+  {com:10,bar:'Monte Castro',nom:'UB Malvinas Argentinas',dir:'C. Irigoyen 799',cont:'Consultar',hora:'Alm y merienda sáb cada 15 días 12 hs'},
+  {com:10,bar:'Floresta',nom:'San Francisco Solano - Cáritas',dir:'Zelada 4771',cont:'4683-3102',hora:'Consultar'},
+  {com:10,bar:'Monte Castro',nom:'San Pedro Apóstol - Cáritas',dir:'Bermúdez 2011',cont:'4566-5805',hora:'Cena dom 19:30 hs; alimentos 2° mar de cada mes'},
+  {com:10,bar:'Villa Luro',nom:'UB Pensando en Vos Siempre',dir:'Av. Álvarez Jonte 5590',cont:'5584-4125',hora:'Merienda y alimentos 4° mié del mes 17:30 hs'},
+  {com:10,bar:'Vélez Sarsfield',nom:'UB Vecinos de Perón',dir:'Av. Juan B. Justo 7447',cont:'11 2388-4117',hora:'Cena (viandas) mar 20 hs'},
+  // C11 — nuevos
+  {com:11,bar:'Villa Santa Rita',nom:'Frente Patria Grande (C11)',dir:'Concordia 1047',cont:'IG: patriagrandecomuna11',hora:'Recorrido viandas mar 19:30 hs'},
+  {com:11,bar:'Villa Devoto',nom:'Desayunador Negrito Manuel',dir:'Fernández de Enciso 4521',cont:'11 2520-1047',hora:'Des mar, jue y vie 8-9 hs'},
+  {com:11,bar:'Villa Devoto',nom:'Centro Cultural Bio Devoto',dir:'Cervantes 2944',cont:'11 5910-9496',hora:'Merienda y viandas lun a vie 15 hs; merienda mar a jue 19 hs'},
+  {com:11,bar:'Villa del Parque',nom:'Parroquia Santa Ana',dir:'Pedro Lozano 3167',cont:'4501-0723',hora:'Alm lun a dom 11 hs; cena lun a dom 18 hs; alimentos lun y mié 16 hs'},
+  {com:11,bar:'Villa Devoto',nom:'Acción por Personas en Situación de Calle',dir:'Allende 2711',cont:'11 7368-1862',hora:'Entrega frutas y verduras mar y vie 20-22 hs; recorridos C9,10,11'},
+  {com:11,bar:'Villa Gral. Mitre',nom:'UB Fernando Chiche Benítez',dir:'Terrero 1590',cont:'11 6163-9844',hora:'Viandas en el lugar vie 18-20 hs'},
+  {com:11,bar:'Villa Devoto',nom:'Espacio Cultural Epecuén',dir:'Epecuén 4882',cont:'11 4536-3813',hora:'Merienda (viandas) lun a vie 15 hs'},
+  // C12 — nuevos
+  {com:12,bar:'Saavedra',nom:'Centro Cultural Los Goyeneches',dir:'Arias 4081',cont:'11 6442-4299',hora:'Merienda niños lun a vie 16:30 hs; cena (viandas) vie 20 hs'},
+  {com:12,bar:'Villa Urquiza',nom:'Urquiza se Organiza',dir:'Plaza Casal (Triunvirato y Roosevelt)',cont:'11 2405-9511',hora:'Merienda lun y vie 17-19:30 hs'},
+  {com:12,bar:'Villa Urquiza',nom:'Asociación Civil Amigos de la Comuna 12',dir:'Línea Mitre, Plaza de la Est. Urquiza',cont:'Consultar',hora:'Merienda mié 18 hs'},
+  {com:12,bar:'Villa Pueyrredón',nom:'Merendero Asamblea de Villa Pueyrredón',dir:'Línea Mitre, Est. Pueyrredón (a J. L. Suárez)',cont:'IG: asambleavillapueyrredon',hora:'Merienda mar 18:30 hs'},
+  {com:12,bar:'Villa Urquiza',nom:'Abrazo Peronista',dir:'Línea Mitre, Est. Villa Pueyrredón (Bolivia y Cabezón)',cont:'IG: abrazo_peronista',hora:'Merienda mié 18:30-20:30 hs'},
+  {com:12,bar:'Villa Urquiza',nom:'Frente Patria Grande (C12)',dir:'Línea Mitre, Est. Urquiza',cont:'11 3170-3791',hora:'Merienda jue 18:30 hs'},
+  {com:12,bar:'Saavedra',nom:'Comedor Lugones',dir:'Lugones 4016',cont:'11 6281-0714',hora:'Merienda mié 19 hs; otros días rotativos'},
+  {com:12,bar:'Saavedra',nom:'RxA Comuna 12',dir:'Av. Balbín 3711',cont:'11 6006-8224',hora:'Merienda lun a vie 16-20 hs; olla popular jue 18:30 hs'},
+  {com:12,bar:'Saavedra',nom:'Unión Vecinal de Saavedra',dir:'Av. Ricardo Balbín 4221',cont:'11 7361-1145',hora:'Merienda lun a vie 16-20 hs; sáb y dom 16-22 hs'},
+  {com:12,bar:'Villa Urquiza',nom:'Jesús Misericordioso',dir:'Pedro I. Rivera 4591',cont:'4521-3153',hora:'Cena (viandas) vie 19 hs'},
+  {com:12,bar:'Villa Pueyrredón',nom:'Cristo Rey',dir:'Larsen 2384',cont:'4572-5459',hora:'Des (viandas) sáb 9-11 hs'},
+  {com:12,bar:'Villa Pueyrredón',nom:'Santísima Trinidad - Cáritas - Centro Trinitario',dir:'Ciudad de la Paz 3577',cont:'4702-4288',hora:'Des y alimentos no perecederos lun a jue 7 hs'},
+  // C13 — nuevos
+  {com:13,bar:'Belgrano',nom:'San Cayetano - Cáritas (C13)',dir:'Vidal 1745',cont:'4781-5886',hora:'Des (viandas) sáb 7-9 hs; recorrido mar y mié 20 hs'},
+  {com:13,bar:'Núñez',nom:'Parroquia Santísima Trinidad',dir:'Av. Cabildo 3680',cont:'4702-1030',hora:'Des y alimentos lun a jue 7-9 hs'},
+  {com:13,bar:'Belgrano',nom:'San Martín de Porres (C13)',dir:'Virrey Loreto 2161',cont:'11 6708-7609',hora:'Alimentos y recorrido viandas mar 20-21:45 hs'},
+  {com:13,bar:'Colegiales',nom:'San Pablo Apóstol - Cáritas (C13)',dir:'Av. Álvarez Thomas 795',cont:'4553-9567',hora:'Viandas mié 17 hs, jue 18 hs, vie 17 hs'},
+  {com:13,bar:'Belgrano',nom:'Comedor de Barrancas El Gomero',dir:'Zavalía y Juramento / Juramento y Obligado',cont:'IG: comedor.barrancas.de.belgrano',hora:'Cena lun-mar-jue-vie-sáb 20-21 hs; dom 19-20 hs'},
+  {com:13,bar:'Belgrano',nom:'Inmaculada Concepción - Cáritas (C13)',dir:'Vuelta de Obligado 2042',cont:'4783-8008',hora:'Cena y alimentos lun a sáb 18:15-19 hs'},
+  // C14 — nuevos
+  {com:14,bar:'Palermo',nom:'Nuestra Señora de Guadalupe',dir:'General Lucio N. Mansilla 3847',cont:'4824-8852',hora:'Merienda (viandas) lun, mié y vie 15-16 hs; vianda mar 19 hs (zona Palermo)'},
+  {com:14,bar:'Palermo',nom:'Frente Patria Grande (C14)',dir:'Bonpland 2077',cont:'11 4540-1691',hora:'Recorrido viandas (Santa Fe, Dorrego, Córdoba, Thames) mié 20 hs'},
+  {com:14,bar:'Palermo',nom:'Santa Lucía (C14)',dir:'Gascón 1372',cont:'11 4245-2140',hora:'Viandas dom 15-17 hs; alimentos 3° sáb del mes 10-12 hs'},
+  // C15 — nuevos
+  {com:15,bar:'La Paternal',nom:'Centro Barrial Vientos de Libertad',dir:'Ávalos 250',cont:'11 6239-5152',hora:'Des, alm y merienda lun a vie 10, 12 y 16 hs; viandas lun a vie 10 y 12 hs'},
+  {com:15,bar:'La Paternal',nom:'Santa Inés Virgen y Mártir y San Camilo',dir:'Ávalos 250',cont:'11 3320-4021',hora:'Des, alm y merienda lun a vie 10, 12 y 16 hs; alimentos jue 12 hs; recorridos mié, jue y sáb'},
+  {com:15,bar:'Agronomía',nom:'Santa Magdalena Sofía Barat',dir:'Av. Salvador María del Carril 2458',cont:'11 5829-8772',hora:'Merienda mié 16-18 hs; alm sáb 12:30 hs; recorrido (viandas) mié 20 hs'},
+  {com:15,bar:'Villa Crespo',nom:'Nuestra Señora de la Consolación',dir:'Raúl Scalabrini Ortiz 1073',cont:'4773-0716',hora:'Alm sáb 12 hs; merienda y viandas vie 14 hs'},
+  {com:15,bar:'Agronomía',nom:'Asamblea de Agronomía',dir:'Av. Warnes y Av. Chorroarín',cont:'11 5117-5291',hora:'Merienda vie 19:30 hs'},
+  {com:15,bar:'Chacarita',nom:'Frente Patria Grande (C15)',dir:'Gandhi 373',cont:'11 3556-3607',hora:'Recorrido viandas mar 17:30 hs y vie 16 hs (Corrientes y Scalabrini Ortiz)'},
+  {com:15,bar:'La Paternal',nom:'Parroquia Encarnación del Señor',dir:'General Manuel A. Rodríguez 2444',cont:'encarnaciondelsenor987@gmail.com',hora:'Recorrido viandas mar 19:15 hs (hacia M. Rodríguez y Trellea)'},
+  {com:15,bar:'Chacarita',nom:'Fundación Social Argentinos Juniors',dir:'Playón de Chacarita',cont:'11 2647-9112',hora:'Cena (viandas) vie 20:30 hs'}
 ];
 
 var DUCHAS = [
@@ -2719,6 +2868,10 @@ window.addEventListener('load', function() {
   renderPorComuna(COMEDORES, 'lista-comer', 'comedor');
   renderPorComuna(DUCHAS, 'lista-ducha', 'ducha');
   renderPorComuna(ROPEROS, 'lista-ropa', 'ropa');
+  document.getElementById('cnt-dormir').textContent = CIS.length;
+  document.getElementById('cnt-comer').textContent = COMEDORES.length;
+  document.getElementById('cnt-ducha').textContent = DUCHAS.length;
+  document.getElementById('cnt-ropa').textContent = ROPEROS.length;
 });
 </script>
 </body>
