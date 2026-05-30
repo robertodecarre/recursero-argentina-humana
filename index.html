@@ -1865,58 +1865,63 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <div class="a108-num">108</div>
     <div><strong>Emergencia en calle:</strong> Gratuita · 24 horas · El equipo BAP va al lugar</div>
   </div>
-  <div class="eb e-vg" style="margin-bottom:10px;width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:16px 14px;" onclick="navIr('p-genero')">
-    <div class="eb-ic" style="font-size:1.5rem;margin:0;flex-shrink:0">💜</div>
-    <div>
-      <div class="eb-tit">Violencia de género</div>
-      <div style="font-size:.71rem;color:var(--gris-txt);margin-top:2px;font-family:'Barlow',sans-serif;font-weight:400">Protocolo de acompañamiento y recursos</div>
+  <div class="card" style="margin-bottom:10px">
+    <h2><span class="ic">🆘</span>¿Qué necesitás ahora?</h2>
+    <div class="emerg-grid">
+      <div class="eb e-c" onclick="navIr('p-dormir')"><div class="eb-ic">🛏️</div><div class="eb-tit">Dónde dormir</div></div>
+      <div class="eb e-f" onclick="navIr('p-comer')"><div class="eb-ic">🍲</div><div class="eb-tit">Dónde comer</div></div>
+      <div class="eb e-d" onclick="navIr('p-ducha')"><div class="eb-ic">🚿</div><div class="eb-tit">Dónde ducharse</div></div>
+      <div class="eb e-r" onclick="navIr('p-ropa')"><div class="eb-ic">👕</div><div class="eb-tit">Ropero comunitario</div></div>
+    </div>
+    <div class="eb e-vg" style="margin-top:10px;width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:16px 14px;" onclick="navIr('p-genero')">
+      <div class="eb-ic" style="font-size:1.5rem;margin:0;flex-shrink:0">💜</div>
+      <div>
+        <div class="eb-tit">Violencia de género</div>
+        <div style="font-size:.71rem;color:var(--gris-txt);margin-top:2px;font-family:'Barlow',sans-serif;font-weight:400">Protocolo de acompañamiento y recursos</div>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="acord-grupo">
-    <div class="acord-hdr" onclick="toggleAcord(this)">
-      <span>🛏️ Dónde dormir · CIS (<span id="cnt-dormir">…</span>)</span>
-      <span class="acord-ico">▼</span>
-    </div>
-    <div class="acord-body">
-      <div class="l108" style="background:#7b5ea7;margin-bottom:8px"><div><div class="l108-n">📞 108</div><div class="l108-t">Para ingresar a un CIS llamar al 108 (24 hs). DIPA: Combate de los Pozos 1280.</div></div></div>
-      <div id="lista-dormir"></div>
-      <p class="aviso" style="margin-top:8px">Fuente: Recursero Defensoría CABA 2026</p>
-    </div>
+<div id="p-dormir" class="pant">
+  <div style="display:flex;align-items:center;justify-content:space-between;background:#5b3f8a;color:#fff;padding:11px 14px;margin-bottom:10px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">🛏️ Dónde dormir · CIS</span>
+    <span id="cnt-dormir" style="background:rgba(0,0,0,.25);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
+  <div class="l108" style="background:#7b5ea7;margin-bottom:10px"><div><div class="l108-n">📞 108</div><div class="l108-t">Para ingresar a un CIS llamar al 108 (24 hs). DIPA: Combate de los Pozos 1280.</div></div></div>
+  <div id="lista-dormir"></div>
+  <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
+  <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
+</div>
 
-  <div class="acord-grupo">
-    <div class="acord-hdr" onclick="toggleAcord(this)">
-      <span>🍲 Dónde comer (<span id="cnt-comer">…</span>)</span>
-      <span class="acord-ico">▼</span>
-    </div>
-    <div class="acord-body">
-      <div id="lista-comer"></div>
-      <p class="aviso" style="margin-top:8px">Fuente: Recursero Defensoría CABA 2026 · mapadeloscomedores.com</p>
-    </div>
+<div id="p-comer" class="pant">
+  <div style="display:flex;align-items:center;justify-content:space-between;background:var(--celeste);color:#fff;padding:11px 14px;margin-bottom:10px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">🍲 Dónde comer</span>
+    <span id="cnt-comer" style="background:rgba(0,0,0,.2);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
+  <div id="lista-comer"></div>
+  <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
+  <p class="aviso">Fuente: Recursero Defensoría CABA 2026 · mapadeloscomedores.com</p>
+</div>
 
-  <div class="acord-grupo">
-    <div class="acord-hdr" onclick="toggleAcord(this)">
-      <span>🚿 Dónde ducharse (<span id="cnt-ducha">…</span>)</span>
-      <span class="acord-ico">▼</span>
-    </div>
-    <div class="acord-body">
-      <div id="lista-ducha"></div>
-      <p class="aviso" style="margin-top:8px">Fuente: Recursero Defensoría CABA 2026</p>
-    </div>
+<div id="p-ducha" class="pant">
+  <div style="display:flex;align-items:center;justify-content:space-between;background:var(--az-oscuro);color:#fff;padding:11px 14px;margin-bottom:10px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">🚿 Dónde ducharse</span>
+    <span id="cnt-ducha" style="background:rgba(0,0,0,.25);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
+  <div id="lista-ducha"></div>
+  <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
+  <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
+</div>
 
-  <div class="acord-grupo">
-    <div class="acord-hdr" onclick="toggleAcord(this)">
-      <span>👕 Ropero comunitario (<span id="cnt-ropa">…</span>)</span>
-      <span class="acord-ico">▼</span>
-    </div>
-    <div class="acord-body">
-      <div id="lista-ropa"></div>
-      <p class="aviso" style="margin-top:8px">Fuente: Recursero Defensoría CABA 2026</p>
-    </div>
+<div id="p-ropa" class="pant">
+  <div style="display:flex;align-items:center;justify-content:space-between;background:#1a7a3c;color:#fff;padding:11px 14px;margin-bottom:10px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">👕 Ropero comunitario</span>
+    <span id="cnt-ropa" style="background:rgba(0,0,0,.25);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
+  <div id="lista-ropa"></div>
+  <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
+  <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
 </div>
 
 <div id="p-genero" class="pant">
@@ -2059,7 +2064,9 @@ const LABELS = {
   'p-todos':'Todos los programas',
   'p-salud':'Salud',
   'p-genero':'Violencia de género',
-  'p-emerg':'Ayuda urgente'
+  'p-emerg':'Ayuda urgente',
+  'p-dormir':'Dónde dormir · CIS','p-comer':'Dónde comer',
+  'p-ducha':'Dónde ducharse','p-ropa':'Ropero comunitario'
 };
 var navStack = ['p-inicio'];
 
@@ -2834,10 +2841,15 @@ function renderPorComuna(datos, contId, tipo) {
   var iconMap = {cis:'🛏️',comedor:'🍲',ducha:'🚿',ropa:'👕'};
   comunas.forEach(function(com) {
     var items = datos.filter(function(d){ return d.com === com; });
-    var tit = document.createElement('div');
-    tit.className = 'com-tit';
-    tit.textContent = '📍 Comuna ' + com;
-    cont.appendChild(tit);
+    var grupo = document.createElement('div');
+    grupo.className = 'acord-grupo';
+    var hdr = document.createElement('div');
+    hdr.className = 'acord-hdr';
+    var label = com === 0 ? 'Fuera de CABA' : 'Comuna ' + com;
+    hdr.innerHTML = '<span>📍 ' + label + ' <span style="opacity:.7;font-weight:700">(' + items.length + ')</span></span><span class="acord-ico">▼</span>';
+    hdr.onclick = function(){ toggleAcord(this); };
+    var body = document.createElement('div');
+    body.className = 'acord-body';
     items.forEach(function(item) {
       var div = document.createElement('div');
       div.className = 'sc';
@@ -2845,22 +2857,18 @@ function renderPorComuna(datos, contId, tipo) {
       div.innerHTML = '<div class="sc-nom">' + item.nom + '</div>' +
         extra + '<span class="sc-tag ' + tagMap[tipo] + '">' + iconMap[tipo] + ' ' + labelMap[tipo] + '</span>' +
         '<div class="sc-inf">' +
-        '<span>📍 ' + item.dir + '</span><br>' +
-        '<a href="tel:' + item.cont.replace(/[-\s]/g, '') + '" style="text-decoration:none;color:currentColor;">📞 ' + item.cont + '</a><br>' +
-        (item.hora ? '<span>🕐 ' + item.hora + '</span><br>' : '') +
-        '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a><br>' +
-        '<div class="det-validado">✔ Validado: Abril 2026</div>' +
-        (tipo === 'cis' ? '<span style="font-size:.72rem;color:#7b5ea7;font-weight:500">Ingreso via Linea 108 (24 hs)</span>' : '') +
+        '<span>📍 ' + item.dir + '</span>' +
+        '<span>📞 ' + item.cont + '</span>' +
+        (item.hora ? '<span>🕐 ' + item.hora + '</span>' : '') +
+        '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' +
+        (tipo === 'cis' ? '<span style="font-size:.72rem;color:#7b5ea7;font-weight:500">Ingreso vía Línea 108 (24 hs)</span>' : '') +
         '</div>';
-      cont.appendChild(div);
+      body.appendChild(div);
     });
+    grupo.appendChild(hdr);
+    grupo.appendChild(body);
+    cont.appendChild(grupo);
   });
-  if (tipo === 'cis') {
-    var nota = document.createElement('p');
-    nota.style.fontStyle = 'italic';
-    nota.textContent = 'Nota: La disponibilidad de plazas depende de la capacidad operativa diaria. Se recomienda derivación vía Línea 108 (BAP).';
-    cont.appendChild(nota);
-  }
 }
 
 window.addEventListener('load', function() {
@@ -2868,10 +2876,10 @@ window.addEventListener('load', function() {
   renderPorComuna(COMEDORES, 'lista-comer', 'comedor');
   renderPorComuna(DUCHAS, 'lista-ducha', 'ducha');
   renderPorComuna(ROPEROS, 'lista-ropa', 'ropa');
-  document.getElementById('cnt-dormir').textContent = CIS.length;
-  document.getElementById('cnt-comer').textContent = COMEDORES.length;
-  document.getElementById('cnt-ducha').textContent = DUCHAS.length;
-  document.getElementById('cnt-ropa').textContent = ROPEROS.length;
+  document.getElementById('cnt-dormir').textContent = CIS.length + ' lugares';
+  document.getElementById('cnt-comer').textContent = COMEDORES.length + ' lugares';
+  document.getElementById('cnt-ducha').textContent = DUCHAS.length + ' lugares';
+  document.getElementById('cnt-ropa').textContent = ROPEROS.length + ' lugares';
 });
 </script>
 </body>
