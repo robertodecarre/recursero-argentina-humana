@@ -1979,6 +1979,8 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <a href="https://www.google.com/maps/search/?api=1&query=Brasil+2782+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
     </div>
   </div>
+  <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;border-top:2px solid #8B4A00;padding-top:10px;margin-top:14px;margin-bottom:6px">Defensorías del Ministerio Público de la Defensa</div>
+  <div id="lista-defensorias"></div>
   <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;border-top:2px solid #8B4A00;padding-top:10px;margin-top:14px;margin-bottom:6px">Otras organizaciones</div>
   <div id="lista-juridico"></div>
   <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
@@ -3078,6 +3080,52 @@ var JURIDICO = [
   {com:9,bar:'Liniers',nom:'Parroquia San Cayetano',dir:'Cuzco 220',cont:'11 3109-6217',hora:'Lun a vie, de 9 a 15 hs',tem:'Asesoramiento jurídico gratuito'}
 ];
 
+var DEFENSORIAS = [
+  // Fuero Contencioso, Administrativo y Tributario
+  {fuero:'CAyT',nom:'Cámara de Apelaciones CAyT Nº 1',titular:'Dr. Fernando Lodeiro Martínez',cont:'7091-3101',email:'defcamcayt1@mpdefensa.gob.ar',dir:'Hipólito Yrigoyen 932, 1º Subsuelo'},
+  {fuero:'CAyT',nom:'Cámara de Apelaciones CAyT Nº 2',titular:'Dra. Mariana Beatriz Pucciarello',cont:'7091-3135',email:'defcamcayt2@mpdefensa.gob.ar',dir:'Hipólito Yrigoyen 932, 1º Subsuelo'},
+  {fuero:'CAyT',nom:'Defensoría CAyT 1',titular:'Dr. Hernán García',cont:'7091-2409',email:'defcayt1@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 11º'},
+  {fuero:'CAyT',nom:'Defensoría CAyT 2',titular:'Dr. Pablo A. De Giovanni',cont:'7091-2429',email:'defcayt2@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 5º CF'},
+  {fuero:'CAyT',nom:'Defensoría CAyT 3',titular:'Dr. Sebastián Cayzac',cont:'7091-2440',email:'defcayt3@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 6º CF'},
+  {fuero:'CAyT',nom:'Defensoría CAyT 4',titular:'Dr. Marcelo Miguel Cerrudo',cont:'7091-2468',email:'mcerrudo@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 6º Frente'},
+  {fuero:'CAyT',nom:'Defensoría CAyT 5',titular:'Dra. Giselle Furlong Pader',cont:'7091-3705',email:'defcayt5@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 5º'},
+  {fuero:'CAyT',nom:'Defensoría CAyT 6',titular:'Dr. Javier Indalecio Barraza',cont:'7091-3725',email:'defcayt6@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 2º'},
+  // Unidades Especializadas CAyT
+  {fuero:'Unidades',nom:'Unidad de Relaciones de Consumo',titular:'Dra. Alejandra Lorena Lampolio',cont:'',email:'',dir:''},
+  {fuero:'Unidades',nom:'Unidad de Procesos de Urbanización e Integración Social',titular:'Dr. Ramiro Joaquín Dos Santos Freire',cont:'',email:'',dir:''},
+  // Fuero Penal, Contravencional y de Faltas
+  {fuero:'PCyF',nom:'Cámara de Apelaciones PCyF Nº 1',titular:'Dr. Gustavo Eduardo Aboso',cont:'7091-2664',email:'defcampcyf1@mpdefensa.gob.ar',dir:'Av. Córdoba 972, Piso 6º'},
+  {fuero:'PCyF',nom:'Cámara de Apelaciones PCyF Nº 2',titular:'Dr. Emilio Antonio Cappuccio',cont:'7091-2654',email:'defcampcyf2@mpdefensa.gob.ar',dir:'Av. Córdoba 972, Piso 6º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 1',titular:'Dra. Patricia Beatriz Lopez',cont:'7091-2551',email:'defpcyf1@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 2',titular:'Dr. Gonzalo Montenegro Correa',cont:'7091-2580',email:'defpcyf2@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 3',titular:'Dra. María Andrea Piesco',cont:'7091-2772',email:'defpcyf3@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 7º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 4',titular:'Dr. Sebastián Zanazzi',cont:'7091-2773',email:'defpcyf4@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 7º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 5',titular:'Dra. Victoria Inés Almada',cont:'7091-2803',email:'defpcyf5@mpdefensa.gob.ar',dir:'Paseo Colón 1333, Piso 7º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 6',titular:'Dra. Marcela María Amelia Paz',cont:'7091-2522',email:'defpcyf6@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 6º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 7',titular:'Dr. Marcelino N. Civitillo',cont:'7091-2815',email:'defpcyf7@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 8',titular:'Dr. Matías Becerra',cont:'7091-2521',email:'defpcyf8@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 6º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 9',titular:'Dra. Sandra Marcela Donnini',cont:'7091-2557',email:'mdonnini@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 10',titular:'Dra. María Florencia Zapata',cont:'7091-2831',email:'defpcyf10@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 11',titular:'Dra. Carolina Spósito',cont:'7091-2847',email:'defpcyf11@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 12',titular:'Dr. Javier Balmayor',cont:'7091-2865',email:'defpcyf12@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 5º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 13',titular:'Dra. Paula Lagos',cont:'7091-2526',email:'defpcyf13@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 7º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 14',titular:'Dr. Sergio Julian Pistone',cont:'7091-2554',email:'defpcyf14@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 15',titular:'Dr. Ariel Sebastián Rebour',cont:'7091-2513',email:'defpcyf15@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 6º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 16',titular:'Dra. Gabriela Marquiegui Mc Loughlin',cont:'7091-2501',email:'defpcyf16@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 7º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 17',titular:'Dr. Miguel Mones Ruiz',cont:'7091-2883',email:'defpcyf17@mpdefensa.gob.ar',dir:'Paseo Colón 1333, Piso 7º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 18',titular:'Dr. Juan Ignacio Cafiero',cont:'7091-2555',email:'defpcyf18@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 19',titular:'Dra. Bibiana Marys Birriel Moreira',cont:'7091-3525',email:'defpcyf19@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 4º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 20',titular:'Dra. Marina Recabarra',cont:'7091-3542',email:'defpcyf20@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 5º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 21',titular:'Dr. Juan Manuel Murature',cont:'7091-3557',email:'defpcyf21@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 5º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 22',titular:'Dr. Ariel Santiago Saenz Tejeira',cont:'7091-3505',email:'asaenztejeira@mpdefensa.gob.ar',dir:'Paseo Colón 1333, Piso 7º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 23',titular:'Dra. Claudia Analía Rodríguez',cont:'7091-3576',email:'defpcyf23@mpdefensa.gob.ar',dir:'Paseo Colón 1333, Piso 11º'},
+  {fuero:'PCyF',nom:'Defensoría PCyF 24',titular:'Dra. María Laura Giuseppucci',cont:'7091-3586',email:'defpcyf24@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 11º'},
+  // Secretarías Letradas PCyF
+  {fuero:'Secretarías',nom:'Secretaría Letrada - Intervención Penal Juvenil',titular:'Dra. Durga Marcela Paula Angulo',cont:'',email:'',dir:''},
+  {fuero:'Secretarías',nom:'Secretaría Letrada - Ejecución de Penas Privativas de la Libertad',titular:'Dra. Mariana Salduna',cont:'',email:'',dir:''},
+  {fuero:'Secretarías',nom:'Secretaría Letrada - Delitos, Contravenciones Especiales y Faltas',titular:'Dra. Silvina Noemí Nápoli',cont:'',email:'',dir:''}
+];
+
 // RENDER SERVICIOS
 function renderPorComuna(datos, contId, tipo) {
   var cont = document.getElementById(contId);
@@ -3140,12 +3188,48 @@ function renderPlano(datos, contId) {
   });
 }
 
+function renderDefensorias(datos, contId) {
+  var cont = document.getElementById(contId);
+  if (!cont || cont.children.length > 0) return;
+  var fueroLabels = {
+    'CAyT':       'Fuero Contencioso, Administrativo y Tributario',
+    'Unidades':   'Unidades Especializadas CAyT',
+    'PCyF':       'Fuero Penal, Contravencional y de Faltas',
+    'Secretarías':'Secretarías Letradas PCyF'
+  };
+  var currentFuero = null;
+  var first = true;
+  datos.forEach(function(item) {
+    if (item.fuero !== currentFuero) {
+      currentFuero = item.fuero;
+      var hdr = document.createElement('div');
+      hdr.style.cssText = 'font-family:\'Barlow Condensed\',sans-serif;font-size:.82rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;margin-bottom:6px;' + (first ? 'margin-top:4px' : 'border-top:2px solid #e8d5c0;padding-top:10px;margin-top:14px');
+      hdr.textContent = fueroLabels[item.fuero] || item.fuero;
+      cont.appendChild(hdr);
+      first = false;
+    }
+    var div = document.createElement('div');
+    div.className = 'sc';
+    div.innerHTML = '<div class="sc-nom">' + item.nom + '</div>' +
+      '<span class="sc-tag tag-j">⚖️ Defensoría MPD</span>' +
+      '<div class="sc-inf">' +
+      '<span style="font-weight:600">👤 ' + item.titular + '</span>' +
+      (item.cont  ? '<span>📞 ' + item.cont  + '</span>' : '') +
+      (item.email ? '<span>✉️ ' + item.email + '</span>' : '') +
+      (item.dir   ? '<span>📍 ' + item.dir   + '</span>' : '') +
+      (item.dir   ? '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' : '') +
+      '</div>';
+    cont.appendChild(div);
+  });
+}
+
 window.addEventListener('load', function() {
   renderPorComuna(CIS, 'lista-dormir', 'cis');
   renderPorComuna(COMEDORES, 'lista-comer', 'comedor');
   renderPorComuna(DUCHAS, 'lista-ducha', 'ducha');
   renderPorComuna(ROPEROS, 'lista-ropa', 'ropa');
   renderPlano(JURIDICO, 'lista-juridico');
+  renderDefensorias(DEFENSORIAS, 'lista-defensorias');
   document.getElementById('cnt-dormir').textContent = CIS.length + ' lugares';
   document.getElementById('cnt-comer').textContent = COMEDORES.length + ' lugares';
   document.getElementById('cnt-ducha').textContent = DUCHAS.length + ' lugares';
