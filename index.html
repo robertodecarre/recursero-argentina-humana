@@ -1952,9 +1952,6 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
   </div>
 
   <!-- BLOQUE 2: 0800-DEFENDER MPD -->
-  <div style="background:#8B4A00;color:#fff;border-radius:var(--r);padding:9px 13px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
-    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">📞 0800-DEFENDER · Ministerio Público de la Defensa</span>
-  </div>
   <div class="l108" style="background:#5a2d00;margin-bottom:8px;">
     <div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;font-style:italic;color:#ffd580;line-height:1.1">0800-DEFENDER</div>
@@ -1998,15 +1995,20 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     </div>
   </div>
 
-  <!-- BLOQUE 3: Defensorías MPD -->
-  <div style="background:#4a2800;color:#fff;border-radius:var(--r);padding:9px 13px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
-    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">⚖️ Defensorías del Ministerio Público de la Defensa</span>
-  </div>
-  <div id="lista-defensorias"></div>
-
-  <!-- BLOQUE 4: Otras organizaciones -->
+  <!-- BLOQUE 3: Otras organizaciones -->
   <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;border-top:2px solid #8B4A00;padding-top:10px;margin-top:16px;margin-bottom:6px">Otras organizaciones</div>
   <div id="lista-juridico"></div>
+
+  <!-- BLOQUE 4: Defensorías del MPD -->
+  <div class="acord-grupo" style="margin-top:16px">
+    <div class="acord-hdr" onclick="toggleAcord(this)">
+      <span>⚖️ Defensorías del MPD</span>
+      <span class="acord-ico">▼</span>
+    </div>
+    <div class="acord-body">
+      <div id="lista-defensorias"></div>
+    </div>
+  </div>
   <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
   <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
 </div>
