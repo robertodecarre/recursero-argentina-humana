@@ -1937,10 +1937,28 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
   <div style="display:flex;align-items:center;background:#8B4A00;color:#fff;padding:11px 14px;margin-bottom:10px;">
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">⚖️ Asesoramiento jurídico gratuito</span>
   </div>
-  <div class="l108" style="background:#8B4A00;margin-bottom:10px">
+  <!-- BLOQUE 1: DOH GCBA -->
+  <div style="background:var(--az-oscuro);color:#fff;border-radius:var(--r);padding:9px 13px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">🏛️ DOH · Dirección de Orientación al Habitante · GCBA</span>
+  </div>
+  <div class="sc" style="border-left:4px solid var(--az-oscuro);margin-bottom:16px;">
+    <div class="sc-nom">Dirección de Orientación al Habitante</div>
+    <span class="sc-tag" style="background:var(--az-oscuro);color:#fff">🏛️ Procuración General GCBA</span>
+    <div class="sc-inf">
+      <span>📍 Almafuerte 45, CABA</span>
+      <span style="font-size:.73rem;color:#1a4480;font-weight:600;line-height:1.5">📋 Vivienda · Familia · Trabajo · Migraciones · Contravenciones</span>
+      <a href="https://www.google.com/maps/search/?api=1&query=Almafuerte+45+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+    </div>
+  </div>
+
+  <!-- BLOQUE 2: 0800-DEFENDER MPD -->
+  <div style="background:#8B4A00;color:#fff;border-radius:var(--r);padding:9px 13px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">📞 0800-DEFENDER · Ministerio Público de la Defensa</span>
+  </div>
+  <div class="l108" style="background:#5a2d00;margin-bottom:8px;">
     <div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;font-style:italic;color:#ffd580;line-height:1.1">0800-DEFENDER</div>
-      <div style="font-size:.76rem;opacity:.9;margin-top:4px">0800 33 336 337 · Gratuita · Dirección de Orientación al Habitante (MPD)</div>
+      <div style="font-size:.76rem;opacity:.9;margin-top:4px">0800 33 336 337 · Gratuita · Línea de entrada al sistema del MPD</div>
     </div>
   </div>
   <div class="sc">
@@ -1970,7 +1988,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <a href="https://www.google.com/maps/search/?api=1&query=Mart%C3%ADn+Garc%C3%ADa+Buenos+Aires+La+Boca" target="_blank" class="btn-maps">📍 Ver en mapa</a>
     </div>
   </div>
-  <div class="sc">
+  <div class="sc" style="margin-bottom:16px;">
     <div class="sc-nom">Parque Patricios</div>
     <span class="sc-tag tag-j">⚖️ Sede MPD</span>
     <div class="sc-inf">
@@ -1979,9 +1997,15 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <a href="https://www.google.com/maps/search/?api=1&query=Brasil+2782+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
     </div>
   </div>
-  <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;border-top:2px solid #8B4A00;padding-top:10px;margin-top:14px;margin-bottom:6px">Defensorías del Ministerio Público de la Defensa</div>
+
+  <!-- BLOQUE 3: Defensorías MPD -->
+  <div style="background:#4a2800;color:#fff;border-radius:var(--r);padding:9px 13px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">⚖️ Defensorías del Ministerio Público de la Defensa</span>
+  </div>
   <div id="lista-defensorias"></div>
-  <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;border-top:2px solid #8B4A00;padding-top:10px;margin-top:14px;margin-bottom:6px">Otras organizaciones</div>
+
+  <!-- BLOQUE 4: Otras organizaciones -->
+  <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;border-top:2px solid #8B4A00;padding-top:10px;margin-top:16px;margin-bottom:6px">Otras organizaciones</div>
   <div id="lista-juridico"></div>
   <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
   <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
@@ -3197,35 +3221,29 @@ function renderDefensorias(datos, contId) {
     'PCyF':       'Fuero Penal, Contravencional y de Faltas',
     'Secretarías':'Secretarías Letradas PCyF'
   };
-  var fueros = [];
-  datos.forEach(function(d) { if (fueros.indexOf(d.fuero) === -1) fueros.push(d.fuero); });
-  fueros.forEach(function(fuero) {
-    var items = datos.filter(function(d) { return d.fuero === fuero; });
-    var grupo = document.createElement('div');
-    grupo.className = 'acord-grupo';
-    var hdr = document.createElement('div');
-    hdr.className = 'acord-hdr';
-    hdr.innerHTML = '<span>⚖️ ' + (fueroLabels[fuero] || fuero) + ' <span style="opacity:.7;font-weight:700">(' + items.length + ')</span></span><span class="acord-ico">▼</span>';
-    hdr.onclick = function() { toggleAcord(this); };
-    var body = document.createElement('div');
-    body.className = 'acord-body';
-    items.forEach(function(item) {
-      var div = document.createElement('div');
-      div.className = 'sc';
-      div.innerHTML = '<div class="sc-nom">' + item.nom + '</div>' +
-        '<span class="sc-tag tag-j">⚖️ Defensoría MPD</span>' +
-        '<div class="sc-inf">' +
-        '<span style="font-weight:600">👤 ' + item.titular + '</span>' +
-        (item.cont  ? '<span>📞 ' + item.cont  + '</span>' : '') +
-        (item.email ? '<span>✉️ ' + item.email + '</span>' : '') +
-        (item.dir   ? '<span>📍 ' + item.dir   + '</span>' : '') +
-        (item.dir   ? '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' : '') +
-        '</div>';
-      body.appendChild(div);
-    });
-    grupo.appendChild(hdr);
-    grupo.appendChild(body);
-    cont.appendChild(grupo);
+  var currentFuero = null;
+  var first = true;
+  datos.forEach(function(item) {
+    if (item.fuero !== currentFuero) {
+      currentFuero = item.fuero;
+      var hdr = document.createElement('div');
+      hdr.style.cssText = 'font-family:\'Barlow Condensed\',sans-serif;font-size:.78rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#4a2800;margin-bottom:5px;' + (first ? 'margin-top:2px' : 'border-top:1px solid #ddd;padding-top:10px;margin-top:12px');
+      hdr.textContent = fueroLabels[item.fuero] || item.fuero;
+      cont.appendChild(hdr);
+      first = false;
+    }
+    var div = document.createElement('div');
+    div.className = 'sc';
+    div.innerHTML = '<div class="sc-nom">' + item.nom + '</div>' +
+      '<span class="sc-tag tag-j">⚖️ Defensoría MPD</span>' +
+      '<div class="sc-inf">' +
+      '<span style="font-weight:600">👤 ' + item.titular + '</span>' +
+      (item.cont  ? '<span>📞 ' + item.cont  + '</span>' : '') +
+      (item.email ? '<span>✉️ ' + item.email + '</span>' : '') +
+      (item.dir   ? '<span>📍 ' + item.dir   + '</span>' : '') +
+      (item.dir   ? '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' : '') +
+      '</div>';
+    cont.appendChild(div);
   });
 }
 
