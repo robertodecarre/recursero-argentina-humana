@@ -3197,29 +3197,35 @@ function renderDefensorias(datos, contId) {
     'PCyF':       'Fuero Penal, Contravencional y de Faltas',
     'Secretarías':'Secretarías Letradas PCyF'
   };
-  var currentFuero = null;
-  var first = true;
-  datos.forEach(function(item) {
-    if (item.fuero !== currentFuero) {
-      currentFuero = item.fuero;
-      var hdr = document.createElement('div');
-      hdr.style.cssText = 'font-family:\'Barlow Condensed\',sans-serif;font-size:.82rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;margin-bottom:6px;' + (first ? 'margin-top:4px' : 'border-top:2px solid #e8d5c0;padding-top:10px;margin-top:14px');
-      hdr.textContent = fueroLabels[item.fuero] || item.fuero;
-      cont.appendChild(hdr);
-      first = false;
-    }
-    var div = document.createElement('div');
-    div.className = 'sc';
-    div.innerHTML = '<div class="sc-nom">' + item.nom + '</div>' +
-      '<span class="sc-tag tag-j">⚖️ Defensoría MPD</span>' +
-      '<div class="sc-inf">' +
-      '<span style="font-weight:600">👤 ' + item.titular + '</span>' +
-      (item.cont  ? '<span>📞 ' + item.cont  + '</span>' : '') +
-      (item.email ? '<span>✉️ ' + item.email + '</span>' : '') +
-      (item.dir   ? '<span>📍 ' + item.dir   + '</span>' : '') +
-      (item.dir   ? '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' : '') +
-      '</div>';
-    cont.appendChild(div);
+  var fueros = [];
+  datos.forEach(function(d) { if (fueros.indexOf(d.fuero) === -1) fueros.push(d.fuero); });
+  fueros.forEach(function(fuero) {
+    var items = datos.filter(function(d) { return d.fuero === fuero; });
+    var grupo = document.createElement('div');
+    grupo.className = 'acord-grupo';
+    var hdr = document.createElement('div');
+    hdr.className = 'acord-hdr';
+    hdr.innerHTML = '<span>⚖️ ' + (fueroLabels[fuero] || fuero) + ' <span style="opacity:.7;font-weight:700">(' + items.length + ')</span></span><span class="acord-ico">▼</span>';
+    hdr.onclick = function() { toggleAcord(this); };
+    var body = document.createElement('div');
+    body.className = 'acord-body';
+    items.forEach(function(item) {
+      var div = document.createElement('div');
+      div.className = 'sc';
+      div.innerHTML = '<div class="sc-nom">' + item.nom + '</div>' +
+        '<span class="sc-tag tag-j">⚖️ Defensoría MPD</span>' +
+        '<div class="sc-inf">' +
+        '<span style="font-weight:600">👤 ' + item.titular + '</span>' +
+        (item.cont  ? '<span>📞 ' + item.cont  + '</span>' : '') +
+        (item.email ? '<span>✉️ ' + item.email + '</span>' : '') +
+        (item.dir   ? '<span>📍 ' + item.dir   + '</span>' : '') +
+        (item.dir   ? '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' : '') +
+        '</div>';
+      body.appendChild(div);
+    });
+    grupo.appendChild(hdr);
+    grupo.appendChild(body);
+    cont.appendChild(grupo);
   });
 }
 
