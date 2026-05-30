@@ -2911,23 +2911,98 @@ var DUCHAS = [
 ];
 
 var ROPEROS = [
-  {com:1,bar:'Retiro',nom:'Parroquia Cristo Obrero',dir:'Villa 31 Manzana 30',cont:'11 3928-5021',hora:'Lun a vie, de 10 a 13 hs'},
-  {com:1,bar:'Retiro',nom:'Nuestra Señora del Perpetuo Socorro',dir:'Suipacha 1241',cont:'4327-4549',hora:'Miercoles, 8 hs'},
+  // COMUNA 1
+  {com:1,bar:'Retiro',nom:'Parroquia Cristo Obrero',dir:'Villa 31, Manzana 30',cont:'11 5849-9414',hora:'Lun a vie, de 10 a 13 hs'},
+  {com:1,bar:'Retiro',nom:'Nuestra Señora del Perpetuo Socorro',dir:'Suipacha 1241',cont:'4327-4549',hora:'Miércoles, 8 hs'},
+  {com:1,bar:'Retiro',nom:'Somos Barrios de Pie',dir:'Alpaca 1409',cont:'11 6737-2339',hora:'Mar y jue, de 10 a 15 hs'},
   {com:1,bar:'Monserrat',nom:'Red Solidaria',dir:'Plaza de Mayo',cont:'4915-9470',hora:'Lun a dom, de 19 a 21 hs'},
-  {com:1,bar:'Monserrat',nom:'Abrigar Derechos',dir:'Hipólito Yrigoyen 1440',cont:'abrigarderechos@gmail.com',hora:'Lun y jue, de 10 a 15 hs'},
-  {com:1,bar:'San Telmo',nom:'Asamblea Popular San Telmo',dir:'Chacabuco 616',cont:'11 3822-4017',hora:'1er sabado del mes, de 12 a 14 hs'},
-  {com:1,bar:'San Telmo',nom:'El Buen Samaritano',dir:'Adolfo Alsina 346',cont:'4331-0625',hora:'Lun a vie, de 10 a 12 hs'},
-  {com:2,bar:'Recoleta',nom:'Parroquia Nuestra Señora del Carmen',dir:'Rodríguez Peña 840',cont:'4812-2748',hora:'Consultar'},
-  {com:3,bar:'Balvanera',nom:'Parroquia San Expedito',dir:'Av. Rivadavia (Balvanera)',cont:'Consultar',hora:'Consultar'},
-  {com:4,bar:'Nueva Pompeya',nom:'San Martín de Porres Caritas',dir:'Guaraní 272',cont:'hogares@caritasbsas.org.ar',hora:'Consultar'},
+  {com:1,bar:'Monserrat',nom:'Abrigar Derechos',dir:'Hipólito Yrigoyen 1440',cont:'11 2893-9058',hora:'Lun y jue, de 10 a 15 hs'},
+  {com:1,bar:'Monserrat',nom:'Asamblea Popular San Telmo',dir:'Chacabuco 616',cont:'11 3822-4017',hora:'Un viernes al mes, de 16 a 18 hs'},
+  {com:1,bar:'Constitución',nom:'Parroquia Inmaculado Corazón de María',dir:'Constitución 1077',cont:'4305-6552',hora:'Jueves, de 16 a 18 hs'},
+  {com:1,bar:'Constitución',nom:'Inmaculada Concepción',dir:'Tacuarí 870',cont:'4300-5547',hora:'Jue 13 hs (hombres), vie 13 hs (mujeres)'},
+  {com:1,bar:'Constitución',nom:'San Vicente - Cáritas',dir:'Constitución 1407',cont:'4304-0855',hora:'Lun a vie, 12 hs'},
+  {com:1,bar:'Constitución',nom:'Santa Elisa - Cáritas',dir:'Salta 2290',cont:'11 6617-7408',hora:'Miércoles, de 14 a 16 hs'},
+  {com:1,bar:'Constitución',nom:'Frente Patria Grande',dir:'Santiago del Estero 866',cont:'11 5636-9209',hora:'Mar, mié, jue y sáb 12.30 hs; sáb 11 a 13 hs (Plaza Alfonsina Storni)'},
+  {com:1,bar:'Constitución',nom:'Fundación Manos Abiertas',dir:'Av. Independencia 1150',cont:'4371-5869',hora:'Martes 14 a 17 hs (solo mujeres con DNI)'},
+  {com:1,bar:'San Telmo',nom:'San Pedro González',dir:'Humberto Primo 330',cont:'4361-1168',hora:'Martes, de 16 a 18 hs'},
+  {com:1,bar:'San Telmo',nom:'El Buen Samaritano',dir:'Adolfo Alsina 346',cont:'4331-0625',hora:'Viernes, 17 hs'},
+  // COMUNA 2
+  {com:2,bar:'Recoleta',nom:'Esclavas del Sagrado Corazón',dir:'Montevideo 1372',cont:'4812-1735',hora:'Lun, mié y vie, de 13 a 17 hs'},
+  {com:2,bar:'Recoleta',nom:'Parroquia Nuestra Señora del Carmen',dir:'Rodríguez Peña 840',cont:'4812-2748',hora:'Jue y sáb, 8 hs'},
+  {com:2,bar:'Recoleta',nom:'Santísimo Redentor',dir:'Larrea 1252',cont:'4824-0895',hora:'Lun a vie, de 7 a 9 hs'},
+  // COMUNA 3
+  {com:3,bar:'Balvanera',nom:'Amigos en el Camino',dir:'Ecuador 462',cont:'11 5608-7175',hora:'Dom a vie, de 20 a 00.30 hs'},
+  {com:3,bar:'Balvanera',nom:'Fundación Obras de San José',dir:'Moreno 2472',cont:'4308-1829',hora:'Lun a vie, de 7.30 a 9.30 hs'},
+  {com:3,bar:'Balvanera',nom:'Amigos por las Calles',dir:'Av. Belgrano 2719',cont:'11 6961-2094',hora:'Jueves, de 20 a 21 hs'},
+  {com:3,bar:'Balvanera',nom:'MTE Vientos de Libertad',dir:'Bartolomé Mitre 3366',cont:'vientosdelibertad.mte.com.ar',hora:'Lun a vie, de 9 a 16 hs'},
+  {com:3,bar:'San Cristóbal',nom:'Somos Barrios de Pie',dir:'Deán Funes 1167',cont:'11 3605-1352',hora:'Mar, jue y vie, de 10 a 15 hs'},
+  // COMUNA 4
+  {com:4,bar:'Pompeya',nom:'Acción Social Sinaí',dir:'Av. Sáenz 541',cont:'11 3013-9726',hora:'Sábados, 17.30 hs'},
+  {com:4,bar:'Barracas',nom:'Iglesia Sagrado Corazón',dir:'Av. Vélez Sarsfield 1351',cont:'11 2291-2400',hora:'Sábados, de 8 a 13 hs'},
+  {com:4,bar:'Barracas',nom:'Virgen de los Milagros de Caacupé',dir:'Av. Osvaldo Cruz 3470',cont:'4302-3643',hora:'Lun a vie, de 10 a 12 hs'},
+  {com:4,bar:'Barracas',nom:'Santa Lucía, Virgen y Mártir',dir:'Av. Montes de Oca 550',cont:'11 2640-2528',hora:'Jueves, de 16.30 a 18.30 hs'},
+  {com:4,bar:'La Boca',nom:'San Juan Evangelista',dir:'Lamadrid 470',cont:'4301-1155',hora:'Lun y jue, de 8 a 10.30 hs'},
+  {com:4,bar:'Parque Patricios',nom:'Acción Comunitaria',dir:'Pasaje Guaraní 563',cont:'info@accioncomunitaria.org',hora:'Mar y jue, 10 hs'},
   {com:4,bar:'Parque Patricios',nom:'Proyecto 7',dir:'15 de Noviembre 2315',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom, de 8 a 20 hs'},
-  {com:5,bar:'Almagro',nom:'Iglesia Evangélica Metodista',dir:'Av. Rivadavia 4050',cont:'4981-4290',hora:'Sab, de 9:30 a 16:30 hs'},
-  {com:7,bar:'Flores',nom:'San Jose de Flores',dir:'Ramón Falcón 2453',cont:'sanjosedeflores1806@gmail.com',hora:'Consultar'},
+  {com:4,bar:'Parque Patricios',nom:'Proyecto 7',dir:'Monteagudo 435',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom, de 8 a 20 hs'},
+  {com:4,bar:'Nueva Pompeya',nom:'Acción Social Sinaí',dir:'Sáenz 541',cont:'11 3013-9726',hora:'Sáb 17.30 hs, dos veces al mes'},
+  // COMUNA 5
+  {com:5,bar:'Almagro',nom:'Club Solidario',dir:'Av. Belgrano 3660',cont:'11 6461-9954',hora:'Mié 16.30 a 18 hs y vie 9.30 a 11 hs'},
+  {com:5,bar:'Almagro',nom:'Parroquia Betania',dir:'Medrano 752',cont:'11 5709-0403',hora:'Jueves, de 10 a 12 hs'},
+  {com:5,bar:'Almagro',nom:'Iglesia Evangélica Metodista de Almagro',dir:'Av. Rivadavia 4050',cont:'4981-4290',hora:'Sábados, de 9 a 16 hs'},
+  {com:5,bar:'Boedo',nom:'Asociación Civil No Tan Distintas',dir:'Virrey Liniers 897',cont:'11 2572-6520',hora:'Mar y jue, de 11 a 16 hs'},
+  // COMUNA 6
+  {com:6,bar:'Caballito',nom:'Club Oeste',dir:'José María Moreno 446',cont:'IG: oeste_solidario',hora:'Lun y mar, 21 hs'},
+  {com:6,bar:'Caballito',nom:'Parroquia Nuestra Señora de Caacupé',dir:'Av. Rivadavia 4879',cont:'4901-1811',hora:'Lunes, 20 hs'},
+  {com:6,bar:'Caballito',nom:'Nuestra Señora de Buenos Aires',dir:'Av. Gaona 1730',cont:'4581-0440',hora:'Sábados, 8 hs'},
+  {com:6,bar:'Caballito',nom:'Buen Pastor - Cáritas',dir:'Aranguren 691',cont:'4904-0590',hora:'Primer lunes del mes, de 16 a 18.30 hs'},
+  {com:6,bar:'Caballito',nom:'Plaza Irlanda Solidaria',dir:'Seguí 850',cont:'IG: plazairlandasolidaria',hora:'Jueves, 20 hs'},
+  {com:6,bar:'Caballito',nom:'UB La Cámpora "Kirchner Vuelve"',dir:'Ambrosetti 279',cont:'IG: Ic_caballito',hora:'Jueves, 20 hs'},
+  {com:6,bar:'Villa General Mitre',nom:'Parroquia Nuestra Señora del Consuelo',dir:'Villa General Mitre',cont:'11 6799-9209',hora:'Jueves, de 14 a 16 hs'},
+  // COMUNA 7
+  {com:7,bar:'Flores',nom:'Parroquia Santa María Madre del Pueblo',dir:'Av. Perito Moreno y Av. Cruz',cont:'4139-0403',hora:'Lun a vie, 10 hs'},
+  {com:7,bar:'Flores',nom:'San José de Flores',dir:'Av. Rivadavia 6950',cont:'4637-1489',hora:'2do martes del mes'},
+  {com:7,bar:'Flores',nom:'Nuestra Señora de la Visitación',dir:'Av. Nazca y Páez',cont:'11 3971-4015',hora:'Martes, 17 hs'},
+  {com:7,bar:'Floresta',nom:'Nuestra Señora de la Paz',dir:'Pergamino 63',cont:'4611-9463',hora:'Lun a vie, de 8 a 20 hs'},
+  {com:7,bar:'Parque Chacabuco',nom:'San Saturnino y San Judas Tadeo - Cáritas',dir:'Miraflores 2080',cont:'4921-9483',hora:'2do sábado del mes, de 9 a 13 hs'},
   {com:7,bar:'Parque Chacabuco',nom:'Proyecto 7',dir:'Av. Carabobo 1128',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom, de 8 a 20 hs'},
-  {com:9,bar:'Liniers',nom:'San Cayetano Caritas',dir:'Cuzco 220',cont:'11 3109-6217',hora:'Consultar'},
-  {com:13,bar:'Belgrano',nom:'San Cayetano Belgrano Caritas',dir:'La Pampa 2788',cont:'4781-5886',hora:'Consultar'},
-  {com:13,bar:'Belgrano',nom:'Amparo Maternal',dir:'Ernesto Bavio 2816',cont:'amparomaternal28@gmail.com',hora:'Consultar'},
-  {com:15,bar:'La Paternal',nom:'Santa Ines Caritas',dir:'Ávalos 250',cont:'11 3320-4021',hora:'Lun a vie, de 10 a 16 hs'}
+  // COMUNA 8
+  {com:8,bar:'Villa Lugano',nom:'San José Benito Cottolengo - Cáritas',dir:'Av. Piedrabuena 3848',cont:'4601-2723',hora:'Miércoles, 17 hs'},
+  {com:8,bar:'Villa Lugano',nom:'María Madre de la Esperanza',dir:'Miralla 3838',cont:'4638-5225',hora:'Mié y jue, de 8 a 11.30 hs'},
+  {com:8,bar:'Villa Lugano',nom:'San Juan Diego Cuauhtlatoatzin - Cáritas',dir:'Av. Escalada 2858',cont:'11 7002-3257',hora:'Jueves, de 17 a 19 hs'},
+  {com:8,bar:'Villa Lugano',nom:'Señora del Carmen - Cáritas',dir:'Eva Perón 6378, manzana 8, casa 1',cont:'4601-0423',hora:'Mié 17 a 19 hs y sáb 9 a 12 hs'},
+  {com:8,bar:'Villa Soldati',nom:'San Francisco de Asís',dir:'Av. de los Corrales 3420',cont:'11 6137-8923',hora:'Lun a vie, de 11 a 16 hs'},
+  {com:8,bar:'Villa Soldati',nom:'Cristo Obrero y San Blas',dir:'Av. Lafuente 3242',cont:'11 5935-1160',hora:'Mar y jue, 17 hs'},
+  {com:8,bar:'Villa Soldati',nom:'Nuestra Señora de Fátima',dir:'Av. Mariano Acosta 2929',cont:'11 3017-1091',hora:'Viernes, de 9 a 11 hs'},
+  {com:8,bar:'Villa Soldati',nom:'Virgen Inmaculada - Cáritas',dir:'Martinez Castro y Pasaje C',cont:'11 3963-4990',hora:'Mar y vie, de 15.30 a 17 hs'},
+  // COMUNA 9
+  {com:9,bar:'Mataderos',nom:'Nuestra Señora de la Misericordia',dir:'Av. Larrazábal 2390',cont:'4635-0605',hora:'Mar y jue, de 15 a 17 hs'},
+  {com:9,bar:'Parque Avellaneda',nom:'Santa María Teresa Goretti',dir:'Av. Escalada 1150',cont:'4635-4012',hora:'Jue y vie, de 12 a 19 hs'},
+  {com:9,bar:'Parque Avellaneda',nom:'Virgen de los Desamparados',dir:'José Enrique Rodó 4203',cont:'4671-1255',hora:'Jueves, de 13 a 16 hs'},
+  {com:9,bar:'Liniers',nom:'San Cayetano',dir:'Cuzco 220',cont:'11 3109-6217',hora:'Lun y jue, 17 hs'},
+  // COMUNA 10
+  {com:10,bar:'Floresta',nom:'Nuestra Señora de la Candelaria',dir:'Bahía Blanca 363',cont:'11 5606-4675',hora:'Mar y jue, 8 hs'},
+  {com:10,bar:'Villa Luro',nom:'San Francisco Solano - Cáritas',dir:'Zelada 4771',cont:'4683-3102',hora:'4to miércoles, de 16 a 18 hs'},
+  {com:10,bar:'Villa del Parque',nom:'UB Vecinos de Perón',dir:'Av. Juan B. Justo 7447',cont:'11 2388-4117',hora:'Martes, 20 hs'},
+  // COMUNA 11
+  {com:11,bar:'Villa del Parque',nom:'Parroquia Santa Ana',dir:'Pedro Lozano 3167',cont:'4501-0723',hora:'Lun y mié, de 16.30 a 17.30 hs'},
+  {com:11,bar:'Villa del Parque',nom:'Sede Norberto Perone - Racing Club',dir:'Nogoyó 3045',cont:'11 5025-1873',hora:'Lun y mié, 15 hs'},
+  {com:11,bar:'Villa Devoto',nom:'Desayunador Negrito Manuel',dir:'Fernández de Enciso 4521',cont:'11 4971-9304',hora:'Martes, de 9 a 10 hs'},
+  // COMUNA 12
+  {com:12,bar:'Saavedra',nom:'Centro Cultural los Goyeneches',dir:'Arias 4081',cont:'11 6442-4299',hora:'Lun a vie, 16.30 hs'},
+  {com:12,bar:'Saavedra',nom:'RxA Comuna 12',dir:'Av. Balbín 3711',cont:'11 6006-8224',hora:'Lun a vie 17 a 20 hs; sáb 10 a 13 hs'},
+  {com:12,bar:'Villa Urquiza',nom:'Jesús Misericordioso',dir:'Pedro I. Rivera 4591',cont:'4521-3153',hora:'Miércoles, 19 hs'},
+  {com:12,bar:'Villa Pueyrredón',nom:'Cristo Rey',dir:'Larsen 2384',cont:'4572-5459',hora:'Un sábado al mes, horario rotativo'},
+  // COMUNA 13
+  {com:13,bar:'Colegiales',nom:'San Pablo Apóstol',dir:'Av. Álvarez Thomas 795',cont:'4553-9567',hora:'Lun y vie, de 17.30 a 18.30 hs'},
+  {com:13,bar:'Belgrano',nom:'San Cayetano - Cáritas',dir:'Vidal 1745',cont:'4781-5886',hora:'Lun y mié, de 9 a 12 hs'},
+  {com:13,bar:'Núñez',nom:'Santísima Trinidad',dir:'Av. Cabildo 3680',cont:'4702-4288',hora:'Lun a jue 9 a 12 hs y mié 15 a 18 hs'},
+  // COMUNA 14
+  {com:14,bar:'Palermo',nom:'Nuestra Señora de Guadalupe',dir:'Gral. Lucio Norberto Mansilla 3847',cont:'4824-8852',hora:'Lun, mié y vie, 15 hs'},
+  {com:14,bar:'Palermo',nom:'Santa Lucía - Cáritas',dir:'Gascón 1372',cont:'11 4245-2140',hora:'1er y 3er domingo del mes, de 17 a 18 hs'},
+  // COMUNA 15
+  {com:15,bar:'La Paternal',nom:'Santa Inés, Virgen y Mártir y San Camilo - Cáritas',dir:'Ávalos 250',cont:'11 3320-4021',hora:'Jueves, de 8 a 12 hs'},
+  {com:15,bar:'Agronomía',nom:'Santa Magdalena Sofía Barat',dir:'Av. Salvador María del Carril 2458',cont:'4571-3829',hora:'Miércoles, de 16 a 18 hs'}
 ];
 
 // RENDER SERVICIOS
