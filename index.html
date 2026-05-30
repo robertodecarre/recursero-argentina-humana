@@ -145,6 +145,8 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .e-f{border-color:var(--celeste);}.e-f .eb-tit{color:var(--celeste-o);}.e-f:hover{background:var(--celeste);}.e-f:hover .eb-tit{color:#fff;}
 .e-d{border-color:var(--az-oscuro);}.e-d .eb-tit{color:var(--az-oscuro);}.e-d:hover{background:var(--az-oscuro);}.e-d:hover .eb-tit{color:#fff;}
 .e-r{border-color:#1a7a3c;}.e-r .eb-tit{color:#1a7a3c;}.e-r:hover{background:#1a7a3c;}.e-r:hover .eb-tit{color:#fff;}
+.e-j{border-color:#8B4A00;}.e-j .eb-tit{color:#8B4A00;}.e-j .eb-sub{color:#8B4A00;font-size:.72rem;opacity:.75;font-family:'Barlow',sans-serif;font-weight:400;margin-top:1px;}.e-j:hover{background:#8B4A00;border-color:#8B4A00;}.e-j:hover .eb-tit,.e-j:hover .eb-sub{color:#fff;opacity:1;}
+.tag-j{background:#8B4A00;color:#fff;}
 .l108{background:var(--negro);color:#fff;border-radius:var(--r);padding:13px 15px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
 .l108-n{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;font-weight:900;font-style:italic;color:var(--celeste);}
 .l108-t{font-size:.76rem;line-height:1.4;opacity:.85;}
@@ -1873,6 +1875,13 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <div class="eb e-d" onclick="navIr('p-ducha')"><div class="eb-ic">🚿</div><div class="eb-tit">Dónde ducharse</div></div>
       <div class="eb e-r" onclick="navIr('p-ropa')"><div class="eb-ic">👕</div><div class="eb-tit">Ropero comunitario</div></div>
     </div>
+    <div class="eb e-j" style="margin-top:10px;width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:16px 14px;" onclick="navIr('p-juridico')">
+      <div class="eb-ic" style="font-size:1.5rem;margin:0;flex-shrink:0">⚖️</div>
+      <div>
+        <div class="eb-tit">Asesoramiento jurídico gratuito</div>
+        <div class="eb-sub">0800-DEFENDER · MPD · Sedes en CABA</div>
+      </div>
+    </div>
     <div class="eb e-vg" style="margin-top:10px;width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:16px 14px;" onclick="navIr('p-genero')">
       <div class="eb-ic" style="font-size:1.5rem;margin:0;flex-shrink:0">💜</div>
       <div>
@@ -1920,6 +1929,58 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <span id="cnt-ropa" style="background:rgba(0,0,0,.25);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
   <div id="lista-ropa"></div>
+  <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
+  <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
+</div>
+
+<div id="p-juridico" class="pant">
+  <div style="display:flex;align-items:center;background:#8B4A00;color:#fff;padding:11px 14px;margin-bottom:10px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">⚖️ Asesoramiento jurídico gratuito</span>
+  </div>
+  <div class="l108" style="background:#8B4A00;margin-bottom:10px">
+    <div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;font-style:italic;color:#ffd580;line-height:1.1">0800-DEFENDER</div>
+      <div style="font-size:.76rem;opacity:.9;margin-top:4px">0800 33 336 337 · Gratuita · Dirección de Orientación al Habitante (MPD)</div>
+    </div>
+  </div>
+  <div class="sc">
+    <div class="sc-nom">Centro</div>
+    <span class="sc-tag tag-j">⚖️ Sede MPD</span>
+    <div class="sc-inf">
+      <span>📍 Av. de Mayo 654</span>
+      <span>🕐 Lun a vie, de 9 a 15 hs</span>
+      <a href="https://www.google.com/maps/search/?api=1&query=Av.+de+Mayo+654+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+    </div>
+  </div>
+  <div class="sc">
+    <div class="sc-nom">Constitución</div>
+    <span class="sc-tag tag-j">⚖️ Sede MPD</span>
+    <div class="sc-inf">
+      <span>📍 Pte. Luis Sáenz Peña 1488</span>
+      <span>🕐 Miércoles, de 9 a 15 hs</span>
+      <a href="https://www.google.com/maps/search/?api=1&query=Pte.+Luis+S%C3%A1enz+Pe%C3%B1a+1488+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+    </div>
+  </div>
+  <div class="sc">
+    <div class="sc-nom">La Boca</div>
+    <span class="sc-tag tag-j">⚖️ Sede MPD</span>
+    <div class="sc-inf">
+      <span>📍 Martín García (La Boca)</span>
+      <span>🕐 Lun a vie, de 9 a 15 hs</span>
+      <a href="https://www.google.com/maps/search/?api=1&query=Mart%C3%ADn+Garc%C3%ADa+Buenos+Aires+La+Boca" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+    </div>
+  </div>
+  <div class="sc">
+    <div class="sc-nom">Parque Patricios</div>
+    <span class="sc-tag tag-j">⚖️ Sede MPD</span>
+    <div class="sc-inf">
+      <span>📍 Brasil 2782</span>
+      <span>🕐 Lun a vie, de 9 a 15 hs</span>
+      <a href="https://www.google.com/maps/search/?api=1&query=Brasil+2782+Buenos+Aires" target="_blank" class="btn-maps">📍 Ver en mapa</a>
+    </div>
+  </div>
+  <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;color:#8B4A00;border-top:2px solid #8B4A00;padding-top:10px;margin-top:14px;margin-bottom:6px">Otras organizaciones</div>
+  <div id="lista-juridico"></div>
   <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
   <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
 </div>
@@ -2066,7 +2127,8 @@ const LABELS = {
   'p-genero':'Violencia de género',
   'p-emerg':'Ayuda urgente',
   'p-dormir':'Dónde dormir · CIS','p-comer':'Dónde comer',
-  'p-ducha':'Dónde ducharse','p-ropa':'Ropero comunitario'
+  'p-ducha':'Dónde ducharse','p-ropa':'Ropero comunitario',
+  'p-juridico':'Asesoramiento jurídico'
 };
 var navStack = ['p-inicio'];
 
@@ -3005,6 +3067,17 @@ var ROPEROS = [
   {com:15,bar:'Agronomía',nom:'Santa Magdalena Sofía Barat',dir:'Av. Salvador María del Carril 2458',cont:'4571-3829',hora:'Miércoles, de 16 a 18 hs'}
 ];
 
+var JURIDICO = [
+  {com:1,bar:'Monserrat',nom:'CELS',dir:'Piedras 547',cont:'4334-4200',hora:'Mar y vie, de 16 a 18 hs',tem:'Derechos humanos, privados de libertad, salud mental, discapacidad, acceso a la justicia'},
+  {com:1,bar:'San Nicolás',nom:'ACIJ - Asoc. Civil por la Igualdad y la Justicia',dir:'Av. de Mayo 1161, 1er piso Dpto. 1',cont:'4381-2371',hora:'Lun y jue, de 14 a 18 hs',tem:'Derechos económicos y sociales, derecho constitucional'},
+  {com:1,bar:'San Nicolás',nom:'Centro Jurídico Derecho a la Identidad (GCBA)',dir:'Rodríguez Peña 778',cont:'11 4823-1165',hora:'Lun a vie, de 9.30 a 15.30 hs',tem:'Identidad, DNI, inscripción registral, procesos judiciales'},
+  {com:1,bar:'San Nicolás',nom:'Procuración General CABA (PG CABA)',dir:'Uruguay 432',cont:'4323-9200 int. 7522',hora:'Lun a vie, de 10 a 14 hs',tem:'Derecho civil y familia, alimentos, autorización salida del país, violencia doméstica'},
+  {com:1,bar:'San Telmo',nom:'El Buen Samaritano',dir:'Adolfo Alsina 346',cont:'4331-0625',hora:'Viernes, 17 hs',tem:'Regularización migratoria, derecho civil y penal, acceso a la vivienda'},
+  {com:2,bar:'Recoleta',nom:'Consultorio y Patrocinio Jurídico Gratuito UBA',dir:'Av. Figueroa Alcorta 2263 (subsuelo)',cont:'consultoriojuridico@derecho.uba.ar',hora:'Lun a vie, de 9 a 18 hs',tem:'Alimentos, desalojo, jubilación, pensión, laboral, penal, salud, violencia y otros'},
+  {com:5,bar:'Boedo',nom:'Los Dandys de Boedo',dir:'Carlos Calvo 3401',cont:'11 6825-2145',hora:'Sáb, de 10 a 13 hs (cada 15 días)',tem:'Filiación, alimentos, divorcio, alquileres, desalojos, salud, penal y laboral'},
+  {com:9,bar:'Liniers',nom:'Parroquia San Cayetano',dir:'Cuzco 220',cont:'11 3109-6217',hora:'Lun a vie, de 9 a 15 hs',tem:'Asesoramiento jurídico gratuito'}
+];
+
 // RENDER SERVICIOS
 function renderPorComuna(datos, contId, tipo) {
   var cont = document.getElementById(contId);
@@ -3012,9 +3085,9 @@ function renderPorComuna(datos, contId, tipo) {
   var comunas = [];
   datos.forEach(function(d) { if (comunas.indexOf(d.com) === -1) comunas.push(d.com); });
   comunas.sort(function(a,b){ return a-b; });
-  var tagMap = {cis:'tag-h',comedor:'tag-c',ducha:'tag-d',ropa:'tag-r'};
-  var labelMap = {cis:'CIS',comedor:'Comedor',ducha:'Duchas',ropa:'Ropero'};
-  var iconMap = {cis:'🛏️',comedor:'🍲',ducha:'🚿',ropa:'👕'};
+  var tagMap = {cis:'tag-h',comedor:'tag-c',ducha:'tag-d',ropa:'tag-r',juridico:'tag-j'};
+  var labelMap = {cis:'CIS',comedor:'Comedor',ducha:'Duchas',ropa:'Ropero',juridico:'Asesoramiento'};
+  var iconMap = {cis:'🛏️',comedor:'🍲',ducha:'🚿',ropa:'👕',juridico:'⚖️'};
   comunas.forEach(function(com) {
     var items = datos.filter(function(d){ return d.com === com; });
     var grupo = document.createElement('div');
@@ -3036,6 +3109,7 @@ function renderPorComuna(datos, contId, tipo) {
         '<span>📍 ' + item.dir + '</span>' +
         '<span>📞 ' + item.cont + '</span>' +
         (item.hora ? '<span>🕐 ' + item.hora + '</span>' : '') +
+        (item.tem ? '<span style="font-size:.72rem;color:#8B4A00;font-weight:500;line-height:1.4;margin-top:2px">📋 ' + item.tem + '</span>' : '') +
         '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' +
         (tipo === 'cis' ? '<span style="font-size:.72rem;color:#7b5ea7;font-weight:500">Ingreso vía Línea 108 (24 hs)</span>' : '') +
         '</div>';
@@ -3047,11 +3121,31 @@ function renderPorComuna(datos, contId, tipo) {
   });
 }
 
+function renderPlano(datos, contId) {
+  var cont = document.getElementById(contId);
+  if (!cont || cont.children.length > 0) return;
+  datos.forEach(function(item) {
+    var div = document.createElement('div');
+    div.className = 'sc';
+    div.innerHTML = '<div class="sc-nom">' + item.nom + '<span style="font-weight:500;font-style:normal;opacity:.6;font-size:.78rem"> · Comuna ' + item.com + ' · ' + item.bar + '</span></div>' +
+      '<span class="sc-tag tag-j">⚖️ Asesoramiento</span>' +
+      '<div class="sc-inf">' +
+      '<span>📍 ' + item.dir + '</span>' +
+      '<span>📞 ' + item.cont + '</span>' +
+      (item.hora ? '<span>🕐 ' + item.hora + '</span>' : '') +
+      (item.tem ? '<span style="font-size:.72rem;color:#8B4A00;font-weight:500;line-height:1.4;margin-top:2px">📋 ' + item.tem + '</span>' : '') +
+      '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' +
+      '</div>';
+    cont.appendChild(div);
+  });
+}
+
 window.addEventListener('load', function() {
   renderPorComuna(CIS, 'lista-dormir', 'cis');
   renderPorComuna(COMEDORES, 'lista-comer', 'comedor');
   renderPorComuna(DUCHAS, 'lista-ducha', 'ducha');
   renderPorComuna(ROPEROS, 'lista-ropa', 'ropa');
+  renderPlano(JURIDICO, 'lista-juridico');
   document.getElementById('cnt-dormir').textContent = CIS.length + ' lugares';
   document.getElementById('cnt-comer').textContent = COMEDORES.length + ' lugares';
   document.getElementById('cnt-ducha').textContent = DUCHAS.length + ' lugares';
