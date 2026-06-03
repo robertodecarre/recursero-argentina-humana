@@ -2167,6 +2167,7 @@ const LABELS = {
   'p-juridico':'Asesoramiento jurídico'
 };
 var navStack = ['p-inicio'];
+history.replaceState({panel: 'p-inicio'}, '');
 
 function mostrarPantalla(id) {
   // Oculta TODAS las pantallas sin importar el stack
@@ -2324,19 +2325,32 @@ function filtrarComuna(n) {
 
 function navIr(id) {
   navStack.push(id);
+  history.pushState({panel: id}, '');
   mostrarPantalla(id);
 }
 
 function navAtras() {
   if (navStack.length <= 1) return;
-  navStack.pop();
-  mostrarPantalla(navStack[navStack.length - 1]);
+  history.back(); // popstate handler drives the actual panel switch
 }
 
 function nuevaConsulta() {
   navStack = ['p-inicio', 'p-form'];
+  history.pushState({panel: 'p-form'}, '');
   mostrarPantalla('p-form');
 }
+
+window.addEventListener('popstate', function(e) {
+  var panel = e.state && e.state.panel ? e.state.panel : 'p-inicio';
+  var idx = navStack.lastIndexOf(panel);
+  if (idx >= 0) {
+    navStack = navStack.slice(0, idx + 1);
+  } else {
+    navStack = ['p-inicio'];
+    panel = 'p-inicio';
+  }
+  mostrarPantalla(panel);
+});
 
 // CHECKBOXES
 function toggleChk(el) { el.classList.toggle('sel'); }
