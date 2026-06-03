@@ -242,27 +242,30 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     </div>
   </div>
   <div class="inicio-grid">
-    <div class="ib celeste" onclick="navIr('p-form')">
+    <div class="ib" onclick="navIr('p-form')">
       <div class="ib-icon">📋</div>
       <div class="ib-tit">¿Qué programas te corresponden?</div>
       <div class="ib-sub">AUH, Ciudadanía Porteña, Progresar y más</div>
     </div>
     <div class="ib" onclick="navIr('p-emerg')">
-      <div class="ib-icon">🆘</div>
-      <div class="ib-tit">Ayuda urgente</div>
-      <div class="ib-sub">Dormir, comer, ducharse, ropa</div>
+      <div class="ib-icon">
+        <div style="position:relative;display:inline-block;width:48px;height:48px;">
+          <div style="font-size:40px;line-height:1;">🗂️</div>
+          <div style="position:absolute;bottom:0;right:-4px;font-size:16px;line-height:1;">✅</div>
+        </div>
+      </div>
+      <div class="ib-tit">Recursero actualizado</div>
+      <div class="ib-sub">Dormir · comer · ducharse · ropa</div>
     </div>
-    <div class="ib" onclick="navIr('p-salud')" style="grid-column:span 2">
+    <div class="ib" onclick="navIr('p-salud')">
       <div class="ib-icon">🏥</div>
       <div class="ib-tit">Salud</div>
       <div class="ib-sub">Hospitales públicos de CABA · Red de salud gratuita</div>
     </div>
-  </div>
-  <div class="ib" style="margin-bottom:10px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;" onclick="navIr('p-todos')">
-    <span style="font-size:1.3rem">📖</span>
-    <div>
-      <div class="ib-tit" style="text-align:left">Ver todos los programas</div>
-      <div class="ib-sub" style="text-align:left">Sin filtrar — acceso directo al listado completo</div>
+    <div class="ib" onclick="navIr('p-todos')">
+      <div class="ib-icon">📖</div>
+      <div class="ib-tit">Ver todos los programas</div>
+      <div class="ib-sub">Sin filtrar — acceso directo al listado completo</div>
     </div>
   </div>
   <div class="aviso108">
