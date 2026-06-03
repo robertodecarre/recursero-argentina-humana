@@ -2161,7 +2161,7 @@ function mostrarPantalla(id) {
   document.querySelectorAll('.pant').forEach(function(p){ p.classList.remove('activa'); });
   // Muestra solo la destino
   document.getElementById(id).classList.add('activa');
-  document.getElementById('hdr-sub').textContent = LABELS[id] || '';
+  const _sub = document.getElementById('hdr-sub'); if (_sub) _sub.textContent = LABELS[id] || '';
   document.getElementById('btn-back').style.display = id === 'p-inicio' ? 'none' : 'block';
   window.scrollTo({top:0,behavior:'smooth'});
   if (id === 'p-todos') renderTodos();
