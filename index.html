@@ -2294,7 +2294,7 @@ function confirmarCompatibilidad() {
   html += '<h2 style="font-size:.95rem;margin-bottom:8px">Resultado del cruce</h2>';
   html += '<p style="font-size:.72rem;color:var(--gris-txt);margin-bottom:12px">' + nombresSelec + '</p>';
   if (incomps.length === 0) {
-    html += '<div style="background:#e8f5e9;border-left:3px solid #2e7d32;padding:10px 12px;font-size:.83rem;color:#1a5c30"><strong>✔ Sin incompatibilidades conocidas</strong><br>No se encontraron conflictos entre los programas seleccionados.</div>';
+    html += '<div style="background:#e8f5e9;border-left:3px solid #2e7d32;padding:10px 12px;font-size:.83rem;color:#1a5c30"><strong>✔ Son compatibles</strong><br>No hay conflictos entre los programas seleccionados.</div>';
   } else {
     incomps.forEach(function(inc){
       html += '<div class="inc-ban"><p><strong>⚠ ' + inc.a + ' — ' + inc.b + '</strong><br><span style="font-size:.8rem">' + inc.nota + '</span></p></div>';
@@ -2439,28 +2439,28 @@ const PROGS = [
   {
     id:'vivir_en_casa', nombre:'Vivir en Casa', amb:'caba',
     desc_c:'Subsidio del GCBA para alquiler para personas de 60 años o más en riesgo habitacional. ⚠️ El GCBA no publica el monto — consultarlo en vivirencasa@buenosaires.gob.ar o al 4342-8587 (lun a vie 9 a 15 hs).',
-    desc_l:'Vivir en Casa es un apoyo económico del GCBA para gastos de alquiler, expensas y servicios, destinado a personas mayores de 60 años en riesgo habitacional que no tienen el beneficio por obra social.\n\n⚠️ MONTO: El GCBA no publica el monto actualizado en su web. Consultarlo en vivirencasa@buenosaires.gob.ar o llamando al 4342-8587 (lun a vie 9 a 15 hs) antes de informarlo.',
+    desc_l:'Vivir en Casa es un apoyo económico del GCBA para gastos de alquiler, expensas y servicios, destinado a personas mayores de 60 años en riesgo habitacional que no tienen el beneficio por obra social.\n\n⚠️ MONTO: El GCBA no publica el monto actualizado en su web. Consultarlo en vivirencasa@buenosaires.gob.ar o llamando al 4342-8587 (lun a vie 9 a 15 hs) antes de informarlo.\n\n⚠️ DIFERENCIA CON EL SUBSIDIO HABITACIONAL (Ley 6935): Este programa es para personas de 60+ que tienen alquiler pero no pueden sostenerlo. Si la persona está en situación de calle o riesgo inminente de desamparo, el camino correcto es el Apoyo Habitacional Ley 6935, que no tiene límite de edad y cubre emergencias. Los dos programas son incompatibles entre sí al mismo tiempo.',
     reqs:['60 años o más','Residencia en CABA de 2 años o más','Ser autovalido o con leve nivel de dependencia','No alquilar a un familiar responsable','No recibir otro subsidio habitacional'],
     docs:['DNI','Recibo de haberes por pensión, jubilación o sueldo','Comprobantes de pago de alquiler, expensas y servicios','Certificado de domicilio'],
     acceso:'Online: buenosaires.gob.ar/tramites/postulacion-al-subsidio-vivir-en-casa · Telefónico: 4342-8587 (lun a vie 9 a 15 hs) · Presencial: Av. Belgrano 858 PB o cualquier Sede de Atención Social.',
     links:[{l:'Formulario online',u:'https://buenosaires.gob.ar/tramites/postulacion-al-subsidio-vivir-en-casa',t:'p'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
     cont:['vivirencasa@buenosaires.gob.ar','4342-8587 — Lun a vie 9 a 15 hs','Av. Belgrano 858 PB'],
     incomp_con:['apoyo_habitacional_ley6935'],
-    nota_incompat:'No compatible con el Apoyo Habitacional Ley 6935 (hasta $227.000/mes, Abril 2026). Comparar cuál cubre mejor la situación según el monto del alquiler. El monto de Vivir en Casa no está publicado — consultarlo en vivirencasa@buenosaires.gob.ar.',
+    nota_incompat:'No compatible con el Programa de Apoyo Habitacional Ley 6935. Solo se puede cobrar uno de los dos. Abrí cada programa para comparar cuál se ajusta mejor a la situación.',
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2 && d.edadMin>=60; }
   },
   {
     id:'apoyo_habitacional_ley6935', nombre:'Programa de Apoyo Habitacional - Ley 6935', amb:'caba',
     desc_c:'Apoyo habitacional por ley con actualizaciones automáticas y pagos únicos.',
-    desc_l:'El Programa de Apoyo Habitacional - Ley 6935 es un derecho por ley. Actualización automática cada 6 meses (Abril/Octubre) por índice IDECBA. Monto: Hasta $227.000 mensuales (Abril 2026). Novedad - Pago Único: Se puede solicitar el cobro adelantado de cuotas para pagar depósitos y gastos de ingreso a un nuevo alquiler. Novedad - Pago de Emergencia: Acceso inmediato para gente en calle efectiva, con 60 días para completar papeles. Prioridad: Personas en calle, familias con menores, discapacidad, adultos mayores y víctimas de violencia.',
+    desc_l:'El Programa de Apoyo Habitacional - Ley 6935 es un derecho por ley. Actualización automática cada 6 meses (Abril/Octubre) por índice IDECBA. Monto: Hasta $227.000 mensuales (Abril 2026). Novedad - Pago Único: Se puede solicitar el cobro adelantado de cuotas para pagar depósitos y gastos de ingreso a un nuevo alquiler. Novedad - Pago de Emergencia: Acceso inmediato para gente en calle efectiva, con 60 días para completar papeles. Prioridad: Personas en calle, familias con menores, discapacidad, adultos mayores y víctimas de violencia.\n\n⚠️ EDAD Y ESTE PROGRAMA: No hay límite de edad. Una persona mayor de 60 años en situación de calle o riesgo inminente de desamparo accede a este programa igual que cualquier otra persona. La edad de 60+ habilita también a Vivir en Casa, pero ese programa es para sostener un alquiler existente — no para emergencia habitacional. Los dos programas son incompatibles entre sí al mismo tiempo, pero no se excluyen por edad.',
     reqs:['Situación de calle o riesgo inminente de desamparo habitacional','Residencia de 2 años en CABA (DNI o informe social)','Ingresos menores a la línea de pobreza del INDEC','Informe social de trabajador/a social matriculado/a','Sin otro subsidio habitacional activo'],
     docs:['DNI de todos los integrantes','Partidas de nacimiento de menores','Vacunas al día de menores','Certificado de escolaridad de menores','Negativa de ANSES','Presupuesto del hotel o documentación de vivienda','Residencia Precaria para extranjeros sin DNI'],
     acceso:'Presencial en Av. Entre Ríos 1492 CABA, lun a vie de 9 a 15 hs. También por mail a atencioninmediata@buenosaires.gob.ar. El informe social lo puede hacer una trabajadora social del GCBA o de una organización.',
     links:[{l:'Info oficial GCBA',u:'https://buenosaires.gob.ar/desarrollohumanoyhabitat/inclusion-social-y-atencion-inmediata/asistencia-habitacional',t:'p'},{l:'Boti WhatsApp',u:'https://wa.me/5491150500147',t:'s'}],
     cont:['Av. Entre Ríos 1492 CABA — Lun a vie 9 a 15 hs','atencioninmediata@buenosaires.gob.ar','108 (emergencias calle 24 hs)','147'],
     incomp_con:['vivir_en_casa'],
-    nota_incompat:'No compatible con Vivir en Casa. El Apoyo Habitacional Ley 6935 cubre hasta $227.000/mes (Abril 2026) con actualización automática cada 6 meses. El monto de Vivir en Casa no está publicado — comparar en sede cuál cubre mejor el alquiler.',
+    nota_incompat:'No compatible con Vivir en Casa. Solo se puede cobrar uno de los dos. Abrí cada programa para comparar cuál se ajusta mejor a la situación.',
     validado:'16 de abril de 2026',
     elegible:function(d){ return d.res_caba>=2 && (d.vivienda==='calle' || d.vivienda==='inquilinato'); }
   },
