@@ -323,6 +323,9 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <option value="familiar">Vivienda familiar (sin pagar)</option>
       <option value="propia">Vivienda propia</option>
     </select>
+  </div>
+  <div class="card">
+    <h2><span class="ic">👨‍👩‍👧</span>Composición del hogar</h2>
     <label>¿Tiene hijos/as menores de 18 a cargo?</label>
     <div class="rg">
       <div class="rb"><input type="radio" name="hijos" id="h_si" value="si" onchange="toggleNumHijos()"><label for="h_si">Sí</label></div>
@@ -2226,8 +2229,8 @@ function renderTodos() {
       lista.appendChild(div);
     });
   }
-  agregarGrupo(caba, 'Programas CABA (' + caba.length + ')', true);
-  agregarGrupo(nac, 'Programas Nacionales (' + nac.length + ')', false);
+  agregarGrupo(nac, '🇦🇷 Programas Nacionales', false);
+  agregarGrupo(caba, '🏙️ Programas Ciudad de Buenos Aires', true);
 }
 
 function toggleAcord(hdr) {
@@ -2462,6 +2465,19 @@ const PROGS = [
     elegible:function(d){ return d.res_caba>=2 && (d.vivienda==='calle' || d.vivienda==='inquilinato'); }
   },
   {
+    id:'aue', nombre:'AUE - Asignación Universal por Embarazo', amb:'nacional',
+    desc_c:'$136.666/mes desde semana 12 hasta el parto (80% mensual + 20% al acreditar controles) · Abril 2026.',
+    desc_l:'La AUE es una prestación mensual de ANSES desde la semana 12 de gestación hasta el parto, para personas desocupadas o del sector informal. El 80% se cobra mensualmente y el 20% al presentar los controles del embarazo.',
+    reqs:['Embarazo desde semana 12','Sin empleo formal','Sin otra asignación familiar'],
+    docs:['DNI','Certificado de embarazo con fecha de gestación','CUIL','CBU o CVU'],
+    acceso:'Online desde Mi ANSES o presencial en cualquier oficina de ANSES con turno (anses.gob.ar o 130).',
+    links:[{l:'Mi ANSES - Iniciar tramite',u:'https://mi.anses.gob.ar/',t:'p'},{l:'Sacar turno ANSES',u:'https://www.anses.gob.ar/atencion/sacar-turno',t:'p'}],
+    cont:['ANSES: 130 (gratuito)'],
+    incomp_con:[],
+    validado:'15 de abril de 2026',
+    elegible:function(d){ return d.emb==='si' && !d.formal && (d.nac==='arg' || d.res_arg>=2); }
+  },
+  {
     id:'auh', nombre:'AUH - Asignación Universal por Hijo', amb:'nacional',
     desc_c:'$136.666 por hijo/mes (80% mensual + 20% anual al acreditar escolaridad y salud) · Abril 2026.',
     desc_l:'La AUH es una prestación mensual de ANSES por cada hijo/a menor de 18 (sin límite con discapacidad) para personas desocupadas o del sector informal. El 80% se cobra mensualmente; el 20% al presentar el certificado de escolaridad y control de salud anual. La Tarjeta Alimentar se asigna automáticamente si hay menores de 14.\n\nSi la familia NO puede acceder a la AUH todavía (por residencia insuficiente o documentación incompleta) y está en CABA, ver el programa NUESTRAS FAMILIAS del GCBA, que funciona como puente mientras se regulariza la situación.',
@@ -2477,29 +2493,42 @@ const PROGS = [
   },
   {
     id:'alimentar', nombre:'Tarjeta Alimentar', amb:'nacional',
-    desc_c:'Tarjeta alimentaria automática para quienes cobran AUH. $52.250 (1 hijo) · $81.936 (2) · $108.062 (3+) · Abril 2026.',
-    desc_l:'La Tarjeta Alimentar es un complemento automatico de la AUH para familias con al menos un/a hijo/a menor de 14 años o con discapacidad. Se acredita en una tarjeta específica solo para comprar alimentos. Si ya se cobra AUH y no llegó la tarjeta, consultar en Mi ANSES o al 130.',
+    desc_c:'Tarjeta alimentaria automática para quienes cobran AUH. $72.250 (1 hijo) · $113.299 (2) · $149.425 (3+) · Junio 2026.',
+    desc_l:'La Tarjeta Alimentar es un complemento automático de la AUH para familias con al menos un/a hijo/a menor de 14 años o con discapacidad. Se acredita en la misma cuenta de la AUH y es solo para comprar alimentos.\n\nMONTOS JUNIO 2026 (actualización del 38% · Resolución 161/2026):\n· 1 hijo/a o titular AUE: $72.250\n· 2 hijos/as: $113.299\n· 3 hijos/as o más: $149.425\n\nSi ya se cobra AUH y no llegó la tarjeta, consultar en Mi ANSES o al 130.',
     reqs:['Cobrar AUH','Al menos un/a hijo/a menor de 14 o con discapacidad','Se asigna automaticamente'],
     docs:['No requiere documentación adicional si ya se cobra AUH'],
     acceso:'Se asigna automaticamente. Si no llegó, consultar en Mi ANSES o llamando al 130.',
     links:[{l:'Mi ANSES - Consultar estado',u:'https://mi.anses.gob.ar/',t:'p'}],
     cont:['ANSES: 130 (gratuito)'],
     incomp_con:[],
-    validado:'15 de abril de 2026',
+    validado:'7 de junio de 2026',
     elegible:function(d){ return d.hijos==='si' && !d.formal && (d.nac==='arg' || d.res_arg>=2); }
   },
   {
-    id:'aue', nombre:'AUE - Asignación Universal por Embarazo', amb:'nacional',
-    desc_c:'$136.666/mes desde semana 12 hasta el parto (80% mensual + 20% al acreditar controles) · Abril 2026.',
-    desc_l:'La AUE es una prestación mensual de ANSES desde la semana 12 de gestación hasta el parto, para personas desocupadas o del sector informal. El 80% se cobra mensualmente y el 20% al presentar los controles del embarazo.',
-    reqs:['Embarazo desde semana 12','Sin empleo formal','Sin otra asignación familiar'],
-    docs:['DNI','Certificado de embarazo con fecha de gestación','CUIL','CBU o CVU'],
-    acceso:'Online desde Mi ANSES o presencial en cualquier oficina de ANSES con turno (anses.gob.ar o 130).',
-    links:[{l:'Mi ANSES - Iniciar tramite',u:'https://mi.anses.gob.ar/',t:'p'},{l:'Sacar turno ANSES',u:'https://www.anses.gob.ar/atencion/sacar-turno',t:'p'}],
-    cont:['ANSES: 130 (gratuito)'],
+    id:'mil_dias', nombre:'Plan 1000 Días', amb:'nacional',
+    desc_c:'Apoyo alimentario mensual ($53.290 · junio 2026) para titulares de AUH o AUE con hijos/as de hasta 3 años. Se acredita automáticamente — si no llegó, consultar en ANSES al 130.',
+    desc_l:'El Plan 1000 Días es la Ley N° 27.611 de Atención y Cuidado Integral de la Salud durante el Embarazo y la Primera Infancia. Cubre desde la gestación hasta los 3 años de vida.\n\nTIENE TRES COMPONENTES:\n\n1. COMPLEMENTO LECHE (mensual, automático): Apoyo alimentario de $53.290/mes (mayo 2026) para titulares de AUH o AUE con hijos/as de hasta 3 años. Se acredita automáticamente junto con la prestación principal — no requiere trámite. Si ya se cobra AUH y hay un/a hijo/a menor de 3 años y no llega este complemento, es un error a reclamar en ANSES.\n\n2. ASIGNACIÓN POR CUIDADO DE SALUD INTEGRAL (anual): Pago único anual para titulares de AUH con hijos/as de hasta 3 años que acrediten controles de salud y vacunación completos.\n\n3. ASIGNACIONES POR NACIMIENTO Y ADOPCIÓN (pago único): Por nacimiento: $82.353. Por adopción: $492.366 (mayo 2026). Pueden solicitarlas titulares de AUH, AUE, trabajadores/as registrados/as, beneficiarios/as de ART y personas con Prestación por Desempleo.\n\n⚠️ DATO CLAVE PARA EL TRABAJO TERRITORIAL: El Complemento Leche es automático. Si la persona ya cobra AUH, tiene hijos/as menores de 3 años y NO recibe este complemento, hay que reclamarlo en ANSES (130) o por Mi ANSES. No es necesario inscribirse.',
+    reqs:['Cobrar AUH o AUE (Asignación por Embarazo)','Hijos/as de hasta 3 años de edad','Para extranjeras: 3 años de residencia en Argentina','Inscripción en Programa SUMAR y sin obra social (solo para el componente de embarazo)'],
+    docs:['No requiere documentación adicional para el Complemento Leche si ya cobra AUH o AUE','Para Asignación por Nacimiento/Adopción: DNI, partida de nacimiento o resolución judicial de adopción, CUIL, CBU'],
+    acceso:'El Complemento Leche se acredita automáticamente. Para Nacimiento/Adopción: tramitar en Mi ANSES online o presencialmente en ANSES con turno. Si no llega el complemento automático, llamar al 130 o ingresar a Mi ANSES.',
+    links:[{l:'Mi ANSES - Consultar estado',u:'https://mi.anses.gob.ar/',t:'p'},{l:'Info Plan 1000 Días',u:'https://www.anses.gob.ar/embarazo-y-nacimiento/plan-1000-dias',t:'p'}],
+    cont:['ANSES: 130 (gratuito)','mi.anses.gob.ar'],
+    incomp_con:[],
+    validado:'7 de junio de 2026',
+    elegible:function(d){ return (d.hijos==='si' || d.emb==='si') && !d.formal && (d.nac==='arg' || d.res_arg>=2); }
+  },
+  {
+    id:'sumar', nombre:'Programa SUMAR', amb:'nacional',
+    desc_c:'Cobertura de salud publica gratuita para personas sin obra social.',
+    desc_l:'El Programa SUMAR garantiza cobertura de salud a personas sin obra social ni prepaga. Cubre controles preventivos, salud materno-infantil, enfermedades crónicas y mas. La inscripción es gratuita en el hospital o centro de salud publico mas cercano con solo el DNI.',
+    reqs:['Sin obra social ni cobertura privada','Inscripción gratuita y voluntaria'],
+    docs:['DNI vigente','Comprobante de domicilio'],
+    acceso:'Inscribirse directamente en el hospital o centro de salud publico mas cercano, presentando el DNI. No requiere turno previo.',
+    links:[{l:'Mas info - Argentina.gob.ar',u:'https://www.argentina.gob.ar/salud/sumar',t:'p'}],
+    cont:['Hospital o Centro de Salud publico mas cercano','0800-222-1002 (Salud Responde)'],
     incomp_con:[],
     validado:'15 de abril de 2026',
-    elegible:function(d){ return d.emb==='si' && !d.formal && (d.nac==='arg' || d.res_arg>=2); }
+    elegible:function(d){ return d.os!=='si' && (d.nac==='arg' || d.res_arg>=1); }
   },
   {
     id:'progresar', nombre:'Beca Progresar', amb:'nacional',
@@ -2554,19 +2583,6 @@ const PROGS = [
     incomp_con:[],
     validado:'15 de abril de 2026',
     elegible:function(d){ return d.disc==='si' && !d.cobra.includes('jubilacion') && !d.formal; }
-  },
-  {
-    id:'sumar', nombre:'Programa SUMAR', amb:'nacional',
-    desc_c:'Cobertura de salud publica gratuita para personas sin obra social.',
-    desc_l:'El Programa SUMAR garantiza cobertura de salud a personas sin obra social ni prepaga. Cubre controles preventivos, salud materno-infantil, enfermedades crónicas y mas. La inscripción es gratuita en el hospital o centro de salud publico mas cercano con solo el DNI.',
-    reqs:['Sin obra social ni cobertura privada','Inscripción gratuita y voluntaria'],
-    docs:['DNI vigente','Comprobante de domicilio'],
-    acceso:'Inscribirse directamente en el hospital o centro de salud publico mas cercano, presentando el DNI. No requiere turno previo.',
-    links:[{l:'Mas info - Argentina.gob.ar',u:'https://www.argentina.gob.ar/salud/sumar',t:'p'}],
-    cont:['Hospital o Centro de Salud publico mas cercano','0800-222-1002 (Salud Responde)'],
-    incomp_con:[],
-    validado:'15 de abril de 2026',
-    elegible:function(d){ return d.os!=='si' && (d.nac==='arg' || d.res_arg>=1); }
   },
   {
     id:'cpi', nombre:'Centros de Primera Infancia (CPI) - CABA', amb:'caba',
