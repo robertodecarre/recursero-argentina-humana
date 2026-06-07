@@ -143,7 +143,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .eb:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.1);}
 .eb .eb-ic{font-size:1.7rem;margin-bottom:6px;}
 .eb .eb-tit{font-family:"Barlow Condensed",sans-serif;font-size:.88rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.5px;}
-.e-c{border-color:#5b3f8a;}.e-c .eb-tit{color:#5b3f8a;}.e-c:hover{background:#5b3f8a;border-color:#5b3f8a;}.e-c:hover .eb-tit{color:#fff;}
+.e-c{border-color:#B85C1A;}.e-c .eb-tit{color:#B85C1A;}.e-c:hover{background:#B85C1A;border-color:#B85C1A;}.e-c:hover .eb-tit{color:#fff;}
 .e-f{border-color:var(--celeste);}.e-f .eb-tit{color:var(--celeste-o);}.e-f:hover{background:var(--celeste);}.e-f:hover .eb-tit{color:#fff;}
 .e-d{border-color:var(--az-oscuro);}.e-d .eb-tit{color:var(--az-oscuro);}.e-d:hover{background:var(--az-oscuro);}.e-d:hover .eb-tit{color:#fff;}
 .e-r{border-color:#1a7a3c;}.e-r .eb-tit{color:#1a7a3c;}.e-r:hover{background:#1a7a3c;}.e-r:hover .eb-tit{color:#fff;}
@@ -181,8 +181,14 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 .acord-body{display:none;padding:10px 12px 12px;}
 .acord-body.visible{display:block;}
 .acord-nota{font-size:.73rem;color:var(--gris-txt);font-style:italic;margin-bottom:10px;padding:6px 10px;background:var(--gris-fondo);border-radius:0;}
-#p-dormir .acord-hdr{background:#2E5FA3;color:#fff;}
-#p-dormir .acord-hdr:hover{background:#254d8a;}
+#p-dormir .acord-hdr{background:hsl(25,75%,71%);color:var(--negro);}
+#p-dormir .acord-hdr:hover{background:hsl(25,75%,66%);}
+#p-ropa .acord-hdr{background:hsl(141,65%,59%);color:var(--negro);}
+#p-ropa .acord-hdr:hover{background:hsl(141,65%,54%);}
+#p-ducha .acord-hdr{background:hsl(215,66%,60%);color:var(--negro);}
+#p-ducha .acord-hdr:hover{background:hsl(215,66%,55%);}
+#p-comer .acord-hdr{background:hsl(196,100%,77%);color:var(--negro);}
+#p-comer .acord-hdr:hover{background:hsl(196,100%,72%);}
 /* TARJETAS HOSPITAL */
 .hosp-card{background:var(--gris-fondo);border-radius:0;padding:12px;margin-bottom:8px;border-left:3px solid var(--celeste);}
 .hosp-card.hc-oculto{display:none;}
@@ -1864,7 +1870,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <div><strong>Emergencia en calle:</strong> Gratuita · 24 horas · El equipo BAP va al lugar</div>
   </div>
   <div class="card" style="margin-bottom:10px">
-    <h2><span class="ic" style="width:35px;height:35px;"><img src="assets/ayuda.png" alt="" style="width:32px;height:auto;display:block;filter:brightness(0) invert(1);"></span>Recursero Actualizado</h2>
+    <h2><span class="ic" style="width:35px;height:35px;background:#fff;"><img src="assets/ayuda.png" alt="" style="width:32px;height:auto;display:block;"></span>Recursero Actualizado</h2>
     <div class="emerg-grid">
       <div class="eb e-c" onclick="navIr('p-dormir')"><div class="eb-ic"><img src="assets/dormir.png" alt="Dónde dormir" style="height:80px;width:auto;display:block;margin:0 auto;"></div><div class="eb-tit">Dónde dormir</div></div>
       <div class="eb e-f" onclick="navIr('p-comer')"><div class="eb-ic"><img src="assets/donde_comer.png" alt="Dónde comer" style="height:80px;width:auto;display:block;margin:0 auto;"></div><div class="eb-tit">Dónde comer</div></div>
@@ -1889,7 +1895,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 </div>
 
 <div id="p-dormir" class="pant">
-  <div style="display:flex;align-items:center;justify-content:space-between;background:#1B3F7A;color:#fff;padding:11px 14px;margin-bottom:10px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;background:#B85C1A;color:#fff;padding:11px 14px;margin-bottom:10px;">
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px">🛏️ Dónde dormir · CIS</span>
     <span id="cnt-dormir" style="background:rgba(0,0,0,.25);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
