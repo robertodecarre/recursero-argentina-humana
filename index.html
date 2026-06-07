@@ -2479,7 +2479,7 @@ const PROGS = [
   },
   {
     id:'auh', nombre:'AUH - Asignación Universal por Hijo', amb:'nacional',
-    desc_c:'$136.666 por hijo/mes (80% mensual + 20% anual al acreditar escolaridad y salud) · Abril 2026.',
+    desc_c:'$144.562 por hijo/mes · $115.650 de bolsillo (80% mensual + 20% anual al acreditar escolaridad y salud) · Junio 2026.',
     desc_l:'La AUH es una prestación mensual de ANSES por cada hijo/a menor de 18 (sin límite con discapacidad) para personas desocupadas o del sector informal. El 80% se cobra mensualmente; el 20% al presentar el certificado de escolaridad y control de salud anual. La Tarjeta Alimentar se asigna automáticamente si hay menores de 14.\n\nSi la familia NO puede acceder a la AUH todavía (por residencia insuficiente o documentación incompleta) y está en CABA, ver el programa NUESTRAS FAMILIAS del GCBA, que funciona como puente mientras se regulariza la situación.',
     reqs:['Hijos/as menores de 18 (o con discapacidad sin límite de edad)','Sin empleo formal registrado','Sin otra asignación familiar','Ingresos por debajo del salario mínimo','Menores escolarizados y con vacunas al día','Extranjeros/as: 2 años de residencia legal en Argentina'],
     docs:['DNI del titular y de los hijos/as','Partida de nacimiento de los hijos/as','CUIL','CBU o CVU a nombre del titular'],
@@ -2488,7 +2488,7 @@ const PROGS = [
     cont:['ANSES: 130 (gratuito)','mi.anses.gob.ar'],
     incomp_con:['nuestras_familias'],
     nota_incompat:'La AUH ($136.666/hijo/mes) no es compatible con Nuestras Familias. La AUH además habilita automáticamente a la Tarjeta Alimentar ($72.250 con 1 hijo · $113.299 con 2 · $149.425 con 3 o más · junio 2026) — conviene pasarse si ya se cumplen los requisitos.',
-    validado:'15 de abril de 2026',
+    validado:'7 de junio de 2026',
     elegible:function(d){ return d.hijos==='si' && !d.formal && (d.nac==='arg' || d.res_arg>=2); }
   },
   {
