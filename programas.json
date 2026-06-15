@@ -4,6 +4,7 @@
   "programas": [
     {
       "id": "ciudadania_portena",
+      "activo": true,
       "nombre": "Ciudadanía Porteña",
       "ambito": "caba",
       "descripcion_corta": "Tarjeta para compra de alimentos, limpieza e higiene. Entre $85.000 y $115.000 promedio por hogar (Abril 2026).",
@@ -45,6 +46,7 @@
     },
     {
       "id": "ticket_social",
+      "activo": true,
       "nombre": "Ticket Social CABA",
       "ambito": "caba",
       "descripcion_corta": "Apoyo económico alimentario del GCBA. Puerta de entrada a Ciudadanía Porteña. ⚠️ El GCBA no publica el monto — consultarlo en sede o por ticketsocial@buenosaires.gob.ar.",
@@ -81,6 +83,7 @@
     },
     {
       "id": "nuestras_familias",
+      "activo": true,
       "nombre": "Nuestras Familias",
       "ambito": "caba",
       "descripcion_corta": "Apoyo económico del GCBA para familias con hijos en vulnerabilidad. Puente hacia la AUH. ⚠️ El GCBA no publica el monto — consultarlo en nuestrasfamilias@buenosaires.gob.ar.",
@@ -124,6 +127,7 @@
     },
     {
       "id": "vivir_en_casa",
+      "activo": true,
       "nombre": "Vivir en Casa",
       "ambito": "caba",
       "descripcion_corta": "Subsidio del GCBA para alquiler para personas de 60 años o más en riesgo habitacional. ⚠️ El GCBA no publica el monto — consultarlo en vivirencasa@buenosaires.gob.ar o al 4342-8587 (lun a vie 9 a 15 hs).",
@@ -164,6 +168,7 @@
     },
     {
       "id": "apoyo_habitacional_ley6935",
+      "activo": true,
       "nombre": "Programa de Apoyo Habitacional - Ley 6935",
       "ambito": "caba",
       "descripcion_corta": "Apoyo habitacional por ley con actualizaciones automáticas y pagos únicos.",
@@ -211,6 +216,7 @@
     },
     {
       "id": "aue",
+      "activo": true,
       "nombre": "AUE - Asignación Universal por Embarazo",
       "ambito": "nacional",
       "descripcion_corta": "$136.666/mes desde semana 12 hasta el parto (80% mensual + 20% al acreditar controles) · Abril 2026.",
@@ -248,6 +254,7 @@
     },
     {
       "id": "auh",
+      "activo": true,
       "nombre": "AUH - Asignación Universal por Hijo",
       "ambito": "nacional",
       "descripcion_corta": "$144.562 por hijo/mes · $115.650 de bolsillo (80% mensual + 20% anual al acreditar escolaridad y salud) · Junio 2026.",
@@ -288,6 +295,7 @@
     },
     {
       "id": "alimentar",
+      "activo": true,
       "nombre": "Tarjeta Alimentar",
       "ambito": "nacional",
       "descripcion_corta": "Tarjeta alimentaria automática para quienes cobran AUH. $72.250 (1 hijo) · $113.299 (2) · $149.425 (3+) · Junio 2026.",
@@ -320,6 +328,7 @@
     },
     {
       "id": "mil_dias",
+      "activo": true,
       "nombre": "Plan 1000 Días",
       "ambito": "nacional",
       "descripcion_corta": "Apoyo alimentario mensual ($53.290 · junio 2026) para titulares de AUH o AUE con hijos/as de hasta 3 años. Se acredita automáticamente — si no llegó, consultar en ANSES al 130.",
@@ -359,6 +368,7 @@
     },
     {
       "id": "sumar",
+      "activo": true,
       "nombre": "Programa SUMAR",
       "ambito": "nacional",
       "descripcion_corta": "Cobertura de salud publica gratuita para personas sin obra social.",
@@ -395,6 +405,7 @@
     },
     {
       "id": "progresar",
+      "activo": true,
       "nombre": "Beca Progresar",
       "ambito": "nacional",
       "descripcion_corta": "Beca educativa de $35.000/mes. ⚠️ Obligatorio y Superior CERRADOS (inscripción 2026 finalizada). Solo sigue abierta Formación Profesional (cursos INET) hasta el 27/11/2026.",
@@ -441,6 +452,7 @@
     },
     {
       "id": "pas",
+      "activo": true,
       "nombre": "Programa de Acompañamiento Social",
       "ambito": "nacional",
       "descripcion_corta": "⚠️ Sin inscripción abierta. Solo cobran ex beneficiarios del Potenciar Trabajo. Para personas 50+ años o madres de 4+ hijos.",
@@ -491,6 +503,7 @@
     },
     {
       "id": "puam",
+      "activo": true,
       "nombre": "PUAM - Prestación Universal Adulto Mayor",
       "ambito": "nacional",
       "descripcion_corta": "$304.243/mes (80% del haber mínimo) · Incluye PAMI · Extranjeros/as necesitan 20 años de residencia · Abril 2026.",
@@ -530,6 +543,7 @@
     },
     {
       "id": "pension_disc",
+      "activo": true,
       "nombre": "Pensión No Contributiva por Discapacidad",
       "ambito": "nacional",
       "descripcion_corta": "$336.223/mes (incluye bono) para personas con CUD sin otros ingresos ni empleo formal · Abril 2026.",
@@ -565,6 +579,7 @@
     },
     {
       "id": "cpi",
+      "activo": true,
       "nombre": "Centros de Primera Infancia (CPI) - CABA",
       "ambito": "caba",
       "descripcion_corta": "Jardines maternales gratuitos del GCBA para niños/as de 45 dias a 4 años.",

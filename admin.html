@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel · Recursero · Argentina Humana</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow+Semi+Condensed:wght@400;700;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#111111;
+  --celeste:#00aeef;
+  --celeste-o:#009fd8;
+  --celeste-s:#e6f7fd;
+  --gris-fondo:#f2f2f0;
+  --gris-borde:#dcdcdc;
+  --gris-txt:#5a5a5a;
+  --blanco:#ffffff;
+  --az-oscuro:#1a4480;
+  --naranja:#d4700a;
+  --rojo:#c0392b;
+  --verde:#1a7a3c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Barlow",sans-serif;background:var(--gris-fondo);color:var(--negro);min-height:100vh;}
+
+header{background:var(--negro);color:var(--blanco);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+.hdr-i{display:flex;align-items:center;gap:12px;padding:10px 16px;max-width:680px;margin:0 auto;}
+.hdr-logo .ah-mark{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;font-weight:900;font-style:italic;color:#fff;letter-spacing:-2px;line-height:1;}
+.hdr-txt h1{font-family:"Barlow Semi Condensed",sans-serif;font-size:1rem;font-weight:900;font-style:italic;letter-spacing:.3px;text-transform:uppercase;line-height:1;}
+.hdr-txt p{font-size:.6rem;opacity:.5;margin-top:2px;letter-spacing:.4px;text-transform:uppercase;}
+.hdr-divider{width:1px;height:28px;background:rgba(255,255,255,.2);}
+
+.wrap{max-width:680px;margin:0 auto;padding:14px 13px 90px;}
+.pant{display:none;}.pant.activa{display:block;}
+
+.card{background:var(--blanco);padding:18px 16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.07);border:1px solid var(--gris-borde);}
+.card h2{font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px;}
+
+label{display:block;font-size:.72rem;font-weight:700;color:var(--gris-txt);margin-bottom:4px;margin-top:14px;text-transform:uppercase;letter-spacing:.4px;}
+input[type=text],input[type=password],input[type=date],input[type=url],textarea,select{
+  width:100%;padding:10px 12px;border:1.5px solid var(--gris-borde);border-radius:0;
+  font-family:"Barlow",sans-serif;font-size:.9rem;color:var(--negro);background:var(--blanco);transition:border-color .15s;
+}
+textarea{resize:vertical;min-height:64px;line-height:1.45;}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--celeste);}
+
+.btn-p{width:100%;padding:14px;background:var(--celeste);color:#fff;border:none;font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;cursor:pointer;transition:background .15s;letter-spacing:.3px;text-transform:uppercase;}
+.btn-p:hover{background:var(--celeste-o);}
+.btn-p:disabled{opacity:.5;cursor:not-allowed;}
+.btn-s{width:100%;padding:11px;background:transparent;color:var(--negro);border:2px solid var(--negro);font-family:"Barlow Condensed",sans-serif;font-size:.95rem;font-weight:800;font-style:italic;cursor:pointer;letter-spacing:.3px;text-transform:uppercase;transition:all .15s;}
+.btn-s:hover{background:var(--negro);color:#fff;}
+
+/* mini botones inline */
+.mini{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;border:none;cursor:pointer;padding:7px 12px;font-size:.8rem;}
+.mini.add{background:var(--celeste-s);color:var(--az-oscuro);border:1.5px dashed var(--celeste);width:100%;margin-top:6px;}
+.mini.add:hover{background:#d7f0fa;}
+.mini.del{background:transparent;color:var(--rojo);border:1.5px solid var(--gris-borde);padding:0 10px;flex-shrink:0;font-size:1.1rem;line-height:1;}
+.mini.del:hover{border-color:var(--rojo);background:#fdeceb;}
+
+/* LISTA */
+.toolbar{display:flex;gap:8px;margin-bottom:12px;}
+.toolbar .btn-p,.toolbar .btn-s{margin:0;}
+.pli{background:var(--blanco);border:1px solid var(--gris-borde);border-left:4px solid var(--celeste);padding:12px 13px;margin-bottom:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:all .15s;}
+.pli:hover{box-shadow:0 4px 14px rgba(0,174,239,.15);transform:translateX(3px);}
+.pli.nac{border-left-color:var(--az-oscuro);}
+.pli.off{border-left-color:#bbb;opacity:.6;}
+.pli-nom{font-family:"Barlow Condensed",sans-serif;font-size:.98rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.4px;line-height:1.15;}
+.pli-meta{font-size:.66rem;color:var(--gris-txt);margin-top:3px;text-transform:uppercase;letter-spacing:.4px;}
+.tag{display:inline-block;font-size:.58rem;font-weight:800;padding:2px 6px;text-transform:uppercase;letter-spacing:.5px;color:#fff;}
+.tag.caba{background:var(--celeste);}
+.tag.nacional{background:var(--az-oscuro);}
+.tag.off{background:#999;}
+
+/* item rows (requisitos, contactos, links) */
+.row{display:flex;gap:7px;align-items:flex-start;margin-bottom:7px;}
+.row textarea,.row input{margin:0;}
+.linkrow{border:1px solid var(--gris-borde);padding:10px;margin-bottom:8px;background:var(--gris-fondo);}
+.linkrow .lr-top{display:flex;gap:7px;align-items:center;margin-bottom:6px;}
+.linkrow select{flex:1;}
+
+.preview{border:1.5px solid var(--gris-borde);background:var(--gris-fondo);padding:10px 12px;font-size:.86rem;line-height:1.5;min-height:40px;margin-top:6px;}
+.readonly-box{border:1.5px solid var(--gris-borde);background:#f8f8f6;padding:10px 12px;font-size:.82rem;line-height:1.5;color:var(--gris-txt);white-space:pre-wrap;}
+.hint{font-size:.7rem;color:var(--gris-txt);margin-top:3px;line-height:1.4;}
+
+/* toggle activo */
+.toggle{display:flex;align-items:center;gap:10px;margin-top:14px;padding:11px 12px;border:1.5px solid var(--gris-borde);cursor:pointer;}
+.toggle .sw{width:42px;height:24px;background:#ccc;border-radius:0;position:relative;flex-shrink:0;transition:background .15s;}
+.toggle .sw::after{content:"";position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;transition:left .15s;}
+.toggle.on .sw{background:var(--verde);}
+.toggle.on .sw::after{left:20px;}
+.toggle-txt{font-size:.85rem;font-weight:600;}
+
+/* incompatibles */
+.chk{display:flex;align-items:center;gap:9px;padding:8px 11px;border:1.5px solid var(--gris-borde);cursor:pointer;margin-bottom:5px;}
+.chk-box{width:18px;height:18px;border:2px solid var(--gris-borde);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;}
+.chk.sel{border-color:var(--celeste);background:var(--celeste-s);}
+.chk.sel .chk-box{background:var(--celeste);border-color:var(--celeste);}
+.chk-txt{font-size:.82rem;font-weight:500;}
+
+/* barra fija de guardado */
+.savebar{position:fixed;left:0;right:0;bottom:0;background:var(--negro);padding:10px 13px;z-index:200;box-shadow:0 -2px 10px rgba(0,0,0,.25);}
+.savebar-i{max-width:680px;margin:0 auto;display:flex;gap:10px;align-items:center;}
+.savebar .btn-p{flex:1;margin:0;}
+.dirty-dot{font-size:.72rem;color:#fff;opacity:.7;white-space:nowrap;}
+
+/* toast */
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:74px;background:var(--negro);color:#fff;padding:12px 18px;font-size:.85rem;font-weight:600;z-index:300;max-width:90%;text-align:center;display:none;border-left:4px solid var(--celeste);}
+#toast.err{border-left-color:var(--rojo);}
+#toast.ok{border-left-color:var(--verde);}
+
+.login-box{max-width:360px;margin:40px auto 0;}
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;}
+@keyframes spin{to{transform:rotate(360deg);}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr-i">
+    <div class="hdr-logo"><div class="ah-mark">AH</div></div>
+    <div class="hdr-divider"></div>
+    <div class="hdr-txt">
+      <h1>Panel del Recursero</h1>
+      <p>Programas sociales · Edición</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- LOGIN -->
+  <div id="p-login" class="pant activa">
+    <div class="card login-box">
+      <h2>Acceso</h2>
+      <label for="pwd">Contraseña</label>
+      <input type="password" id="pwd" autocomplete="current-password" onkeydown="if(event.key==='Enter')entrar()">
+      <p class="hint">La contraseña se valida en el servidor al guardar.</p>
+      <button class="btn-p" style="margin-top:14px" onclick="entrar()">Entrar</button>
+    </div>
+  </div>
+
+  <!-- LISTA -->
+  <div id="p-lista" class="pant">
+    <div class="toolbar">
+      <button class="btn-p" onclick="nuevo()">+ Nuevo programa</button>
+    </div>
+    <div id="lista"></div>
+  </div>
+
+  <!-- EDITOR -->
+  <div id="p-editor" class="pant"></div>
+
+</div>
+
+<!-- barra fija (solo en lista) -->
+<div id="savebar" class="savebar" style="display:none">
+  <div class="savebar-i">
+    <span id="dirty" class="dirty-dot"></span>
+    <button id="btn-guardar" class="btn-p" onclick="guardar()">Guardar cambios</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ===== Estado ===== */
+var DATA = null;       // objeto completo del JSON (version, actualizado, programas)
+var PROGS = [];        // referencia a DATA.programas
+var PASS = '';         // contraseña en memoria (no se persiste)
+var editando = null;   // copia del programa en edición
+var editIndex = -1;    // índice en PROGS (-1 = nuevo)
+var dirty = false;     // hay cambios sin guardar
+
+var AMBITOS = ['caba', 'nacional'];
+var ESTILOS = ['primario', 'secundario'];
+
+/* ===== Utilidades ===== */
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function slug(s){
+  return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'').slice(0,40) || 'programa';
+}
+function mdPreview(s){ return esc(s).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>'); }
+function mostrar(id){
+  ['p-login','p-lista','p-editor'].forEach(function(p){ $(p).classList.remove('activa'); });
+  $(id).classList.add('activa');
+  $('savebar').style.display = (id === 'p-lista') ? 'block' : 'none';
+  window.scrollTo(0,0);
+}
+function toast(msg, tipo){
+  var t = $('toast'); t.textContent = msg; t.className = tipo || '';
+  t.style.display = 'block';
+  clearTimeout(t._h); t._h = setTimeout(function(){ t.style.display = 'none'; }, tipo === 'err' ? 6000 : 3000);
+}
+function marcarDirty(){ dirty = true; $('dirty').textContent = '● cambios sin guardar'; }
+
+/* ===== Login + carga ===== */
+function entrar(){
+  var p = $('pwd').value;
+  if (!p){ toast('Ingresá la contraseña', 'err'); return; }
+  PASS = p;
+  cargar();
+}
+
+function cargar(){
+  fetch('programas.json', { cache: 'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(function(data){
+      DATA = data;
+      PROGS = data.programas || [];
+      DATA.programas = PROGS;
+      renderLista();
+      mostrar('p-lista');
+    })
+    .catch(function(e){
+      toast('No se pudo cargar programas.json: ' + e.message, 'err');
+    });
+}
+
+/* ===== Lista ===== */
+function renderLista(){
+  var html = PROGS.map(function(p, i){
+    var amb = p.ambito === 'nacional' ? 'nacional' : 'caba';
+    var off = (p.activo === false);
+    return '<div class="pli ' + (amb === 'nacional' ? 'nac' : '') + (off ? ' off' : '') + '" onclick="editar(' + i + ')">' +
+      '<div>' +
+        '<div class="pli-nom">' + esc(p.nombre) + '</div>' +
+        '<div class="pli-meta">' +
+          '<span class="tag ' + amb + '">' + amb + '</span> ' +
+          (off ? '<span class="tag off">inactivo</span> ' : '') +
+          esc(p.id) +
+        '</div>' +
+      '</div>' +
+      '<div style="color:#bbb;font-size:1.2rem">›</div>' +
+    '</div>';
+  }).join('');
+  $('lista').innerHTML = html || '<div class="card">No hay programas.</div>';
+}
+
+/* ===== Editor ===== */
+function editar(i){
+  editIndex = i;
+  editando = JSON.parse(JSON.stringify(PROGS[i]));
+  normalizar(editando);
+  renderEditor(false);
+  mostrar('p-editor');
+}
+function nuevo(){
+  editIndex = -1;
+  editando = {
+    id:'', nombre:'', ambito:'caba', descripcion_corta:'', descripcion_larga:'',
+    requisitos:[], documentacion:[], como_acceder:'', links:[], contactos:[],
+    incompatible_con:[], nota_incompatibilidad:'', validado:'', activo:true,
+    elegibilidad:{ logica:'todas', condiciones:[] }
+  };
+  renderEditor(true);
+  mostrar('p-editor');
+}
+function normalizar(p){
+  p.requisitos = p.requisitos || [];
+  p.documentacion = p.documentacion || [];
+  p.links = p.links || [];
+  p.contactos = p.contactos || [];
+  p.incompatible_con = p.incompatible_con || [];
+  if (typeof p.activo === 'undefined') p.activo = true;
+  if (typeof p.descripcion_larga === 'undefined') p.descripcion_larga = '';
+  if (typeof p.como_acceder === 'undefined') p.como_acceder = '';
+  if (typeof p.nota_incompatibilidad === 'undefined') p.nota_incompatibilidad = '';
+  if (typeof p.validado === 'undefined') p.validado = '';
+}
+
+function optAmbito(v){
+  return AMBITOS.map(function(a){ return '<option value="'+a+'"'+(v===a?' selected':'')+'>'+a+'</option>'; }).join('');
+}
+
+function renderEditor(esNuevo){
+  var p = editando;
+  var listaItems = function(campo){
+    return (p[campo]).map(function(v, i){
+      return '<div class="row">' +
+        '<textarea oninput="editando.'+campo+'['+i+']=this.value" rows="2">'+esc(v)+'</textarea>' +
+        '<button class="mini del" title="Eliminar" onclick="delItem(\''+campo+'\','+i+')">×</button>' +
+      '</div>';
+    }).join('');
+  };
+  var contactosItems = (p.contactos).map(function(v,i){
+    return '<div class="row">' +
+      '<input type="text" oninput="editando.contactos['+i+']=this.value" value="'+esc(v)+'">' +
+      '<button class="mini del" title="Eliminar" onclick="delItem(\'contactos\','+i+')">×</button>' +
+    '</div>';
+  }).join('');
+  var linksItems = (p.links).map(function(l,i){
+    return '<div class="linkrow">' +
+      '<div class="lr-top">' +
+        '<select onchange="editando.links['+i+'].estilo=this.value">' +
+          ESTILOS.map(function(e){ return '<option value="'+e+'"'+((l.estilo||'primario')===e?' selected':'')+'>'+e+'</option>'; }).join('') +
+        '</select>' +
+        '<button class="mini del" title="Eliminar" onclick="delLink('+i+')">×</button>' +
+      '</div>' +
+      '<input type="text" placeholder="Texto del botón" oninput="editando.links['+i+'].texto=this.value" value="'+esc(l.texto)+'" style="margin-bottom:6px">' +
+      '<input type="url" placeholder="https://..." oninput="editando.links['+i+'].url=this.value" value="'+esc(l.url)+'">' +
+    '</div>';
+  }).join('');
+  var incompItems = PROGS.filter(function(o){ return o.id !== p.id; }).map(function(o){
+    var sel = (p.incompatible_con.indexOf(o.id) !== -1);
+    return '<div class="chk'+(sel?' sel':'')+'" onclick="toggleIncomp(\''+esc(o.id)+'\')">' +
+      '<div class="chk-box">'+(sel?'✓':'')+'</div>' +
+      '<div class="chk-txt">'+esc(o.nombre)+' <span style="color:#999">('+esc(o.id)+')</span></div>' +
+    '</div>';
+  }).join('');
+
+  // elegibilidad (solo lectura)
+  var eleg = p.elegibilidad || {};
+  var condTxt = (eleg.condiciones || []).map(function(c){ return '· ' + c.campo + ' ' + c.op + ' ' + c.valor; }).join('\n');
+  var elegTxt = 'Lógica: ' + (eleg.logica || '—') + '\n' + (condTxt || '(sin condiciones)');
+
+  $('p-editor').innerHTML =
+  '<div class="card">' +
+    '<h2>' + (esNuevo ? 'Nuevo programa' : 'Editar programa') + '</h2>' +
+
+    '<label>ID' + (esNuevo ? '' : ' (no editable)') + '</label>' +
+    (esNuevo
+      ? '<input type="text" id="f-id" placeholder="se genera del nombre si lo dejás vacío" oninput="editando.id=this.value" value="'+esc(p.id)+'">'
+      : '<input type="text" value="'+esc(p.id)+'" disabled>') +
+
+    '<label>Nombre</label>' +
+    '<input type="text" oninput="editando.nombre=this.value' + (esNuevo ? ';autoId()' : '') + '" value="'+esc(p.nombre)+'">' +
+
+    '<label>Ámbito</label>' +
+    '<select onchange="editando.ambito=this.value">' + optAmbito(p.ambito) + '</select>' +
+
+    '<label>Descripción corta</label>' +
+    '<textarea oninput="editando.descripcion_corta=this.value" rows="2">'+esc(p.descripcion_corta)+'</textarea>' +
+
+    '<label>Descripción larga (Markdown: **negrita**, saltos de línea)</label>' +
+    '<textarea oninput="editando.descripcion_larga=this.value;prevLarga()" rows="6">'+esc(p.descripcion_larga)+'</textarea>' +
+    '<div class="preview" id="prev-larga">'+mdPreview(p.descripcion_larga)+'</div>' +
+
+    '<label>Cómo acceder (admite **negrita**)</label>' +
+    '<textarea oninput="editando.como_acceder=this.value" rows="4">'+esc(p.como_acceder)+'</textarea>' +
+  '</div>' +
+
+  '<div class="card">' +
+    '<h2>Requisitos</h2>' +
+    '<div id="lst-requisitos">' + listaItems('requisitos') + '</div>' +
+    '<button class="mini add" onclick="addItem(\'requisitos\')">+ Agregar requisito</button>' +
+  '</div>' +
+
+  '<div class="card">' +
+    '<h2>Documentación</h2>' +
+    '<div id="lst-documentacion">' + listaItems('documentacion') + '</div>' +
+    '<button class="mini add" onclick="addItem(\'documentacion\')">+ Agregar documento</button>' +
+  '</div>' +
+
+  '<div class="card">' +
+    '<h2>Links</h2>' +
+    '<div id="lst-links">' + linksItems + '</div>' +
+    '<button class="mini add" onclick="addLink()">+ Agregar link</button>' +
+  '</div>' +
+
+  '<div class="card">' +
+    '<h2>Contactos</h2>' +
+    '<div id="lst-contactos">' + contactosItems + '</div>' +
+    '<button class="mini add" onclick="addItem(\'contactos\')">+ Agregar contacto</button>' +
+  '</div>' +
+
+  '<div class="card">' +
+    '<h2>Incompatibilidad</h2>' +
+    '<label>Incompatible con</label>' +
+    (incompItems || '<p class="hint">No hay otros programas.</p>') +
+    '<label>Nota de incompatibilidad</label>' +
+    '<textarea oninput="editando.nota_incompatibilidad=this.value" rows="3">'+esc(p.nota_incompatibilidad)+'</textarea>' +
+  '</div>' +
+
+  '<div class="card">' +
+    '<h2>Estado y validación</h2>' +
+    '<label>Fecha de validación</label>' +
+    '<input type="date" oninput="editando.validado=this.value" value="'+esc(p.validado)+'">' +
+    '<div class="toggle' + (p.activo !== false ? ' on' : '') + '" id="tog-activo" onclick="toggleActivo()">' +
+      '<div class="sw"></div>' +
+      '<div class="toggle-txt">' + (p.activo !== false ? 'Activo (visible en el sitio)' : 'Inactivo (oculto en el sitio)') + '</div>' +
+    '</div>' +
+
+    '<label style="margin-top:18px">Elegibilidad (solo lectura — referencia)</label>' +
+    '<div class="readonly-box">'+esc(elegTxt)+'</div>' +
+    '<p class="hint">La elegibilidad no se edita desde el panel.</p>' +
+  '</div>' +
+
+  '<div class="card">' +
+    '<button class="btn-p" onclick="aplicar()">Aplicar cambios</button>' +
+    '<button class="btn-s" style="margin-top:8px" onclick="renderLista();mostrar(\'p-lista\')">Cancelar</button>' +
+  '</div>';
+}
+
+/* ===== Handlers del editor ===== */
+function autoId(){
+  // solo para programas nuevos sin id manual
+  var f = $('f-id');
+  if (f && (f.value === '' || f.dataset.auto === '1')) {
+    f.value = slug(editando.nombre);
+    f.dataset.auto = '1';
+    editando.id = f.value;
+  }
+}
+function prevLarga(){ $('prev-larga').innerHTML = mdPreview(editando.descripcion_larga); }
+function addItem(campo){ editando[campo].push(''); reRenderLista(campo); }
+function delItem(campo,i){ editando[campo].splice(i,1); reRenderLista(campo); }
+function addLink(){ editando.links.push({ texto:'', url:'', estilo:'primario' }); renderEditor(editIndex===-1); }
+function delLink(i){ editando.links.splice(i,1); renderEditor(editIndex===-1); }
+function toggleIncomp(id){
+  var a = editando.incompatible_con, k = a.indexOf(id);
+  if (k === -1) a.push(id); else a.splice(k,1);
+  renderEditor(editIndex===-1);
+}
+function toggleActivo(){
+  editando.activo = (editando.activo === false);
+  var t = $('tog-activo');
+  t.classList.toggle('on', editando.activo !== false);
+  t.querySelector('.toggle-txt').textContent = editando.activo !== false ? 'Activo (visible en el sitio)' : 'Inactivo (oculto en el sitio)';
+}
+// re-render parcial de una lista para no perder el foco del resto del formulario
+function reRenderLista(campo){
+  // re-render completo es lo más simple y seguro acá
+  renderEditor(editIndex === -1);
+}
+
+function aplicar(){
+  var p = editando;
+  if (!p.nombre || !p.nombre.trim()){ toast('El nombre es obligatorio', 'err'); return; }
+  if (editIndex === -1 && (!p.id || !p.id.trim())) p.id = slug(p.nombre);
+  if (!p.id || !p.id.trim()){ toast('El ID es obligatorio', 'err'); return; }
+
+  // ID único
+  var dup = PROGS.some(function(o, idx){ return o.id === p.id && idx !== editIndex; });
+  if (dup){ toast('Ya existe un programa con el ID "'+p.id+'"', 'err'); return; }
+
+  // limpiar items vacíos de las listas de texto
+  ['requisitos','documentacion','contactos'].forEach(function(c){
+    p[c] = p[c].map(function(s){ return (s||'').trim(); }).filter(function(s){ return s; });
+  });
+  p.links = p.links.filter(function(l){ return (l.texto||'').trim() || (l.url||'').trim(); });
+
+  if (editIndex === -1) PROGS.push(p); else PROGS[editIndex] = p;
+  marcarDirty();
+  renderLista();
+  mostrar('p-lista');
+  toast('Cambios aplicados (todavía no guardados)', 'ok');
+}
+
+/* ===== Guardar en GitHub ===== */
+function guardar(){
+  if (!dirty){ toast('No hay cambios para guardar'); return; }
+  var btn = $('btn-guardar');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Guardando...';
+  fetch('/api/guardar', {
+    method:'POST',
+    headers:{ 'Content-Type':'application/json' },
+    body: JSON.stringify({ password: PASS, version: DATA.version, programas: PROGS })
+  })
+  .then(function(r){ return r.json().then(function(j){ return { status:r.status, j:j }; }); })
+  .then(function(res){
+    btn.disabled = false; btn.textContent = 'Guardar cambios';
+    if (res.j && res.j.ok){
+      dirty = false; $('dirty').textContent = '';
+      DATA.actualizado = res.j.actualizado;
+      toast('Guardado ✓ Vercel va a redeployar en ~1 min', 'ok');
+    } else {
+      var msg = (res.j && res.j.error) || ('Error '+res.status);
+      if (res.status === 401) msg = 'Contraseña incorrecta';
+      toast('No se pudo guardar: ' + msg, 'err');
+    }
+  })
+  .catch(function(e){
+    btn.disabled = false; btn.textContent = 'Guardar cambios';
+    toast('Error de red al guardar: ' + e.message, 'err');
+  });
+}
+</script>
+</body>
+</html>

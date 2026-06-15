@@ -2459,7 +2459,7 @@ function cargarProgramas() {
   return fetch('programas.json')
     .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function(data){
-      PROGS = (data.programas || []).map(adaptarPrograma);
+      PROGS = (data.programas || []).filter(function(p){ return p.activo !== false; }).map(adaptarPrograma);
       var badge = document.getElementById('badge-todos');
       if (badge) badge.textContent = PROGS.length;
       // Si el usuario ya esta viendo "Todos los programas", refrescar la lista
@@ -2472,7 +2472,7 @@ function cargarProgramas() {
     .catch(function(e){
       console.error('No se pudo cargar programas.json:', e);
       var lista = document.getElementById('lista-todos');
-      if (lista) lista.innerHTML = '<div class="no-res">⚠️ No se pudieron cargar los programas. Si abriste el archivo con doble clic (file://), hay que servirlo desde un servidor web o publicarlo (GitHub Pages ya lo hace).</div>';
+      if (lista) lista.innerHTML = '<div class="no-res">⚠️ No se pudieron cargar los programas. Si abriste el archivo con doble clic (file://), hay que servirlo desde un servidor web o publicarlo (Vercel ya lo hace).</div>';
     });
 }
 
