@@ -49,6 +49,8 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--celeste)
 .btn-p:disabled{opacity:.5;cursor:not-allowed;}
 .btn-s{width:100%;padding:11px;background:transparent;color:var(--negro);border:2px solid var(--negro);font-family:"Barlow Condensed",sans-serif;font-size:.95rem;font-weight:800;font-style:italic;cursor:pointer;letter-spacing:.3px;text-transform:uppercase;transition:all .15s;}
 .btn-s:hover{background:var(--negro);color:#fff;}
+.btn-del{width:100%;padding:11px;background:transparent;color:var(--rojo);border:2px solid var(--rojo);font-family:"Barlow Condensed",sans-serif;font-size:.95rem;font-weight:800;font-style:italic;cursor:pointer;letter-spacing:.3px;text-transform:uppercase;transition:all .15s;}
+.btn-del:hover{background:var(--rojo);color:#fff;}
 
 /* mini botones inline */
 .mini{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;border:none;cursor:pointer;padding:7px 12px;font-size:.8rem;}
@@ -390,7 +392,17 @@ function renderEditor(esNuevo){
   '<div class="card">' +
     '<button class="btn-p" onclick="aplicar()">Aplicar cambios</button>' +
     '<button class="btn-s" style="margin-top:8px" onclick="renderLista();mostrar(\'p-lista\')">Cancelar</button>' +
+    (esNuevo ? '' : '<div id="del-zone">' + delZoneHTML() + '</div>') +
   '</div>';
+}
+
+// Zona de "Eliminar programa": solo visible/habilitada si el programa está inactivo
+function delZoneHTML(){
+  if (editando.activo !== false) {
+    return '<p class="hint" style="margin-top:16px;border-top:1px solid var(--gris-borde);padding-top:14px">' +
+      'Para poder eliminar un programa, primero marcalo como <strong>inactivo</strong>.</p>';
+  }
+  return '<button class="btn-del" style="margin-top:16px" onclick="eliminar()">Eliminar programa</button>';
 }
 
 /* ===== Handlers del editor ===== */
@@ -418,6 +430,19 @@ function toggleActivo(){
   var t = $('tog-activo');
   t.classList.toggle('on', editando.activo !== false);
   t.querySelector('.toggle-txt').textContent = editando.activo !== false ? 'Activo (visible en el sitio)' : 'Inactivo (oculto en el sitio)';
+  var dz = $('del-zone');
+  if (dz) dz.innerHTML = delZoneHTML();
+}
+function eliminar(){
+  if (editIndex === -1) return;            // no aplica a programas nuevos
+  if (editando.activo !== false) return;   // solo inactivos
+  if (!confirm('¿Estás seguro? Esta acción no se puede deshacer.')) return;
+  PROGS.splice(editIndex, 1);
+  editando = null; editIndex = -1;
+  marcarDirty();
+  renderLista();
+  mostrar('p-lista');
+  toast('Programa eliminado (todavía no guardado)', 'ok');
 }
 // re-render parcial de una lista para no perder el foco del resto del formulario
 function reRenderLista(campo){
