@@ -989,33 +989,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "PRUEBA",
-      "nombre": "Nombre de Prueba",
-      "ambito": "caba",
-      "descripcion_corta": "blabla lablabl",
-      "descripcion_larga": "**Negrita** \nblablablabl",
-      "requisitos": [
-        "- Mayor 18 años"
-      ],
-      "documentacion": [],
-      "como_acceder": "",
-      "links": [],
-      "contactos": [],
-      "incompatible_con": [
-        "ciudadania_portena",
-        "ticket_social",
-        "nuestras_familias",
-        "vivir_en_casa"
-      ],
-      "nota_incompatibilidad": "",
-      "validado": "2026-06-15",
-      "activo": true,
-      "elegibilidad": {
-        "logica": "todas",
-        "condiciones": []
-      }
     }
   ]
 }
