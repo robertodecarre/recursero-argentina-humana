@@ -24,23 +24,45 @@
       ],
       "como_acceder": "Trámite virtual: enviar mail a inscripcionescp@buenosaires.gob.ar indicando DNI/precaria, CUIL, nombre, fecha de nacimiento y domicilio de cada integrante. Presencial: Se realiza en la SAS de tu comuna (lunes a viernes 9:30 a 15:30 hs) o Sede Central: Salguero 979, Almagro (lun a vie 9 a 15 hs).",
       "links": [
-        { "texto": "Web oficial GCBA", "url": "https://buenosaires.gob.ar/desarrollohumanoyhabitat/ciudadania-portena", "estilo": "primario" },
-        { "texto": "Sacar turno en Sede de Atención Social", "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346", "estilo": "primario" },
-        { "texto": "Consultas en Salguero 979 (beneficiarios)", "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=5685", "estilo": "secundario" },
-        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+        {
+          "texto": "Web oficial GCBA",
+          "url": "https://buenosaires.gob.ar/desarrollohumanoyhabitat/ciudadania-portena",
+          "estilo": "primario"
+        },
+        {
+          "texto": "Sacar turno en Sede de Atención Social",
+          "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346",
+          "estilo": "primario"
+        },
+        {
+          "texto": "Consultas en Salguero 979 (beneficiarios)",
+          "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=5685",
+          "estilo": "secundario"
+        },
+        {
+          "texto": "Boti WhatsApp",
+          "url": "https://wa.me/5491150500147",
+          "estilo": "secundario"
+        }
       ],
       "contactos": [
         "inscripcionescp@buenosaires.gob.ar",
         "Salguero 979, Almagro — Lun a vie 9 a 15 hs",
         "Línea 147"
       ],
-      "incompatible_con": ["ticket_social"],
+      "incompatible_con": [
+        "ticket_social"
+      ],
       "nota_incompatibilidad": "Para acceder a Ciudadanía Porteña ($85.000–$115.000 promedio/hogar, Abril 2026), que es significativamente mayor al Ticket Social, debería darse de baja de este último (el trámite lo gestiona el mismo equipo).",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "res_caba", "op": ">=", "valor": 2 }
+          {
+            "campo": "res_caba",
+            "op": ">=",
+            "valor": 2
+          }
         ]
       }
     },
@@ -63,21 +85,35 @@
       ],
       "como_acceder": "Online: tramitesdigitales.buenosaires.gob.ar/formulario/formularioTemplate/ticketSocial · Presencial: Sede de Atención Social de la comuna (lun a vie 9:30 a 15:30 hs) · Sede Central: Av. Entre Ríos 1492 PB.",
       "links": [
-        { "texto": "Inscripción online", "url": "https://tramitesdigitales.buenosaires.gob.ar/formulario/formularioTemplate/ticketSocial", "estilo": "primario" },
-        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+        {
+          "texto": "Inscripción online",
+          "url": "https://tramitesdigitales.buenosaires.gob.ar/formulario/formularioTemplate/ticketSocial",
+          "estilo": "primario"
+        },
+        {
+          "texto": "Boti WhatsApp",
+          "url": "https://wa.me/5491150500147",
+          "estilo": "secundario"
+        }
       ],
       "contactos": [
         "ticketsocial@buenosaires.gob.ar",
         "Av. Entre Ríos 1492 PB — Lun a vie 9 a 15 hs",
         "Línea 147"
       ],
-      "incompatible_con": ["ciudadania_portena"],
+      "incompatible_con": [
+        "ciudadania_portena"
+      ],
       "nota_incompatibilidad": "Ciudadanía Porteña ($85.000–$115.000 promedio/hogar, Abril 2026) puede duplicar o triplicar al Ticket Social según composición familiar. Consultar en sede el pase a Ciudadanía Porteña.",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "res_caba", "op": ">=", "valor": 2 }
+          {
+            "campo": "res_caba",
+            "op": ">=",
+            "valor": 2
+          }
         ]
       }
     },
@@ -103,25 +139,49 @@
       ],
       "como_acceder": "Online: buenosaires.gob.ar/tramites/inscripcion-en-el-programa-nuestras-familias · Presencial: cualquier Sede de Atención Social (lun a vie 9:30 a 15:30 hs). En situaciones de emergencia, el ingreso puede ser por derivación directa de la SAS (Sede de Atención Social) de la comuna.",
       "links": [
-        { "texto": "Turno en SAS", "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346", "estilo": "primario" }
+        {
+          "texto": "Turno en SAS",
+          "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346",
+          "estilo": "primario"
+        }
       ],
       "contactos": [
         "nuestrasfamilias@buenosaires.gob.ar",
         "Av. Entre Ríos 1492 1° piso, oficina 109",
         "4300-9610 / 8674 — Lun a vie 10 a 16 hs"
       ],
-      "incompatible_con": ["auh"],
+      "incompatible_con": [
+        "auh"
+      ],
       "nota_incompatibilidad": "No compatible con AUH. Si ya puede cobrar AUH ($136.666/hijo/mes), la AUH sumada a la Tarjeta Alimentar ($72.250 con 1 hijo · $113.299 con 2 · $149.425 con 3 o más · junio 2026) generalmente supera a Nuestras Familias. Conviene hacer el cambio si ya cumple los requisitos.",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "res_caba", "op": ">=", "valor": 2 },
-          { "cualquiera": [
-            { "campo": "hijos", "op": "==", "valor": "si" },
-            { "campo": "emb", "op": "==", "valor": "si" }
-          ]},
-          { "campo": "cobra", "op": "no_incluye", "valor": "auh" }
+          {
+            "campo": "res_caba",
+            "op": ">=",
+            "valor": 2
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "hijos",
+                "op": "==",
+                "valor": "si"
+              },
+              {
+                "campo": "emb",
+                "op": "==",
+                "valor": "si"
+              }
+            ]
+          },
+          {
+            "campo": "cobra",
+            "op": "no_incluye",
+            "valor": "auh"
+          }
         ]
       }
     },
@@ -130,7 +190,7 @@
       "activo": true,
       "nombre": "Vivir en Casa",
       "ambito": "caba",
-      "descripcion_corta": "Subsidio del GCBA para alquiler para personas de 60 años o más en riesgo habitacional. ⚠️ El GCBA no publica el monto — consultarlo en vivirencasa@buenosaires.gob.ar o al 4342-8587 (lun a vie 9 a 15 hs).",
+      "descripcion_corta": "Subsidiooo del GCBA para alquiler para personas de 60 años o más en riesgo habitacional. ⚠️ El GCBA no publica el monto — consultarlo en vivirencasa@buenosaires.gob.ar o al 4342-8587 (lun a vie 9 a 15 hs).",
       "descripcion_larga": "Vivir en Casa es un **apoyo económico del GCBA** para gastos de **alquiler, expensas y servicios**, destinado a personas **mayores de 60 años** en riesgo habitacional que no tienen el beneficio por obra social.\n\n⚠️ **MONTO:** el GCBA no publica el monto actualizado en su web. Consultarlo en **vivirencasa@buenosaires.gob.ar** o llamando al **4342-8587** (lun a vie 9 a 15 hs) antes de informarlo.\n\n⚠️ **Diferencia con el subsidio habitacional (Ley 6935):** este programa es para personas de 60+ que tienen alquiler pero no pueden sostenerlo. Si la persona está en **situación de calle o riesgo inminente de desamparo**, el camino correcto es el **Apoyo Habitacional Ley 6935**, que no tiene límite de edad y cubre emergencias. Los dos programas son incompatibles entre sí al mismo tiempo.",
       "requisitos": [
         "60 años o más",
@@ -147,22 +207,40 @@
       ],
       "como_acceder": "Online: buenosaires.gob.ar/tramites/postulacion-al-subsidio-vivir-en-casa · Telefónico: 4342-8587 (lun a vie 9 a 15 hs) · Presencial: Av. Belgrano 858 PB o cualquier Sede de Atención Social.",
       "links": [
-        { "texto": "Turno en SAS", "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346", "estilo": "primario" },
-        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+        {
+          "texto": "Turno en SAS",
+          "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346",
+          "estilo": "primario"
+        },
+        {
+          "texto": "Boti WhatsApp",
+          "url": "https://wa.me/5491150500147",
+          "estilo": "secundario"
+        }
       ],
       "contactos": [
         "vivirencasa@buenosaires.gob.ar",
         "4342-8587 — Lun a vie 9 a 15 hs",
         "Av. Belgrano 858 PB"
       ],
-      "incompatible_con": ["apoyo_habitacional_ley6935"],
+      "incompatible_con": [
+        "apoyo_habitacional_ley6935"
+      ],
       "nota_incompatibilidad": "No compatible con el Programa de Apoyo Habitacional Ley 6935. Solo se puede cobrar uno de los dos. Abrí cada programa para comparar cuál se ajusta mejor a la situación.",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "res_caba", "op": ">=", "valor": 2 },
-          { "campo": "edadMin", "op": ">=", "valor": 60 }
+          {
+            "campo": "res_caba",
+            "op": ">=",
+            "valor": 2
+          },
+          {
+            "campo": "edadMin",
+            "op": ">=",
+            "valor": 60
+          }
         ]
       }
     },
@@ -191,8 +269,16 @@
       ],
       "como_acceder": "Presencial en Av. Entre Ríos 1492 CABA, lun a vie de 9 a 15 hs. También por mail a atencioninmediata@buenosaires.gob.ar. El informe social lo puede hacer una trabajadora social del GCBA o de una organización.",
       "links": [
-        { "texto": "Info oficial GCBA", "url": "https://buenosaires.gob.ar/desarrollohumanoyhabitat/inclusion-social-y-atencion-inmediata/asistencia-habitacional", "estilo": "primario" },
-        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+        {
+          "texto": "Info oficial GCBA",
+          "url": "https://buenosaires.gob.ar/desarrollohumanoyhabitat/inclusion-social-y-atencion-inmediata/asistencia-habitacional",
+          "estilo": "primario"
+        },
+        {
+          "texto": "Boti WhatsApp",
+          "url": "https://wa.me/5491150500147",
+          "estilo": "secundario"
+        }
       ],
       "contactos": [
         "Av. Entre Ríos 1492 CABA — Lun a vie 9 a 15 hs",
@@ -200,17 +286,33 @@
         "108 (emergencias calle 24 hs)",
         "147"
       ],
-      "incompatible_con": ["vivir_en_casa"],
+      "incompatible_con": [
+        "vivir_en_casa"
+      ],
       "nota_incompatibilidad": "No compatible con Vivir en Casa. Solo se puede cobrar uno de los dos. Abrí cada programa para comparar cuál se ajusta mejor a la situación.",
       "validado": "2026-04-16",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "res_caba", "op": ">=", "valor": 2 },
-          { "cualquiera": [
-            { "campo": "vivienda", "op": "==", "valor": "calle" },
-            { "campo": "vivienda", "op": "==", "valor": "inquilinato" }
-          ]}
+          {
+            "campo": "res_caba",
+            "op": ">=",
+            "valor": 2
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "vivienda",
+                "op": "==",
+                "valor": "calle"
+              },
+              {
+                "campo": "vivienda",
+                "op": "==",
+                "valor": "inquilinato"
+              }
+            ]
+          }
         ]
       }
     },
@@ -234,21 +336,45 @@
       ],
       "como_acceder": "Online desde Mi ANSES o presencial en cualquier oficina de ANSES con turno (anses.gob.ar o 130).",
       "links": [
-        { "texto": "Sacar turno ANSES", "url": "https://servicioswww.anses.gob.ar/TurnosInternet/g/fd35d1767f064d88861198beaeec30cb/Solicitud/IngresoSolicitud?idprest=36", "estilo": "primario" }
+        {
+          "texto": "Sacar turno ANSES",
+          "url": "https://servicioswww.anses.gob.ar/TurnosInternet/g/fd35d1767f064d88861198beaeec30cb/Solicitud/IngresoSolicitud?idprest=36",
+          "estilo": "primario"
+        }
       ],
-      "contactos": ["ANSES: 130 (gratuito)"],
+      "contactos": [
+        "ANSES: 130 (gratuito)"
+      ],
       "incompatible_con": [],
       "nota_incompatibilidad": "",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "emb", "op": "==", "valor": "si" },
-          { "campo": "formal", "op": "==", "valor": false },
-          { "cualquiera": [
-            { "campo": "nac", "op": "==", "valor": "arg" },
-            { "campo": "res_arg", "op": ">=", "valor": 2 }
-          ]}
+          {
+            "campo": "emb",
+            "op": "==",
+            "valor": "si"
+          },
+          {
+            "campo": "formal",
+            "op": "==",
+            "valor": false
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "nac",
+                "op": "==",
+                "valor": "arg"
+              },
+              {
+                "campo": "res_arg",
+                "op": ">=",
+                "valor": 2
+              }
+            ]
+          }
         ]
       }
     },
@@ -275,21 +401,48 @@
       ],
       "como_acceder": "Online desde Mi ANSES con CUIL y clave. Presencial en cualquier oficina de ANSES con turno previo (anses.gob.ar o llamando al 130).",
       "links": [
-        { "texto": "Sacar turno ANSES", "url": "https://servicioswww.anses.gob.ar/TurnosInternet/g/90b8942487124b54a7fb09eff6f38793/Solicitud/IngresoSolicitud?idprest=31", "estilo": "primario" }
+        {
+          "texto": "Sacar turno ANSES",
+          "url": "https://servicioswww.anses.gob.ar/TurnosInternet/g/90b8942487124b54a7fb09eff6f38793/Solicitud/IngresoSolicitud?idprest=31",
+          "estilo": "primario"
+        }
       ],
-      "contactos": ["ANSES: 130 (gratuito)", "mi.anses.gob.ar"],
-      "incompatible_con": ["nuestras_familias"],
+      "contactos": [
+        "ANSES: 130 (gratuito)",
+        "mi.anses.gob.ar"
+      ],
+      "incompatible_con": [
+        "nuestras_familias"
+      ],
       "nota_incompatibilidad": "La AUH ($136.666/hijo/mes) no es compatible con Nuestras Familias. La AUH además habilita automáticamente a la Tarjeta Alimentar ($72.250 con 1 hijo · $113.299 con 2 · $149.425 con 3 o más · junio 2026) — conviene pasarse si ya se cumplen los requisitos.",
       "validado": "2026-06-07",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "hijos", "op": "==", "valor": "si" },
-          { "campo": "formal", "op": "==", "valor": false },
-          { "cualquiera": [
-            { "campo": "nac", "op": "==", "valor": "arg" },
-            { "campo": "res_arg", "op": ">=", "valor": 2 }
-          ]}
+          {
+            "campo": "hijos",
+            "op": "==",
+            "valor": "si"
+          },
+          {
+            "campo": "formal",
+            "op": "==",
+            "valor": false
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "nac",
+                "op": "==",
+                "valor": "arg"
+              },
+              {
+                "campo": "res_arg",
+                "op": ">=",
+                "valor": 2
+              }
+            ]
+          }
         ]
       }
     },
@@ -310,19 +463,39 @@
       ],
       "como_acceder": "Se asigna automaticamente. Si no llegó, consultar en Mi ANSES o llamando al 130.",
       "links": [],
-      "contactos": ["ANSES: 130 (gratuito)"],
+      "contactos": [
+        "ANSES: 130 (gratuito)"
+      ],
       "incompatible_con": [],
       "nota_incompatibilidad": "",
       "validado": "2026-06-07",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "hijos", "op": "==", "valor": "si" },
-          { "campo": "formal", "op": "==", "valor": false },
-          { "cualquiera": [
-            { "campo": "nac", "op": "==", "valor": "arg" },
-            { "campo": "res_arg", "op": ">=", "valor": 2 }
-          ]}
+          {
+            "campo": "hijos",
+            "op": "==",
+            "valor": "si"
+          },
+          {
+            "campo": "formal",
+            "op": "==",
+            "valor": false
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "nac",
+                "op": "==",
+                "valor": "arg"
+              },
+              {
+                "campo": "res_arg",
+                "op": ">=",
+                "valor": 2
+              }
+            ]
+          }
         ]
       }
     },
@@ -345,24 +518,55 @@
       ],
       "como_acceder": "El Complemento Leche se acredita automáticamente. Para Nacimiento/Adopción: tramitar en Mi ANSES online o presencialmente en ANSES con turno. Si no llega el complemento automático, llamar al 130 o ingresar a Mi ANSES.",
       "links": [
-        { "texto": "Info Plan 1000 Días", "url": "https://www.argentina.gob.ar/salud/1000dias/en-que-consiste", "estilo": "primario" }
+        {
+          "texto": "Info Plan 1000 Días",
+          "url": "https://www.argentina.gob.ar/salud/1000dias/en-que-consiste",
+          "estilo": "primario"
+        }
       ],
-      "contactos": ["ANSES: 130 (gratuito)", "mi.anses.gob.ar"],
+      "contactos": [
+        "ANSES: 130 (gratuito)",
+        "mi.anses.gob.ar"
+      ],
       "incompatible_con": [],
       "nota_incompatibilidad": "",
       "validado": "2026-06-07",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "cualquiera": [
-            { "campo": "hijos", "op": "==", "valor": "si" },
-            { "campo": "emb", "op": "==", "valor": "si" }
-          ]},
-          { "campo": "formal", "op": "==", "valor": false },
-          { "cualquiera": [
-            { "campo": "nac", "op": "==", "valor": "arg" },
-            { "campo": "res_arg", "op": ">=", "valor": 2 }
-          ]}
+          {
+            "cualquiera": [
+              {
+                "campo": "hijos",
+                "op": "==",
+                "valor": "si"
+              },
+              {
+                "campo": "emb",
+                "op": "==",
+                "valor": "si"
+              }
+            ]
+          },
+          {
+            "campo": "formal",
+            "op": "==",
+            "valor": false
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "nac",
+                "op": "==",
+                "valor": "arg"
+              },
+              {
+                "campo": "res_arg",
+                "op": ">=",
+                "valor": 2
+              }
+            ]
+          }
         ]
       }
     },
@@ -383,7 +587,11 @@
       ],
       "como_acceder": "Inscribirse directamente en el hospital o centro de salud publico mas cercano, presentando el DNI. No requiere turno previo.",
       "links": [
-        { "texto": "Mas info - Argentina.gob.ar", "url": "https://www.argentina.gob.ar/salud/sumar", "estilo": "primario" }
+        {
+          "texto": "Mas info - Argentina.gob.ar",
+          "url": "https://www.argentina.gob.ar/salud/sumar",
+          "estilo": "primario"
+        }
       ],
       "contactos": [
         "Hospital o Centro de Salud publico mas cercano",
@@ -395,11 +603,25 @@
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "os", "op": "!=", "valor": "si" },
-          { "cualquiera": [
-            { "campo": "nac", "op": "==", "valor": "arg" },
-            { "campo": "res_arg", "op": ">=", "valor": 1 }
-          ]}
+          {
+            "campo": "os",
+            "op": "!=",
+            "valor": "si"
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "nac",
+                "op": "==",
+                "valor": "arg"
+              },
+              {
+                "campo": "res_arg",
+                "op": ">=",
+                "valor": 1
+              }
+            ]
+          }
         ]
       }
     },
@@ -426,27 +648,69 @@
       ],
       "como_acceder": "**Inscripción 100% online** en becasprogresar.educacion.gob.ar.\n\nRequiere **cuenta validada en la app Mi Argentina**.\n\n⚠️ **Obligatorio y Superior:** inscripción **cerrada** (finalizó en abril 2026) — esperar la próxima convocatoria.\n\n✅ **Formación Profesional:** abierto hasta el **27 de noviembre de 2026**.",
       "links": [
-        { "texto": "Plataforma Progresar", "url": "https://becasprogresar.educacion.gob.ar/", "estilo": "primario" },
-        { "texto": "Mi Argentina", "url": "https://mi.argentina.gob.ar/", "estilo": "primario" }
+        {
+          "texto": "Plataforma Progresar",
+          "url": "https://becasprogresar.educacion.gob.ar/",
+          "estilo": "primario"
+        },
+        {
+          "texto": "Mi Argentina",
+          "url": "https://mi.argentina.gob.ar/",
+          "estilo": "primario"
+        }
       ],
-      "contactos": ["0800-999-1066 (opción 1)"],
+      "contactos": [
+        "0800-999-1066 (opción 1)"
+      ],
       "incompatible_con": [],
       "nota_incompatibilidad": "",
       "validado": "2026-06-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "edadMax", "op": ">=", "valor": 16 },
-          { "campo": "edadMin", "op": "<=", "valor": 35 },
-          { "cualquiera": [
-            { "campo": "formal", "op": "==", "valor": false },
-            { "campo": "ingresos", "op": "==", "valor": "menos1" },
-            { "campo": "ingresos", "op": "==", "valor": "1a3" }
-          ]},
-          { "cualquiera": [
-            { "campo": "nac", "op": "==", "valor": "arg" },
-            { "campo": "res_arg", "op": ">=", "valor": 2 }
-          ]}
+          {
+            "campo": "edadMax",
+            "op": ">=",
+            "valor": 16
+          },
+          {
+            "campo": "edadMin",
+            "op": "<=",
+            "valor": 35
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "formal",
+                "op": "==",
+                "valor": false
+              },
+              {
+                "campo": "ingresos",
+                "op": "==",
+                "valor": "menos1"
+              },
+              {
+                "campo": "ingresos",
+                "op": "==",
+                "valor": "1a3"
+              }
+            ]
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "nac",
+                "op": "==",
+                "valor": "arg"
+              },
+              {
+                "campo": "res_arg",
+                "op": ">=",
+                "valor": 2
+              }
+            ]
+          }
         ]
       }
     },
@@ -471,33 +735,82 @@
       ],
       "como_acceder": "⚠️ No hay inscripción abierta al público en general (abril 2026). Solo ex titulares del Potenciar Trabajo. Para consultar si hubo novedades: 0800-222-3294 (Secretaría de Niñez, Adolescencia y Familia) o ANSES al 130.",
       "links": [
-        { "texto": "Info oficial", "url": "https://www.argentina.gob.ar/programa-de-acompanamiento-social-0", "estilo": "primario" },
-        { "texto": "Consultas 0800-222-3294", "url": "tel:08002223294", "estilo": "secundario" }
+        {
+          "texto": "Info oficial",
+          "url": "https://www.argentina.gob.ar/programa-de-acompanamiento-social-0",
+          "estilo": "primario"
+        },
+        {
+          "texto": "Consultas 0800-222-3294",
+          "url": "tel:08002223294",
+          "estilo": "secundario"
+        }
       ],
       "contactos": [
         "Secretaría de Niñez: 0800-222-3294 (lun a vie 8 a 20 hs)",
         "ANSES: 130 (gratuito)"
       ],
-      "incompatible_con": ["jubilacion", "puam"],
+      "incompatible_con": [
+        "jubilacion",
+        "puam"
+      ],
       "nota_incompatibilidad": "El PAS ($78.000/mes) no es compatible con cobrar jubilación ni con la PUAM ($304.243/mes, Abril 2026). Si puede tramitar la PUAM, es significativamente mayor y además incluye cobertura de PAMI.",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "cualquiera": [
-            { "campo": "edadMin", "op": ">=", "valor": 50 },
-            { "campo": "num_hijos", "op": ">=", "valor": 4 }
-          ]},
-          { "campo": "cobra", "op": "no_incluye", "valor": "jubilacion" },
-          { "campo": "cobra", "op": "no_incluye", "valor": "puam" },
-          { "cualquiera": [
-            { "campo": "formal", "op": "==", "valor": false },
-            { "campo": "ingresos", "op": "==", "valor": "menos1" }
-          ]},
-          { "cualquiera": [
-            { "campo": "nac", "op": "==", "valor": "arg" },
-            { "campo": "res_arg", "op": ">=", "valor": 1 }
-          ]}
+          {
+            "cualquiera": [
+              {
+                "campo": "edadMin",
+                "op": ">=",
+                "valor": 50
+              },
+              {
+                "campo": "num_hijos",
+                "op": ">=",
+                "valor": 4
+              }
+            ]
+          },
+          {
+            "campo": "cobra",
+            "op": "no_incluye",
+            "valor": "jubilacion"
+          },
+          {
+            "campo": "cobra",
+            "op": "no_incluye",
+            "valor": "puam"
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "formal",
+                "op": "==",
+                "valor": false
+              },
+              {
+                "campo": "ingresos",
+                "op": "==",
+                "valor": "menos1"
+              }
+            ]
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "nac",
+                "op": "==",
+                "valor": "arg"
+              },
+              {
+                "campo": "res_arg",
+                "op": ">=",
+                "valor": 1
+              }
+            ]
+          }
         ]
       }
     },
@@ -523,21 +836,48 @@
       ],
       "como_acceder": "Tramitar en Mi ANSES online o presencialmente en cualquier oficina de ANSES con turno previo (anses.gob.ar o 130).",
       "links": [
-        { "texto": "Sacar turno ANSES", "url": "https://www.anses.gob.ar/atencion/sacar-turno", "estilo": "primario" }
+        {
+          "texto": "Sacar turno ANSES",
+          "url": "https://www.anses.gob.ar/atencion/sacar-turno",
+          "estilo": "primario"
+        }
       ],
-      "contactos": ["ANSES: 130 (gratuito)", "mi.anses.gob.ar"],
-      "incompatible_con": ["pas"],
+      "contactos": [
+        "ANSES: 130 (gratuito)",
+        "mi.anses.gob.ar"
+      ],
+      "incompatible_con": [
+        "pas"
+      ],
       "nota_incompatibilidad": "La PUAM ($304.243/mes, Abril 2026) no es compatible con el PAS ($78.000/mes). La PUAM es significativamente mayor e incluye además cobertura de PAMI.",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "edadMin", "op": ">=", "valor": 65 },
-          { "campo": "cobra", "op": "no_incluye", "valor": "jubilacion" },
-          { "cualquiera": [
-            { "campo": "nac", "op": "==", "valor": "arg" },
-            { "campo": "res_arg", "op": ">=", "valor": 20 }
-          ]}
+          {
+            "campo": "edadMin",
+            "op": ">=",
+            "valor": 65
+          },
+          {
+            "campo": "cobra",
+            "op": "no_incluye",
+            "valor": "jubilacion"
+          },
+          {
+            "cualquiera": [
+              {
+                "campo": "nac",
+                "op": "==",
+                "valor": "arg"
+              },
+              {
+                "campo": "res_arg",
+                "op": ">=",
+                "valor": 20
+              }
+            ]
+          }
         ]
       }
     },
@@ -562,18 +902,36 @@
       ],
       "como_acceder": "Tramitar en cualquier oficina de ANSES con turno previo (anses.gob.ar o 130) o en Mi ANSES online.",
       "links": [
-        { "texto": "Turno ANSES", "url": "https://www.anses.gob.ar/atencion/sacar-turno", "estilo": "primario" }
+        {
+          "texto": "Turno ANSES",
+          "url": "https://www.anses.gob.ar/atencion/sacar-turno",
+          "estilo": "primario"
+        }
       ],
-      "contactos": ["ANSES: 130 (gratuito)"],
+      "contactos": [
+        "ANSES: 130 (gratuito)"
+      ],
       "incompatible_con": [],
       "nota_incompatibilidad": "",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "disc", "op": "==", "valor": "si" },
-          { "campo": "cobra", "op": "no_incluye", "valor": "jubilacion" },
-          { "campo": "formal", "op": "==", "valor": false }
+          {
+            "campo": "disc",
+            "op": "==",
+            "valor": "si"
+          },
+          {
+            "campo": "cobra",
+            "op": "no_incluye",
+            "valor": "jubilacion"
+          },
+          {
+            "campo": "formal",
+            "op": "==",
+            "valor": false
+          }
         ]
       }
     },
@@ -598,18 +956,37 @@
       ],
       "como_acceder": "Inscripción online en el portal del GCBA o presencial en el CPI mas cercano. También por Boti (WhatsApp 11-5050-0147).",
       "links": [
-        { "texto": "Ver CPI cercanos e inscribirse", "url": "https://buenosaires.gob.ar/educacion/establecimientos/centros-de-primera-infancia", "estilo": "primario" },
-        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+        {
+          "texto": "Ver CPI cercanos e inscribirse",
+          "url": "https://buenosaires.gob.ar/educacion/establecimientos/centros-de-primera-infancia",
+          "estilo": "primario"
+        },
+        {
+          "texto": "Boti WhatsApp",
+          "url": "https://wa.me/5491150500147",
+          "estilo": "secundario"
+        }
       ],
-      "contactos": ["Linea 147", "CPI o Sede Comunal mas cercana"],
+      "contactos": [
+        "Linea 147",
+        "CPI o Sede Comunal mas cercana"
+      ],
       "incompatible_con": [],
       "nota_incompatibilidad": "",
       "validado": "2026-04-15",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
-          { "campo": "res_caba", "op": ">=", "valor": 2 },
-          { "campo": "hijos", "op": "==", "valor": "si" }
+          {
+            "campo": "res_caba",
+            "op": ">=",
+            "valor": 2
+          },
+          {
+            "campo": "hijos",
+            "op": "==",
+            "valor": "si"
+          }
         ]
       }
     }
