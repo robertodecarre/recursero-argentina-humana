@@ -2622,452 +2622,55 @@ function verDetalle(id, esInc) {
 }
 
 // DATOS SERVICIOS
-var CIS = [
-  // — C1 · Propios —
-  {com:1, bar:'San Telmo', nom:'Azucena Villaflor', dir:'Piedras 1583', cont:'Línea 108', pop:'Mujeres con niños/as', plazas:80},
-  {com:1, bar:'San Telmo', nom:'Hogar Félix Lora', dir:'Av. Paseo Colón 811', cont:'Línea 108', pop:'Hombres', plazas:102},
-  {com:1, bar:'San Telmo', nom:'26 de Julio', dir:'Av. Belgrano 482', cont:'Línea 108', pop:'Mujeres con niños/as', plazas:74},
-  // — C1 · Gestión asociada —
-  {com:1, bar:'San Telmo', nom:'Julieta Lanteri', dir:'Tacuarí 1670', cont:'Línea 108', pop:'Hombres (salud mental)', plazas:32},
-  {com:1, bar:'Constitución', nom:'Brasil', dir:'Brasil 1334', cont:'Línea 108', pop:'Hombres', plazas:66},
-  {com:1, bar:'Constitución', nom:'Rosedal', dir:'Santiago del Estero 1685', cont:'Línea 108', pop:'Adultos mayores (mixto)', plazas:139},
-  {com:1, bar:'Retiro', nom:'Retiro', dir:'Av. Gendarmería Nacional 522', cont:'Línea 108', pop:'Hombres', plazas:196},
-  {com:1, bar:'Constitución', nom:'Entre Ríos', dir:'Av. Entre Ríos 1742', cont:'Línea 108', pop:'Mujeres y diversidades', plazas:90},
-  {com:1, bar:'San Telmo', nom:'Tacuarí', dir:'Tacuarí 1523', cont:'Línea 108', pop:'Hombres', plazas:70},
-  {com:1, bar:'Constitución', nom:'Casa Blanca', dir:'Santiago del Estero 1687', cont:'Línea 108', pop:'Hombres', plazas:149},
-  {com:1, bar:'Constitución', nom:'América', dir:'Bernardo de Irigoyen 1608', cont:'Línea 108', pop:'Familias', plazas:270},
-  {com:1, bar:'Constitución', nom:'Garay', dir:'Juan de Garay 1450', cont:'Línea 108', pop:'Hombres', plazas:180},
-  {com:1, bar:'Constitución', nom:'Brisas', dir:'Tacuarí 1621', cont:'Línea 108', pop:'Hombres', plazas:144},
-  {com:1, bar:'Constitución', nom:'Carlos Calvo', dir:'Carlos Calvo 1231', cont:'Línea 108', pop:'Familias', plazas:80},
-  {com:1, bar:'Monserrat', nom:'Lima', dir:'Lima 477', cont:'Línea 108', pop:'Hombres (consumos problemáticos)', plazas:40},
-  // — C1 · Conveniados —
-  {com:1, bar:'San Telmo', nom:'Hogar Año Santo', dir:'Chacabuco 1345', cont:'Línea 108', pop:'Hombres 18-59 años', plazas:86},
-  {com:1, bar:'Retiro', nom:'Monseñor Albisetti', dir:'Suipacha 1241', cont:'Línea 108', pop:'Hombres 18-59 años', plazas:24},
-  {com:1, bar:'Constitución', nom:'Hogar Refugio de María', dir:'Av. Independencia 1150', cont:'Línea 108', pop:'Mujeres solas 18-59 años', plazas:15},
-  {com:1, bar:'Constitución', nom:'Hogar Amparo', dir:"O'Brien 1242", cont:'Línea 108', pop:'Mujeres solas 18-59 años', plazas:40},
-  {com:1, bar:'Constitución', nom:'Hogar Betania', dir:"O'Brien 1264", cont:'Línea 108', pop:'Mujeres solas 18-59 años', plazas:50},
-  // — C3 · Propios —
-  {com:3, bar:'San Cristóbal', nom:'Loria (módulos)', dir:'Cochabamba 3270', cont:'Línea 108', pop:'Familias', plazas:258},
-  {com:3, bar:'Balvanera', nom:'Once PB', dir:'Tte. Gral. Juan Domingo Perón 2869', cont:'Línea 108', pop:'Hombres', plazas:192},
-  // — C3 · Gestión asociada —
-  {com:3, bar:'Balvanera', nom:'Once (1° piso)', dir:'Pres. Juan Domingo Perón 2869', cont:'Línea 108', pop:'Hombres', plazas:100},
-  {com:3, bar:'Balvanera', nom:'Urquiza 250', dir:'Gral. Urquiza 250', cont:'Línea 108', pop:'Hombres', plazas:87},
-  {com:3, bar:'Balvanera', nom:'Urquiza 264', dir:'Gral. Urquiza 264', cont:'Línea 108', pop:'Familias', plazas:96},
-  {com:3, bar:'Balvanera', nom:'Rivadavia', dir:'Av. Rivadavia 3113', cont:'Línea 108', pop:'Hombres', plazas:130},
-  // — C3 · Conveniados —
-  {com:3, bar:'San Cristóbal', nom:'Hogar Renacer (Hombres)', dir:'Constitución 3156', cont:'Línea 108', pop:'Hombres 18-59 años', plazas:110},
-  {com:3, bar:'San Cristóbal', nom:'Hogar Renacer (Hombres con discapacidad)', dir:'Constitución 3156', cont:'Línea 108', pop:'Hombres 18-59 años con discapacidad', plazas:40},
-  {com:3, bar:'Balvanera', nom:'Hogar Renacer (Madres/Discapacidad)', dir:'Hipólito Yrigoyen 1924', cont:'Línea 108', pop:'Mujeres con hijos menores / discapacidad', plazas:50},
-  // — C4 · Propios —
-  {com:4, bar:'La Boca', nom:'CIS La Boca', dir:'Av. Don Pedro de Mendoza 1357', cont:'Línea 108', pop:'Hombres', plazas:96},
-  {com:4, bar:'Puerto Madero', nom:'Costanera', dir:'Av. España 2265', cont:'Línea 108', pop:'Hombres', plazas:172},
-  {com:4, bar:'Nueva Pompeya', nom:'Bepo Ghezzi', dir:'Herminio Masantonio 2970', cont:'Línea 108', pop:'Hombres', plazas:53},
-  // — C4 · Gestión asociada —
-  {com:4, bar:'La Boca', nom:'7 de Mayo', dir:'Almirante Brown 1127', cont:'Línea 108', pop:'Hombres', plazas:40},
-  {com:4, bar:'Nueva Pompeya', nom:'Martina Chapanay', dir:'Dr. Domingo Cabred 4708', cont:'Línea 108', pop:'Mujeres y diversidades', plazas:35},
-  // — C4 · Conveniados —
-  {com:4, bar:'Nueva Pompeya', nom:'Hogar San Martín de Porres', dir:'Guaraní 272', cont:'Línea 108', pop:'Hombres 18-59 años', plazas:130},
-  {com:4, bar:'Nueva Pompeya', nom:'Hogar San Francisco de Asís', dir:'Guaraní 272', cont:'Línea 108', pop:'Hombres 18-59 años', plazas:130},
-  {com:4, bar:'La Boca', nom:'Casa del Reencuentro', dir:'Pi y Margall 1142', cont:'Línea 108', pop:'Mujeres con niños', plazas:15},
-  {com:4, bar:'La Boca', nom:'Hogar Isauro Arancibia', dir:'Martín Rodríguez 764', cont:'Línea 108', pop:'Hombres y mujeres', plazas:18},
-  {com:4, bar:'Parque Patricios', nom:'Hogar Monteagudo', dir:'Monteagudo 435', cont:'Línea 108', pop:'Hombres 18-59 años', plazas:118},
-  {com:4, bar:'Parque Patricios', nom:'Hogar Frida', dir:'15 de Noviembre de 1889 2315/17', cont:'Línea 108', pop:'Mujeres, madres y población trans', plazas:45},
-  // — C7 · Propio —
-  {com:7, bar:'Parque Chacabuco', nom:'Parque Chacabuco', dir:'Asamblea 1301', cont:'Línea 108', pop:'Hombres', plazas:100},
-  // — C7 · Gestión asociada —
-  {com:7, bar:'Parque Chacabuco', nom:'Castañares', dir:'Castañares 1653', cont:'Línea 108', pop:'Adultos mayores y personas con discapacidad', plazas:60},
-  // — C7 · Conveniados —
-  {com:7, bar:'Flores', nom:'San José de Flores', dir:'Coronel Ramón L. Falcón 2453', cont:'Línea 108', pop:'Hombres 18-59 años', plazas:50},
-  {com:7, bar:'Flores', nom:'Hogar Santa María Madre del Pueblo', dir:'Av. Perito Moreno y Av. de la Cruz', cont:'Línea 108', pop:'Hombres y mujeres (vulnerabilidad/consumo)', plazas:60},
-  {com:7, bar:'Flores', nom:'Hogar Puente 1', dir:'General Artigas 691', cont:'Línea 108', pop:'Mujeres solas y/o con niños', plazas:100},
-  {com:7, bar:'Parque Chacabuco', nom:'Carabobo', dir:'Carabobo 1128', cont:'Línea 108', pop:'Hombres solos', plazas:40},
-  // — C8 · Conveniados —
-  {com:8, bar:'Villa Soldati', nom:'Monseñor Romero - Virgen Inmaculada', dir:'Portela 2625', cont:'Línea 108', pop:'Hombres (consumo problemático)', plazas:20},
-  {com:8, bar:'Villa Soldati', nom:'Siempre es Hoy', dir:'Av. Fernando de la Cruz 3262', cont:'Línea 108', pop:'Hombres 18-59 años', plazas:95},
-  {com:8, bar:'Villa Soldati', nom:'Siempre es Hoy (Discapacidad)', dir:'Av. Fernando de la Cruz 3262', cont:'Línea 108', pop:'Hombres con discapacidad', plazas:10},
-  // — C9 · Gestión asociada —
-  {com:9, bar:'Mataderos', nom:'Mataderos', dir:'Larrazábal 1680', cont:'Línea 108', pop:'Adultos mayores', plazas:80},
-  // — C10 · Gestión asociada —
-  {com:10, bar:'Floresta', nom:'Sergio Karakachof', dir:'Av. Mariano Acosta 140', cont:'Línea 108', pop:'Hombres', plazas:40},
-  // — C10 · Conveniados —
-  {com:10, bar:'Flores', nom:'Mamá Antula', dir:'Fernández 253', cont:'Línea 108', pop:'Mujeres 18-59 años', plazas:12},
-  // — C13 · Gestión asociada —
-  {com:13, bar:'Colegiales', nom:'Zabala', dir:'Zabala 3444', cont:'Línea 108', pop:'Mujeres', plazas:80},
-  // — C13 · Conveniados —
-  {com:13, bar:'Núñez', nom:'Hogar Amparo Maternal', dir:'Ernesto A. Bavio 2816', cont:'Línea 108', pop:'Mujeres con niños', plazas:70},
-  // — C15 · Gestión asociada —
-  {com:15, bar:'La Paternal', nom:'San Camilo', dir:'Paz Soldán 4924', cont:'Línea 108', pop:'Hombres', plazas:80},
-  {com:15, bar:'Chacarita', nom:'Vientos', dir:'Concepción Arenal 4819', cont:'Línea 108', pop:'Hombres', plazas:30},
-  // — C15 · Conveniados —
-  {com:15, bar:'Villa Ortúzar', nom:'Casa Heredia', dir:'Heredia 390', cont:'Línea 108', pop:'Personas en tratamiento por consumo problemático', plazas:34},
-  // — Fuera de CABA (PBA) —
-  {com:0, bar:'Gral. Rodríguez', nom:'CIS General Rodríguez', dir:'C. P. Albarracín y C. Chile, Gral. Rodríguez', cont:'Línea 108', pop:'Mujeres con niños/as', plazas:30},
-  {com:0, bar:'Ituzaingó', nom:'CIS Ituzaingó', dir:'Coronel Ventura Alegre 750, Ituzaingó', cont:'Línea 108', pop:'Hombres', plazas:80},
-  {com:0, bar:'Florida, Vicente López', nom:'Posada Loyola de Convalecientes', dir:'Alsina 2311, Florida, Vicente López', cont:'Línea 108', pop:'Personas convalecientes', plazas:7},
-  {com:0, bar:'Lobos', nom:'HODIF', dir:'Calle 124 N.° 1350, Lobos', cont:'Línea 108', pop:'Personas con discapacidad', plazas:56},
-  {com:0, bar:'Carapachay, Vicente López', nom:'El Pobre de Asís - Kaupé (Mujeres)', dir:'Montes de Oca 6820, Carapachay, Vicente López', cont:'Línea 108', pop:'Mujeres con discapacidad', plazas:30},
-  {com:0, bar:'Carapachay, Vicente López', nom:'El Pobre de Asís - Kaupé (Hombres)', dir:'Montes de Oca 6820, Carapachay, Vicente López', cont:'Línea 108', pop:'Hombres con discapacidad', plazas:17},
-];
+// DATOS TERRITORIALES — se cargan desde recursos.json
+var CIS = [], COMEDORES = [], DUCHAS = [], ROPEROS = [], JURIDICO = [], DEFENSORIAS = [];
 
-var COMEDORES = [
-  {com:1,bar:'Retiro',nom:'Parroquia Cristo Obrero',dir:'Villa 31 Manzana 30',cont:'11 3928-5021',hora:'Lun a vie: desayuno 9 hs, almuerzo 13 hs'},
-  {com:1,bar:'Retiro',nom:'Nuestra Señora del Perpetuo Socorro',dir:'Suipacha 1241',cont:'4327-4549',hora:'Dom a vie 8 hs. Alimentos: martes 9 hs'},
-  {com:1,bar:'Retiro',nom:'MTD Movimiento Trabajadores Desocupados',dir:'Flor de Otoño 301',cont:'11 2136-0302',hora:'Sab y dom, de 10 a 11 hs'},
-  {com:1,bar:'Monserrat',nom:'Abrigar Derechos',dir:'Hipólito Yrigoyen 1440',cont:'abrigarderechos@gmail.com',hora:'Lun y jue: 10 hs y 13 hs'},
-  {com:1,bar:'Constitución',nom:'Frente Patria Grande',dir:'Santiago del Estero 866',cont:'11 5636-9209',hora:'Mar-jue-sab 12:30 hs; desayuno sab 11 hs'},
-  {com:1,bar:'San Telmo',nom:'Colectivo Hambre No',dir:'Estados Unidos 553',cont:'11 3439-2506',hora:'Domingos, 13 hs'},
-  {com:1,bar:'Constitución',nom:'San Vicente Caritas',dir:'Constitución 1407',cont:'11 4043-3895',hora:'Lun a vie: almuerzo 11 hs; sab: merienda 14:45 hs'},
-  {com:1,bar:'San Telmo',nom:'San Telmo se Organiza',dir:'Paseo Colón (entre Independencia y Estados Unidos)',cont:'11 4173-6877',hora:'Sab 13 hs; mie 18 hs (merienda)'},
-  {com:1,bar:'San Telmo',nom:'San Pedro González Telmo Caritas',dir:'Humberto Primo 330',cont:'4361-1168',hora:'Lun-mar-mie-vie 11 hs; viandas mie y vie 12 hs'},
-  {com:1,bar:'Constitución',nom:'UTEP',dir:'Pedro Echagüe 1235',cont:'11 3777-0647',hora:'Merienda 17 hs; cena 20 hs; recorrido con viandas'},
-  {com:1,bar:'Monserrat',nom:'Red Solidaria',dir:'Plaza de Mayo',cont:'4915-9470',hora:'Lun a dom, de 19 a 21 hs'},
-  {com:1,bar:'Parque Lezama',nom:'Olla Popular Parque Lezama',dir:'Parque Lezama (Brasil y Defensa)',cont:'IG: ollaparquelezama',hora:'Lunes, 19 hs'},
-  {com:2,bar:'Recoleta',nom:'Esclavas del Sagrado Corazon',dir:'Montevideo 1372',cont:'4812-1735',hora:'Sabados, merienda 16 hs'},
-  {com:2,bar:'Recoleta',nom:'Parroquia Nuestra Señora del Carmen',dir:'Rodríguez Peña 840',cont:'11 2611-6281',hora:'Merienda - consultar'},
-  {com:3,bar:'Balvanera',nom:'Parroquia San Expedito',dir:'Av. Rivadavia (Balvanera)',cont:'Consultar',hora:'Almuerzo - consultar'},
-  {com:4,bar:'La Boca',nom:'San Juan Evangelista Caritas',dir:'Olavarría 486',cont:'4301-1155',hora:'Consultar'},
-  {com:4,bar:'Parque Patricios',nom:'Iglesia Sagrado Corazon',dir:'Av. Vélez Sarsfield 1351',cont:'4911-9090',hora:'Almuerzo - consultar'},
-  {com:5,bar:'Almagro',nom:'Asociación Civil No Tan Distintas',dir:'Virrey Liniers 897',cont:'Consultar',hora:'Almuerzo - consultar'},
-  {com:6,bar:'Caballito',nom:'Parroquia Nuestra Señora de Caacupe',dir:'Av. Rivadavia (Caballito)',cont:'Consultar',hora:'Consultar'},
-  {com:6,bar:'Caballito',nom:'Nuestra Señora de Buenos Aires Caritas',dir:'Av. Rivadavia 4879',cont:'Consultar',hora:'Consultar'},
-  {com:8,bar:'Villa Soldati',nom:'Santa Isabel de Hungría Caritas',dir:'Estrada 833',cont:'4923-3101',hora:'Consultar'},
-  {com:9,bar:'Liniers',nom:'San Cayetano',dir:'Cuzco 110',cont:'Consultar',hora:'Almuerzo y merienda lun a dom. Alimentos no perecederos adultos mayores'},
-  {com:10,bar:'Floresta',nom:'Nuestra Señora de la Candelaria',dir:'Bahía Blanca 363',cont:'Consultar',hora:'Consultar'},
-  {com:12,bar:'Villa Urquiza',nom:'Estación Urquiza - recorrida',dir:'Línea Mitre, Estación Urquiza',cont:'11 3170-3791',hora:'Recorrida con entrega de viandas'},
-  {com:14,bar:'Palermo',nom:'Fundación Si',dir:'Palermo',cont:'4824-8852',hora:'Recorridas con entrega de viandas'},
-  // C1 — nuevos
-  {com:1,bar:'Retiro',nom:'Centro Barrial Padre Carlos Mugica',dir:'Talampaya 2873',cont:'11 6193-0433',hora:'Des, alm, merienda y cena lun a vie 9-17 hs'},
-  {com:1,bar:'Retiro',nom:"Comunidad Sant'Egidio",dir:'Av. Rivadavia 851 (Casa de la Amistad)',cont:'IG: santegidioarg',hora:'Viandas mié 19 hs, jue 19:30 hs, vie 19 hs'},
-  {com:1,bar:'Retiro',nom:'Nuestra Señora del Socorro - Cáritas',dir:'Juncal 888',cont:'4393-1423',hora:'Des (viandas) lun a vie 8 hs. Alimentos mar 9 hs'},
-  {com:1,bar:'Retiro',nom:'Somos Barrios de Pie - CAAC Retiro',dir:'Alpaca 1409',cont:'11 6737-2339',hora:'Des y alm mar y jue 10-15 hs'},
-  {com:1,bar:'Monserrat',nom:'Fundación Manos Abiertas',dir:'Av. Independencia 1150',cont:'4371-5869',hora:'Consultar'},
-  {com:1,bar:'Constitución',nom:'Santa Elisa - Cáritas',dir:'Salta 2290',cont:'11 6617-7408',hora:'Alm sáb 11:30 hs. Alimentos mié 14-16 hs'},
-  {com:1,bar:'Constitución',nom:'Parroquia Inmaculado Corazón de María',dir:'Constitución 1077',cont:'4305-6552',hora:'Alm y alimentos sáb 12 hs'},
-  {com:1,bar:'Monserrat',nom:'Asamblea Popular San Telmo - Merendero Darío Santillán',dir:'Chacabuco 634',cont:'11 3822-4017',hora:'Merienda lun a vie 16-17 hs'},
-  {com:1,bar:'Constitución',nom:'Santa Catalina de Alejandría - Cáritas',dir:'Brasil 850',cont:'4300-2194',hora:'Merienda y alimentos lun a vie 17 hs'},
-  {com:1,bar:'San Telmo',nom:'Buenos Aires 3D',dir:'Piedras 539',cont:'11 2725-6354',hora:'Cena (olla popular) mar 19 hs'},
-  {com:1,bar:'Monserrat',nom:'Misión Solidaria - Iglesia Metodista Almagro',dir:'Av. Rivadavia 4050',cont:'11 3432-7033',hora:'Cena (viandas Solís y Yrigoyen) dom 20:30-21 hs'},
-  {com:1,bar:'Puerto Madero',nom:'Nuestra Señora de la Esperanza - Cáritas',dir:'Aimé Painé 1698',cont:'11 6285-4848',hora:'Recorrido viandas jue 20 hs'},
-  {com:1,bar:'Constitución',nom:'Inmaculada Concepción (C1) - Cáritas',dir:'Tacuarí 870',cont:'4300-5547',hora:'Alimentos jue 10 hs'},
-  {com:1,bar:'San Telmo',nom:'El Buen Samaritano (comedor)',dir:'Adolfo Alsina 346',cont:'4331-0625',hora:'Cena (viandas) vie 18 hs'},
-  // C2 — nuevos
-  {com:2,bar:'Recoleta',nom:'Santísimo Redentor - Cáritas',dir:'Larrea 1252',cont:'4824-0895',hora:'Des 7-8:30 hs; alm 11 hs lun a vie (Beruti 2352)'},
-  {com:2,bar:'Recoleta',nom:'Comedor Madre Camila',dir:'Azcuénaga 1266',cont:'4822-1897',hora:'Des lun a vie 7-8:30 hs; alm lun a vie 11-12:30 hs'},
-  // C3 — nuevos
-  {com:3,bar:'Balvanera',nom:'Parroquia Nuestra Señora de Balvanera - San Expedito',dir:'Bartolomé Mitre 2411',cont:'4802-5830',hora:'Des sáb 9 hs; alm sáb 12 hs; merienda vie tarde (niños)'},
-  {com:3,bar:'Balvanera',nom:'Fundación Obras de San José',dir:'Moreno 2472',cont:'4308-1829',hora:'Des lun a sáb 3 turnos: 7:45, 8:20 y 8:55 hs'},
-  {com:3,bar:'Balvanera',nom:'MTE Vientos de Libertad',dir:'Bartolomé Mitre 3366',cont:'IG: vientosdelibertad.mte',hora:'Des y alm lun a vie 9-16 hs'},
-  {com:3,bar:'San Cristóbal',nom:'Santa Cruz - Cáritas',dir:'Estados Unidos 3150',cont:'4931-1317',hora:'Merienda vie 18 hs; viandas sáb 11 hs; alimentos lun-mié 15-18 hs'},
-  {com:3,bar:'Balvanera',nom:'Frente Patria Grande (C3)',dir:'Riobamba 86',cont:'IG: patriagrandecomuna3',hora:'Alm lun 12 hs; alimentos jue 16 hs; recorrido mar-jue-vie 15 hs'},
-  {com:3,bar:'Balvanera',nom:'Amigos en el Camino',dir:'Ecuador 462',cont:'11 5608-7175',hora:'Recorridos nocturnos dom a vie 20-00:30 hs'},
-  {com:3,bar:'Balvanera',nom:'Amigos por las Calles',dir:'Av. Belgrano 2719',cont:'11 6961-2094',hora:'Recorrido viandas jue 20-21:30 hs (Balvanera, Almagro, Palermo)'},
-  {com:3,bar:'Balvanera',nom:'Somos Barrios de Pie (C3)',dir:'Plaza Once',cont:'11 3605-1352',hora:'Cena (olla popular) mar 18 hs'},
-  // C4 — nuevos
-  {com:4,bar:'Parque Patricios',nom:'Acción Comunitaria',dir:'Pasaje Guaraní 563',cont:'info@accioncomunitaria.org',hora:'Recorridos "Sopa de Letras" (C1,3,4,5) lun a dom 18:30-22:30 hs'},
-  {com:4,bar:'Pompeya',nom:'Acción Social Sinaí',dir:'Av. Sáenz 541',cont:'11 3013-9726',hora:'Alm dom (3 veces/mes) 12-13 hs; viandas sáb (2 veces/mes) 17:30 hs'},
-  {com:4,bar:'Barracas',nom:'Virgen de los Milagros de Caacupé',dir:'Av. Osvaldo Cruz 3470',cont:'4302-3643',hora:'Des y alm lun a vie 10 y 12:30 hs; alimentos vie 16 hs; recorrido lun 20 hs'},
-  {com:4,bar:'La Boca',nom:'Parroquia San Juan Evangelista (alimentos)',dir:'Olavarría 486',cont:'4301-1155',hora:'Des dom 9-10 hs; alm dom 11:30 hs; viandas dom 10:30 hs; alimentos jue 8-10 hs'},
-  {com:4,bar:'La Boca',nom:'Somos Barrios de Pie (C4)',dir:'Lamadrid 663',cont:'IG: somosbarriosdepie.c4',hora:'Cena (olla popular) vie 18 hs'},
-  {com:4,bar:'Parque Patricios',nom:'Comedor Padre Mugica - Virgen de Luján - Cáritas',dir:'H. Masantonio 3495',cont:'4911-9090',hora:'Alm lun a vie 11:30-13:30 hs'},
-  {com:4,bar:'Barracas',nom:'Santa Lucía Virgen y Mártir - Cáritas',dir:'Av. Montes de Oca 550',cont:'11 2640-2528',hora:'Alimentos y recorrido viandas jue 16:30 hs'},
-  // C5 — nuevos
-  {com:5,bar:'Almagro',nom:'Casa Gatica',dir:'Sánchez de Bustamante 551',cont:'IG: casagatica',hora:'Alm sábados 12 hs'},
-  {com:5,bar:'Almagro',nom:'Club Solidario',dir:'Av. Belgrano 3660',cont:'11 6461-9954',hora:'Des y merienda: mié 16:30-18 hs y vie 9:30-11 hs'},
-  {com:5,bar:'Almagro',nom:'Iglesia Evangélica Metodista de Almagro (C5)',dir:'Av. Rivadavia 4050',cont:'4981-4290',hora:'Des y alm sáb 9:30-13:30 hs (mayores 40); merienda sáb 16:30 hs'},
-  {com:5,bar:'Almagro',nom:'Asamblea Popular Plaza Almagro - Olla Popular',dir:'Presidente Perón y Agüero',cont:'11 6818-4807',hora:'Alimentos todos los días 18 hs'},
-  {com:5,bar:'Almagro',nom:'Parroquia de San Carlos',dir:'Av. H. Yrigoyen 3999',cont:'4981-4741',hora:'Viandas y alimentos lun y jue 10-12 hs; alimentos último mar del mes 15 hs'},
-  {com:5,bar:'Almagro',nom:'Parroquia Betania',dir:'Av. Medrano 752',cont:'4862-0825',hora:'Cena vie 20:30 hs; merienda adultos mayores mié 17 hs'},
-  {com:5,bar:'Almagro',nom:'Frente Patria Grande (C5)',dir:'Castro Barros 957',cont:'IG: patriagrandecomuna5',hora:'Cena (olla popular) mié 19:30 hs'},
-  {com:5,bar:'Almagro',nom:'Espacio Mayos',dir:'Sánchez de Bustamante 631',cont:'IG: espaciomayos',hora:'Cena (olla popular) mié 19:30-20:30 hs'},
-  {com:5,bar:'Almagro',nom:'Iglesia San Antonio',dir:'México 4050',cont:'4931-2139',hora:'Des todos los días 18 hs'},
-  {com:5,bar:'Almagro',nom:'Santa María - Cáritas',dir:'Av. La Plata 286',cont:'4983-7944',hora:'Alimentos no perecederos mar y vie 16 hs'},
-  // C6 — nuevos
-  {com:6,bar:'Caballito',nom:'Peronismo Solidario',dir:'Acoyte y Rivadavia',cont:'IG: peronismosolidario.caballito',hora:'Alm dom 12 hs'},
-  {com:6,bar:'Caballito',nom:'Buen Pastor - Cáritas',dir:'Aranguren 691',cont:'4904-0590',hora:'Des lun y jue 7:30 hs; cena jue 20 hs; alimentos último jue mes 17:30 hs'},
-  {com:6,bar:'Caballito',nom:'Parroquia Nuestra Señora de Caacupé (C6)',dir:'Av. Rivadavia 4879',cont:'4901-1811',hora:'Cena (viandas) lun 20 hs; alimentos una vez por mes'},
-  {com:6,bar:'Villa General Mitre',nom:'Parroquia Nuestra Señora del Consuelo',dir:'Av. Donato Álvarez 2050',cont:'4581-2117',hora:'Alimentos no perecederos jue 14-16:30 hs'},
-  {com:6,bar:'Caballito',nom:'Club Oeste',dir:'José María Moreno 446',cont:'IG: oeste_solidario',hora:'Recorrido viandas lun y mar 21 hs (Caballito y Boedo)'},
-  {com:6,bar:'Caballito',nom:'Kirchner Vuelve',dir:'Ambrosetti 279',cont:'IG: lc_caballito',hora:'Cena (viandas) jue 20 hs'},
-  {com:6,bar:'Caballito',nom:'Plaza Irlanda Solidaria',dir:'Seguí 850',cont:'IG: plazairlandasolidaria',hora:'Cena (viandas) jue 20 hs'},
-  {com:6,bar:'Caballito',nom:'Centro Cultural La Ronda',dir:'Méndez de Andes 614',cont:'IG: rondaollapopular',hora:'Alm dom 12-14 hs; viandas lun 18 hs'},
-  {com:6,bar:'Caballito',nom:'Club Ferrocarril Oeste DDHH y Acción Social',dir:'Rojas y las vías (est. Caballito)',cont:'IG: ferro_ddhh_y_accion_social',hora:'Cena (viandas) último mié del mes 20 hs'},
-  // C7 — nuevos
-  {com:7,bar:'Flores',nom:'Centro Manuel Ugarte',dir:'Av. Juan Bautista Alberdi 2509',cont:'11 6453-8187',hora:'Des y alm (viandas) lun a vie 12-14 hs'},
-  {com:7,bar:'Flores',nom:'MTD (C7) Movimiento de Trabajadores Desocupados',dir:'Miraflores 2278',cont:'11 2136-0302',hora:'Des y alm lun a vie 9-16 hs'},
-  {com:7,bar:'Flores',nom:'Parroquia Santa María Madre del Pueblo',dir:'Av. Perito Moreno y Av. Cruz - Barrio P. Ricciardelli',cont:'4139-0403',hora:'Des 10 hs, alm 12 hs, cena 19 hs lun a vie; recorrido zona 11:30 hs'},
-  {com:7,bar:'Flores',nom:'San José de Flores - Cáritas',dir:'Av. Rivadavia 6950',cont:'4637-1489',hora:'Alm lun a vie 12 hs; cena mujeres/niños lun a vie 16:30 hs; viandas lun a sáb 10 hs'},
-  {com:7,bar:'Floresta',nom:'Nuestra Señora de la Paz - Cáritas',dir:'Pergamino 63',cont:'4611-9463',hora:'Cena y alimentos jue 19:30 hs'},
-  {com:7,bar:'Flores',nom:'Nuestra Señora de la Visitación - Cáritas',dir:'Av. Nazca y Páez',cont:'11 3971-4015',hora:'Viandas un sáb al mes'},
-  {com:7,bar:'Flores',nom:'Frente Patria Grande (C7)',dir:'Esteban Bonorino 1957',cont:'11 4034-9822',hora:'Cena (olla popular) lun y vie 19:30 hs'},
-  // C8 — nuevos
-  {com:8,bar:'Villa Soldati',nom:'Parroquia San Francisco de Asís (Mariano Acosta)',dir:'Mariano Acosta 3501',cont:'11 6137-8923',hora:'Des lun-vie 8 hs; alm lun-vie 12 hs; alimentos último vie mes; recorrido mar 17 hs'},
-  {com:8,bar:'Villa Lugano',nom:'Centro Barrial Don Orione',dir:'Saraza 6135',cont:'11 2650-7250',hora:'Des, alm y merienda lun a vie 11-17 hs'},
-  {com:8,bar:'Villa Lugano',nom:'Nuestra Señora del Rosario del Milagro',dir:'Montiel 3899',cont:'11 7369-7274',hora:'Alm sáb 12:30-13:30 hs'},
-  {com:8,bar:'Villa Lugano',nom:'María Madre de la Esperanza',dir:'Miralla 3838',cont:'4638-5225',hora:'Des 9-12 hs; alm 11-13 hs'},
-  {com:8,bar:'Villa Lugano',nom:'San Juan Diego Cuauhtlatoatzin',dir:'Av. Escalada 2858',cont:'11 7002-3257',hora:'Alimentos no perecederos mar 17-19 hs'},
-  {com:8,bar:'Villa Lugano',nom:'Nuestra Señora del Carmen - Cáritas (C8)',dir:'Eva Perón 6378, manzana 8 casa 1',cont:'4601-0423',hora:'Des lun-vie 10 hs; alm lun-vie 13 hs; merienda lun-vie 16 hs; viandas sáb 11:30 hs'},
-  {com:8,bar:'Villa Soldati',nom:'Nuestra Señora de Fátima',dir:'Av. Mariano Acosta 2929',cont:'11 3017-1091',hora:'Alm y merienda lun-dom 12 y 17 hs; alimentos adultos mayores último vie mes'},
-  {com:8,bar:'Villa Soldati',nom:'Cristo Obrero y San Blas',dir:'Av. Lafuente 3242',cont:'11 5935-1160',hora:'Alm 12 hs; cena 19 hs'},
-  {com:8,bar:'Villa Soldati',nom:'San Francisco de Asís (los Corrales)',dir:'Av. de los Corrales 3420',cont:'11 6137-8923',hora:'Alm lun a vie 11-16 hs'},
-  {com:8,bar:'Villa Soldati',nom:'Virgen Inmaculada (F) - Cáritas',dir:'Martínez Castro y Pasaje C',cont:'11 3963-4990',hora:'Merienda y viandas todos los días; alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs'},
-  {com:8,bar:'Villa Lugano / Villa 20',nom:'MTD (C8) Movimiento de Trabajadores Desocupados',dir:'Lugares rotativos',cont:'11 2136-0302',hora:'Cena (olla popular) jue 19 hs'},
-  {com:8,bar:'Villa Soldati',nom:'Parroquia Virgen Inmaculada - Comedor Los Abuelos',dir:'Manzana 7, Barrio Fátima',cont:'Consultar',hora:'Alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs'},
-  // C9 — nuevos
-  {com:9,bar:'Liniers',nom:'Nuestra Señora de la Misericordia - Cáritas',dir:'Av. Larrazábal 2390',cont:'4635-0605',hora:'Merienda sáb 18 hs; alimentos adultos mayores 2° jue mes 14 hs'},
-  {com:9,bar:'Parque Avellaneda',nom:'Santa María Teresa Goretti - Cáritas',dir:'Av. Escalada 1150',cont:'4635-4012',hora:'Alm (viandas) todos los días 12 hs; cena todos los días 20:30 hs; alimentos 1° sáb mes 8 hs'},
-  {com:9,bar:'Parque Avellaneda',nom:'Virgen de los Desamparados - Cáritas',dir:'José Enrique Rodó 4203',cont:'4671-1255',hora:'Merienda (viandas) mié y dom 16 hs; alimentos mar por la tarde'},
-  {com:9,bar:'Liniers',nom:'Olla Popular Papa Francisco',dir:'Estación Liniers, Av. Rivadavia y Cuzco',cont:'IG: ollapopular_papafrancisco',hora:'Cena (viandas) mar 19-21 hs'},
-  {com:9,bar:'Liniers',nom:'Tránsito de San José - Cáritas',dir:'Av. Emilio Castro 6391',cont:'11 5040-4985',hora:'Alm sáb 12 hs'},
-  {com:9,bar:'Parque Avellaneda',nom:'Ser con Vos',dir:'Olivera 1497',cont:'11 3287-8206',hora:'Recorrido viandas (C7,9,10,11) lun 20-24 hs'},
-  // C10 — nuevos
-  {com:10,bar:'Monte Castro',nom:'UB Malvinas Argentinas',dir:'C. Irigoyen 799',cont:'Consultar',hora:'Alm y merienda sáb cada 15 días 12 hs'},
-  {com:10,bar:'Floresta',nom:'San Francisco Solano - Cáritas',dir:'Zelada 4771',cont:'4683-3102',hora:'Consultar'},
-  {com:10,bar:'Monte Castro',nom:'San Pedro Apóstol - Cáritas',dir:'Bermúdez 2011',cont:'4566-5805',hora:'Cena dom 19:30 hs; alimentos 2° mar de cada mes'},
-  {com:10,bar:'Villa Luro',nom:'UB Pensando en Vos Siempre',dir:'Av. Álvarez Jonte 5590',cont:'5584-4125',hora:'Merienda y alimentos 4° mié del mes 17:30 hs'},
-  {com:10,bar:'Vélez Sarsfield',nom:'UB Vecinos de Perón',dir:'Av. Juan B. Justo 7447',cont:'11 2388-4117',hora:'Cena (viandas) mar 20 hs'},
-  // C11 — nuevos
-  {com:11,bar:'Villa Santa Rita',nom:'Frente Patria Grande (C11)',dir:'Concordia 1047',cont:'IG: patriagrandecomuna11',hora:'Recorrido viandas mar 19:30 hs'},
-  {com:11,bar:'Villa Devoto',nom:'Desayunador Negrito Manuel',dir:'Fernández de Enciso 4521',cont:'11 2520-1047',hora:'Des mar, jue y vie 8-9 hs'},
-  {com:11,bar:'Villa Devoto',nom:'Centro Cultural Bio Devoto',dir:'Cervantes 2944',cont:'11 5910-9496',hora:'Merienda y viandas lun a vie 15 hs; merienda mar a jue 19 hs'},
-  {com:11,bar:'Villa del Parque',nom:'Parroquia Santa Ana',dir:'Pedro Lozano 3167',cont:'4501-0723',hora:'Alm lun a dom 11 hs; cena lun a dom 18 hs; alimentos lun y mié 16 hs'},
-  {com:11,bar:'Villa Devoto',nom:'Acción por Personas en Situación de Calle',dir:'Allende 2711',cont:'11 7368-1862',hora:'Entrega frutas y verduras mar y vie 20-22 hs; recorridos C9,10,11'},
-  {com:11,bar:'Villa Gral. Mitre',nom:'UB Fernando Chiche Benítez',dir:'Terrero 1590',cont:'11 6163-9844',hora:'Viandas en el lugar vie 18-20 hs'},
-  {com:11,bar:'Villa Devoto',nom:'Espacio Cultural Epecuén',dir:'Epecuén 4882',cont:'11 4536-3813',hora:'Merienda (viandas) lun a vie 15 hs'},
-  // C12 — nuevos
-  {com:12,bar:'Saavedra',nom:'Centro Cultural Los Goyeneches',dir:'Arias 4081',cont:'11 6442-4299',hora:'Merienda niños lun a vie 16:30 hs; cena (viandas) vie 20 hs'},
-  {com:12,bar:'Villa Urquiza',nom:'Urquiza se Organiza',dir:'Plaza Casal (Triunvirato y Roosevelt)',cont:'11 2405-9511',hora:'Merienda lun y vie 17-19:30 hs'},
-  {com:12,bar:'Villa Urquiza',nom:'Asociación Civil Amigos de la Comuna 12',dir:'Línea Mitre, Plaza de la Est. Urquiza',cont:'Consultar',hora:'Merienda mié 18 hs'},
-  {com:12,bar:'Villa Pueyrredón',nom:'Merendero Asamblea de Villa Pueyrredón',dir:'Línea Mitre, Est. Pueyrredón (a J. L. Suárez)',cont:'IG: asambleavillapueyrredon',hora:'Merienda mar 18:30 hs'},
-  {com:12,bar:'Villa Urquiza',nom:'Abrazo Peronista',dir:'Línea Mitre, Est. Villa Pueyrredón (Bolivia y Cabezón)',cont:'IG: abrazo_peronista',hora:'Merienda mié 18:30-20:30 hs'},
-  {com:12,bar:'Villa Urquiza',nom:'Frente Patria Grande (C12)',dir:'Línea Mitre, Est. Urquiza',cont:'11 3170-3791',hora:'Merienda jue 18:30 hs'},
-  {com:12,bar:'Saavedra',nom:'Comedor Lugones',dir:'Lugones 4016',cont:'11 6281-0714',hora:'Merienda mié 19 hs; otros días rotativos'},
-  {com:12,bar:'Saavedra',nom:'RxA Comuna 12',dir:'Av. Balbín 3711',cont:'11 6006-8224',hora:'Merienda lun a vie 16-20 hs; olla popular jue 18:30 hs'},
-  {com:12,bar:'Saavedra',nom:'Unión Vecinal de Saavedra',dir:'Av. Ricardo Balbín 4221',cont:'11 7361-1145',hora:'Merienda lun a vie 16-20 hs; sáb y dom 16-22 hs'},
-  {com:12,bar:'Villa Urquiza',nom:'Jesús Misericordioso',dir:'Pedro I. Rivera 4591',cont:'4521-3153',hora:'Cena (viandas) vie 19 hs'},
-  {com:12,bar:'Villa Pueyrredón',nom:'Cristo Rey',dir:'Larsen 2384',cont:'4572-5459',hora:'Des (viandas) sáb 9-11 hs'},
-  {com:12,bar:'Villa Pueyrredón',nom:'Santísima Trinidad - Cáritas - Centro Trinitario',dir:'Ciudad de la Paz 3577',cont:'4702-4288',hora:'Des y alimentos no perecederos lun a jue 7 hs'},
-  // C13 — nuevos
-  {com:13,bar:'Belgrano',nom:'San Cayetano - Cáritas (C13)',dir:'Vidal 1745',cont:'4781-5886',hora:'Des (viandas) sáb 7-9 hs; recorrido mar y mié 20 hs'},
-  {com:13,bar:'Núñez',nom:'Parroquia Santísima Trinidad',dir:'Av. Cabildo 3680',cont:'4702-1030',hora:'Des y alimentos lun a jue 7-9 hs'},
-  {com:13,bar:'Belgrano',nom:'San Martín de Porres (C13)',dir:'Virrey Loreto 2161',cont:'11 6708-7609',hora:'Alimentos y recorrido viandas mar 20-21:45 hs'},
-  {com:13,bar:'Colegiales',nom:'San Pablo Apóstol - Cáritas (C13)',dir:'Av. Álvarez Thomas 795',cont:'4553-9567',hora:'Viandas mié 17 hs, jue 18 hs, vie 17 hs'},
-  {com:13,bar:'Belgrano',nom:'Comedor de Barrancas El Gomero',dir:'Zavalía y Juramento / Juramento y Obligado',cont:'IG: comedor.barrancas.de.belgrano',hora:'Cena lun-mar-jue-vie-sáb 20-21 hs; dom 19-20 hs'},
-  {com:13,bar:'Belgrano',nom:'Inmaculada Concepción - Cáritas (C13)',dir:'Vuelta de Obligado 2042',cont:'4783-8008',hora:'Cena y alimentos lun a sáb 18:15-19 hs'},
-  // C14 — nuevos
-  {com:14,bar:'Palermo',nom:'Nuestra Señora de Guadalupe',dir:'General Lucio N. Mansilla 3847',cont:'4824-8852',hora:'Merienda (viandas) lun, mié y vie 15-16 hs; vianda mar 19 hs (zona Palermo)'},
-  {com:14,bar:'Palermo',nom:'Frente Patria Grande (C14)',dir:'Bonpland 2077',cont:'11 4540-1691',hora:'Recorrido viandas (Santa Fe, Dorrego, Córdoba, Thames) mié 20 hs'},
-  {com:14,bar:'Palermo',nom:'Santa Lucía (C14)',dir:'Gascón 1372',cont:'11 4245-2140',hora:'Viandas dom 15-17 hs; alimentos 3° sáb del mes 10-12 hs'},
-  // C15 — nuevos
-  {com:15,bar:'La Paternal',nom:'Centro Barrial Vientos de Libertad',dir:'Ávalos 250',cont:'11 6239-5152',hora:'Des, alm y merienda lun a vie 10, 12 y 16 hs; viandas lun a vie 10 y 12 hs'},
-  {com:15,bar:'La Paternal',nom:'Santa Inés Virgen y Mártir y San Camilo',dir:'Ávalos 250',cont:'11 3320-4021',hora:'Des, alm y merienda lun a vie 10, 12 y 16 hs; alimentos jue 12 hs; recorridos mié, jue y sáb'},
-  {com:15,bar:'Agronomía',nom:'Santa Magdalena Sofía Barat',dir:'Av. Salvador María del Carril 2458',cont:'11 5829-8772',hora:'Merienda mié 16-18 hs; alm sáb 12:30 hs; recorrido (viandas) mié 20 hs'},
-  {com:15,bar:'Villa Crespo',nom:'Nuestra Señora de la Consolación',dir:'Raúl Scalabrini Ortiz 1073',cont:'4773-0716',hora:'Alm sáb 12 hs; merienda y viandas vie 14 hs'},
-  {com:15,bar:'Agronomía',nom:'Asamblea de Agronomía',dir:'Av. Warnes y Av. Chorroarín',cont:'11 5117-5291',hora:'Merienda vie 19:30 hs'},
-  {com:15,bar:'Chacarita',nom:'Frente Patria Grande (C15)',dir:'Gandhi 373',cont:'11 3556-3607',hora:'Recorrido viandas mar 17:30 hs y vie 16 hs (Corrientes y Scalabrini Ortiz)'},
-  {com:15,bar:'La Paternal',nom:'Parroquia Encarnación del Señor',dir:'General Manuel A. Rodríguez 2444',cont:'encarnaciondelsenor987@gmail.com',hora:'Recorrido viandas mar 19:15 hs (hacia M. Rodríguez y Trellea)'},
-  {com:15,bar:'Chacarita',nom:'Fundación Social Argentinos Juniors',dir:'Playón de Chacarita',cont:'11 2647-9112',hora:'Cena (viandas) vie 20:30 hs'}
-];
+// Adapta un servicio por comuna (comedor/ducha/ropero) a la forma interna del render
+function adaptarServicio(o) {
+  return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario };
+}
 
-var DUCHAS = [
-  // C1
-  {com:1,bar:'Constitución',nom:'UTEP',dir:'Pedro Echagüe 1235',cont:'11 3777-0647',hora:'Lun, mié y vie 9 a 17 hs'},
-  {com:1,bar:'Retiro',nom:'Parroquia Cristo Obrero',dir:'Villa 31 Manzana 30',cont:'11 5849-9414',hora:'Lun a vie 9 a 18 hs'},
-  {com:1,bar:'Retiro',nom:'Nuestra Señora del Perpetuo Socorro',dir:'Suipacha 1241',cont:'4327-4549',hora:'Martes 9 hs (solo hombres)'},
-  {com:1,bar:'Monserrat',nom:'Abrigar Derechos',dir:'Hipólito Yrigoyen 1440',cont:'abrigarderechos@gmail.com',hora:'Lun y jue 10 a 15 hs'},
-  {com:1,bar:'San Telmo',nom:'El Buen Samaritano',dir:'Adolfo Alsina 346',cont:'4331-0625',hora:'Viernes 17 hs'},
-  {com:1,bar:'Retiro',nom:'Nuestra Señora del Socorro - Cáritas',dir:'Juncal 888',cont:'4393-1423',hora:'Martes 9 hs (solo hombres)'},
-  {com:1,bar:'Retiro',nom:'Somos Barrios de Pie',dir:'Alpaca 1409',cont:'11 6737-2339',hora:'Mar y jue 10 a 15 hs'},
-  {com:1,bar:'Constitución',nom:'Fundación Manos Abiertas',dir:'Av. Independencia 1150',cont:'4371-5869',hora:'Lun a jue 14 a 17 hs (solo mujeres con DNI)'},
-  // C2
-  {com:2,bar:'Recoleta',nom:'Esclavas del Sagrado Corazón',dir:'Montevideo 1372',cont:'4812-1735',hora:'Lun, mié y vie 13 a 17 hs'},
-  {com:2,bar:'Recoleta',nom:'Comedor Madre Camila',dir:'Azcuénaga 1266',cont:'4822-1897',hora:'Lun a vie 7 a 8:30 hs'},
-  {com:2,bar:'Recoleta',nom:'Parroquia Nuestra Señora del Carmen',dir:'Rodríguez Peña 840',cont:'4812-2748',hora:'Jue 17 hs (mujeres); sáb por medio 8 hs (hombres)'},
-  // C3
-  {com:3,bar:'Balvanera',nom:'Fundación Obras de San José',dir:'Moreno 2472',cont:'4308-1829',hora:'Lun a vie 7:30 a 9:30 hs'},
-  {com:3,bar:'Balvanera',nom:'MTE Vientos de Libertad',dir:'Bartolomé Mitre 3366',cont:'IG: vientosdelibertad.mte',hora:'Lun a vie 9 a 16 hs'},
-  // C4
-  {com:4,bar:'Barracas',nom:'Virgen de los Milagros de Caacupé',dir:'Av. Osvaldo Cruz 3470',cont:'4302-3643',hora:'Lun a vie 10 a 12 hs'},
-  {com:4,bar:'Parque Patricios',nom:'Proyecto 7',dir:'15 de Noviembre 2315',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom 8 a 20 hs'},
-  {com:4,bar:'Barracas',nom:'Iglesia Sagrado Corazón',dir:'Av. Vélez Sarsfield 1351',cont:'11 2291-2400',hora:'Sáb 9 a 11 hs (solo hombres)'},
-  {com:4,bar:'Parque Patricios',nom:'Proyecto 7 (Monteagudo)',dir:'Monteagudo 435',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom 8 a 20 hs'},
-  // C5
-  {com:5,bar:'Almagro',nom:'Iglesia Evangélica Metodista de Almagro',dir:'Av. Rivadavia 4050',cont:'4981-4290',hora:'Lun 9 hs (anotarse previamente sáb de 9 a 16 hs)'},
-  {com:5,bar:'Boedo',nom:'Asociación Civil No Tan Distintas',dir:'Virrey Liniers 897',cont:'11 2572-6520',hora:'Mar y jue 11 a 16 hs'},
-  // C7
-  {com:7,bar:'Parque Chacabuco',nom:'Proyecto 7',dir:'Av. Carabobo 1128',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom 8 a 20 hs'},
-  {com:7,bar:'Flores',nom:'Frente Patria Grande',dir:'Mom 2379',cont:'11 4034-9822',hora:'Un sáb al mes 10 a 13 hs'},
-  // C8
-  {com:8,bar:'Villa Lugano',nom:'María Madre de la Esperanza',dir:'Miralla 3838',cont:'4638-5225',hora:'Lun a vie 9 a 12 hs'},
-  {com:8,bar:'Villa Lugano',nom:'Centro Barrial Don Orione',dir:'Saraza 6135',cont:'11 2650-7250',hora:'Lun a vie 11 a 17 hs'},
-  // C9
-  {com:9,bar:'Mataderos',nom:'Nuestra Señora de la Misericordia - Cáritas',dir:'Av. Larrazábal 2390',cont:'4635-0605',hora:'Sábados por la mañana'},
-  {com:9,bar:'Liniers',nom:'San Cayetano - Cáritas',dir:'Cuzco 220',cont:'11 3109-6217',hora:'Lun, mié y vie: 11 hs (hombres), 12 hs (mujeres)'},
-  {com:9,bar:'Parque Avellaneda',nom:'Ser con Vos',dir:'Olivera 1497',cont:'11 3287-8206',hora:'Mié y jue 16 a 19 hs (con turno previo)'},
-  // C10
-  {com:10,bar:'Floresta',nom:'Nuestra Señora de la Candelaria',dir:'Bahía Blanca 363',cont:'5606-4675',hora:'Mar y jue 8 hs'},
-  // C11
-  {com:11,bar:'Villa Devoto',nom:'Desayunador Negrito Manuel',dir:'Fernández de Enciso 4521',cont:'11 2520-1047',hora:'Mar 9-10 hs (mujeres); vie 9-10 hs (hombres)'},
-  // C13
-  {com:13,bar:'Colegiales',nom:'San Pablo Apóstol - Cáritas',dir:'Av. Álvarez Thomas 795',cont:'4553-9567',hora:'Mié 17 a 19 hs (hombres y mujeres)'},
-  {com:13,bar:'Belgrano',nom:'San Cayetano Belgrano - Cáritas',dir:'La Pampa 2788',cont:'4781-5886',hora:'Sábados por la mañana (hombres)'},
-  // C14
-  {com:14,bar:'Palermo',nom:'Santísimo Redentor - Cáritas',dir:'Beruti 2352',cont:'4824-0895',hora:'Lun a vie 7 a 9 hs'},
-  // C15
-  {com:15,bar:'La Paternal',nom:'Santa Inés Virgen y Mártir y San Camilo - Cáritas',dir:'Ávalos 250',cont:'11 3320-4021',hora:'Lun a vie 10 a 16 hs'},
-  {com:15,bar:'La Paternal',nom:'Centro Barrial Vientos de Libertad',dir:'Ávalos 250',cont:'11 6239-5152',hora:'Lun-mié 10-18 hs; jue 12-18 hs; vie 14-18 hs'},
-];
+// Carga recursos.json, puebla los arrays y dispara el render
+function cargarRecursos() {
+  return fetch('recursos.json')
+    .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data){
+      CIS = (data.dormir || []).map(function(o){
+        return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, pop: o.poblacion, plazas: o.plazas, gestion: o.gestion };
+      });
+      COMEDORES = (data.comedores || []).map(adaptarServicio);
+      DUCHAS = (data.duchas || []).map(adaptarServicio);
+      ROPEROS = (data.roperos || []).map(adaptarServicio);
+      JURIDICO = (data.juridico || []).map(function(o){
+        return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario, tem: o.temas };
+      });
+      DEFENSORIAS = (data.defensorias || []).map(function(o){
+        return { fuero: o.fuero, nom: o.nombre, titular: o.titular, cont: o.contacto, email: o.email, dir: o.direccion };
+      });
+      renderRecursos();
+    })
+    .catch(function(e){
+      console.error('No se pudo cargar recursos.json:', e);
+      ['lista-dormir','lista-comer','lista-ducha','lista-ropa','lista-juridico','lista-defensorias'].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.innerHTML = '<div class="no-res">⚠️ No se pudieron cargar los recursos. Si abriste el archivo con doble clic (file://), hay que servirlo desde un servidor web o publicarlo.</div>';
+      });
+    });
+}
 
-var ROPEROS = [
-  // COMUNA 1
-  {com:1,bar:'Retiro',nom:'Parroquia Cristo Obrero',dir:'Villa 31, Manzana 30',cont:'11 5849-9414',hora:'Lun a vie, de 10 a 13 hs'},
-  {com:1,bar:'Retiro',nom:'Nuestra Señora del Perpetuo Socorro',dir:'Suipacha 1241',cont:'4327-4549',hora:'Miércoles, 8 hs'},
-  {com:1,bar:'Retiro',nom:'Somos Barrios de Pie',dir:'Alpaca 1409',cont:'11 6737-2339',hora:'Mar y jue, de 10 a 15 hs'},
-  {com:1,bar:'Monserrat',nom:'Red Solidaria',dir:'Plaza de Mayo',cont:'4915-9470',hora:'Lun a dom, de 19 a 21 hs'},
-  {com:1,bar:'Monserrat',nom:'Abrigar Derechos',dir:'Hipólito Yrigoyen 1440',cont:'11 2893-9058',hora:'Lun y jue, de 10 a 15 hs'},
-  {com:1,bar:'Monserrat',nom:'Asamblea Popular San Telmo',dir:'Chacabuco 616',cont:'11 3822-4017',hora:'Un viernes al mes, de 16 a 18 hs'},
-  {com:1,bar:'Constitución',nom:'Parroquia Inmaculado Corazón de María',dir:'Constitución 1077',cont:'4305-6552',hora:'Jueves, de 16 a 18 hs'},
-  {com:1,bar:'Constitución',nom:'Inmaculada Concepción',dir:'Tacuarí 870',cont:'4300-5547',hora:'Jue 13 hs (hombres), vie 13 hs (mujeres)'},
-  {com:1,bar:'Constitución',nom:'San Vicente - Cáritas',dir:'Constitución 1407',cont:'4304-0855',hora:'Lun a vie, 12 hs'},
-  {com:1,bar:'Constitución',nom:'Santa Elisa - Cáritas',dir:'Salta 2290',cont:'11 6617-7408',hora:'Miércoles, de 14 a 16 hs'},
-  {com:1,bar:'Constitución',nom:'Frente Patria Grande',dir:'Santiago del Estero 866',cont:'11 5636-9209',hora:'Mar, mié, jue y sáb 12.30 hs; sáb 11 a 13 hs (Plaza Alfonsina Storni)'},
-  {com:1,bar:'Constitución',nom:'Fundación Manos Abiertas',dir:'Av. Independencia 1150',cont:'4371-5869',hora:'Martes 14 a 17 hs (solo mujeres con DNI)'},
-  {com:1,bar:'San Telmo',nom:'San Pedro González',dir:'Humberto Primo 330',cont:'4361-1168',hora:'Martes, de 16 a 18 hs'},
-  {com:1,bar:'San Telmo',nom:'El Buen Samaritano',dir:'Adolfo Alsina 346',cont:'4331-0625',hora:'Viernes, 17 hs'},
-  // COMUNA 2
-  {com:2,bar:'Recoleta',nom:'Esclavas del Sagrado Corazón',dir:'Montevideo 1372',cont:'4812-1735',hora:'Lun, mié y vie, de 13 a 17 hs'},
-  {com:2,bar:'Recoleta',nom:'Parroquia Nuestra Señora del Carmen',dir:'Rodríguez Peña 840',cont:'4812-2748',hora:'Jue y sáb, 8 hs'},
-  {com:2,bar:'Recoleta',nom:'Santísimo Redentor',dir:'Larrea 1252',cont:'4824-0895',hora:'Lun a vie, de 7 a 9 hs'},
-  // COMUNA 3
-  {com:3,bar:'Balvanera',nom:'Amigos en el Camino',dir:'Ecuador 462',cont:'11 5608-7175',hora:'Dom a vie, de 20 a 00.30 hs'},
-  {com:3,bar:'Balvanera',nom:'Fundación Obras de San José',dir:'Moreno 2472',cont:'4308-1829',hora:'Lun a vie, de 7.30 a 9.30 hs'},
-  {com:3,bar:'Balvanera',nom:'Amigos por las Calles',dir:'Av. Belgrano 2719',cont:'11 6961-2094',hora:'Jueves, de 20 a 21 hs'},
-  {com:3,bar:'Balvanera',nom:'MTE Vientos de Libertad',dir:'Bartolomé Mitre 3366',cont:'vientosdelibertad.mte.com.ar',hora:'Lun a vie, de 9 a 16 hs'},
-  {com:3,bar:'San Cristóbal',nom:'Somos Barrios de Pie',dir:'Deán Funes 1167',cont:'11 3605-1352',hora:'Mar, jue y vie, de 10 a 15 hs'},
-  // COMUNA 4
-  {com:4,bar:'Pompeya',nom:'Acción Social Sinaí',dir:'Av. Sáenz 541',cont:'11 3013-9726',hora:'Sábados, 17.30 hs'},
-  {com:4,bar:'Barracas',nom:'Iglesia Sagrado Corazón',dir:'Av. Vélez Sarsfield 1351',cont:'11 2291-2400',hora:'Sábados, de 8 a 13 hs'},
-  {com:4,bar:'Barracas',nom:'Virgen de los Milagros de Caacupé',dir:'Av. Osvaldo Cruz 3470',cont:'4302-3643',hora:'Lun a vie, de 10 a 12 hs'},
-  {com:4,bar:'Barracas',nom:'Santa Lucía, Virgen y Mártir',dir:'Av. Montes de Oca 550',cont:'11 2640-2528',hora:'Jueves, de 16.30 a 18.30 hs'},
-  {com:4,bar:'La Boca',nom:'San Juan Evangelista',dir:'Lamadrid 470',cont:'4301-1155',hora:'Lun y jue, de 8 a 10.30 hs'},
-  {com:4,bar:'Parque Patricios',nom:'Acción Comunitaria',dir:'Pasaje Guaraní 563',cont:'info@accioncomunitaria.org',hora:'Mar y jue, 10 hs'},
-  {com:4,bar:'Parque Patricios',nom:'Proyecto 7',dir:'15 de Noviembre 2315',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom, de 8 a 20 hs'},
-  {com:4,bar:'Parque Patricios',nom:'Proyecto 7',dir:'Monteagudo 435',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom, de 8 a 20 hs'},
-  {com:4,bar:'Nueva Pompeya',nom:'Acción Social Sinaí',dir:'Sáenz 541',cont:'11 3013-9726',hora:'Sáb 17.30 hs, dos veces al mes'},
-  // COMUNA 5
-  {com:5,bar:'Almagro',nom:'Club Solidario',dir:'Av. Belgrano 3660',cont:'11 6461-9954',hora:'Mié 16.30 a 18 hs y vie 9.30 a 11 hs'},
-  {com:5,bar:'Almagro',nom:'Parroquia Betania',dir:'Medrano 752',cont:'11 5709-0403',hora:'Jueves, de 10 a 12 hs'},
-  {com:5,bar:'Almagro',nom:'Iglesia Evangélica Metodista de Almagro',dir:'Av. Rivadavia 4050',cont:'4981-4290',hora:'Sábados, de 9 a 16 hs'},
-  {com:5,bar:'Boedo',nom:'Asociación Civil No Tan Distintas',dir:'Virrey Liniers 897',cont:'11 2572-6520',hora:'Mar y jue, de 11 a 16 hs'},
-  // COMUNA 6
-  {com:6,bar:'Caballito',nom:'Club Oeste',dir:'José María Moreno 446',cont:'IG: oeste_solidario',hora:'Lun y mar, 21 hs'},
-  {com:6,bar:'Caballito',nom:'Parroquia Nuestra Señora de Caacupé',dir:'Av. Rivadavia 4879',cont:'4901-1811',hora:'Lunes, 20 hs'},
-  {com:6,bar:'Caballito',nom:'Nuestra Señora de Buenos Aires',dir:'Av. Gaona 1730',cont:'4581-0440',hora:'Sábados, 8 hs'},
-  {com:6,bar:'Caballito',nom:'Buen Pastor - Cáritas',dir:'Aranguren 691',cont:'4904-0590',hora:'Primer lunes del mes, de 16 a 18.30 hs'},
-  {com:6,bar:'Caballito',nom:'Plaza Irlanda Solidaria',dir:'Seguí 850',cont:'IG: plazairlandasolidaria',hora:'Jueves, 20 hs'},
-  {com:6,bar:'Caballito',nom:'UB La Cámpora "Kirchner Vuelve"',dir:'Ambrosetti 279',cont:'IG: Ic_caballito',hora:'Jueves, 20 hs'},
-  {com:6,bar:'Villa General Mitre',nom:'Parroquia Nuestra Señora del Consuelo',dir:'Villa General Mitre',cont:'11 6799-9209',hora:'Jueves, de 14 a 16 hs'},
-  // COMUNA 7
-  {com:7,bar:'Flores',nom:'Parroquia Santa María Madre del Pueblo',dir:'Av. Perito Moreno y Av. Cruz',cont:'4139-0403',hora:'Lun a vie, 10 hs'},
-  {com:7,bar:'Flores',nom:'San José de Flores',dir:'Av. Rivadavia 6950',cont:'4637-1489',hora:'2do martes del mes'},
-  {com:7,bar:'Flores',nom:'Nuestra Señora de la Visitación',dir:'Av. Nazca y Páez',cont:'11 3971-4015',hora:'Martes, 17 hs'},
-  {com:7,bar:'Floresta',nom:'Nuestra Señora de la Paz',dir:'Pergamino 63',cont:'4611-9463',hora:'Lun a vie, de 8 a 20 hs'},
-  {com:7,bar:'Parque Chacabuco',nom:'San Saturnino y San Judas Tadeo - Cáritas',dir:'Miraflores 2080',cont:'4921-9483',hora:'2do sábado del mes, de 9 a 13 hs'},
-  {com:7,bar:'Parque Chacabuco',nom:'Proyecto 7',dir:'Av. Carabobo 1128',cont:'proyecto7bsas@gmail.com',hora:'Lun a dom, de 8 a 20 hs'},
-  // COMUNA 8
-  {com:8,bar:'Villa Lugano',nom:'San José Benito Cottolengo - Cáritas',dir:'Av. Piedrabuena 3848',cont:'4601-2723',hora:'Miércoles, 17 hs'},
-  {com:8,bar:'Villa Lugano',nom:'María Madre de la Esperanza',dir:'Miralla 3838',cont:'4638-5225',hora:'Mié y jue, de 8 a 11.30 hs'},
-  {com:8,bar:'Villa Lugano',nom:'San Juan Diego Cuauhtlatoatzin - Cáritas',dir:'Av. Escalada 2858',cont:'11 7002-3257',hora:'Jueves, de 17 a 19 hs'},
-  {com:8,bar:'Villa Lugano',nom:'Señora del Carmen - Cáritas',dir:'Eva Perón 6378, manzana 8, casa 1',cont:'4601-0423',hora:'Mié 17 a 19 hs y sáb 9 a 12 hs'},
-  {com:8,bar:'Villa Soldati',nom:'San Francisco de Asís',dir:'Av. de los Corrales 3420',cont:'11 6137-8923',hora:'Lun a vie, de 11 a 16 hs'},
-  {com:8,bar:'Villa Soldati',nom:'Cristo Obrero y San Blas',dir:'Av. Lafuente 3242',cont:'11 5935-1160',hora:'Mar y jue, 17 hs'},
-  {com:8,bar:'Villa Soldati',nom:'Nuestra Señora de Fátima',dir:'Av. Mariano Acosta 2929',cont:'11 3017-1091',hora:'Viernes, de 9 a 11 hs'},
-  {com:8,bar:'Villa Soldati',nom:'Virgen Inmaculada - Cáritas',dir:'Martinez Castro y Pasaje C',cont:'11 3963-4990',hora:'Mar y vie, de 15.30 a 17 hs'},
-  // COMUNA 9
-  {com:9,bar:'Mataderos',nom:'Nuestra Señora de la Misericordia',dir:'Av. Larrazábal 2390',cont:'4635-0605',hora:'Mar y jue, de 15 a 17 hs'},
-  {com:9,bar:'Parque Avellaneda',nom:'Santa María Teresa Goretti',dir:'Av. Escalada 1150',cont:'4635-4012',hora:'Jue y vie, de 12 a 19 hs'},
-  {com:9,bar:'Parque Avellaneda',nom:'Virgen de los Desamparados',dir:'José Enrique Rodó 4203',cont:'4671-1255',hora:'Jueves, de 13 a 16 hs'},
-  {com:9,bar:'Liniers',nom:'San Cayetano',dir:'Cuzco 220',cont:'11 3109-6217',hora:'Lun y jue, 17 hs'},
-  // COMUNA 10
-  {com:10,bar:'Floresta',nom:'Nuestra Señora de la Candelaria',dir:'Bahía Blanca 363',cont:'11 5606-4675',hora:'Mar y jue, 8 hs'},
-  {com:10,bar:'Villa Luro',nom:'San Francisco Solano - Cáritas',dir:'Zelada 4771',cont:'4683-3102',hora:'4to miércoles, de 16 a 18 hs'},
-  {com:10,bar:'Villa del Parque',nom:'UB Vecinos de Perón',dir:'Av. Juan B. Justo 7447',cont:'11 2388-4117',hora:'Martes, 20 hs'},
-  // COMUNA 11
-  {com:11,bar:'Villa del Parque',nom:'Parroquia Santa Ana',dir:'Pedro Lozano 3167',cont:'4501-0723',hora:'Lun y mié, de 16.30 a 17.30 hs'},
-  {com:11,bar:'Villa del Parque',nom:'Sede Norberto Perone - Racing Club',dir:'Nogoyó 3045',cont:'11 5025-1873',hora:'Lun y mié, 15 hs'},
-  {com:11,bar:'Villa Devoto',nom:'Desayunador Negrito Manuel',dir:'Fernández de Enciso 4521',cont:'11 4971-9304',hora:'Martes, de 9 a 10 hs'},
-  // COMUNA 12
-  {com:12,bar:'Saavedra',nom:'Centro Cultural los Goyeneches',dir:'Arias 4081',cont:'11 6442-4299',hora:'Lun a vie, 16.30 hs'},
-  {com:12,bar:'Saavedra',nom:'RxA Comuna 12',dir:'Av. Balbín 3711',cont:'11 6006-8224',hora:'Lun a vie 17 a 20 hs; sáb 10 a 13 hs'},
-  {com:12,bar:'Villa Urquiza',nom:'Jesús Misericordioso',dir:'Pedro I. Rivera 4591',cont:'4521-3153',hora:'Miércoles, 19 hs'},
-  {com:12,bar:'Villa Pueyrredón',nom:'Cristo Rey',dir:'Larsen 2384',cont:'4572-5459',hora:'Un sábado al mes, horario rotativo'},
-  // COMUNA 13
-  {com:13,bar:'Colegiales',nom:'San Pablo Apóstol',dir:'Av. Álvarez Thomas 795',cont:'4553-9567',hora:'Lun y vie, de 17.30 a 18.30 hs'},
-  {com:13,bar:'Belgrano',nom:'San Cayetano - Cáritas',dir:'Vidal 1745',cont:'4781-5886',hora:'Lun y mié, de 9 a 12 hs'},
-  {com:13,bar:'Núñez',nom:'Santísima Trinidad',dir:'Av. Cabildo 3680',cont:'4702-4288',hora:'Lun a jue 9 a 12 hs y mié 15 a 18 hs'},
-  // COMUNA 14
-  {com:14,bar:'Palermo',nom:'Nuestra Señora de Guadalupe',dir:'Gral. Lucio Norberto Mansilla 3847',cont:'4824-8852',hora:'Lun, mié y vie, 15 hs'},
-  {com:14,bar:'Palermo',nom:'Santa Lucía - Cáritas',dir:'Gascón 1372',cont:'11 4245-2140',hora:'1er y 3er domingo del mes, de 17 a 18 hs'},
-  // COMUNA 15
-  {com:15,bar:'La Paternal',nom:'Santa Inés, Virgen y Mártir y San Camilo - Cáritas',dir:'Ávalos 250',cont:'11 3320-4021',hora:'Jueves, de 8 a 12 hs'},
-  {com:15,bar:'Agronomía',nom:'Santa Magdalena Sofía Barat',dir:'Av. Salvador María del Carril 2458',cont:'4571-3829',hora:'Miércoles, de 16 a 18 hs'}
-];
-
-var JURIDICO = [
-  {com:1,bar:'Monserrat',nom:'CELS',dir:'Piedras 547',cont:'4334-4200',hora:'Mar y vie, de 16 a 18 hs',tem:'Derechos humanos, privados de libertad, salud mental, discapacidad, acceso a la justicia'},
-  {com:1,bar:'San Nicolás',nom:'ACIJ - Asoc. Civil por la Igualdad y la Justicia',dir:'Av. de Mayo 1161, 1er piso Dpto. 1',cont:'4381-2371',hora:'Lun y jue, de 14 a 18 hs',tem:'Derechos económicos y sociales, derecho constitucional'},
-  {com:1,bar:'San Nicolás',nom:'Centro Jurídico Derecho a la Identidad (GCBA)',dir:'Rodríguez Peña 778',cont:'11 4823-1165',hora:'Lun a vie, de 9.30 a 15.30 hs',tem:'Identidad, DNI, inscripción registral, procesos judiciales'},
-  {com:1,bar:'San Nicolás',nom:'Procuración General CABA (PG CABA)',dir:'Uruguay 432',cont:'4323-9200 int. 7522',hora:'Lun a vie, de 10 a 14 hs',tem:'Derecho civil y familia, alimentos, autorización salida del país, violencia doméstica'},
-  {com:1,bar:'San Telmo',nom:'El Buen Samaritano',dir:'Adolfo Alsina 346',cont:'4331-0625',hora:'Viernes, 17 hs',tem:'Regularización migratoria, derecho civil y penal, acceso a la vivienda'},
-  {com:2,bar:'Recoleta',nom:'Consultorio y Patrocinio Jurídico Gratuito UBA',dir:'Av. Figueroa Alcorta 2263 (subsuelo)',cont:'consultoriojuridico@derecho.uba.ar',hora:'Lun a vie, de 9 a 18 hs',tem:'Alimentos, desalojo, jubilación, pensión, laboral, penal, salud, violencia y otros'},
-  {com:5,bar:'Boedo',nom:'Los Dandys de Boedo',dir:'Carlos Calvo 3401',cont:'11 6825-2145',hora:'Sáb, de 10 a 13 hs (cada 15 días)',tem:'Filiación, alimentos, divorcio, alquileres, desalojos, salud, penal y laboral'},
-  {com:9,bar:'Liniers',nom:'Parroquia San Cayetano',dir:'Cuzco 220',cont:'11 3109-6217',hora:'Lun a vie, de 9 a 15 hs',tem:'Asesoramiento jurídico gratuito'}
-];
-
-var DEFENSORIAS = [
-  // Fuero Contencioso, Administrativo y Tributario
-  {fuero:'CAyT',nom:'Cámara de Apelaciones CAyT Nº 1',titular:'Dr. Fernando Lodeiro Martínez',cont:'7091-3101',email:'defcamcayt1@mpdefensa.gob.ar',dir:'Hipólito Yrigoyen 932, 1º Subsuelo'},
-  {fuero:'CAyT',nom:'Cámara de Apelaciones CAyT Nº 2',titular:'Dra. Mariana Beatriz Pucciarello',cont:'7091-3135',email:'defcamcayt2@mpdefensa.gob.ar',dir:'Hipólito Yrigoyen 932, 1º Subsuelo'},
-  {fuero:'CAyT',nom:'Defensoría CAyT 1',titular:'Dr. Hernán García',cont:'7091-2409',email:'defcayt1@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 11º'},
-  {fuero:'CAyT',nom:'Defensoría CAyT 2',titular:'Dr. Pablo A. De Giovanni',cont:'7091-2429',email:'defcayt2@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 5º CF'},
-  {fuero:'CAyT',nom:'Defensoría CAyT 3',titular:'Dr. Sebastián Cayzac',cont:'7091-2440',email:'defcayt3@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 6º CF'},
-  {fuero:'CAyT',nom:'Defensoría CAyT 4',titular:'Dr. Marcelo Miguel Cerrudo',cont:'7091-2468',email:'mcerrudo@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 6º Frente'},
-  {fuero:'CAyT',nom:'Defensoría CAyT 5',titular:'Dra. Giselle Furlong Pader',cont:'7091-3705',email:'defcayt5@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 5º'},
-  {fuero:'CAyT',nom:'Defensoría CAyT 6',titular:'Dr. Javier Indalecio Barraza',cont:'7091-3725',email:'defcayt6@mpdefensa.gob.ar',dir:'Av. de Mayo 654, Piso 2º'},
-  // Unidades Especializadas CAyT
-  {fuero:'Unidades',nom:'Unidad de Relaciones de Consumo',titular:'Dra. Alejandra Lorena Lampolio',cont:'',email:'',dir:''},
-  {fuero:'Unidades',nom:'Unidad de Procesos de Urbanización e Integración Social',titular:'Dr. Ramiro Joaquín Dos Santos Freire',cont:'',email:'',dir:''},
-  // Fuero Penal, Contravencional y de Faltas
-  {fuero:'PCyF',nom:'Cámara de Apelaciones PCyF Nº 1',titular:'Dr. Gustavo Eduardo Aboso',cont:'7091-2664',email:'defcampcyf1@mpdefensa.gob.ar',dir:'Av. Córdoba 972, Piso 6º'},
-  {fuero:'PCyF',nom:'Cámara de Apelaciones PCyF Nº 2',titular:'Dr. Emilio Antonio Cappuccio',cont:'7091-2654',email:'defcampcyf2@mpdefensa.gob.ar',dir:'Av. Córdoba 972, Piso 6º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 1',titular:'Dra. Patricia Beatriz Lopez',cont:'7091-2551',email:'defpcyf1@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 2',titular:'Dr. Gonzalo Montenegro Correa',cont:'7091-2580',email:'defpcyf2@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 3',titular:'Dra. María Andrea Piesco',cont:'7091-2772',email:'defpcyf3@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 7º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 4',titular:'Dr. Sebastián Zanazzi',cont:'7091-2773',email:'defpcyf4@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 7º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 5',titular:'Dra. Victoria Inés Almada',cont:'7091-2803',email:'defpcyf5@mpdefensa.gob.ar',dir:'Paseo Colón 1333, Piso 7º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 6',titular:'Dra. Marcela María Amelia Paz',cont:'7091-2522',email:'defpcyf6@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 6º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 7',titular:'Dr. Marcelino N. Civitillo',cont:'7091-2815',email:'defpcyf7@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 8',titular:'Dr. Matías Becerra',cont:'7091-2521',email:'defpcyf8@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 6º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 9',titular:'Dra. Sandra Marcela Donnini',cont:'7091-2557',email:'mdonnini@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 10',titular:'Dra. María Florencia Zapata',cont:'7091-2831',email:'defpcyf10@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 11',titular:'Dra. Carolina Spósito',cont:'7091-2847',email:'defpcyf11@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 12',titular:'Dr. Javier Balmayor',cont:'7091-2865',email:'defpcyf12@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 5º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 13',titular:'Dra. Paula Lagos',cont:'7091-2526',email:'defpcyf13@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 7º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 14',titular:'Dr. Sergio Julian Pistone',cont:'7091-2554',email:'defpcyf14@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 15',titular:'Dr. Ariel Sebastián Rebour',cont:'7091-2513',email:'defpcyf15@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 6º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 16',titular:'Dra. Gabriela Marquiegui Mc Loughlin',cont:'7091-2501',email:'defpcyf16@mpdefensa.gob.ar',dir:'Suipacha 150, Piso 7º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 17',titular:'Dr. Miguel Mones Ruiz',cont:'7091-2883',email:'defpcyf17@mpdefensa.gob.ar',dir:'Paseo Colón 1333, Piso 7º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 18',titular:'Dr. Juan Ignacio Cafiero',cont:'7091-2555',email:'defpcyf18@mpdefensa.gob.ar',dir:'Av. Cabildo 3067, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 19',titular:'Dra. Bibiana Marys Birriel Moreira',cont:'7091-3525',email:'defpcyf19@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 4º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 20',titular:'Dra. Marina Recabarra',cont:'7091-3542',email:'defpcyf20@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 5º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 21',titular:'Dr. Juan Manuel Murature',cont:'7091-3557',email:'defpcyf21@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 5º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 22',titular:'Dr. Ariel Santiago Saenz Tejeira',cont:'7091-3505',email:'asaenztejeira@mpdefensa.gob.ar',dir:'Paseo Colón 1333, Piso 7º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 23',titular:'Dra. Claudia Analía Rodríguez',cont:'7091-3576',email:'defpcyf23@mpdefensa.gob.ar',dir:'Paseo Colón 1333, Piso 11º'},
-  {fuero:'PCyF',nom:'Defensoría PCyF 24',titular:'Dra. María Laura Giuseppucci',cont:'7091-3586',email:'defpcyf24@mpdefensa.gob.ar',dir:'Av. Paseo Colón 1333, Piso 11º'},
-  // Secretarías Letradas PCyF
-  {fuero:'Secretarías',nom:'Secretaría Letrada - Intervención Penal Juvenil',titular:'Dra. Durga Marcela Paula Angulo',cont:'',email:'',dir:''},
-  {fuero:'Secretarías',nom:'Secretaría Letrada - Ejecución de Penas Privativas de la Libertad',titular:'Dra. Mariana Salduna',cont:'',email:'',dir:''},
-  {fuero:'Secretarías',nom:'Secretaría Letrada - Delitos, Contravenciones Especiales y Faltas',titular:'Dra. Silvina Noemí Nápoli',cont:'',email:'',dir:''}
-];
+// Renderiza todas las secciones territoriales y actualiza los contadores
+function renderRecursos() {
+  renderPorComuna(CIS, 'lista-dormir', 'cis');
+  renderPorComuna(COMEDORES, 'lista-comer', 'comedor');
+  renderPorComuna(DUCHAS, 'lista-ducha', 'ducha');
+  renderPorComuna(ROPEROS, 'lista-ropa', 'ropa');
+  renderPlano(JURIDICO, 'lista-juridico');
+  renderDefensorias(DEFENSORIAS, 'lista-defensorias');
+  document.getElementById('cnt-dormir').textContent = CIS.length + ' lugares';
+  document.getElementById('cnt-comer').textContent = COMEDORES.length + ' lugares';
+  document.getElementById('cnt-ducha').textContent = DUCHAS.length + ' lugares';
+  document.getElementById('cnt-ropa').textContent = ROPEROS.length + ' lugares';
+}
 
 // RENDER SERVICIOS
 function renderPorComuna(datos, contId, tipo) {
@@ -3168,16 +2771,7 @@ function renderDefensorias(datos, contId) {
 
 window.addEventListener('load', function() {
   cargarProgramas();
-  renderPorComuna(CIS, 'lista-dormir', 'cis');
-  renderPorComuna(COMEDORES, 'lista-comer', 'comedor');
-  renderPorComuna(DUCHAS, 'lista-ducha', 'ducha');
-  renderPorComuna(ROPEROS, 'lista-ropa', 'ropa');
-  renderPlano(JURIDICO, 'lista-juridico');
-  renderDefensorias(DEFENSORIAS, 'lista-defensorias');
-  document.getElementById('cnt-dormir').textContent = CIS.length + ' lugares';
-  document.getElementById('cnt-comer').textContent = COMEDORES.length + ' lugares';
-  document.getElementById('cnt-ducha').textContent = DUCHAS.length + ' lugares';
-  document.getElementById('cnt-ropa').textContent = ROPEROS.length + ' lugares';
+  cargarRecursos();
 });
 </script>
 <footer style="text-align:center;padding:24px 16px 32px;background:var(--negro);">
