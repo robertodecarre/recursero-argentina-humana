@@ -1,0 +1,602 @@
+{
+  "version": 1,
+  "actualizado": "2026-06-15",
+  "programas": [
+    {
+      "id": "ciudadania_portena",
+      "nombre": "Ciudadanía Porteña",
+      "ambito": "caba",
+      "descripcion_corta": "Tarjeta para compra de alimentos, limpieza e higiene. Entre $85.000 y $115.000 promedio por hogar (Abril 2026).",
+      "descripcion_larga": "Ciudadanía Porteña otorga una **tarjeta precargada del Banco Ciudad** para alimentos, limpieza, higiene, útiles y garrafa.\n\nEl monto es de **$85.000 a $115.000 promedio por hogar** (Abril 2026) y puede **duplicar o triplicar al Ticket Social** según la composición familiar. Para acceder se ingresa primero al Ticket Social y luego se evalúa el pase.\n\n**Complementos:** Red Primeros Meses (embarazo y primer año) y Estudiar es Trabajar (18 a 40 años, para terminar estudios).\n\nLas personas de **25 a 60 años sin hijos y sin empleo registrado** deben cumplir talleres de orientación laboral.",
+      "requisitos": [
+        "Residencia en CABA de 2 años o más",
+        "Ingresos totales del hogar por debajo de la línea de pobreza del INDEC (no importa si son en blanco o en negro). Valores marzo 2026: persona sola $464.228 · familia de 3 $1.142.000 · familia de 4 $1.434.464",
+        "DNI argentino o residencia precaria para todos los integrantes"
+      ],
+      "documentacion": [
+        "DNI original y copia de todos los integrantes",
+        "Partidas de nacimiento de menores de 18",
+        "CUIL de todos",
+        "Certificado de domicilio (Policía de la Ciudad o factura)",
+        "Certificados de escolaridad de 4 a 18 años",
+        "CUD si corresponde"
+      ],
+      "como_acceder": "Trámite virtual: enviar mail a inscripcionescp@buenosaires.gob.ar indicando DNI/precaria, CUIL, nombre, fecha de nacimiento y domicilio de cada integrante. Presencial: Se realiza en la SAS de tu comuna (lunes a viernes 9:30 a 15:30 hs) o Sede Central: Salguero 979, Almagro (lun a vie 9 a 15 hs).",
+      "links": [
+        { "texto": "Web oficial GCBA", "url": "https://buenosaires.gob.ar/desarrollohumanoyhabitat/ciudadania-portena", "estilo": "primario" },
+        { "texto": "Sacar turno en Sede de Atención Social", "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346", "estilo": "primario" },
+        { "texto": "Consultas en Salguero 979 (beneficiarios)", "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=5685", "estilo": "secundario" },
+        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+      ],
+      "contactos": [
+        "inscripcionescp@buenosaires.gob.ar",
+        "Salguero 979, Almagro — Lun a vie 9 a 15 hs",
+        "Línea 147"
+      ],
+      "incompatible_con": ["ticket_social"],
+      "nota_incompatibilidad": "Para acceder a Ciudadanía Porteña ($85.000–$115.000 promedio/hogar, Abril 2026), que es significativamente mayor al Ticket Social, debería darse de baja de este último (el trámite lo gestiona el mismo equipo).",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "res_caba", "op": ">=", "valor": 2 }
+        ]
+      }
+    },
+    {
+      "id": "ticket_social",
+      "nombre": "Ticket Social CABA",
+      "ambito": "caba",
+      "descripcion_corta": "Apoyo económico alimentario del GCBA. Puerta de entrada a Ciudadanía Porteña. ⚠️ El GCBA no publica el monto — consultarlo en sede o por ticketsocial@buenosaires.gob.ar.",
+      "descripcion_larga": "El Ticket Social otorga una **tarjeta para compra de alimentos**. Es la **puerta de entrada al programa Ciudadanía Porteña**, que duplica o triplica su monto según la composición familiar.\n\nSe recomienda consultar si ya califica para **Ciudadanía Porteña** directamente.\n\n⚠️ **MONTO:** el GCBA no publica el monto actualizado en su web. Consultarlo en la sede (**Av. Entre Ríos 1492 PB**) o por mail a **ticketsocial@buenosaires.gob.ar** antes de informarlo.",
+      "requisitos": [
+        "Residencia en CABA de 2 años o más",
+        "Situación de vulnerabilidad socioeconómica — ingresos del hogar por debajo de la línea de pobreza. Valores marzo 2026: persona sola $464.228 · familia de 3 $1.142.000 · familia de 4 $1.434.464"
+      ],
+      "documentacion": [
+        "DNI y CUIL de todos los integrantes",
+        "Partidas de nacimiento de menores",
+        "Certificado de domicilio",
+        "Certificado médico si hay riesgo nutricional"
+      ],
+      "como_acceder": "Online: tramitesdigitales.buenosaires.gob.ar/formulario/formularioTemplate/ticketSocial · Presencial: Sede de Atención Social de la comuna (lun a vie 9:30 a 15:30 hs) · Sede Central: Av. Entre Ríos 1492 PB.",
+      "links": [
+        { "texto": "Inscripción online", "url": "https://tramitesdigitales.buenosaires.gob.ar/formulario/formularioTemplate/ticketSocial", "estilo": "primario" },
+        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+      ],
+      "contactos": [
+        "ticketsocial@buenosaires.gob.ar",
+        "Av. Entre Ríos 1492 PB — Lun a vie 9 a 15 hs",
+        "Línea 147"
+      ],
+      "incompatible_con": ["ciudadania_portena"],
+      "nota_incompatibilidad": "Ciudadanía Porteña ($85.000–$115.000 promedio/hogar, Abril 2026) puede duplicar o triplicar al Ticket Social según composición familiar. Consultar en sede el pase a Ciudadanía Porteña.",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "res_caba", "op": ">=", "valor": 2 }
+        ]
+      }
+    },
+    {
+      "id": "nuestras_familias",
+      "nombre": "Nuestras Familias",
+      "ambito": "caba",
+      "descripcion_corta": "Apoyo económico del GCBA para familias con hijos en vulnerabilidad. Puente hacia la AUH. ⚠️ El GCBA no publica el monto — consultarlo en nuestrasfamilias@buenosaires.gob.ar.",
+      "descripcion_larga": "Nuestras Familias es un **apoyo económico del GCBA** para familias con **hijos menores de 18 o embarazadas** en situación de vulnerabilidad. Su rol principal es ser una **red de entrada** para familias que todavía no pueden acceder a la AUH nacional.\n\n**¿Cuándo corresponde este programa y no la AUH?**\n\n**1. Familia migrante con 2 años en CABA pero menos de 2 en Argentina:** la AUH exige 2 años de residencia legal en el país. Con 2 años en CABA ya califica para Nuestras Familias aunque todavía no llegue al requisito nacional.\n\n**2. Documentación incompleta:** si el DNI del menor está en trámite, la partida de nacimiento está pendiente, o hay una situación de guarda no formalizada, ANSES no puede procesar la AUH. La SAS (Sede de Atención Social) puede otorgar Nuestras Familias como medida de emergencia mientras se regulariza.\n\n**3. Situación de emergencia detectada por trabajo social:** el programa puede otorgarse por derivación directa de las SAS (Sedes de Atención Social) ante situaciones de crisis.\n\n⚠️ **IMPORTANTE:** una vez que la familia regulariza su situación y puede tramitar la AUH, conviene hacer el cambio. La AUH sumada a la Tarjeta Alimentar suele representar un ingreso mayor que Nuestras Familias.",
+      "requisitos": [
+        "Hijos menores de 18 o embarazo",
+        "Residencia en CABA de 2 años o más",
+        "Situación de vulnerabilidad o riesgo social",
+        "No cobrar AUH nacional"
+      ],
+      "documentacion": [
+        "DNI y CUIL del solicitante y grupo familiar",
+        "Partidas de nacimiento de menores de 18 (o constancia de trámite si está pendiente)",
+        "Certificados de escolaridad hasta 18 años",
+        "Documentación de la situación que motivó la solicitud (informe social, constancia de trámite pendiente, etc.)",
+        "CUD si corresponde"
+      ],
+      "como_acceder": "Online: buenosaires.gob.ar/tramites/inscripcion-en-el-programa-nuestras-familias · Presencial: cualquier Sede de Atención Social (lun a vie 9:30 a 15:30 hs). En situaciones de emergencia, el ingreso puede ser por derivación directa de la SAS (Sede de Atención Social) de la comuna.",
+      "links": [
+        { "texto": "Turno en SAS", "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346", "estilo": "primario" }
+      ],
+      "contactos": [
+        "nuestrasfamilias@buenosaires.gob.ar",
+        "Av. Entre Ríos 1492 1° piso, oficina 109",
+        "4300-9610 / 8674 — Lun a vie 10 a 16 hs"
+      ],
+      "incompatible_con": ["auh"],
+      "nota_incompatibilidad": "No compatible con AUH. Si ya puede cobrar AUH ($136.666/hijo/mes), la AUH sumada a la Tarjeta Alimentar ($72.250 con 1 hijo · $113.299 con 2 · $149.425 con 3 o más · junio 2026) generalmente supera a Nuestras Familias. Conviene hacer el cambio si ya cumple los requisitos.",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "res_caba", "op": ">=", "valor": 2 },
+          { "cualquiera": [
+            { "campo": "hijos", "op": "==", "valor": "si" },
+            { "campo": "emb", "op": "==", "valor": "si" }
+          ]},
+          { "campo": "cobra", "op": "no_incluye", "valor": "auh" }
+        ]
+      }
+    },
+    {
+      "id": "vivir_en_casa",
+      "nombre": "Vivir en Casa",
+      "ambito": "caba",
+      "descripcion_corta": "Subsidio del GCBA para alquiler para personas de 60 años o más en riesgo habitacional. ⚠️ El GCBA no publica el monto — consultarlo en vivirencasa@buenosaires.gob.ar o al 4342-8587 (lun a vie 9 a 15 hs).",
+      "descripcion_larga": "Vivir en Casa es un **apoyo económico del GCBA** para gastos de **alquiler, expensas y servicios**, destinado a personas **mayores de 60 años** en riesgo habitacional que no tienen el beneficio por obra social.\n\n⚠️ **MONTO:** el GCBA no publica el monto actualizado en su web. Consultarlo en **vivirencasa@buenosaires.gob.ar** o llamando al **4342-8587** (lun a vie 9 a 15 hs) antes de informarlo.\n\n⚠️ **Diferencia con el subsidio habitacional (Ley 6935):** este programa es para personas de 60+ que tienen alquiler pero no pueden sostenerlo. Si la persona está en **situación de calle o riesgo inminente de desamparo**, el camino correcto es el **Apoyo Habitacional Ley 6935**, que no tiene límite de edad y cubre emergencias. Los dos programas son incompatibles entre sí al mismo tiempo.",
+      "requisitos": [
+        "60 años o más",
+        "Residencia en CABA de 2 años o más",
+        "Ser autovalido o con leve nivel de dependencia",
+        "No alquilar a un familiar responsable",
+        "No recibir otro subsidio habitacional"
+      ],
+      "documentacion": [
+        "DNI",
+        "Recibo de haberes por pensión, jubilación o sueldo",
+        "Comprobantes de pago de alquiler, expensas y servicios",
+        "Certificado de domicilio"
+      ],
+      "como_acceder": "Online: buenosaires.gob.ar/tramites/postulacion-al-subsidio-vivir-en-casa · Telefónico: 4342-8587 (lun a vie 9 a 15 hs) · Presencial: Av. Belgrano 858 PB o cualquier Sede de Atención Social.",
+      "links": [
+        { "texto": "Turno en SAS", "url": "https://formulario-sigeci.buenosaires.gob.ar/InicioTramiteComun?idPrestacion=4346", "estilo": "primario" },
+        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+      ],
+      "contactos": [
+        "vivirencasa@buenosaires.gob.ar",
+        "4342-8587 — Lun a vie 9 a 15 hs",
+        "Av. Belgrano 858 PB"
+      ],
+      "incompatible_con": ["apoyo_habitacional_ley6935"],
+      "nota_incompatibilidad": "No compatible con el Programa de Apoyo Habitacional Ley 6935. Solo se puede cobrar uno de los dos. Abrí cada programa para comparar cuál se ajusta mejor a la situación.",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "res_caba", "op": ">=", "valor": 2 },
+          { "campo": "edadMin", "op": ">=", "valor": 60 }
+        ]
+      }
+    },
+    {
+      "id": "apoyo_habitacional_ley6935",
+      "nombre": "Programa de Apoyo Habitacional - Ley 6935",
+      "ambito": "caba",
+      "descripcion_corta": "Apoyo habitacional por ley con actualizaciones automáticas y pagos únicos.",
+      "descripcion_larga": "El Programa de Apoyo Habitacional - Ley 6935 es un **derecho por ley**, con **actualización automática cada 6 meses** (Abril/Octubre) por índice IDECBA.\n\n**Monto:** hasta **$227.000 mensuales** (Abril 2026).\n\n**Novedad — Pago Único:** se puede solicitar el cobro adelantado de cuotas para pagar depósitos y gastos de ingreso a un nuevo alquiler.\n\n**Novedad — Pago de Emergencia:** acceso inmediato para gente en calle efectiva, con 60 días para completar papeles.\n\n**Prioridad:** personas en calle, familias con menores, discapacidad, adultos mayores y víctimas de violencia.\n\n⚠️ **Edad y este programa:** no hay límite de edad. Una persona mayor de 60 años en situación de calle o riesgo inminente de desamparo accede igual que cualquier otra persona. La edad de 60+ habilita también a **Vivir en Casa**, pero ese programa es para sostener un alquiler existente — no para emergencia habitacional. Los dos programas son incompatibles entre sí al mismo tiempo, pero no se excluyen por edad.",
+      "requisitos": [
+        "Situación de calle o riesgo inminente de desamparo habitacional",
+        "Residencia de 2 años en CABA (DNI o informe social)",
+        "Ingresos menores a la línea de pobreza del INDEC",
+        "Informe social de trabajador/a social matriculado/a",
+        "Sin otro subsidio habitacional activo"
+      ],
+      "documentacion": [
+        "DNI de todos los integrantes",
+        "Partidas de nacimiento de menores",
+        "Vacunas al día de menores",
+        "Certificado de escolaridad de menores",
+        "Negativa de ANSES",
+        "Presupuesto del hotel o documentación de vivienda",
+        "Residencia Precaria para extranjeros sin DNI"
+      ],
+      "como_acceder": "Presencial en Av. Entre Ríos 1492 CABA, lun a vie de 9 a 15 hs. También por mail a atencioninmediata@buenosaires.gob.ar. El informe social lo puede hacer una trabajadora social del GCBA o de una organización.",
+      "links": [
+        { "texto": "Info oficial GCBA", "url": "https://buenosaires.gob.ar/desarrollohumanoyhabitat/inclusion-social-y-atencion-inmediata/asistencia-habitacional", "estilo": "primario" },
+        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+      ],
+      "contactos": [
+        "Av. Entre Ríos 1492 CABA — Lun a vie 9 a 15 hs",
+        "atencioninmediata@buenosaires.gob.ar",
+        "108 (emergencias calle 24 hs)",
+        "147"
+      ],
+      "incompatible_con": ["vivir_en_casa"],
+      "nota_incompatibilidad": "No compatible con Vivir en Casa. Solo se puede cobrar uno de los dos. Abrí cada programa para comparar cuál se ajusta mejor a la situación.",
+      "validado": "2026-04-16",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "res_caba", "op": ">=", "valor": 2 },
+          { "cualquiera": [
+            { "campo": "vivienda", "op": "==", "valor": "calle" },
+            { "campo": "vivienda", "op": "==", "valor": "inquilinato" }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "aue",
+      "nombre": "AUE - Asignación Universal por Embarazo",
+      "ambito": "nacional",
+      "descripcion_corta": "$136.666/mes desde semana 12 hasta el parto (80% mensual + 20% al acreditar controles) · Abril 2026.",
+      "descripcion_larga": "La **AUE** es una prestación mensual de ANSES **desde la semana 12 de gestación hasta el parto**, para personas **desocupadas o del sector informal**.\n\nEl **80% se cobra todos los meses**; el **20% restante** se acredita al presentar los **controles del embarazo**.",
+      "requisitos": [
+        "Embarazo desde semana 12",
+        "Sin empleo formal",
+        "Sin otra asignación familiar"
+      ],
+      "documentacion": [
+        "DNI",
+        "Certificado de embarazo con fecha de gestación",
+        "CUIL",
+        "CBU o CVU"
+      ],
+      "como_acceder": "Online desde Mi ANSES o presencial en cualquier oficina de ANSES con turno (anses.gob.ar o 130).",
+      "links": [
+        { "texto": "Sacar turno ANSES", "url": "https://servicioswww.anses.gob.ar/TurnosInternet/g/fd35d1767f064d88861198beaeec30cb/Solicitud/IngresoSolicitud?idprest=36", "estilo": "primario" }
+      ],
+      "contactos": ["ANSES: 130 (gratuito)"],
+      "incompatible_con": [],
+      "nota_incompatibilidad": "",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "emb", "op": "==", "valor": "si" },
+          { "campo": "formal", "op": "==", "valor": false },
+          { "cualquiera": [
+            { "campo": "nac", "op": "==", "valor": "arg" },
+            { "campo": "res_arg", "op": ">=", "valor": 2 }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "auh",
+      "nombre": "AUH - Asignación Universal por Hijo",
+      "ambito": "nacional",
+      "descripcion_corta": "$144.562 por hijo/mes · $115.650 de bolsillo (80% mensual + 20% anual al acreditar escolaridad y salud) · Junio 2026.",
+      "descripcion_larga": "La **AUH** es una prestación mensual de ANSES por cada hijo/a **menor de 18 años** (sin límite de edad con discapacidad), para personas **desocupadas o del sector informal**.\n\nEl **80% se cobra todos los meses**; el **20% restante** se acredita una vez al año, al presentar el **certificado de escolaridad** y el **control de salud**.\n\nLa **Tarjeta Alimentar** se asigna automáticamente si hay menores de 14 años.\n\n⚠️ Si la familia **todavía no puede acceder a la AUH** (por residencia insuficiente o documentación incompleta) y vive en **CABA**, puede ver el programa **Nuestras Familias** del GCBA, que funciona como puente mientras se regulariza la situación.",
+      "requisitos": [
+        "Hijos/as menores de 18 (o con discapacidad sin límite de edad)",
+        "Sin empleo formal registrado",
+        "Sin otra asignación familiar",
+        "Ingresos por debajo del salario mínimo",
+        "Menores escolarizados y con vacunas al día",
+        "Extranjeros/as: 2 años de residencia legal en Argentina"
+      ],
+      "documentacion": [
+        "DNI del titular y de los hijos/as",
+        "Partida de nacimiento de los hijos/as",
+        "CUIL",
+        "CBU o CVU a nombre del titular"
+      ],
+      "como_acceder": "Online desde Mi ANSES con CUIL y clave. Presencial en cualquier oficina de ANSES con turno previo (anses.gob.ar o llamando al 130).",
+      "links": [
+        { "texto": "Sacar turno ANSES", "url": "https://servicioswww.anses.gob.ar/TurnosInternet/g/90b8942487124b54a7fb09eff6f38793/Solicitud/IngresoSolicitud?idprest=31", "estilo": "primario" }
+      ],
+      "contactos": ["ANSES: 130 (gratuito)", "mi.anses.gob.ar"],
+      "incompatible_con": ["nuestras_familias"],
+      "nota_incompatibilidad": "La AUH ($136.666/hijo/mes) no es compatible con Nuestras Familias. La AUH además habilita automáticamente a la Tarjeta Alimentar ($72.250 con 1 hijo · $113.299 con 2 · $149.425 con 3 o más · junio 2026) — conviene pasarse si ya se cumplen los requisitos.",
+      "validado": "2026-06-07",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "hijos", "op": "==", "valor": "si" },
+          { "campo": "formal", "op": "==", "valor": false },
+          { "cualquiera": [
+            { "campo": "nac", "op": "==", "valor": "arg" },
+            { "campo": "res_arg", "op": ">=", "valor": 2 }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "alimentar",
+      "nombre": "Tarjeta Alimentar",
+      "ambito": "nacional",
+      "descripcion_corta": "Tarjeta alimentaria automática para quienes cobran AUH. $72.250 (1 hijo) · $113.299 (2) · $149.425 (3+) · Junio 2026.",
+      "descripcion_larga": "La **Tarjeta Alimentar** es un **complemento automático de la AUH** para familias con al menos un/a hijo/a **menor de 14 años** o con discapacidad. Se acredita en la misma cuenta de la AUH y es **solo para comprar alimentos**.\n\n**Montos junio 2026** (actualización del 38% · Resolución 161/2026):\n· **1 hijo/a o titular AUE:** $72.250\n· **2 hijos/as:** $113.299\n· **3 hijos/as o más:** $149.425\n\nSi ya se cobra AUH y no llegó la tarjeta, consultar en **Mi ANSES** o al **130**.",
+      "requisitos": [
+        "Cobrar AUH",
+        "Al menos un/a hijo/a menor de 14 o con discapacidad",
+        "Se asigna automaticamente"
+      ],
+      "documentacion": [
+        "No requiere documentación adicional si ya se cobra AUH"
+      ],
+      "como_acceder": "Se asigna automaticamente. Si no llegó, consultar en Mi ANSES o llamando al 130.",
+      "links": [],
+      "contactos": ["ANSES: 130 (gratuito)"],
+      "incompatible_con": [],
+      "nota_incompatibilidad": "",
+      "validado": "2026-06-07",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "hijos", "op": "==", "valor": "si" },
+          { "campo": "formal", "op": "==", "valor": false },
+          { "cualquiera": [
+            { "campo": "nac", "op": "==", "valor": "arg" },
+            { "campo": "res_arg", "op": ">=", "valor": 2 }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "mil_dias",
+      "nombre": "Plan 1000 Días",
+      "ambito": "nacional",
+      "descripcion_corta": "Apoyo alimentario mensual ($53.290 · junio 2026) para titulares de AUH o AUE con hijos/as de hasta 3 años. Se acredita automáticamente — si no llegó, consultar en ANSES al 130.",
+      "descripcion_larga": "El Plan 1000 Días es la **Ley N° 27.611** de Atención y Cuidado Integral de la Salud durante el Embarazo y la Primera Infancia. Cubre **desde la gestación hasta los 3 años de vida**.\n\n**Tiene tres componentes:**\n\n**1. Complemento Leche (mensual, automático):** apoyo alimentario de **$53.290/mes** (mayo 2026) para titulares de AUH o AUE con hijos/as de hasta 3 años. Se acredita automáticamente junto con la prestación principal — no requiere trámite. Si ya se cobra AUH, hay un/a hijo/a menor de 3 años y no llega este complemento, es un error a reclamar en ANSES.\n\n**2. Asignación por Cuidado de Salud Integral (anual):** pago único anual para titulares de AUH con hijos/as de hasta 3 años que acrediten controles de salud y vacunación completos.\n\n**3. Asignaciones por Nacimiento y Adopción (pago único):** por nacimiento **$82.353**; por adopción **$492.366** (mayo 2026). Pueden solicitarlas titulares de AUH, AUE, trabajadores/as registrados/as, beneficiarios/as de ART y personas con Prestación por Desempleo.\n\n⚠️ **Dato clave para el trabajo territorial:** el Complemento Leche es automático. Si la persona ya cobra AUH, tiene hijos/as menores de 3 años y NO recibe este complemento, hay que reclamarlo en ANSES (130) o por Mi ANSES. No es necesario inscribirse.",
+      "requisitos": [
+        "Cobrar AUH o AUE (Asignación por Embarazo)",
+        "Hijos/as de hasta 3 años de edad",
+        "Para extranjeras: 3 años de residencia en Argentina",
+        "Inscripción en Programa SUMAR y sin obra social (solo para el componente de embarazo)"
+      ],
+      "documentacion": [
+        "No requiere documentación adicional para el Complemento Leche si ya cobra AUH o AUE",
+        "Para Asignación por Nacimiento/Adopción: DNI, partida de nacimiento o resolución judicial de adopción, CUIL, CBU"
+      ],
+      "como_acceder": "El Complemento Leche se acredita automáticamente. Para Nacimiento/Adopción: tramitar en Mi ANSES online o presencialmente en ANSES con turno. Si no llega el complemento automático, llamar al 130 o ingresar a Mi ANSES.",
+      "links": [
+        { "texto": "Info Plan 1000 Días", "url": "https://www.argentina.gob.ar/salud/1000dias/en-que-consiste", "estilo": "primario" }
+      ],
+      "contactos": ["ANSES: 130 (gratuito)", "mi.anses.gob.ar"],
+      "incompatible_con": [],
+      "nota_incompatibilidad": "",
+      "validado": "2026-06-07",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "cualquiera": [
+            { "campo": "hijos", "op": "==", "valor": "si" },
+            { "campo": "emb", "op": "==", "valor": "si" }
+          ]},
+          { "campo": "formal", "op": "==", "valor": false },
+          { "cualquiera": [
+            { "campo": "nac", "op": "==", "valor": "arg" },
+            { "campo": "res_arg", "op": ">=", "valor": 2 }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "sumar",
+      "nombre": "Programa SUMAR",
+      "ambito": "nacional",
+      "descripcion_corta": "Cobertura de salud publica gratuita para personas sin obra social.",
+      "descripcion_larga": "El Programa SUMAR garantiza **cobertura de salud a personas sin obra social ni prepaga**. Cubre controles preventivos, salud materno-infantil, enfermedades crónicas y más.\n\nLa inscripción es **gratuita** en el hospital o centro de salud público más cercano, con **solo el DNI**.",
+      "requisitos": [
+        "Sin obra social ni cobertura privada",
+        "Inscripción gratuita y voluntaria"
+      ],
+      "documentacion": [
+        "DNI vigente",
+        "Comprobante de domicilio"
+      ],
+      "como_acceder": "Inscribirse directamente en el hospital o centro de salud publico mas cercano, presentando el DNI. No requiere turno previo.",
+      "links": [
+        { "texto": "Mas info - Argentina.gob.ar", "url": "https://www.argentina.gob.ar/salud/sumar", "estilo": "primario" }
+      ],
+      "contactos": [
+        "Hospital o Centro de Salud publico mas cercano",
+        "0800-222-1002 (Salud Responde)"
+      ],
+      "incompatible_con": [],
+      "nota_incompatibilidad": "",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "os", "op": "!=", "valor": "si" },
+          { "cualquiera": [
+            { "campo": "nac", "op": "==", "valor": "arg" },
+            { "campo": "res_arg", "op": ">=", "valor": 1 }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "progresar",
+      "nombre": "Beca Progresar",
+      "ambito": "nacional",
+      "descripcion_corta": "Beca educativa de $35.000/mes. ⚠️ Obligatorio y Superior CERRADOS (inscripción 2026 finalizada). Solo sigue abierta Formación Profesional (cursos INET) hasta el 27/11/2026.",
+      "descripcion_larga": "Las Becas Progresar tienen **tres líneas**. Monto: **$35.000 mensuales** (80% mensual, 20% al acreditar cursada regular al fin de año).\n\n⚠️ **Estado de inscripción (junio 2026):**\n· **Progresar Obligatorio** (secundario, 16-24 años): **CERRADO** — la inscripción finalizó el 24 de abril de 2026.\n· **Progresar Superior** (terciario/universidad, hasta 35 años): **CERRADO** — la inscripción finalizó el 30 de abril de 2026.\n· **Progresar Formación Profesional** (cursos INET, 18-35 años): **ABIERTO** hasta el 27 de noviembre de 2026.\n\nPara Obligatorio y Superior habrá que esperar la próxima convocatoria (consultar en la plataforma Progresar para conocer las nuevas fechas).\n\n⚠️ **Obligación 2026:** los/as beneficiarios/as deben notificar cualquier cambio académico, laboral, familiar o patrimonial dentro de los 30 días. Se hace por la plataforma Progresar (cambios educativos), ANSES (cambios económicos) o Mi Argentina (cambio de domicilio). El incumplimiento puede dar de baja el beneficio.",
+      "requisitos": [
+        "⚠️ Requiere tener estudios en curso o incompletos: secundaria incompleta (Progresar Obligatorio), terciario/universitario incompleto (Progresar Superior), o inscripción en curso INET (Progresar Formación Profesional). No aplica si ya completó todos los niveles educativos.",
+        "Progresar Obligatorio: 16 a 24 años, cursando secundario incompleto",
+        "Progresar Superior: hasta 35 años, terciario o universidad en curso",
+        "Progresar Formación Profesional: 18 a 35 años, inscripto/a en curso validado por INET, sin empleo formal",
+        "Ingresos del grupo familiar no superiores a 3 SMVM",
+        "Argentino/a nativo/a o naturalizado/a, o extranjero/a con 2 años de residencia legal con DNI"
+      ],
+      "documentacion": [
+        "Cuenta validada en Mi Argentina",
+        "CUIL y clave Mi Argentina",
+        "CBU o CVU propio",
+        "Datos actualizados en ANSES"
+      ],
+      "como_acceder": "**Inscripción 100% online** en becasprogresar.educacion.gob.ar.\n\nRequiere **cuenta validada en la app Mi Argentina**.\n\n⚠️ **Obligatorio y Superior:** inscripción **cerrada** (finalizó en abril 2026) — esperar la próxima convocatoria.\n\n✅ **Formación Profesional:** abierto hasta el **27 de noviembre de 2026**.",
+      "links": [
+        { "texto": "Plataforma Progresar", "url": "https://becasprogresar.educacion.gob.ar/", "estilo": "primario" },
+        { "texto": "Mi Argentina", "url": "https://mi.argentina.gob.ar/", "estilo": "primario" }
+      ],
+      "contactos": ["0800-999-1066 (opción 1)"],
+      "incompatible_con": [],
+      "nota_incompatibilidad": "",
+      "validado": "2026-06-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "edadMax", "op": ">=", "valor": 16 },
+          { "campo": "edadMin", "op": "<=", "valor": 35 },
+          { "cualquiera": [
+            { "campo": "formal", "op": "==", "valor": false },
+            { "campo": "ingresos", "op": "==", "valor": "menos1" },
+            { "campo": "ingresos", "op": "==", "valor": "1a3" }
+          ]},
+          { "cualquiera": [
+            { "campo": "nac", "op": "==", "valor": "arg" },
+            { "campo": "res_arg", "op": ">=", "valor": 2 }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "pas",
+      "nombre": "Programa de Acompañamiento Social",
+      "ambito": "nacional",
+      "descripcion_corta": "⚠️ Sin inscripción abierta. Solo cobran ex beneficiarios del Potenciar Trabajo. Para personas 50+ años o madres de 4+ hijos.",
+      "descripcion_larga": "El Programa de Acompañamiento Social (PAS) reemplazó al ex **Potenciar Trabajo** para personas de **50 años o más**, o **madres con 4 o más hijos menores de 18**. Otorga prestación mensual (**$78.000**), talleres y asesoramiento.\n\n⚠️ **IMPORTANTE:** desde su creación en 2024, el **padrón está congelado** — solo cobran quienes ya eran del Potenciar Trabajo. La Resolución 167/2025 habilitó nuevas altas pero el formulario de inscripción online nunca fue publicado. Si la situación cambia, se inscribirá vía web oficial sin intermediarios.",
+      "requisitos": [
+        "50 años o más (o madre de 4+ hijos menores de 18)",
+        "Sin jubilación ni pensión contributiva",
+        "Sin empleo formal o ingresos por debajo del SMVM",
+        "Cumplir talleres de capacitación y controles de salud"
+      ],
+      "documentacion": [
+        "DNI",
+        "CUIL",
+        "Constancia situación laboral",
+        "Composición familiar"
+      ],
+      "como_acceder": "⚠️ No hay inscripción abierta al público en general (abril 2026). Solo ex titulares del Potenciar Trabajo. Para consultar si hubo novedades: 0800-222-3294 (Secretaría de Niñez, Adolescencia y Familia) o ANSES al 130.",
+      "links": [
+        { "texto": "Info oficial", "url": "https://www.argentina.gob.ar/programa-de-acompanamiento-social-0", "estilo": "primario" },
+        { "texto": "Consultas 0800-222-3294", "url": "tel:08002223294", "estilo": "secundario" }
+      ],
+      "contactos": [
+        "Secretaría de Niñez: 0800-222-3294 (lun a vie 8 a 20 hs)",
+        "ANSES: 130 (gratuito)"
+      ],
+      "incompatible_con": ["jubilacion", "puam"],
+      "nota_incompatibilidad": "El PAS ($78.000/mes) no es compatible con cobrar jubilación ni con la PUAM ($304.243/mes, Abril 2026). Si puede tramitar la PUAM, es significativamente mayor y además incluye cobertura de PAMI.",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "cualquiera": [
+            { "campo": "edadMin", "op": ">=", "valor": 50 },
+            { "campo": "num_hijos", "op": ">=", "valor": 4 }
+          ]},
+          { "campo": "cobra", "op": "no_incluye", "valor": "jubilacion" },
+          { "campo": "cobra", "op": "no_incluye", "valor": "puam" },
+          { "cualquiera": [
+            { "campo": "formal", "op": "==", "valor": false },
+            { "campo": "ingresos", "op": "==", "valor": "menos1" }
+          ]},
+          { "cualquiera": [
+            { "campo": "nac", "op": "==", "valor": "arg" },
+            { "campo": "res_arg", "op": ">=", "valor": 1 }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "puam",
+      "nombre": "PUAM - Prestación Universal Adulto Mayor",
+      "ambito": "nacional",
+      "descripcion_corta": "$304.243/mes (80% del haber mínimo) · Incluye PAMI · Extranjeros/as necesitan 20 años de residencia · Abril 2026.",
+      "descripcion_larga": "La **PUAM** es una prestación del **80% del haber mínimo** para personas de **65 años o más** sin jubilación ni pensión contributiva.\n\nPara **argentinos/as** no requiere aportes previos. Para **extranjeros/as** se requieren **20 años de residencia legal** en Argentina.\n\nIncluye **cobertura de PAMI**.",
+      "requisitos": [
+        "65 años o mas",
+        "Sin jubilación ni pensión contributiva",
+        "Argentino/a: sin requisito especial de residencia",
+        "Extranjero/a: 20 años de residencia legal en Argentina",
+        "Sin bienes ni ingresos que superen el minimo"
+      ],
+      "documentacion": [
+        "DNI vigente",
+        "Declaración jurada de situación económica",
+        "Negativa de ANSES",
+        "Para extranjeros: documentación de 20 años de residencia"
+      ],
+      "como_acceder": "Tramitar en Mi ANSES online o presencialmente en cualquier oficina de ANSES con turno previo (anses.gob.ar o 130).",
+      "links": [
+        { "texto": "Sacar turno ANSES", "url": "https://www.anses.gob.ar/atencion/sacar-turno", "estilo": "primario" }
+      ],
+      "contactos": ["ANSES: 130 (gratuito)", "mi.anses.gob.ar"],
+      "incompatible_con": ["pas"],
+      "nota_incompatibilidad": "La PUAM ($304.243/mes, Abril 2026) no es compatible con el PAS ($78.000/mes). La PUAM es significativamente mayor e incluye además cobertura de PAMI.",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "edadMin", "op": ">=", "valor": 65 },
+          { "campo": "cobra", "op": "no_incluye", "valor": "jubilacion" },
+          { "cualquiera": [
+            { "campo": "nac", "op": "==", "valor": "arg" },
+            { "campo": "res_arg", "op": ">=", "valor": 20 }
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "pension_disc",
+      "nombre": "Pensión No Contributiva por Discapacidad",
+      "ambito": "nacional",
+      "descripcion_corta": "$336.223/mes (incluye bono) para personas con CUD sin otros ingresos ni empleo formal · Abril 2026.",
+      "descripcion_larga": "Pensión mensual para personas con **Certificado Único de Discapacidad (CUD) vigente** que **no tienen otros ingresos ni empleo formal**.\n\nNo requiere aportes previos al sistema previsional.",
+      "requisitos": [
+        "CUD (Certificado Unico de Discapacidad) vigente",
+        "Sin jubilación ni pensión contributiva",
+        "Sin empleo formal",
+        "Sin bienes ni ingresos que superen el minimo"
+      ],
+      "documentacion": [
+        "DNI",
+        "CUD vigente",
+        "Negativa de ANSES",
+        "Declaración jurada económica"
+      ],
+      "como_acceder": "Tramitar en cualquier oficina de ANSES con turno previo (anses.gob.ar o 130) o en Mi ANSES online.",
+      "links": [
+        { "texto": "Turno ANSES", "url": "https://www.anses.gob.ar/atencion/sacar-turno", "estilo": "primario" }
+      ],
+      "contactos": ["ANSES: 130 (gratuito)"],
+      "incompatible_con": [],
+      "nota_incompatibilidad": "",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "disc", "op": "==", "valor": "si" },
+          { "campo": "cobra", "op": "no_incluye", "valor": "jubilacion" },
+          { "campo": "formal", "op": "==", "valor": false }
+        ]
+      }
+    },
+    {
+      "id": "cpi",
+      "nombre": "Centros de Primera Infancia (CPI) - CABA",
+      "ambito": "caba",
+      "descripcion_corta": "Jardines maternales gratuitos del GCBA para niños/as de 45 dias a 4 años.",
+      "descripcion_larga": "Los CPI son **espacios educativos y de cuidado gratuitos del GCBA** para niños/as de **45 días a 4 años** de familias en situación de vulnerabilidad.\n\nFuncionan de **lunes a viernes en jornada completa**, con alimentación y estimulación temprana.",
+      "requisitos": [
+        "Niños/as de 45 dias a 4 años",
+        "Residencia en CABA de 2 años o mas",
+        "Situación socioeconómica vulnerable",
+        "Sin vacante en jardín formal"
+      ],
+      "documentacion": [
+        "DNI del niño/a y adulto responsable",
+        "Partida de nacimiento",
+        "Vacunación al dia",
+        "Comprobante de domicilio CABA"
+      ],
+      "como_acceder": "Inscripción online en el portal del GCBA o presencial en el CPI mas cercano. También por Boti (WhatsApp 11-5050-0147).",
+      "links": [
+        { "texto": "Ver CPI cercanos e inscribirse", "url": "https://buenosaires.gob.ar/educacion/establecimientos/centros-de-primera-infancia", "estilo": "primario" },
+        { "texto": "Boti WhatsApp", "url": "https://wa.me/5491150500147", "estilo": "secundario" }
+      ],
+      "contactos": ["Linea 147", "CPI o Sede Comunal mas cercana"],
+      "incompatible_con": [],
+      "nota_incompatibilidad": "",
+      "validado": "2026-04-15",
+      "elegibilidad": {
+        "logica": "todas",
+        "condiciones": [
+          { "campo": "res_caba", "op": ">=", "valor": 2 },
+          { "campo": "hijos", "op": "==", "valor": "si" }
+        ]
+      }
+    }
+  ]
+}
