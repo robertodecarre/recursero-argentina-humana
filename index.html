@@ -2627,7 +2627,7 @@ var CIS = [], COMEDORES = [], DUCHAS = [], ROPEROS = [], JURIDICO = [], DEFENSOR
 
 // Adapta un servicio por comuna (comedor/ducha/ropero) a la forma interna del render
 function adaptarServicio(o) {
-  return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario };
+  return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario, maps_url: o.maps_url || '' };
 }
 
 // Carga recursos.json, puebla los arrays y dispara el render
@@ -2636,16 +2636,16 @@ function cargarRecursos() {
     .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function(data){
       CIS = (data.dormir || []).map(function(o){
-        return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, pop: o.poblacion, plazas: o.plazas, gestion: o.gestion };
+        return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, pop: o.poblacion, plazas: o.plazas, gestion: o.gestion, maps_url: o.maps_url || '' };
       });
       COMEDORES = (data.comedores || []).map(adaptarServicio);
       DUCHAS = (data.duchas || []).map(adaptarServicio);
       ROPEROS = (data.roperos || []).map(adaptarServicio);
       JURIDICO = (data.juridico || []).map(function(o){
-        return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario, tem: o.temas };
+        return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario, tem: o.temas, maps_url: o.maps_url || '' };
       });
       DEFENSORIAS = (data.defensorias || []).map(function(o){
-        return { fuero: o.fuero, nom: o.nombre, titular: o.titular, cont: o.contacto, email: o.email, dir: o.direccion };
+        return { fuero: o.fuero, nom: o.nombre, titular: o.titular, cont: o.contacto, email: o.email, dir: o.direccion, maps_url: o.maps_url || '' };
       });
       renderRecursos();
     })
@@ -2704,7 +2704,7 @@ function renderPorComuna(datos, contId, tipo) {
         '<span>📞 ' + item.cont + '</span>' +
         (item.hora ? '<span>🕐 ' + item.hora + '</span>' : '') +
         (item.tem ? '<span style="font-size:.72rem;color:#8B4A00;font-weight:500;line-height:1.4;margin-top:2px">📋 ' + item.tem + '</span>' : '') +
-        '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' +
+        '<a href="' + (item.maps_url || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires')) + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' +
         (tipo === 'cis' ? '<span style="font-size:.72rem;color:#7b5ea7;font-weight:500">Ingreso vía Línea 108 (24 hs)</span>' : '') +
         '</div>';
       body.appendChild(div);
@@ -2728,7 +2728,7 @@ function renderPlano(datos, contId) {
       '<span>📞 ' + item.cont + '</span>' +
       (item.hora ? '<span>🕐 ' + item.hora + '</span>' : '') +
       (item.tem ? '<span style="font-size:.72rem;color:#8B4A00;font-weight:500;line-height:1.4;margin-top:2px">📋 ' + item.tem + '</span>' : '') +
-      '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' +
+      '<a href="' + (item.maps_url || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires')) + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' +
       '</div>';
     cont.appendChild(div);
   });
@@ -2763,7 +2763,7 @@ function renderDefensorias(datos, contId) {
       (item.cont  ? '<span>📞 ' + item.cont  + '</span>' : '') +
       (item.email ? '<span>✉️ ' + item.email + '</span>' : '') +
       (item.dir   ? '<span>📍 ' + item.dir   + '</span>' : '') +
-      (item.dir   ? '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires') + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' : '') +
+      ((item.maps_url || item.dir) ? '<a href="' + (item.maps_url || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.dir + ' Buenos Aires')) + '" target="_blank" class="btn-maps">📍 Ver en mapa</a>' : '') +
       '</div>';
     cont.appendChild(div);
   });

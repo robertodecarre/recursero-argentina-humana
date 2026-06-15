@@ -10,7 +10,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres con niños/as",
       "plazas": 80,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -20,7 +21,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 102,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -30,7 +32,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres con niños/as",
       "plazas": 74,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -40,7 +43,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres (salud mental)",
       "plazas": 32,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -50,7 +54,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 66,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -60,7 +65,8 @@
       "contacto": "Línea 108",
       "poblacion": "Adultos mayores (mixto)",
       "plazas": 139,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -70,7 +76,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 196,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -80,7 +87,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres y diversidades",
       "plazas": 90,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -90,7 +98,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 70,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -100,7 +109,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 149,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -110,7 +120,8 @@
       "contacto": "Línea 108",
       "poblacion": "Familias",
       "plazas": 270,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -120,7 +131,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 180,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -130,7 +142,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 144,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -140,7 +153,8 @@
       "contacto": "Línea 108",
       "poblacion": "Familias",
       "plazas": 80,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -150,7 +164,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres (consumos problemáticos)",
       "plazas": 40,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -160,7 +175,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años",
       "plazas": 86,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -170,7 +186,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años",
       "plazas": 24,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -180,7 +197,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres solas 18-59 años",
       "plazas": 15,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -190,7 +208,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres solas 18-59 años",
       "plazas": 40,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -200,7 +219,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres solas 18-59 años",
       "plazas": 50,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -210,7 +230,8 @@
       "contacto": "Línea 108",
       "poblacion": "Familias",
       "plazas": 258,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -220,7 +241,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 192,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -230,7 +252,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 100,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -240,7 +263,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 87,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -250,7 +274,8 @@
       "contacto": "Línea 108",
       "poblacion": "Familias",
       "plazas": 96,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -260,7 +285,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 130,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -270,7 +296,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años",
       "plazas": 110,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -280,7 +307,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años con discapacidad",
       "plazas": 40,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -290,7 +318,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres con hijos menores / discapacidad",
       "plazas": 50,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -300,7 +329,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 96,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -310,7 +340,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 172,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -320,7 +351,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 53,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -330,7 +362,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 40,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -340,7 +373,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres y diversidades",
       "plazas": 35,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -350,7 +384,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años",
       "plazas": 130,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -360,7 +395,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años",
       "plazas": 130,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -370,7 +406,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres con niños",
       "plazas": 15,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -380,7 +417,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres y mujeres",
       "plazas": 18,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -390,7 +428,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años",
       "plazas": 118,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -400,7 +439,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres, madres y población trans",
       "plazas": 45,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -410,7 +450,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 100,
-      "gestion": "propio"
+      "gestion": "propio",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -420,7 +461,8 @@
       "contacto": "Línea 108",
       "poblacion": "Adultos mayores y personas con discapacidad",
       "plazas": 60,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -430,7 +472,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años",
       "plazas": 50,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -440,7 +483,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres y mujeres (vulnerabilidad/consumo)",
       "plazas": 60,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -450,7 +494,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres solas y/o con niños",
       "plazas": 100,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -460,7 +505,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres solos",
       "plazas": 40,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -470,7 +516,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres (consumo problemático)",
       "plazas": 20,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -480,7 +527,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres 18-59 años",
       "plazas": 95,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -490,7 +538,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres con discapacidad",
       "plazas": 10,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -500,7 +549,8 @@
       "contacto": "Línea 108",
       "poblacion": "Adultos mayores",
       "plazas": 80,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -510,7 +560,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 40,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -520,7 +571,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres 18-59 años",
       "plazas": 12,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -530,7 +582,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres",
       "plazas": 80,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -540,7 +593,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres con niños",
       "plazas": 70,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -550,7 +604,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 80,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -560,7 +615,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 30,
-      "gestion": "gestion_asociada"
+      "gestion": "gestion_asociada",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -570,7 +626,8 @@
       "contacto": "Línea 108",
       "poblacion": "Personas en tratamiento por consumo problemático",
       "plazas": 34,
-      "gestion": "conveniado"
+      "gestion": "conveniado",
+      "maps_url": ""
     },
     {
       "comuna": 0,
@@ -580,7 +637,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres con niños/as",
       "plazas": 30,
-      "gestion": ""
+      "gestion": "",
+      "maps_url": ""
     },
     {
       "comuna": 0,
@@ -590,7 +648,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres",
       "plazas": 80,
-      "gestion": ""
+      "gestion": "",
+      "maps_url": ""
     },
     {
       "comuna": 0,
@@ -600,7 +659,8 @@
       "contacto": "Línea 108",
       "poblacion": "Personas convalecientes",
       "plazas": 7,
-      "gestion": ""
+      "gestion": "",
+      "maps_url": ""
     },
     {
       "comuna": 0,
@@ -610,7 +670,8 @@
       "contacto": "Línea 108",
       "poblacion": "Personas con discapacidad",
       "plazas": 56,
-      "gestion": ""
+      "gestion": "",
+      "maps_url": ""
     },
     {
       "comuna": 0,
@@ -620,7 +681,8 @@
       "contacto": "Línea 108",
       "poblacion": "Mujeres con discapacidad",
       "plazas": 30,
-      "gestion": ""
+      "gestion": "",
+      "maps_url": ""
     },
     {
       "comuna": 0,
@@ -630,7 +692,8 @@
       "contacto": "Línea 108",
       "poblacion": "Hombres con discapacidad",
       "plazas": 17,
-      "gestion": ""
+      "gestion": "",
+      "maps_url": ""
     }
   ],
   "comedores": [
@@ -640,7 +703,8 @@
       "nombre": "Parroquia Cristo Obrero",
       "direccion": "Villa 31 Manzana 30",
       "contacto": "11 3928-5021",
-      "horario": "Lun a vie: desayuno 9 hs, almuerzo 13 hs"
+      "horario": "Lun a vie: desayuno 9 hs, almuerzo 13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -648,7 +712,8 @@
       "nombre": "Nuestra Señora del Perpetuo Socorro",
       "direccion": "Suipacha 1241",
       "contacto": "4327-4549",
-      "horario": "Dom a vie 8 hs. Alimentos: martes 9 hs"
+      "horario": "Dom a vie 8 hs. Alimentos: martes 9 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -656,7 +721,8 @@
       "nombre": "MTD Movimiento Trabajadores Desocupados",
       "direccion": "Flor de Otoño 301",
       "contacto": "11 2136-0302",
-      "horario": "Sab y dom, de 10 a 11 hs"
+      "horario": "Sab y dom, de 10 a 11 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -664,7 +730,8 @@
       "nombre": "Abrigar Derechos",
       "direccion": "Hipólito Yrigoyen 1440",
       "contacto": "abrigarderechos@gmail.com",
-      "horario": "Lun y jue: 10 hs y 13 hs"
+      "horario": "Lun y jue: 10 hs y 13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -672,7 +739,8 @@
       "nombre": "Frente Patria Grande",
       "direccion": "Santiago del Estero 866",
       "contacto": "11 5636-9209",
-      "horario": "Mar-jue-sab 12:30 hs; desayuno sab 11 hs"
+      "horario": "Mar-jue-sab 12:30 hs; desayuno sab 11 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -680,7 +748,8 @@
       "nombre": "Colectivo Hambre No",
       "direccion": "Estados Unidos 553",
       "contacto": "11 3439-2506",
-      "horario": "Domingos, 13 hs"
+      "horario": "Domingos, 13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -688,7 +757,8 @@
       "nombre": "San Vicente Caritas",
       "direccion": "Constitución 1407",
       "contacto": "11 4043-3895",
-      "horario": "Lun a vie: almuerzo 11 hs; sab: merienda 14:45 hs"
+      "horario": "Lun a vie: almuerzo 11 hs; sab: merienda 14:45 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -696,7 +766,8 @@
       "nombre": "San Telmo se Organiza",
       "direccion": "Paseo Colón (entre Independencia y Estados Unidos)",
       "contacto": "11 4173-6877",
-      "horario": "Sab 13 hs; mie 18 hs (merienda)"
+      "horario": "Sab 13 hs; mie 18 hs (merienda)",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -704,7 +775,8 @@
       "nombre": "San Pedro González Telmo Caritas",
       "direccion": "Humberto Primo 330",
       "contacto": "4361-1168",
-      "horario": "Lun-mar-mie-vie 11 hs; viandas mie y vie 12 hs"
+      "horario": "Lun-mar-mie-vie 11 hs; viandas mie y vie 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -712,7 +784,8 @@
       "nombre": "UTEP",
       "direccion": "Pedro Echagüe 1235",
       "contacto": "11 3777-0647",
-      "horario": "Merienda 17 hs; cena 20 hs; recorrido con viandas"
+      "horario": "Merienda 17 hs; cena 20 hs; recorrido con viandas",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -720,7 +793,8 @@
       "nombre": "Red Solidaria",
       "direccion": "Plaza de Mayo",
       "contacto": "4915-9470",
-      "horario": "Lun a dom, de 19 a 21 hs"
+      "horario": "Lun a dom, de 19 a 21 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -728,7 +802,8 @@
       "nombre": "Olla Popular Parque Lezama",
       "direccion": "Parque Lezama (Brasil y Defensa)",
       "contacto": "IG: ollaparquelezama",
-      "horario": "Lunes, 19 hs"
+      "horario": "Lunes, 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -736,7 +811,8 @@
       "nombre": "Esclavas del Sagrado Corazon",
       "direccion": "Montevideo 1372",
       "contacto": "4812-1735",
-      "horario": "Sabados, merienda 16 hs"
+      "horario": "Sabados, merienda 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -744,7 +820,8 @@
       "nombre": "Parroquia Nuestra Señora del Carmen",
       "direccion": "Rodríguez Peña 840",
       "contacto": "11 2611-6281",
-      "horario": "Merienda - consultar"
+      "horario": "Merienda - consultar",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -752,7 +829,8 @@
       "nombre": "Parroquia San Expedito",
       "direccion": "Av. Rivadavia (Balvanera)",
       "contacto": "Consultar",
-      "horario": "Almuerzo - consultar"
+      "horario": "Almuerzo - consultar",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -760,7 +838,8 @@
       "nombre": "San Juan Evangelista Caritas",
       "direccion": "Olavarría 486",
       "contacto": "4301-1155",
-      "horario": "Consultar"
+      "horario": "Consultar",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -768,7 +847,8 @@
       "nombre": "Iglesia Sagrado Corazon",
       "direccion": "Av. Vélez Sarsfield 1351",
       "contacto": "4911-9090",
-      "horario": "Almuerzo - consultar"
+      "horario": "Almuerzo - consultar",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -776,7 +856,8 @@
       "nombre": "Asociación Civil No Tan Distintas",
       "direccion": "Virrey Liniers 897",
       "contacto": "Consultar",
-      "horario": "Almuerzo - consultar"
+      "horario": "Almuerzo - consultar",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -784,7 +865,8 @@
       "nombre": "Parroquia Nuestra Señora de Caacupe",
       "direccion": "Av. Rivadavia (Caballito)",
       "contacto": "Consultar",
-      "horario": "Consultar"
+      "horario": "Consultar",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -792,7 +874,8 @@
       "nombre": "Nuestra Señora de Buenos Aires Caritas",
       "direccion": "Av. Rivadavia 4879",
       "contacto": "Consultar",
-      "horario": "Consultar"
+      "horario": "Consultar",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -800,7 +883,8 @@
       "nombre": "Santa Isabel de Hungría Caritas",
       "direccion": "Estrada 833",
       "contacto": "4923-3101",
-      "horario": "Consultar"
+      "horario": "Consultar",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -808,7 +892,8 @@
       "nombre": "San Cayetano",
       "direccion": "Cuzco 110",
       "contacto": "Consultar",
-      "horario": "Almuerzo y merienda lun a dom. Alimentos no perecederos adultos mayores"
+      "horario": "Almuerzo y merienda lun a dom. Alimentos no perecederos adultos mayores",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -816,7 +901,8 @@
       "nombre": "Nuestra Señora de la Candelaria",
       "direccion": "Bahía Blanca 363",
       "contacto": "Consultar",
-      "horario": "Consultar"
+      "horario": "Consultar",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -824,7 +910,8 @@
       "nombre": "Estación Urquiza - recorrida",
       "direccion": "Línea Mitre, Estación Urquiza",
       "contacto": "11 3170-3791",
-      "horario": "Recorrida con entrega de viandas"
+      "horario": "Recorrida con entrega de viandas",
+      "maps_url": ""
     },
     {
       "comuna": 14,
@@ -832,7 +919,8 @@
       "nombre": "Fundación Si",
       "direccion": "Palermo",
       "contacto": "4824-8852",
-      "horario": "Recorridas con entrega de viandas"
+      "horario": "Recorridas con entrega de viandas",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -840,7 +928,8 @@
       "nombre": "Centro Barrial Padre Carlos Mugica",
       "direccion": "Talampaya 2873",
       "contacto": "11 6193-0433",
-      "horario": "Des, alm, merienda y cena lun a vie 9-17 hs"
+      "horario": "Des, alm, merienda y cena lun a vie 9-17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -848,7 +937,8 @@
       "nombre": "Comunidad Sant'Egidio",
       "direccion": "Av. Rivadavia 851 (Casa de la Amistad)",
       "contacto": "IG: santegidioarg",
-      "horario": "Viandas mié 19 hs, jue 19:30 hs, vie 19 hs"
+      "horario": "Viandas mié 19 hs, jue 19:30 hs, vie 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -856,7 +946,8 @@
       "nombre": "Nuestra Señora del Socorro - Cáritas",
       "direccion": "Juncal 888",
       "contacto": "4393-1423",
-      "horario": "Des (viandas) lun a vie 8 hs. Alimentos mar 9 hs"
+      "horario": "Des (viandas) lun a vie 8 hs. Alimentos mar 9 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -864,7 +955,8 @@
       "nombre": "Somos Barrios de Pie - CAAC Retiro",
       "direccion": "Alpaca 1409",
       "contacto": "11 6737-2339",
-      "horario": "Des y alm mar y jue 10-15 hs"
+      "horario": "Des y alm mar y jue 10-15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -872,7 +964,8 @@
       "nombre": "Fundación Manos Abiertas",
       "direccion": "Av. Independencia 1150",
       "contacto": "4371-5869",
-      "horario": "Consultar"
+      "horario": "Consultar",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -880,7 +973,8 @@
       "nombre": "Santa Elisa - Cáritas",
       "direccion": "Salta 2290",
       "contacto": "11 6617-7408",
-      "horario": "Alm sáb 11:30 hs. Alimentos mié 14-16 hs"
+      "horario": "Alm sáb 11:30 hs. Alimentos mié 14-16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -888,7 +982,8 @@
       "nombre": "Parroquia Inmaculado Corazón de María",
       "direccion": "Constitución 1077",
       "contacto": "4305-6552",
-      "horario": "Alm y alimentos sáb 12 hs"
+      "horario": "Alm y alimentos sáb 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -896,7 +991,8 @@
       "nombre": "Asamblea Popular San Telmo - Merendero Darío Santillán",
       "direccion": "Chacabuco 634",
       "contacto": "11 3822-4017",
-      "horario": "Merienda lun a vie 16-17 hs"
+      "horario": "Merienda lun a vie 16-17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -904,7 +1000,8 @@
       "nombre": "Santa Catalina de Alejandría - Cáritas",
       "direccion": "Brasil 850",
       "contacto": "4300-2194",
-      "horario": "Merienda y alimentos lun a vie 17 hs"
+      "horario": "Merienda y alimentos lun a vie 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -912,7 +1009,8 @@
       "nombre": "Buenos Aires 3D",
       "direccion": "Piedras 539",
       "contacto": "11 2725-6354",
-      "horario": "Cena (olla popular) mar 19 hs"
+      "horario": "Cena (olla popular) mar 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -920,7 +1018,8 @@
       "nombre": "Misión Solidaria - Iglesia Metodista Almagro",
       "direccion": "Av. Rivadavia 4050",
       "contacto": "11 3432-7033",
-      "horario": "Cena (viandas Solís y Yrigoyen) dom 20:30-21 hs"
+      "horario": "Cena (viandas Solís y Yrigoyen) dom 20:30-21 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -928,7 +1027,8 @@
       "nombre": "Nuestra Señora de la Esperanza - Cáritas",
       "direccion": "Aimé Painé 1698",
       "contacto": "11 6285-4848",
-      "horario": "Recorrido viandas jue 20 hs"
+      "horario": "Recorrido viandas jue 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -936,7 +1036,8 @@
       "nombre": "Inmaculada Concepción (C1) - Cáritas",
       "direccion": "Tacuarí 870",
       "contacto": "4300-5547",
-      "horario": "Alimentos jue 10 hs"
+      "horario": "Alimentos jue 10 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -944,7 +1045,8 @@
       "nombre": "El Buen Samaritano (comedor)",
       "direccion": "Adolfo Alsina 346",
       "contacto": "4331-0625",
-      "horario": "Cena (viandas) vie 18 hs"
+      "horario": "Cena (viandas) vie 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -952,7 +1054,8 @@
       "nombre": "Santísimo Redentor - Cáritas",
       "direccion": "Larrea 1252",
       "contacto": "4824-0895",
-      "horario": "Des 7-8:30 hs; alm 11 hs lun a vie (Beruti 2352)"
+      "horario": "Des 7-8:30 hs; alm 11 hs lun a vie (Beruti 2352)",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -960,7 +1063,8 @@
       "nombre": "Comedor Madre Camila",
       "direccion": "Azcuénaga 1266",
       "contacto": "4822-1897",
-      "horario": "Des lun a vie 7-8:30 hs; alm lun a vie 11-12:30 hs"
+      "horario": "Des lun a vie 7-8:30 hs; alm lun a vie 11-12:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -968,7 +1072,8 @@
       "nombre": "Parroquia Nuestra Señora de Balvanera - San Expedito",
       "direccion": "Bartolomé Mitre 2411",
       "contacto": "4802-5830",
-      "horario": "Des sáb 9 hs; alm sáb 12 hs; merienda vie tarde (niños)"
+      "horario": "Des sáb 9 hs; alm sáb 12 hs; merienda vie tarde (niños)",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -976,7 +1081,8 @@
       "nombre": "Fundación Obras de San José",
       "direccion": "Moreno 2472",
       "contacto": "4308-1829",
-      "horario": "Des lun a sáb 3 turnos: 7:45, 8:20 y 8:55 hs"
+      "horario": "Des lun a sáb 3 turnos: 7:45, 8:20 y 8:55 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -984,7 +1090,8 @@
       "nombre": "MTE Vientos de Libertad",
       "direccion": "Bartolomé Mitre 3366",
       "contacto": "IG: vientosdelibertad.mte",
-      "horario": "Des y alm lun a vie 9-16 hs"
+      "horario": "Des y alm lun a vie 9-16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -992,7 +1099,8 @@
       "nombre": "Santa Cruz - Cáritas",
       "direccion": "Estados Unidos 3150",
       "contacto": "4931-1317",
-      "horario": "Merienda vie 18 hs; viandas sáb 11 hs; alimentos lun-mié 15-18 hs"
+      "horario": "Merienda vie 18 hs; viandas sáb 11 hs; alimentos lun-mié 15-18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -1000,7 +1108,8 @@
       "nombre": "Frente Patria Grande (C3)",
       "direccion": "Riobamba 86",
       "contacto": "IG: patriagrandecomuna3",
-      "horario": "Alm lun 12 hs; alimentos jue 16 hs; recorrido mar-jue-vie 15 hs"
+      "horario": "Alm lun 12 hs; alimentos jue 16 hs; recorrido mar-jue-vie 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -1008,7 +1117,8 @@
       "nombre": "Amigos en el Camino",
       "direccion": "Ecuador 462",
       "contacto": "11 5608-7175",
-      "horario": "Recorridos nocturnos dom a vie 20-00:30 hs"
+      "horario": "Recorridos nocturnos dom a vie 20-00:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -1016,7 +1126,8 @@
       "nombre": "Amigos por las Calles",
       "direccion": "Av. Belgrano 2719",
       "contacto": "11 6961-2094",
-      "horario": "Recorrido viandas jue 20-21:30 hs (Balvanera, Almagro, Palermo)"
+      "horario": "Recorrido viandas jue 20-21:30 hs (Balvanera, Almagro, Palermo)",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -1024,7 +1135,8 @@
       "nombre": "Somos Barrios de Pie (C3)",
       "direccion": "Plaza Once",
       "contacto": "11 3605-1352",
-      "horario": "Cena (olla popular) mar 18 hs"
+      "horario": "Cena (olla popular) mar 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1032,7 +1144,8 @@
       "nombre": "Acción Comunitaria",
       "direccion": "Pasaje Guaraní 563",
       "contacto": "info@accioncomunitaria.org",
-      "horario": "Recorridos \"Sopa de Letras\" (C1,3,4,5) lun a dom 18:30-22:30 hs"
+      "horario": "Recorridos \"Sopa de Letras\" (C1,3,4,5) lun a dom 18:30-22:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1040,7 +1153,8 @@
       "nombre": "Acción Social Sinaí",
       "direccion": "Av. Sáenz 541",
       "contacto": "11 3013-9726",
-      "horario": "Alm dom (3 veces/mes) 12-13 hs; viandas sáb (2 veces/mes) 17:30 hs"
+      "horario": "Alm dom (3 veces/mes) 12-13 hs; viandas sáb (2 veces/mes) 17:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1048,7 +1162,8 @@
       "nombre": "Virgen de los Milagros de Caacupé",
       "direccion": "Av. Osvaldo Cruz 3470",
       "contacto": "4302-3643",
-      "horario": "Des y alm lun a vie 10 y 12:30 hs; alimentos vie 16 hs; recorrido lun 20 hs"
+      "horario": "Des y alm lun a vie 10 y 12:30 hs; alimentos vie 16 hs; recorrido lun 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1056,7 +1171,8 @@
       "nombre": "Parroquia San Juan Evangelista (alimentos)",
       "direccion": "Olavarría 486",
       "contacto": "4301-1155",
-      "horario": "Des dom 9-10 hs; alm dom 11:30 hs; viandas dom 10:30 hs; alimentos jue 8-10 hs"
+      "horario": "Des dom 9-10 hs; alm dom 11:30 hs; viandas dom 10:30 hs; alimentos jue 8-10 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1064,7 +1180,8 @@
       "nombre": "Somos Barrios de Pie (C4)",
       "direccion": "Lamadrid 663",
       "contacto": "IG: somosbarriosdepie.c4",
-      "horario": "Cena (olla popular) vie 18 hs"
+      "horario": "Cena (olla popular) vie 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1072,7 +1189,8 @@
       "nombre": "Comedor Padre Mugica - Virgen de Luján - Cáritas",
       "direccion": "H. Masantonio 3495",
       "contacto": "4911-9090",
-      "horario": "Alm lun a vie 11:30-13:30 hs"
+      "horario": "Alm lun a vie 11:30-13:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1080,7 +1198,8 @@
       "nombre": "Santa Lucía Virgen y Mártir - Cáritas",
       "direccion": "Av. Montes de Oca 550",
       "contacto": "11 2640-2528",
-      "horario": "Alimentos y recorrido viandas jue 16:30 hs"
+      "horario": "Alimentos y recorrido viandas jue 16:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1088,7 +1207,8 @@
       "nombre": "Casa Gatica",
       "direccion": "Sánchez de Bustamante 551",
       "contacto": "IG: casagatica",
-      "horario": "Alm sábados 12 hs"
+      "horario": "Alm sábados 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1096,7 +1216,8 @@
       "nombre": "Club Solidario",
       "direccion": "Av. Belgrano 3660",
       "contacto": "11 6461-9954",
-      "horario": "Des y merienda: mié 16:30-18 hs y vie 9:30-11 hs"
+      "horario": "Des y merienda: mié 16:30-18 hs y vie 9:30-11 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1104,7 +1225,8 @@
       "nombre": "Iglesia Evangélica Metodista de Almagro (C5)",
       "direccion": "Av. Rivadavia 4050",
       "contacto": "4981-4290",
-      "horario": "Des y alm sáb 9:30-13:30 hs (mayores 40); merienda sáb 16:30 hs"
+      "horario": "Des y alm sáb 9:30-13:30 hs (mayores 40); merienda sáb 16:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1112,7 +1234,8 @@
       "nombre": "Asamblea Popular Plaza Almagro - Olla Popular",
       "direccion": "Presidente Perón y Agüero",
       "contacto": "11 6818-4807",
-      "horario": "Alimentos todos los días 18 hs"
+      "horario": "Alimentos todos los días 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1120,7 +1243,8 @@
       "nombre": "Parroquia de San Carlos",
       "direccion": "Av. H. Yrigoyen 3999",
       "contacto": "4981-4741",
-      "horario": "Viandas y alimentos lun y jue 10-12 hs; alimentos último mar del mes 15 hs"
+      "horario": "Viandas y alimentos lun y jue 10-12 hs; alimentos último mar del mes 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1128,7 +1252,8 @@
       "nombre": "Parroquia Betania",
       "direccion": "Av. Medrano 752",
       "contacto": "4862-0825",
-      "horario": "Cena vie 20:30 hs; merienda adultos mayores mié 17 hs"
+      "horario": "Cena vie 20:30 hs; merienda adultos mayores mié 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1136,7 +1261,8 @@
       "nombre": "Frente Patria Grande (C5)",
       "direccion": "Castro Barros 957",
       "contacto": "IG: patriagrandecomuna5",
-      "horario": "Cena (olla popular) mié 19:30 hs"
+      "horario": "Cena (olla popular) mié 19:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1144,7 +1270,8 @@
       "nombre": "Espacio Mayos",
       "direccion": "Sánchez de Bustamante 631",
       "contacto": "IG: espaciomayos",
-      "horario": "Cena (olla popular) mié 19:30-20:30 hs"
+      "horario": "Cena (olla popular) mié 19:30-20:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1152,7 +1279,8 @@
       "nombre": "Iglesia San Antonio",
       "direccion": "México 4050",
       "contacto": "4931-2139",
-      "horario": "Des todos los días 18 hs"
+      "horario": "Des todos los días 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1160,7 +1288,8 @@
       "nombre": "Santa María - Cáritas",
       "direccion": "Av. La Plata 286",
       "contacto": "4983-7944",
-      "horario": "Alimentos no perecederos mar y vie 16 hs"
+      "horario": "Alimentos no perecederos mar y vie 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1168,7 +1297,8 @@
       "nombre": "Peronismo Solidario",
       "direccion": "Acoyte y Rivadavia",
       "contacto": "IG: peronismosolidario.caballito",
-      "horario": "Alm dom 12 hs"
+      "horario": "Alm dom 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1176,7 +1306,8 @@
       "nombre": "Buen Pastor - Cáritas",
       "direccion": "Aranguren 691",
       "contacto": "4904-0590",
-      "horario": "Des lun y jue 7:30 hs; cena jue 20 hs; alimentos último jue mes 17:30 hs"
+      "horario": "Des lun y jue 7:30 hs; cena jue 20 hs; alimentos último jue mes 17:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1184,7 +1315,8 @@
       "nombre": "Parroquia Nuestra Señora de Caacupé (C6)",
       "direccion": "Av. Rivadavia 4879",
       "contacto": "4901-1811",
-      "horario": "Cena (viandas) lun 20 hs; alimentos una vez por mes"
+      "horario": "Cena (viandas) lun 20 hs; alimentos una vez por mes",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1192,7 +1324,8 @@
       "nombre": "Parroquia Nuestra Señora del Consuelo",
       "direccion": "Av. Donato Álvarez 2050",
       "contacto": "4581-2117",
-      "horario": "Alimentos no perecederos jue 14-16:30 hs"
+      "horario": "Alimentos no perecederos jue 14-16:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1200,7 +1333,8 @@
       "nombre": "Club Oeste",
       "direccion": "José María Moreno 446",
       "contacto": "IG: oeste_solidario",
-      "horario": "Recorrido viandas lun y mar 21 hs (Caballito y Boedo)"
+      "horario": "Recorrido viandas lun y mar 21 hs (Caballito y Boedo)",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1208,7 +1342,8 @@
       "nombre": "Kirchner Vuelve",
       "direccion": "Ambrosetti 279",
       "contacto": "IG: lc_caballito",
-      "horario": "Cena (viandas) jue 20 hs"
+      "horario": "Cena (viandas) jue 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1216,7 +1351,8 @@
       "nombre": "Plaza Irlanda Solidaria",
       "direccion": "Seguí 850",
       "contacto": "IG: plazairlandasolidaria",
-      "horario": "Cena (viandas) jue 20 hs"
+      "horario": "Cena (viandas) jue 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1224,7 +1360,8 @@
       "nombre": "Centro Cultural La Ronda",
       "direccion": "Méndez de Andes 614",
       "contacto": "IG: rondaollapopular",
-      "horario": "Alm dom 12-14 hs; viandas lun 18 hs"
+      "horario": "Alm dom 12-14 hs; viandas lun 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -1232,7 +1369,8 @@
       "nombre": "Club Ferrocarril Oeste DDHH y Acción Social",
       "direccion": "Rojas y las vías (est. Caballito)",
       "contacto": "IG: ferro_ddhh_y_accion_social",
-      "horario": "Cena (viandas) último mié del mes 20 hs"
+      "horario": "Cena (viandas) último mié del mes 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1240,7 +1378,8 @@
       "nombre": "Centro Manuel Ugarte",
       "direccion": "Av. Juan Bautista Alberdi 2509",
       "contacto": "11 6453-8187",
-      "horario": "Des y alm (viandas) lun a vie 12-14 hs"
+      "horario": "Des y alm (viandas) lun a vie 12-14 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1248,7 +1387,8 @@
       "nombre": "MTD (C7) Movimiento de Trabajadores Desocupados",
       "direccion": "Miraflores 2278",
       "contacto": "11 2136-0302",
-      "horario": "Des y alm lun a vie 9-16 hs"
+      "horario": "Des y alm lun a vie 9-16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1256,7 +1396,8 @@
       "nombre": "Parroquia Santa María Madre del Pueblo",
       "direccion": "Av. Perito Moreno y Av. Cruz - Barrio P. Ricciardelli",
       "contacto": "4139-0403",
-      "horario": "Des 10 hs, alm 12 hs, cena 19 hs lun a vie; recorrido zona 11:30 hs"
+      "horario": "Des 10 hs, alm 12 hs, cena 19 hs lun a vie; recorrido zona 11:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1264,7 +1405,8 @@
       "nombre": "San José de Flores - Cáritas",
       "direccion": "Av. Rivadavia 6950",
       "contacto": "4637-1489",
-      "horario": "Alm lun a vie 12 hs; cena mujeres/niños lun a vie 16:30 hs; viandas lun a sáb 10 hs"
+      "horario": "Alm lun a vie 12 hs; cena mujeres/niños lun a vie 16:30 hs; viandas lun a sáb 10 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1272,7 +1414,8 @@
       "nombre": "Nuestra Señora de la Paz - Cáritas",
       "direccion": "Pergamino 63",
       "contacto": "4611-9463",
-      "horario": "Cena y alimentos jue 19:30 hs"
+      "horario": "Cena y alimentos jue 19:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1280,7 +1423,8 @@
       "nombre": "Nuestra Señora de la Visitación - Cáritas",
       "direccion": "Av. Nazca y Páez",
       "contacto": "11 3971-4015",
-      "horario": "Viandas un sáb al mes"
+      "horario": "Viandas un sáb al mes",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1288,7 +1432,8 @@
       "nombre": "Frente Patria Grande (C7)",
       "direccion": "Esteban Bonorino 1957",
       "contacto": "11 4034-9822",
-      "horario": "Cena (olla popular) lun y vie 19:30 hs"
+      "horario": "Cena (olla popular) lun y vie 19:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1296,7 +1441,8 @@
       "nombre": "Parroquia San Francisco de Asís (Mariano Acosta)",
       "direccion": "Mariano Acosta 3501",
       "contacto": "11 6137-8923",
-      "horario": "Des lun-vie 8 hs; alm lun-vie 12 hs; alimentos último vie mes; recorrido mar 17 hs"
+      "horario": "Des lun-vie 8 hs; alm lun-vie 12 hs; alimentos último vie mes; recorrido mar 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1304,7 +1450,8 @@
       "nombre": "Centro Barrial Don Orione",
       "direccion": "Saraza 6135",
       "contacto": "11 2650-7250",
-      "horario": "Des, alm y merienda lun a vie 11-17 hs"
+      "horario": "Des, alm y merienda lun a vie 11-17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1312,7 +1459,8 @@
       "nombre": "Nuestra Señora del Rosario del Milagro",
       "direccion": "Montiel 3899",
       "contacto": "11 7369-7274",
-      "horario": "Alm sáb 12:30-13:30 hs"
+      "horario": "Alm sáb 12:30-13:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1320,7 +1468,8 @@
       "nombre": "María Madre de la Esperanza",
       "direccion": "Miralla 3838",
       "contacto": "4638-5225",
-      "horario": "Des 9-12 hs; alm 11-13 hs"
+      "horario": "Des 9-12 hs; alm 11-13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1328,7 +1477,8 @@
       "nombre": "San Juan Diego Cuauhtlatoatzin",
       "direccion": "Av. Escalada 2858",
       "contacto": "11 7002-3257",
-      "horario": "Alimentos no perecederos mar 17-19 hs"
+      "horario": "Alimentos no perecederos mar 17-19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1336,7 +1486,8 @@
       "nombre": "Nuestra Señora del Carmen - Cáritas (C8)",
       "direccion": "Eva Perón 6378, manzana 8 casa 1",
       "contacto": "4601-0423",
-      "horario": "Des lun-vie 10 hs; alm lun-vie 13 hs; merienda lun-vie 16 hs; viandas sáb 11:30 hs"
+      "horario": "Des lun-vie 10 hs; alm lun-vie 13 hs; merienda lun-vie 16 hs; viandas sáb 11:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1344,7 +1495,8 @@
       "nombre": "Nuestra Señora de Fátima",
       "direccion": "Av. Mariano Acosta 2929",
       "contacto": "11 3017-1091",
-      "horario": "Alm y merienda lun-dom 12 y 17 hs; alimentos adultos mayores último vie mes"
+      "horario": "Alm y merienda lun-dom 12 y 17 hs; alimentos adultos mayores último vie mes",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1352,7 +1504,8 @@
       "nombre": "Cristo Obrero y San Blas",
       "direccion": "Av. Lafuente 3242",
       "contacto": "11 5935-1160",
-      "horario": "Alm 12 hs; cena 19 hs"
+      "horario": "Alm 12 hs; cena 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1360,7 +1513,8 @@
       "nombre": "San Francisco de Asís (los Corrales)",
       "direccion": "Av. de los Corrales 3420",
       "contacto": "11 6137-8923",
-      "horario": "Alm lun a vie 11-16 hs"
+      "horario": "Alm lun a vie 11-16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1368,7 +1522,8 @@
       "nombre": "Virgen Inmaculada (F) - Cáritas",
       "direccion": "Martínez Castro y Pasaje C",
       "contacto": "11 3963-4990",
-      "horario": "Merienda y viandas todos los días; alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs"
+      "horario": "Merienda y viandas todos los días; alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1376,7 +1531,8 @@
       "nombre": "MTD (C8) Movimiento de Trabajadores Desocupados",
       "direccion": "Lugares rotativos",
       "contacto": "11 2136-0302",
-      "horario": "Cena (olla popular) jue 19 hs"
+      "horario": "Cena (olla popular) jue 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1384,7 +1540,8 @@
       "nombre": "Parroquia Virgen Inmaculada - Comedor Los Abuelos",
       "direccion": "Manzana 7, Barrio Fátima",
       "contacto": "Consultar",
-      "horario": "Alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs"
+      "horario": "Alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1392,7 +1549,8 @@
       "nombre": "Nuestra Señora de la Misericordia - Cáritas",
       "direccion": "Av. Larrazábal 2390",
       "contacto": "4635-0605",
-      "horario": "Merienda sáb 18 hs; alimentos adultos mayores 2° jue mes 14 hs"
+      "horario": "Merienda sáb 18 hs; alimentos adultos mayores 2° jue mes 14 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1400,7 +1558,8 @@
       "nombre": "Santa María Teresa Goretti - Cáritas",
       "direccion": "Av. Escalada 1150",
       "contacto": "4635-4012",
-      "horario": "Alm (viandas) todos los días 12 hs; cena todos los días 20:30 hs; alimentos 1° sáb mes 8 hs"
+      "horario": "Alm (viandas) todos los días 12 hs; cena todos los días 20:30 hs; alimentos 1° sáb mes 8 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1408,7 +1567,8 @@
       "nombre": "Virgen de los Desamparados - Cáritas",
       "direccion": "José Enrique Rodó 4203",
       "contacto": "4671-1255",
-      "horario": "Merienda (viandas) mié y dom 16 hs; alimentos mar por la tarde"
+      "horario": "Merienda (viandas) mié y dom 16 hs; alimentos mar por la tarde",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1416,7 +1576,8 @@
       "nombre": "Olla Popular Papa Francisco",
       "direccion": "Estación Liniers, Av. Rivadavia y Cuzco",
       "contacto": "IG: ollapopular_papafrancisco",
-      "horario": "Cena (viandas) mar 19-21 hs"
+      "horario": "Cena (viandas) mar 19-21 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1424,7 +1585,8 @@
       "nombre": "Tránsito de San José - Cáritas",
       "direccion": "Av. Emilio Castro 6391",
       "contacto": "11 5040-4985",
-      "horario": "Alm sáb 12 hs"
+      "horario": "Alm sáb 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1432,7 +1594,8 @@
       "nombre": "Ser con Vos",
       "direccion": "Olivera 1497",
       "contacto": "11 3287-8206",
-      "horario": "Recorrido viandas (C7,9,10,11) lun 20-24 hs"
+      "horario": "Recorrido viandas (C7,9,10,11) lun 20-24 hs",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -1440,7 +1603,8 @@
       "nombre": "UB Malvinas Argentinas",
       "direccion": "C. Irigoyen 799",
       "contacto": "Consultar",
-      "horario": "Alm y merienda sáb cada 15 días 12 hs"
+      "horario": "Alm y merienda sáb cada 15 días 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -1448,7 +1612,8 @@
       "nombre": "San Francisco Solano - Cáritas",
       "direccion": "Zelada 4771",
       "contacto": "4683-3102",
-      "horario": "Consultar"
+      "horario": "Consultar",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -1456,7 +1621,8 @@
       "nombre": "San Pedro Apóstol - Cáritas",
       "direccion": "Bermúdez 2011",
       "contacto": "4566-5805",
-      "horario": "Cena dom 19:30 hs; alimentos 2° mar de cada mes"
+      "horario": "Cena dom 19:30 hs; alimentos 2° mar de cada mes",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -1464,7 +1630,8 @@
       "nombre": "UB Pensando en Vos Siempre",
       "direccion": "Av. Álvarez Jonte 5590",
       "contacto": "5584-4125",
-      "horario": "Merienda y alimentos 4° mié del mes 17:30 hs"
+      "horario": "Merienda y alimentos 4° mié del mes 17:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -1472,7 +1639,8 @@
       "nombre": "UB Vecinos de Perón",
       "direccion": "Av. Juan B. Justo 7447",
       "contacto": "11 2388-4117",
-      "horario": "Cena (viandas) mar 20 hs"
+      "horario": "Cena (viandas) mar 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -1480,7 +1648,8 @@
       "nombre": "Frente Patria Grande (C11)",
       "direccion": "Concordia 1047",
       "contacto": "IG: patriagrandecomuna11",
-      "horario": "Recorrido viandas mar 19:30 hs"
+      "horario": "Recorrido viandas mar 19:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -1488,7 +1657,8 @@
       "nombre": "Desayunador Negrito Manuel",
       "direccion": "Fernández de Enciso 4521",
       "contacto": "11 2520-1047",
-      "horario": "Des mar, jue y vie 8-9 hs"
+      "horario": "Des mar, jue y vie 8-9 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -1496,7 +1666,8 @@
       "nombre": "Centro Cultural Bio Devoto",
       "direccion": "Cervantes 2944",
       "contacto": "11 5910-9496",
-      "horario": "Merienda y viandas lun a vie 15 hs; merienda mar a jue 19 hs"
+      "horario": "Merienda y viandas lun a vie 15 hs; merienda mar a jue 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -1504,7 +1675,8 @@
       "nombre": "Parroquia Santa Ana",
       "direccion": "Pedro Lozano 3167",
       "contacto": "4501-0723",
-      "horario": "Alm lun a dom 11 hs; cena lun a dom 18 hs; alimentos lun y mié 16 hs"
+      "horario": "Alm lun a dom 11 hs; cena lun a dom 18 hs; alimentos lun y mié 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -1512,7 +1684,8 @@
       "nombre": "Acción por Personas en Situación de Calle",
       "direccion": "Allende 2711",
       "contacto": "11 7368-1862",
-      "horario": "Entrega frutas y verduras mar y vie 20-22 hs; recorridos C9,10,11"
+      "horario": "Entrega frutas y verduras mar y vie 20-22 hs; recorridos C9,10,11",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -1520,7 +1693,8 @@
       "nombre": "UB Fernando Chiche Benítez",
       "direccion": "Terrero 1590",
       "contacto": "11 6163-9844",
-      "horario": "Viandas en el lugar vie 18-20 hs"
+      "horario": "Viandas en el lugar vie 18-20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -1528,7 +1702,8 @@
       "nombre": "Espacio Cultural Epecuén",
       "direccion": "Epecuén 4882",
       "contacto": "11 4536-3813",
-      "horario": "Merienda (viandas) lun a vie 15 hs"
+      "horario": "Merienda (viandas) lun a vie 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1536,7 +1711,8 @@
       "nombre": "Centro Cultural Los Goyeneches",
       "direccion": "Arias 4081",
       "contacto": "11 6442-4299",
-      "horario": "Merienda niños lun a vie 16:30 hs; cena (viandas) vie 20 hs"
+      "horario": "Merienda niños lun a vie 16:30 hs; cena (viandas) vie 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1544,7 +1720,8 @@
       "nombre": "Urquiza se Organiza",
       "direccion": "Plaza Casal (Triunvirato y Roosevelt)",
       "contacto": "11 2405-9511",
-      "horario": "Merienda lun y vie 17-19:30 hs"
+      "horario": "Merienda lun y vie 17-19:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1552,7 +1729,8 @@
       "nombre": "Asociación Civil Amigos de la Comuna 12",
       "direccion": "Línea Mitre, Plaza de la Est. Urquiza",
       "contacto": "Consultar",
-      "horario": "Merienda mié 18 hs"
+      "horario": "Merienda mié 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1560,7 +1738,8 @@
       "nombre": "Merendero Asamblea de Villa Pueyrredón",
       "direccion": "Línea Mitre, Est. Pueyrredón (a J. L. Suárez)",
       "contacto": "IG: asambleavillapueyrredon",
-      "horario": "Merienda mar 18:30 hs"
+      "horario": "Merienda mar 18:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1568,7 +1747,8 @@
       "nombre": "Abrazo Peronista",
       "direccion": "Línea Mitre, Est. Villa Pueyrredón (Bolivia y Cabezón)",
       "contacto": "IG: abrazo_peronista",
-      "horario": "Merienda mié 18:30-20:30 hs"
+      "horario": "Merienda mié 18:30-20:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1576,7 +1756,8 @@
       "nombre": "Frente Patria Grande (C12)",
       "direccion": "Línea Mitre, Est. Urquiza",
       "contacto": "11 3170-3791",
-      "horario": "Merienda jue 18:30 hs"
+      "horario": "Merienda jue 18:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1584,7 +1765,8 @@
       "nombre": "Comedor Lugones",
       "direccion": "Lugones 4016",
       "contacto": "11 6281-0714",
-      "horario": "Merienda mié 19 hs; otros días rotativos"
+      "horario": "Merienda mié 19 hs; otros días rotativos",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1592,7 +1774,8 @@
       "nombre": "RxA Comuna 12",
       "direccion": "Av. Balbín 3711",
       "contacto": "11 6006-8224",
-      "horario": "Merienda lun a vie 16-20 hs; olla popular jue 18:30 hs"
+      "horario": "Merienda lun a vie 16-20 hs; olla popular jue 18:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1600,7 +1783,8 @@
       "nombre": "Unión Vecinal de Saavedra",
       "direccion": "Av. Ricardo Balbín 4221",
       "contacto": "11 7361-1145",
-      "horario": "Merienda lun a vie 16-20 hs; sáb y dom 16-22 hs"
+      "horario": "Merienda lun a vie 16-20 hs; sáb y dom 16-22 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1608,7 +1792,8 @@
       "nombre": "Jesús Misericordioso",
       "direccion": "Pedro I. Rivera 4591",
       "contacto": "4521-3153",
-      "horario": "Cena (viandas) vie 19 hs"
+      "horario": "Cena (viandas) vie 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1616,7 +1801,8 @@
       "nombre": "Cristo Rey",
       "direccion": "Larsen 2384",
       "contacto": "4572-5459",
-      "horario": "Des (viandas) sáb 9-11 hs"
+      "horario": "Des (viandas) sáb 9-11 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -1624,7 +1810,8 @@
       "nombre": "Santísima Trinidad - Cáritas - Centro Trinitario",
       "direccion": "Ciudad de la Paz 3577",
       "contacto": "4702-4288",
-      "horario": "Des y alimentos no perecederos lun a jue 7 hs"
+      "horario": "Des y alimentos no perecederos lun a jue 7 hs",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -1632,7 +1819,8 @@
       "nombre": "San Cayetano - Cáritas (C13)",
       "direccion": "Vidal 1745",
       "contacto": "4781-5886",
-      "horario": "Des (viandas) sáb 7-9 hs; recorrido mar y mié 20 hs"
+      "horario": "Des (viandas) sáb 7-9 hs; recorrido mar y mié 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -1640,7 +1828,8 @@
       "nombre": "Parroquia Santísima Trinidad",
       "direccion": "Av. Cabildo 3680",
       "contacto": "4702-1030",
-      "horario": "Des y alimentos lun a jue 7-9 hs"
+      "horario": "Des y alimentos lun a jue 7-9 hs",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -1648,7 +1837,8 @@
       "nombre": "San Martín de Porres (C13)",
       "direccion": "Virrey Loreto 2161",
       "contacto": "11 6708-7609",
-      "horario": "Alimentos y recorrido viandas mar 20-21:45 hs"
+      "horario": "Alimentos y recorrido viandas mar 20-21:45 hs",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -1656,7 +1846,8 @@
       "nombre": "San Pablo Apóstol - Cáritas (C13)",
       "direccion": "Av. Álvarez Thomas 795",
       "contacto": "4553-9567",
-      "horario": "Viandas mié 17 hs, jue 18 hs, vie 17 hs"
+      "horario": "Viandas mié 17 hs, jue 18 hs, vie 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -1664,7 +1855,8 @@
       "nombre": "Comedor de Barrancas El Gomero",
       "direccion": "Zavalía y Juramento / Juramento y Obligado",
       "contacto": "IG: comedor.barrancas.de.belgrano",
-      "horario": "Cena lun-mar-jue-vie-sáb 20-21 hs; dom 19-20 hs"
+      "horario": "Cena lun-mar-jue-vie-sáb 20-21 hs; dom 19-20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -1672,7 +1864,8 @@
       "nombre": "Inmaculada Concepción - Cáritas (C13)",
       "direccion": "Vuelta de Obligado 2042",
       "contacto": "4783-8008",
-      "horario": "Cena y alimentos lun a sáb 18:15-19 hs"
+      "horario": "Cena y alimentos lun a sáb 18:15-19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 14,
@@ -1680,7 +1873,8 @@
       "nombre": "Nuestra Señora de Guadalupe",
       "direccion": "General Lucio N. Mansilla 3847",
       "contacto": "4824-8852",
-      "horario": "Merienda (viandas) lun, mié y vie 15-16 hs; vianda mar 19 hs (zona Palermo)"
+      "horario": "Merienda (viandas) lun, mié y vie 15-16 hs; vianda mar 19 hs (zona Palermo)",
+      "maps_url": ""
     },
     {
       "comuna": 14,
@@ -1688,7 +1882,8 @@
       "nombre": "Frente Patria Grande (C14)",
       "direccion": "Bonpland 2077",
       "contacto": "11 4540-1691",
-      "horario": "Recorrido viandas (Santa Fe, Dorrego, Córdoba, Thames) mié 20 hs"
+      "horario": "Recorrido viandas (Santa Fe, Dorrego, Córdoba, Thames) mié 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 14,
@@ -1696,7 +1891,8 @@
       "nombre": "Santa Lucía (C14)",
       "direccion": "Gascón 1372",
       "contacto": "11 4245-2140",
-      "horario": "Viandas dom 15-17 hs; alimentos 3° sáb del mes 10-12 hs"
+      "horario": "Viandas dom 15-17 hs; alimentos 3° sáb del mes 10-12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -1704,7 +1900,8 @@
       "nombre": "Centro Barrial Vientos de Libertad",
       "direccion": "Ávalos 250",
       "contacto": "11 6239-5152",
-      "horario": "Des, alm y merienda lun a vie 10, 12 y 16 hs; viandas lun a vie 10 y 12 hs"
+      "horario": "Des, alm y merienda lun a vie 10, 12 y 16 hs; viandas lun a vie 10 y 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -1712,7 +1909,8 @@
       "nombre": "Santa Inés Virgen y Mártir y San Camilo",
       "direccion": "Ávalos 250",
       "contacto": "11 3320-4021",
-      "horario": "Des, alm y merienda lun a vie 10, 12 y 16 hs; alimentos jue 12 hs; recorridos mié, jue y sáb"
+      "horario": "Des, alm y merienda lun a vie 10, 12 y 16 hs; alimentos jue 12 hs; recorridos mié, jue y sáb",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -1720,7 +1918,8 @@
       "nombre": "Santa Magdalena Sofía Barat",
       "direccion": "Av. Salvador María del Carril 2458",
       "contacto": "11 5829-8772",
-      "horario": "Merienda mié 16-18 hs; alm sáb 12:30 hs; recorrido (viandas) mié 20 hs"
+      "horario": "Merienda mié 16-18 hs; alm sáb 12:30 hs; recorrido (viandas) mié 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -1728,7 +1927,8 @@
       "nombre": "Nuestra Señora de la Consolación",
       "direccion": "Raúl Scalabrini Ortiz 1073",
       "contacto": "4773-0716",
-      "horario": "Alm sáb 12 hs; merienda y viandas vie 14 hs"
+      "horario": "Alm sáb 12 hs; merienda y viandas vie 14 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -1736,7 +1936,8 @@
       "nombre": "Asamblea de Agronomía",
       "direccion": "Av. Warnes y Av. Chorroarín",
       "contacto": "11 5117-5291",
-      "horario": "Merienda vie 19:30 hs"
+      "horario": "Merienda vie 19:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -1744,7 +1945,8 @@
       "nombre": "Frente Patria Grande (C15)",
       "direccion": "Gandhi 373",
       "contacto": "11 3556-3607",
-      "horario": "Recorrido viandas mar 17:30 hs y vie 16 hs (Corrientes y Scalabrini Ortiz)"
+      "horario": "Recorrido viandas mar 17:30 hs y vie 16 hs (Corrientes y Scalabrini Ortiz)",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -1752,7 +1954,8 @@
       "nombre": "Parroquia Encarnación del Señor",
       "direccion": "General Manuel A. Rodríguez 2444",
       "contacto": "encarnaciondelsenor987@gmail.com",
-      "horario": "Recorrido viandas mar 19:15 hs (hacia M. Rodríguez y Trellea)"
+      "horario": "Recorrido viandas mar 19:15 hs (hacia M. Rodríguez y Trellea)",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -1760,7 +1963,8 @@
       "nombre": "Fundación Social Argentinos Juniors",
       "direccion": "Playón de Chacarita",
       "contacto": "11 2647-9112",
-      "horario": "Cena (viandas) vie 20:30 hs"
+      "horario": "Cena (viandas) vie 20:30 hs",
+      "maps_url": ""
     }
   ],
   "duchas": [
@@ -1770,7 +1974,8 @@
       "nombre": "UTEP",
       "direccion": "Pedro Echagüe 1235",
       "contacto": "11 3777-0647",
-      "horario": "Lun, mié y vie 9 a 17 hs"
+      "horario": "Lun, mié y vie 9 a 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -1778,7 +1983,8 @@
       "nombre": "Parroquia Cristo Obrero",
       "direccion": "Villa 31 Manzana 30",
       "contacto": "11 5849-9414",
-      "horario": "Lun a vie 9 a 18 hs"
+      "horario": "Lun a vie 9 a 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -1786,7 +1992,8 @@
       "nombre": "Nuestra Señora del Perpetuo Socorro",
       "direccion": "Suipacha 1241",
       "contacto": "4327-4549",
-      "horario": "Martes 9 hs (solo hombres)"
+      "horario": "Martes 9 hs (solo hombres)",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -1794,7 +2001,8 @@
       "nombre": "Abrigar Derechos",
       "direccion": "Hipólito Yrigoyen 1440",
       "contacto": "abrigarderechos@gmail.com",
-      "horario": "Lun y jue 10 a 15 hs"
+      "horario": "Lun y jue 10 a 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -1802,7 +2010,8 @@
       "nombre": "El Buen Samaritano",
       "direccion": "Adolfo Alsina 346",
       "contacto": "4331-0625",
-      "horario": "Viernes 17 hs"
+      "horario": "Viernes 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -1810,7 +2019,8 @@
       "nombre": "Nuestra Señora del Socorro - Cáritas",
       "direccion": "Juncal 888",
       "contacto": "4393-1423",
-      "horario": "Martes 9 hs (solo hombres)"
+      "horario": "Martes 9 hs (solo hombres)",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -1818,7 +2028,8 @@
       "nombre": "Somos Barrios de Pie",
       "direccion": "Alpaca 1409",
       "contacto": "11 6737-2339",
-      "horario": "Mar y jue 10 a 15 hs"
+      "horario": "Mar y jue 10 a 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -1826,7 +2037,8 @@
       "nombre": "Fundación Manos Abiertas",
       "direccion": "Av. Independencia 1150",
       "contacto": "4371-5869",
-      "horario": "Lun a jue 14 a 17 hs (solo mujeres con DNI)"
+      "horario": "Lun a jue 14 a 17 hs (solo mujeres con DNI)",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -1834,7 +2046,8 @@
       "nombre": "Esclavas del Sagrado Corazón",
       "direccion": "Montevideo 1372",
       "contacto": "4812-1735",
-      "horario": "Lun, mié y vie 13 a 17 hs"
+      "horario": "Lun, mié y vie 13 a 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -1842,7 +2055,8 @@
       "nombre": "Comedor Madre Camila",
       "direccion": "Azcuénaga 1266",
       "contacto": "4822-1897",
-      "horario": "Lun a vie 7 a 8:30 hs"
+      "horario": "Lun a vie 7 a 8:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -1850,7 +2064,8 @@
       "nombre": "Parroquia Nuestra Señora del Carmen",
       "direccion": "Rodríguez Peña 840",
       "contacto": "4812-2748",
-      "horario": "Jue 17 hs (mujeres); sáb por medio 8 hs (hombres)"
+      "horario": "Jue 17 hs (mujeres); sáb por medio 8 hs (hombres)",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -1858,7 +2073,8 @@
       "nombre": "Fundación Obras de San José",
       "direccion": "Moreno 2472",
       "contacto": "4308-1829",
-      "horario": "Lun a vie 7:30 a 9:30 hs"
+      "horario": "Lun a vie 7:30 a 9:30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -1866,7 +2082,8 @@
       "nombre": "MTE Vientos de Libertad",
       "direccion": "Bartolomé Mitre 3366",
       "contacto": "IG: vientosdelibertad.mte",
-      "horario": "Lun a vie 9 a 16 hs"
+      "horario": "Lun a vie 9 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1874,7 +2091,8 @@
       "nombre": "Virgen de los Milagros de Caacupé",
       "direccion": "Av. Osvaldo Cruz 3470",
       "contacto": "4302-3643",
-      "horario": "Lun a vie 10 a 12 hs"
+      "horario": "Lun a vie 10 a 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1882,7 +2100,8 @@
       "nombre": "Proyecto 7",
       "direccion": "15 de Noviembre 2315",
       "contacto": "proyecto7bsas@gmail.com",
-      "horario": "Lun a dom 8 a 20 hs"
+      "horario": "Lun a dom 8 a 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1890,7 +2109,8 @@
       "nombre": "Iglesia Sagrado Corazón",
       "direccion": "Av. Vélez Sarsfield 1351",
       "contacto": "11 2291-2400",
-      "horario": "Sáb 9 a 11 hs (solo hombres)"
+      "horario": "Sáb 9 a 11 hs (solo hombres)",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -1898,7 +2118,8 @@
       "nombre": "Proyecto 7 (Monteagudo)",
       "direccion": "Monteagudo 435",
       "contacto": "proyecto7bsas@gmail.com",
-      "horario": "Lun a dom 8 a 20 hs"
+      "horario": "Lun a dom 8 a 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1906,7 +2127,8 @@
       "nombre": "Iglesia Evangélica Metodista de Almagro",
       "direccion": "Av. Rivadavia 4050",
       "contacto": "4981-4290",
-      "horario": "Lun 9 hs (anotarse previamente sáb de 9 a 16 hs)"
+      "horario": "Lun 9 hs (anotarse previamente sáb de 9 a 16 hs)",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -1914,7 +2136,8 @@
       "nombre": "Asociación Civil No Tan Distintas",
       "direccion": "Virrey Liniers 897",
       "contacto": "11 2572-6520",
-      "horario": "Mar y jue 11 a 16 hs"
+      "horario": "Mar y jue 11 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1922,7 +2145,8 @@
       "nombre": "Proyecto 7",
       "direccion": "Av. Carabobo 1128",
       "contacto": "proyecto7bsas@gmail.com",
-      "horario": "Lun a dom 8 a 20 hs"
+      "horario": "Lun a dom 8 a 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -1930,7 +2154,8 @@
       "nombre": "Frente Patria Grande",
       "direccion": "Mom 2379",
       "contacto": "11 4034-9822",
-      "horario": "Un sáb al mes 10 a 13 hs"
+      "horario": "Un sáb al mes 10 a 13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1938,7 +2163,8 @@
       "nombre": "María Madre de la Esperanza",
       "direccion": "Miralla 3838",
       "contacto": "4638-5225",
-      "horario": "Lun a vie 9 a 12 hs"
+      "horario": "Lun a vie 9 a 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -1946,7 +2172,8 @@
       "nombre": "Centro Barrial Don Orione",
       "direccion": "Saraza 6135",
       "contacto": "11 2650-7250",
-      "horario": "Lun a vie 11 a 17 hs"
+      "horario": "Lun a vie 11 a 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1954,7 +2181,8 @@
       "nombre": "Nuestra Señora de la Misericordia - Cáritas",
       "direccion": "Av. Larrazábal 2390",
       "contacto": "4635-0605",
-      "horario": "Sábados por la mañana"
+      "horario": "Sábados por la mañana",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1962,7 +2190,8 @@
       "nombre": "San Cayetano - Cáritas",
       "direccion": "Cuzco 220",
       "contacto": "11 3109-6217",
-      "horario": "Lun, mié y vie: 11 hs (hombres), 12 hs (mujeres)"
+      "horario": "Lun, mié y vie: 11 hs (hombres), 12 hs (mujeres)",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -1970,7 +2199,8 @@
       "nombre": "Ser con Vos",
       "direccion": "Olivera 1497",
       "contacto": "11 3287-8206",
-      "horario": "Mié y jue 16 a 19 hs (con turno previo)"
+      "horario": "Mié y jue 16 a 19 hs (con turno previo)",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -1978,7 +2208,8 @@
       "nombre": "Nuestra Señora de la Candelaria",
       "direccion": "Bahía Blanca 363",
       "contacto": "5606-4675",
-      "horario": "Mar y jue 8 hs"
+      "horario": "Mar y jue 8 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -1986,7 +2217,8 @@
       "nombre": "Desayunador Negrito Manuel",
       "direccion": "Fernández de Enciso 4521",
       "contacto": "11 2520-1047",
-      "horario": "Mar 9-10 hs (mujeres); vie 9-10 hs (hombres)"
+      "horario": "Mar 9-10 hs (mujeres); vie 9-10 hs (hombres)",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -1994,7 +2226,8 @@
       "nombre": "San Pablo Apóstol - Cáritas",
       "direccion": "Av. Álvarez Thomas 795",
       "contacto": "4553-9567",
-      "horario": "Mié 17 a 19 hs (hombres y mujeres)"
+      "horario": "Mié 17 a 19 hs (hombres y mujeres)",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -2002,7 +2235,8 @@
       "nombre": "San Cayetano Belgrano - Cáritas",
       "direccion": "La Pampa 2788",
       "contacto": "4781-5886",
-      "horario": "Sábados por la mañana (hombres)"
+      "horario": "Sábados por la mañana (hombres)",
+      "maps_url": ""
     },
     {
       "comuna": 14,
@@ -2010,7 +2244,8 @@
       "nombre": "Santísimo Redentor - Cáritas",
       "direccion": "Beruti 2352",
       "contacto": "4824-0895",
-      "horario": "Lun a vie 7 a 9 hs"
+      "horario": "Lun a vie 7 a 9 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -2018,7 +2253,8 @@
       "nombre": "Santa Inés Virgen y Mártir y San Camilo - Cáritas",
       "direccion": "Ávalos 250",
       "contacto": "11 3320-4021",
-      "horario": "Lun a vie 10 a 16 hs"
+      "horario": "Lun a vie 10 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -2026,7 +2262,8 @@
       "nombre": "Centro Barrial Vientos de Libertad",
       "direccion": "Ávalos 250",
       "contacto": "11 6239-5152",
-      "horario": "Lun-mié 10-18 hs; jue 12-18 hs; vie 14-18 hs"
+      "horario": "Lun-mié 10-18 hs; jue 12-18 hs; vie 14-18 hs",
+      "maps_url": ""
     }
   ],
   "roperos": [
@@ -2036,7 +2273,8 @@
       "nombre": "Parroquia Cristo Obrero",
       "direccion": "Villa 31, Manzana 30",
       "contacto": "11 5849-9414",
-      "horario": "Lun a vie, de 10 a 13 hs"
+      "horario": "Lun a vie, de 10 a 13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2044,7 +2282,8 @@
       "nombre": "Nuestra Señora del Perpetuo Socorro",
       "direccion": "Suipacha 1241",
       "contacto": "4327-4549",
-      "horario": "Miércoles, 8 hs"
+      "horario": "Miércoles, 8 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2052,7 +2291,8 @@
       "nombre": "Somos Barrios de Pie",
       "direccion": "Alpaca 1409",
       "contacto": "11 6737-2339",
-      "horario": "Mar y jue, de 10 a 15 hs"
+      "horario": "Mar y jue, de 10 a 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2060,7 +2300,8 @@
       "nombre": "Red Solidaria",
       "direccion": "Plaza de Mayo",
       "contacto": "4915-9470",
-      "horario": "Lun a dom, de 19 a 21 hs"
+      "horario": "Lun a dom, de 19 a 21 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2068,7 +2309,8 @@
       "nombre": "Abrigar Derechos",
       "direccion": "Hipólito Yrigoyen 1440",
       "contacto": "11 2893-9058",
-      "horario": "Lun y jue, de 10 a 15 hs"
+      "horario": "Lun y jue, de 10 a 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2076,7 +2318,8 @@
       "nombre": "Asamblea Popular San Telmo",
       "direccion": "Chacabuco 616",
       "contacto": "11 3822-4017",
-      "horario": "Un viernes al mes, de 16 a 18 hs"
+      "horario": "Un viernes al mes, de 16 a 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2084,7 +2327,8 @@
       "nombre": "Parroquia Inmaculado Corazón de María",
       "direccion": "Constitución 1077",
       "contacto": "4305-6552",
-      "horario": "Jueves, de 16 a 18 hs"
+      "horario": "Jueves, de 16 a 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2092,7 +2336,8 @@
       "nombre": "Inmaculada Concepción",
       "direccion": "Tacuarí 870",
       "contacto": "4300-5547",
-      "horario": "Jue 13 hs (hombres), vie 13 hs (mujeres)"
+      "horario": "Jue 13 hs (hombres), vie 13 hs (mujeres)",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2100,7 +2345,8 @@
       "nombre": "San Vicente - Cáritas",
       "direccion": "Constitución 1407",
       "contacto": "4304-0855",
-      "horario": "Lun a vie, 12 hs"
+      "horario": "Lun a vie, 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2108,7 +2354,8 @@
       "nombre": "Santa Elisa - Cáritas",
       "direccion": "Salta 2290",
       "contacto": "11 6617-7408",
-      "horario": "Miércoles, de 14 a 16 hs"
+      "horario": "Miércoles, de 14 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2116,7 +2363,8 @@
       "nombre": "Frente Patria Grande",
       "direccion": "Santiago del Estero 866",
       "contacto": "11 5636-9209",
-      "horario": "Mar, mié, jue y sáb 12.30 hs; sáb 11 a 13 hs (Plaza Alfonsina Storni)"
+      "horario": "Mar, mié, jue y sáb 12.30 hs; sáb 11 a 13 hs (Plaza Alfonsina Storni)",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2124,7 +2372,8 @@
       "nombre": "Fundación Manos Abiertas",
       "direccion": "Av. Independencia 1150",
       "contacto": "4371-5869",
-      "horario": "Martes 14 a 17 hs (solo mujeres con DNI)"
+      "horario": "Martes 14 a 17 hs (solo mujeres con DNI)",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2132,7 +2381,8 @@
       "nombre": "San Pedro González",
       "direccion": "Humberto Primo 330",
       "contacto": "4361-1168",
-      "horario": "Martes, de 16 a 18 hs"
+      "horario": "Martes, de 16 a 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2140,7 +2390,8 @@
       "nombre": "El Buen Samaritano",
       "direccion": "Adolfo Alsina 346",
       "contacto": "4331-0625",
-      "horario": "Viernes, 17 hs"
+      "horario": "Viernes, 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -2148,7 +2399,8 @@
       "nombre": "Esclavas del Sagrado Corazón",
       "direccion": "Montevideo 1372",
       "contacto": "4812-1735",
-      "horario": "Lun, mié y vie, de 13 a 17 hs"
+      "horario": "Lun, mié y vie, de 13 a 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -2156,7 +2408,8 @@
       "nombre": "Parroquia Nuestra Señora del Carmen",
       "direccion": "Rodríguez Peña 840",
       "contacto": "4812-2748",
-      "horario": "Jue y sáb, 8 hs"
+      "horario": "Jue y sáb, 8 hs",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -2164,7 +2417,8 @@
       "nombre": "Santísimo Redentor",
       "direccion": "Larrea 1252",
       "contacto": "4824-0895",
-      "horario": "Lun a vie, de 7 a 9 hs"
+      "horario": "Lun a vie, de 7 a 9 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -2172,7 +2426,8 @@
       "nombre": "Amigos en el Camino",
       "direccion": "Ecuador 462",
       "contacto": "11 5608-7175",
-      "horario": "Dom a vie, de 20 a 00.30 hs"
+      "horario": "Dom a vie, de 20 a 00.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -2180,7 +2435,8 @@
       "nombre": "Fundación Obras de San José",
       "direccion": "Moreno 2472",
       "contacto": "4308-1829",
-      "horario": "Lun a vie, de 7.30 a 9.30 hs"
+      "horario": "Lun a vie, de 7.30 a 9.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -2188,7 +2444,8 @@
       "nombre": "Amigos por las Calles",
       "direccion": "Av. Belgrano 2719",
       "contacto": "11 6961-2094",
-      "horario": "Jueves, de 20 a 21 hs"
+      "horario": "Jueves, de 20 a 21 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -2196,7 +2453,8 @@
       "nombre": "MTE Vientos de Libertad",
       "direccion": "Bartolomé Mitre 3366",
       "contacto": "vientosdelibertad.mte.com.ar",
-      "horario": "Lun a vie, de 9 a 16 hs"
+      "horario": "Lun a vie, de 9 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 3,
@@ -2204,7 +2462,8 @@
       "nombre": "Somos Barrios de Pie",
       "direccion": "Deán Funes 1167",
       "contacto": "11 3605-1352",
-      "horario": "Mar, jue y vie, de 10 a 15 hs"
+      "horario": "Mar, jue y vie, de 10 a 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2212,7 +2471,8 @@
       "nombre": "Acción Social Sinaí",
       "direccion": "Av. Sáenz 541",
       "contacto": "11 3013-9726",
-      "horario": "Sábados, 17.30 hs"
+      "horario": "Sábados, 17.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2220,7 +2480,8 @@
       "nombre": "Iglesia Sagrado Corazón",
       "direccion": "Av. Vélez Sarsfield 1351",
       "contacto": "11 2291-2400",
-      "horario": "Sábados, de 8 a 13 hs"
+      "horario": "Sábados, de 8 a 13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2228,7 +2489,8 @@
       "nombre": "Virgen de los Milagros de Caacupé",
       "direccion": "Av. Osvaldo Cruz 3470",
       "contacto": "4302-3643",
-      "horario": "Lun a vie, de 10 a 12 hs"
+      "horario": "Lun a vie, de 10 a 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2236,7 +2498,8 @@
       "nombre": "Santa Lucía, Virgen y Mártir",
       "direccion": "Av. Montes de Oca 550",
       "contacto": "11 2640-2528",
-      "horario": "Jueves, de 16.30 a 18.30 hs"
+      "horario": "Jueves, de 16.30 a 18.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2244,7 +2507,8 @@
       "nombre": "San Juan Evangelista",
       "direccion": "Lamadrid 470",
       "contacto": "4301-1155",
-      "horario": "Lun y jue, de 8 a 10.30 hs"
+      "horario": "Lun y jue, de 8 a 10.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2252,7 +2516,8 @@
       "nombre": "Acción Comunitaria",
       "direccion": "Pasaje Guaraní 563",
       "contacto": "info@accioncomunitaria.org",
-      "horario": "Mar y jue, 10 hs"
+      "horario": "Mar y jue, 10 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2260,7 +2525,8 @@
       "nombre": "Proyecto 7",
       "direccion": "15 de Noviembre 2315",
       "contacto": "proyecto7bsas@gmail.com",
-      "horario": "Lun a dom, de 8 a 20 hs"
+      "horario": "Lun a dom, de 8 a 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2268,7 +2534,8 @@
       "nombre": "Proyecto 7",
       "direccion": "Monteagudo 435",
       "contacto": "proyecto7bsas@gmail.com",
-      "horario": "Lun a dom, de 8 a 20 hs"
+      "horario": "Lun a dom, de 8 a 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 4,
@@ -2276,7 +2543,8 @@
       "nombre": "Acción Social Sinaí",
       "direccion": "Sáenz 541",
       "contacto": "11 3013-9726",
-      "horario": "Sáb 17.30 hs, dos veces al mes"
+      "horario": "Sáb 17.30 hs, dos veces al mes",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -2284,7 +2552,8 @@
       "nombre": "Club Solidario",
       "direccion": "Av. Belgrano 3660",
       "contacto": "11 6461-9954",
-      "horario": "Mié 16.30 a 18 hs y vie 9.30 a 11 hs"
+      "horario": "Mié 16.30 a 18 hs y vie 9.30 a 11 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -2292,7 +2561,8 @@
       "nombre": "Parroquia Betania",
       "direccion": "Medrano 752",
       "contacto": "11 5709-0403",
-      "horario": "Jueves, de 10 a 12 hs"
+      "horario": "Jueves, de 10 a 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -2300,7 +2570,8 @@
       "nombre": "Iglesia Evangélica Metodista de Almagro",
       "direccion": "Av. Rivadavia 4050",
       "contacto": "4981-4290",
-      "horario": "Sábados, de 9 a 16 hs"
+      "horario": "Sábados, de 9 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -2308,7 +2579,8 @@
       "nombre": "Asociación Civil No Tan Distintas",
       "direccion": "Virrey Liniers 897",
       "contacto": "11 2572-6520",
-      "horario": "Mar y jue, de 11 a 16 hs"
+      "horario": "Mar y jue, de 11 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -2316,7 +2588,8 @@
       "nombre": "Club Oeste",
       "direccion": "José María Moreno 446",
       "contacto": "IG: oeste_solidario",
-      "horario": "Lun y mar, 21 hs"
+      "horario": "Lun y mar, 21 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -2324,7 +2597,8 @@
       "nombre": "Parroquia Nuestra Señora de Caacupé",
       "direccion": "Av. Rivadavia 4879",
       "contacto": "4901-1811",
-      "horario": "Lunes, 20 hs"
+      "horario": "Lunes, 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -2332,7 +2606,8 @@
       "nombre": "Nuestra Señora de Buenos Aires",
       "direccion": "Av. Gaona 1730",
       "contacto": "4581-0440",
-      "horario": "Sábados, 8 hs"
+      "horario": "Sábados, 8 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -2340,7 +2615,8 @@
       "nombre": "Buen Pastor - Cáritas",
       "direccion": "Aranguren 691",
       "contacto": "4904-0590",
-      "horario": "Primer lunes del mes, de 16 a 18.30 hs"
+      "horario": "Primer lunes del mes, de 16 a 18.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -2348,7 +2624,8 @@
       "nombre": "Plaza Irlanda Solidaria",
       "direccion": "Seguí 850",
       "contacto": "IG: plazairlandasolidaria",
-      "horario": "Jueves, 20 hs"
+      "horario": "Jueves, 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -2356,7 +2633,8 @@
       "nombre": "UB La Cámpora \"Kirchner Vuelve\"",
       "direccion": "Ambrosetti 279",
       "contacto": "IG: Ic_caballito",
-      "horario": "Jueves, 20 hs"
+      "horario": "Jueves, 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 6,
@@ -2364,7 +2642,8 @@
       "nombre": "Parroquia Nuestra Señora del Consuelo",
       "direccion": "Villa General Mitre",
       "contacto": "11 6799-9209",
-      "horario": "Jueves, de 14 a 16 hs"
+      "horario": "Jueves, de 14 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -2372,7 +2651,8 @@
       "nombre": "Parroquia Santa María Madre del Pueblo",
       "direccion": "Av. Perito Moreno y Av. Cruz",
       "contacto": "4139-0403",
-      "horario": "Lun a vie, 10 hs"
+      "horario": "Lun a vie, 10 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -2380,7 +2660,8 @@
       "nombre": "San José de Flores",
       "direccion": "Av. Rivadavia 6950",
       "contacto": "4637-1489",
-      "horario": "2do martes del mes"
+      "horario": "2do martes del mes",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -2388,7 +2669,8 @@
       "nombre": "Nuestra Señora de la Visitación",
       "direccion": "Av. Nazca y Páez",
       "contacto": "11 3971-4015",
-      "horario": "Martes, 17 hs"
+      "horario": "Martes, 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -2396,7 +2678,8 @@
       "nombre": "Nuestra Señora de la Paz",
       "direccion": "Pergamino 63",
       "contacto": "4611-9463",
-      "horario": "Lun a vie, de 8 a 20 hs"
+      "horario": "Lun a vie, de 8 a 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -2404,7 +2687,8 @@
       "nombre": "San Saturnino y San Judas Tadeo - Cáritas",
       "direccion": "Miraflores 2080",
       "contacto": "4921-9483",
-      "horario": "2do sábado del mes, de 9 a 13 hs"
+      "horario": "2do sábado del mes, de 9 a 13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 7,
@@ -2412,7 +2696,8 @@
       "nombre": "Proyecto 7",
       "direccion": "Av. Carabobo 1128",
       "contacto": "proyecto7bsas@gmail.com",
-      "horario": "Lun a dom, de 8 a 20 hs"
+      "horario": "Lun a dom, de 8 a 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -2420,7 +2705,8 @@
       "nombre": "San José Benito Cottolengo - Cáritas",
       "direccion": "Av. Piedrabuena 3848",
       "contacto": "4601-2723",
-      "horario": "Miércoles, 17 hs"
+      "horario": "Miércoles, 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -2428,7 +2714,8 @@
       "nombre": "María Madre de la Esperanza",
       "direccion": "Miralla 3838",
       "contacto": "4638-5225",
-      "horario": "Mié y jue, de 8 a 11.30 hs"
+      "horario": "Mié y jue, de 8 a 11.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -2436,7 +2723,8 @@
       "nombre": "San Juan Diego Cuauhtlatoatzin - Cáritas",
       "direccion": "Av. Escalada 2858",
       "contacto": "11 7002-3257",
-      "horario": "Jueves, de 17 a 19 hs"
+      "horario": "Jueves, de 17 a 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -2444,7 +2732,8 @@
       "nombre": "Señora del Carmen - Cáritas",
       "direccion": "Eva Perón 6378, manzana 8, casa 1",
       "contacto": "4601-0423",
-      "horario": "Mié 17 a 19 hs y sáb 9 a 12 hs"
+      "horario": "Mié 17 a 19 hs y sáb 9 a 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -2452,7 +2741,8 @@
       "nombre": "San Francisco de Asís",
       "direccion": "Av. de los Corrales 3420",
       "contacto": "11 6137-8923",
-      "horario": "Lun a vie, de 11 a 16 hs"
+      "horario": "Lun a vie, de 11 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -2460,7 +2750,8 @@
       "nombre": "Cristo Obrero y San Blas",
       "direccion": "Av. Lafuente 3242",
       "contacto": "11 5935-1160",
-      "horario": "Mar y jue, 17 hs"
+      "horario": "Mar y jue, 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -2468,7 +2759,8 @@
       "nombre": "Nuestra Señora de Fátima",
       "direccion": "Av. Mariano Acosta 2929",
       "contacto": "11 3017-1091",
-      "horario": "Viernes, de 9 a 11 hs"
+      "horario": "Viernes, de 9 a 11 hs",
+      "maps_url": ""
     },
     {
       "comuna": 8,
@@ -2476,7 +2768,8 @@
       "nombre": "Virgen Inmaculada - Cáritas",
       "direccion": "Martinez Castro y Pasaje C",
       "contacto": "11 3963-4990",
-      "horario": "Mar y vie, de 15.30 a 17 hs"
+      "horario": "Mar y vie, de 15.30 a 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -2484,7 +2777,8 @@
       "nombre": "Nuestra Señora de la Misericordia",
       "direccion": "Av. Larrazábal 2390",
       "contacto": "4635-0605",
-      "horario": "Mar y jue, de 15 a 17 hs"
+      "horario": "Mar y jue, de 15 a 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -2492,7 +2786,8 @@
       "nombre": "Santa María Teresa Goretti",
       "direccion": "Av. Escalada 1150",
       "contacto": "4635-4012",
-      "horario": "Jue y vie, de 12 a 19 hs"
+      "horario": "Jue y vie, de 12 a 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -2500,7 +2795,8 @@
       "nombre": "Virgen de los Desamparados",
       "direccion": "José Enrique Rodó 4203",
       "contacto": "4671-1255",
-      "horario": "Jueves, de 13 a 16 hs"
+      "horario": "Jueves, de 13 a 16 hs",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -2508,7 +2804,8 @@
       "nombre": "San Cayetano",
       "direccion": "Cuzco 220",
       "contacto": "11 3109-6217",
-      "horario": "Lun y jue, 17 hs"
+      "horario": "Lun y jue, 17 hs",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -2516,7 +2813,8 @@
       "nombre": "Nuestra Señora de la Candelaria",
       "direccion": "Bahía Blanca 363",
       "contacto": "11 5606-4675",
-      "horario": "Mar y jue, 8 hs"
+      "horario": "Mar y jue, 8 hs",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -2524,7 +2822,8 @@
       "nombre": "San Francisco Solano - Cáritas",
       "direccion": "Zelada 4771",
       "contacto": "4683-3102",
-      "horario": "4to miércoles, de 16 a 18 hs"
+      "horario": "4to miércoles, de 16 a 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 10,
@@ -2532,7 +2831,8 @@
       "nombre": "UB Vecinos de Perón",
       "direccion": "Av. Juan B. Justo 7447",
       "contacto": "11 2388-4117",
-      "horario": "Martes, 20 hs"
+      "horario": "Martes, 20 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -2540,7 +2840,8 @@
       "nombre": "Parroquia Santa Ana",
       "direccion": "Pedro Lozano 3167",
       "contacto": "4501-0723",
-      "horario": "Lun y mié, de 16.30 a 17.30 hs"
+      "horario": "Lun y mié, de 16.30 a 17.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -2548,7 +2849,8 @@
       "nombre": "Sede Norberto Perone - Racing Club",
       "direccion": "Nogoyó 3045",
       "contacto": "11 5025-1873",
-      "horario": "Lun y mié, 15 hs"
+      "horario": "Lun y mié, 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 11,
@@ -2556,7 +2858,8 @@
       "nombre": "Desayunador Negrito Manuel",
       "direccion": "Fernández de Enciso 4521",
       "contacto": "11 4971-9304",
-      "horario": "Martes, de 9 a 10 hs"
+      "horario": "Martes, de 9 a 10 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -2564,7 +2867,8 @@
       "nombre": "Centro Cultural los Goyeneches",
       "direccion": "Arias 4081",
       "contacto": "11 6442-4299",
-      "horario": "Lun a vie, 16.30 hs"
+      "horario": "Lun a vie, 16.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -2572,7 +2876,8 @@
       "nombre": "RxA Comuna 12",
       "direccion": "Av. Balbín 3711",
       "contacto": "11 6006-8224",
-      "horario": "Lun a vie 17 a 20 hs; sáb 10 a 13 hs"
+      "horario": "Lun a vie 17 a 20 hs; sáb 10 a 13 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -2580,7 +2885,8 @@
       "nombre": "Jesús Misericordioso",
       "direccion": "Pedro I. Rivera 4591",
       "contacto": "4521-3153",
-      "horario": "Miércoles, 19 hs"
+      "horario": "Miércoles, 19 hs",
+      "maps_url": ""
     },
     {
       "comuna": 12,
@@ -2588,7 +2894,8 @@
       "nombre": "Cristo Rey",
       "direccion": "Larsen 2384",
       "contacto": "4572-5459",
-      "horario": "Un sábado al mes, horario rotativo"
+      "horario": "Un sábado al mes, horario rotativo",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -2596,7 +2903,8 @@
       "nombre": "San Pablo Apóstol",
       "direccion": "Av. Álvarez Thomas 795",
       "contacto": "4553-9567",
-      "horario": "Lun y vie, de 17.30 a 18.30 hs"
+      "horario": "Lun y vie, de 17.30 a 18.30 hs",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -2604,7 +2912,8 @@
       "nombre": "San Cayetano - Cáritas",
       "direccion": "Vidal 1745",
       "contacto": "4781-5886",
-      "horario": "Lun y mié, de 9 a 12 hs"
+      "horario": "Lun y mié, de 9 a 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 13,
@@ -2612,7 +2921,8 @@
       "nombre": "Santísima Trinidad",
       "direccion": "Av. Cabildo 3680",
       "contacto": "4702-4288",
-      "horario": "Lun a jue 9 a 12 hs y mié 15 a 18 hs"
+      "horario": "Lun a jue 9 a 12 hs y mié 15 a 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 14,
@@ -2620,7 +2930,8 @@
       "nombre": "Nuestra Señora de Guadalupe",
       "direccion": "Gral. Lucio Norberto Mansilla 3847",
       "contacto": "4824-8852",
-      "horario": "Lun, mié y vie, 15 hs"
+      "horario": "Lun, mié y vie, 15 hs",
+      "maps_url": ""
     },
     {
       "comuna": 14,
@@ -2628,7 +2939,8 @@
       "nombre": "Santa Lucía - Cáritas",
       "direccion": "Gascón 1372",
       "contacto": "11 4245-2140",
-      "horario": "1er y 3er domingo del mes, de 17 a 18 hs"
+      "horario": "1er y 3er domingo del mes, de 17 a 18 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -2636,7 +2948,8 @@
       "nombre": "Santa Inés, Virgen y Mártir y San Camilo - Cáritas",
       "direccion": "Ávalos 250",
       "contacto": "11 3320-4021",
-      "horario": "Jueves, de 8 a 12 hs"
+      "horario": "Jueves, de 8 a 12 hs",
+      "maps_url": ""
     },
     {
       "comuna": 15,
@@ -2644,7 +2957,8 @@
       "nombre": "Santa Magdalena Sofía Barat",
       "direccion": "Av. Salvador María del Carril 2458",
       "contacto": "4571-3829",
-      "horario": "Miércoles, de 16 a 18 hs"
+      "horario": "Miércoles, de 16 a 18 hs",
+      "maps_url": ""
     }
   ],
   "juridico": [
@@ -2655,7 +2969,8 @@
       "direccion": "Piedras 547",
       "contacto": "4334-4200",
       "horario": "Mar y vie, de 16 a 18 hs",
-      "temas": "Derechos humanos, privados de libertad, salud mental, discapacidad, acceso a la justicia"
+      "temas": "Derechos humanos, privados de libertad, salud mental, discapacidad, acceso a la justicia",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2664,7 +2979,8 @@
       "direccion": "Av. de Mayo 1161, 1er piso Dpto. 1",
       "contacto": "4381-2371",
       "horario": "Lun y jue, de 14 a 18 hs",
-      "temas": "Derechos económicos y sociales, derecho constitucional"
+      "temas": "Derechos económicos y sociales, derecho constitucional",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2673,7 +2989,8 @@
       "direccion": "Rodríguez Peña 778",
       "contacto": "11 4823-1165",
       "horario": "Lun a vie, de 9.30 a 15.30 hs",
-      "temas": "Identidad, DNI, inscripción registral, procesos judiciales"
+      "temas": "Identidad, DNI, inscripción registral, procesos judiciales",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2682,7 +2999,8 @@
       "direccion": "Uruguay 432",
       "contacto": "4323-9200 int. 7522",
       "horario": "Lun a vie, de 10 a 14 hs",
-      "temas": "Derecho civil y familia, alimentos, autorización salida del país, violencia doméstica"
+      "temas": "Derecho civil y familia, alimentos, autorización salida del país, violencia doméstica",
+      "maps_url": ""
     },
     {
       "comuna": 1,
@@ -2691,7 +3009,8 @@
       "direccion": "Adolfo Alsina 346",
       "contacto": "4331-0625",
       "horario": "Viernes, 17 hs",
-      "temas": "Regularización migratoria, derecho civil y penal, acceso a la vivienda"
+      "temas": "Regularización migratoria, derecho civil y penal, acceso a la vivienda",
+      "maps_url": ""
     },
     {
       "comuna": 2,
@@ -2700,7 +3019,8 @@
       "direccion": "Av. Figueroa Alcorta 2263 (subsuelo)",
       "contacto": "consultoriojuridico@derecho.uba.ar",
       "horario": "Lun a vie, de 9 a 18 hs",
-      "temas": "Alimentos, desalojo, jubilación, pensión, laboral, penal, salud, violencia y otros"
+      "temas": "Alimentos, desalojo, jubilación, pensión, laboral, penal, salud, violencia y otros",
+      "maps_url": ""
     },
     {
       "comuna": 5,
@@ -2709,7 +3029,8 @@
       "direccion": "Carlos Calvo 3401",
       "contacto": "11 6825-2145",
       "horario": "Sáb, de 10 a 13 hs (cada 15 días)",
-      "temas": "Filiación, alimentos, divorcio, alquileres, desalojos, salud, penal y laboral"
+      "temas": "Filiación, alimentos, divorcio, alquileres, desalojos, salud, penal y laboral",
+      "maps_url": ""
     },
     {
       "comuna": 9,
@@ -2718,7 +3039,8 @@
       "direccion": "Cuzco 220",
       "contacto": "11 3109-6217",
       "horario": "Lun a vie, de 9 a 15 hs",
-      "temas": "Asesoramiento jurídico gratuito"
+      "temas": "Asesoramiento jurídico gratuito",
+      "maps_url": ""
     }
   ],
   "defensorias": [
@@ -2728,7 +3050,8 @@
       "titular": "Dr. Fernando Lodeiro Martínez",
       "contacto": "7091-3101",
       "email": "defcamcayt1@mpdefensa.gob.ar",
-      "direccion": "Hipólito Yrigoyen 932, 1º Subsuelo"
+      "direccion": "Hipólito Yrigoyen 932, 1º Subsuelo",
+      "maps_url": ""
     },
     {
       "fuero": "CAyT",
@@ -2736,7 +3059,8 @@
       "titular": "Dra. Mariana Beatriz Pucciarello",
       "contacto": "7091-3135",
       "email": "defcamcayt2@mpdefensa.gob.ar",
-      "direccion": "Hipólito Yrigoyen 932, 1º Subsuelo"
+      "direccion": "Hipólito Yrigoyen 932, 1º Subsuelo",
+      "maps_url": ""
     },
     {
       "fuero": "CAyT",
@@ -2744,7 +3068,8 @@
       "titular": "Dr. Hernán García",
       "contacto": "7091-2409",
       "email": "defcayt1@mpdefensa.gob.ar",
-      "direccion": "Av. de Mayo 654, Piso 11º"
+      "direccion": "Av. de Mayo 654, Piso 11º",
+      "maps_url": ""
     },
     {
       "fuero": "CAyT",
@@ -2752,7 +3077,8 @@
       "titular": "Dr. Pablo A. De Giovanni",
       "contacto": "7091-2429",
       "email": "defcayt2@mpdefensa.gob.ar",
-      "direccion": "Av. de Mayo 654, Piso 5º CF"
+      "direccion": "Av. de Mayo 654, Piso 5º CF",
+      "maps_url": ""
     },
     {
       "fuero": "CAyT",
@@ -2760,7 +3086,8 @@
       "titular": "Dr. Sebastián Cayzac",
       "contacto": "7091-2440",
       "email": "defcayt3@mpdefensa.gob.ar",
-      "direccion": "Av. de Mayo 654, Piso 6º CF"
+      "direccion": "Av. de Mayo 654, Piso 6º CF",
+      "maps_url": ""
     },
     {
       "fuero": "CAyT",
@@ -2768,7 +3095,8 @@
       "titular": "Dr. Marcelo Miguel Cerrudo",
       "contacto": "7091-2468",
       "email": "mcerrudo@mpdefensa.gob.ar",
-      "direccion": "Av. de Mayo 654, Piso 6º Frente"
+      "direccion": "Av. de Mayo 654, Piso 6º Frente",
+      "maps_url": ""
     },
     {
       "fuero": "CAyT",
@@ -2776,7 +3104,8 @@
       "titular": "Dra. Giselle Furlong Pader",
       "contacto": "7091-3705",
       "email": "defcayt5@mpdefensa.gob.ar",
-      "direccion": "Av. de Mayo 654, Piso 5º"
+      "direccion": "Av. de Mayo 654, Piso 5º",
+      "maps_url": ""
     },
     {
       "fuero": "CAyT",
@@ -2784,7 +3113,8 @@
       "titular": "Dr. Javier Indalecio Barraza",
       "contacto": "7091-3725",
       "email": "defcayt6@mpdefensa.gob.ar",
-      "direccion": "Av. de Mayo 654, Piso 2º"
+      "direccion": "Av. de Mayo 654, Piso 2º",
+      "maps_url": ""
     },
     {
       "fuero": "Unidades",
@@ -2792,7 +3122,8 @@
       "titular": "Dra. Alejandra Lorena Lampolio",
       "contacto": "",
       "email": "",
-      "direccion": ""
+      "direccion": "",
+      "maps_url": ""
     },
     {
       "fuero": "Unidades",
@@ -2800,7 +3131,8 @@
       "titular": "Dr. Ramiro Joaquín Dos Santos Freire",
       "contacto": "",
       "email": "",
-      "direccion": ""
+      "direccion": "",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2808,7 +3140,8 @@
       "titular": "Dr. Gustavo Eduardo Aboso",
       "contacto": "7091-2664",
       "email": "defcampcyf1@mpdefensa.gob.ar",
-      "direccion": "Av. Córdoba 972, Piso 6º"
+      "direccion": "Av. Córdoba 972, Piso 6º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2816,7 +3149,8 @@
       "titular": "Dr. Emilio Antonio Cappuccio",
       "contacto": "7091-2654",
       "email": "defcampcyf2@mpdefensa.gob.ar",
-      "direccion": "Av. Córdoba 972, Piso 6º"
+      "direccion": "Av. Córdoba 972, Piso 6º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2824,7 +3158,8 @@
       "titular": "Dra. Patricia Beatriz Lopez",
       "contacto": "7091-2551",
       "email": "defpcyf1@mpdefensa.gob.ar",
-      "direccion": "Av. Cabildo 3067, Piso 4º"
+      "direccion": "Av. Cabildo 3067, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2832,7 +3167,8 @@
       "titular": "Dr. Gonzalo Montenegro Correa",
       "contacto": "7091-2580",
       "email": "defpcyf2@mpdefensa.gob.ar",
-      "direccion": "Av. Cabildo 3067, Piso 4º"
+      "direccion": "Av. Cabildo 3067, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2840,7 +3176,8 @@
       "titular": "Dra. María Andrea Piesco",
       "contacto": "7091-2772",
       "email": "defpcyf3@mpdefensa.gob.ar",
-      "direccion": "Suipacha 150, Piso 7º"
+      "direccion": "Suipacha 150, Piso 7º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2848,7 +3185,8 @@
       "titular": "Dr. Sebastián Zanazzi",
       "contacto": "7091-2773",
       "email": "defpcyf4@mpdefensa.gob.ar",
-      "direccion": "Suipacha 150, Piso 7º"
+      "direccion": "Suipacha 150, Piso 7º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2856,7 +3194,8 @@
       "titular": "Dra. Victoria Inés Almada",
       "contacto": "7091-2803",
       "email": "defpcyf5@mpdefensa.gob.ar",
-      "direccion": "Paseo Colón 1333, Piso 7º"
+      "direccion": "Paseo Colón 1333, Piso 7º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2864,7 +3203,8 @@
       "titular": "Dra. Marcela María Amelia Paz",
       "contacto": "7091-2522",
       "email": "defpcyf6@mpdefensa.gob.ar",
-      "direccion": "Suipacha 150, Piso 6º"
+      "direccion": "Suipacha 150, Piso 6º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2872,7 +3212,8 @@
       "titular": "Dr. Marcelino N. Civitillo",
       "contacto": "7091-2815",
       "email": "defpcyf7@mpdefensa.gob.ar",
-      "direccion": "Av. Paseo Colón 1333, Piso 4º"
+      "direccion": "Av. Paseo Colón 1333, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2880,7 +3221,8 @@
       "titular": "Dr. Matías Becerra",
       "contacto": "7091-2521",
       "email": "defpcyf8@mpdefensa.gob.ar",
-      "direccion": "Suipacha 150, Piso 6º"
+      "direccion": "Suipacha 150, Piso 6º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2888,7 +3230,8 @@
       "titular": "Dra. Sandra Marcela Donnini",
       "contacto": "7091-2557",
       "email": "mdonnini@mpdefensa.gob.ar",
-      "direccion": "Av. Cabildo 3067, Piso 4º"
+      "direccion": "Av. Cabildo 3067, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2896,7 +3239,8 @@
       "titular": "Dra. María Florencia Zapata",
       "contacto": "7091-2831",
       "email": "defpcyf10@mpdefensa.gob.ar",
-      "direccion": "Av. Paseo Colón 1333, Piso 4º"
+      "direccion": "Av. Paseo Colón 1333, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2904,7 +3248,8 @@
       "titular": "Dra. Carolina Spósito",
       "contacto": "7091-2847",
       "email": "defpcyf11@mpdefensa.gob.ar",
-      "direccion": "Av. Paseo Colón 1333, Piso 4º"
+      "direccion": "Av. Paseo Colón 1333, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2912,7 +3257,8 @@
       "titular": "Dr. Javier Balmayor",
       "contacto": "7091-2865",
       "email": "defpcyf12@mpdefensa.gob.ar",
-      "direccion": "Av. Paseo Colón 1333, Piso 5º"
+      "direccion": "Av. Paseo Colón 1333, Piso 5º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2920,7 +3266,8 @@
       "titular": "Dra. Paula Lagos",
       "contacto": "7091-2526",
       "email": "defpcyf13@mpdefensa.gob.ar",
-      "direccion": "Suipacha 150, Piso 7º"
+      "direccion": "Suipacha 150, Piso 7º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2928,7 +3275,8 @@
       "titular": "Dr. Sergio Julian Pistone",
       "contacto": "7091-2554",
       "email": "defpcyf14@mpdefensa.gob.ar",
-      "direccion": "Av. Cabildo 3067, Piso 4º"
+      "direccion": "Av. Cabildo 3067, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2936,7 +3284,8 @@
       "titular": "Dr. Ariel Sebastián Rebour",
       "contacto": "7091-2513",
       "email": "defpcyf15@mpdefensa.gob.ar",
-      "direccion": "Suipacha 150, Piso 6º"
+      "direccion": "Suipacha 150, Piso 6º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2944,7 +3293,8 @@
       "titular": "Dra. Gabriela Marquiegui Mc Loughlin",
       "contacto": "7091-2501",
       "email": "defpcyf16@mpdefensa.gob.ar",
-      "direccion": "Suipacha 150, Piso 7º"
+      "direccion": "Suipacha 150, Piso 7º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2952,7 +3302,8 @@
       "titular": "Dr. Miguel Mones Ruiz",
       "contacto": "7091-2883",
       "email": "defpcyf17@mpdefensa.gob.ar",
-      "direccion": "Paseo Colón 1333, Piso 7º"
+      "direccion": "Paseo Colón 1333, Piso 7º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2960,7 +3311,8 @@
       "titular": "Dr. Juan Ignacio Cafiero",
       "contacto": "7091-2555",
       "email": "defpcyf18@mpdefensa.gob.ar",
-      "direccion": "Av. Cabildo 3067, Piso 4º"
+      "direccion": "Av. Cabildo 3067, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2968,7 +3320,8 @@
       "titular": "Dra. Bibiana Marys Birriel Moreira",
       "contacto": "7091-3525",
       "email": "defpcyf19@mpdefensa.gob.ar",
-      "direccion": "Av. Paseo Colón 1333, Piso 4º"
+      "direccion": "Av. Paseo Colón 1333, Piso 4º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2976,7 +3329,8 @@
       "titular": "Dra. Marina Recabarra",
       "contacto": "7091-3542",
       "email": "defpcyf20@mpdefensa.gob.ar",
-      "direccion": "Av. Paseo Colón 1333, Piso 5º"
+      "direccion": "Av. Paseo Colón 1333, Piso 5º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2984,7 +3338,8 @@
       "titular": "Dr. Juan Manuel Murature",
       "contacto": "7091-3557",
       "email": "defpcyf21@mpdefensa.gob.ar",
-      "direccion": "Av. Paseo Colón 1333, Piso 5º"
+      "direccion": "Av. Paseo Colón 1333, Piso 5º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -2992,7 +3347,8 @@
       "titular": "Dr. Ariel Santiago Saenz Tejeira",
       "contacto": "7091-3505",
       "email": "asaenztejeira@mpdefensa.gob.ar",
-      "direccion": "Paseo Colón 1333, Piso 7º"
+      "direccion": "Paseo Colón 1333, Piso 7º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -3000,7 +3356,8 @@
       "titular": "Dra. Claudia Analía Rodríguez",
       "contacto": "7091-3576",
       "email": "defpcyf23@mpdefensa.gob.ar",
-      "direccion": "Paseo Colón 1333, Piso 11º"
+      "direccion": "Paseo Colón 1333, Piso 11º",
+      "maps_url": ""
     },
     {
       "fuero": "PCyF",
@@ -3008,7 +3365,8 @@
       "titular": "Dra. María Laura Giuseppucci",
       "contacto": "7091-3586",
       "email": "defpcyf24@mpdefensa.gob.ar",
-      "direccion": "Av. Paseo Colón 1333, Piso 11º"
+      "direccion": "Av. Paseo Colón 1333, Piso 11º",
+      "maps_url": ""
     },
     {
       "fuero": "Secretarías",
@@ -3016,7 +3374,8 @@
       "titular": "Dra. Durga Marcela Paula Angulo",
       "contacto": "",
       "email": "",
-      "direccion": ""
+      "direccion": "",
+      "maps_url": ""
     },
     {
       "fuero": "Secretarías",
@@ -3024,7 +3383,8 @@
       "titular": "Dra. Mariana Salduna",
       "contacto": "",
       "email": "",
-      "direccion": ""
+      "direccion": "",
+      "maps_url": ""
     },
     {
       "fuero": "Secretarías",
@@ -3032,7 +3392,8 @@
       "titular": "Dra. Silvina Noemí Nápoli",
       "contacto": "",
       "email": "",
-      "direccion": ""
+      "direccion": "",
+      "maps_url": ""
     }
   ]
 }
