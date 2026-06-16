@@ -367,7 +367,7 @@ function nuevo(){
   editando = {
     id:'', nombre:'', ambito:'caba', descripcion_corta:'', descripcion_larga:'',
     requisitos:[], documentacion:[], como_acceder:'', links:[], contactos:[],
-    incompatible_con:[], nota_incompatibilidad:'', validado:'', activo:true,
+    incompatible_con:[], nota_incompatibilidad:'', modelos_doc:[], validado:'', activo:true,
     elegibilidad:{ logica:'todas', condiciones:[] }
   };
   renderEditor(true);
@@ -379,6 +379,7 @@ function normalizar(p){
   p.links = p.links || [];
   p.contactos = p.contactos || [];
   p.incompatible_con = p.incompatible_con || [];
+  p.modelos_doc = p.modelos_doc || [];
   if (typeof p.activo === 'undefined') p.activo = true;
   if (typeof p.descripcion_larga === 'undefined') p.descripcion_larga = '';
   if (typeof p.como_acceder === 'undefined') p.como_acceder = '';
@@ -416,6 +417,16 @@ function renderEditor(esNuevo){
       '</div>' +
       '<input type="text" placeholder="Texto del botón" oninput="editando.links['+i+'].texto=this.value" value="'+esc(l.texto)+'" style="margin-bottom:6px">' +
       '<input type="url" placeholder="https://..." oninput="editando.links['+i+'].url=this.value" value="'+esc(l.url)+'">' +
+    '</div>';
+  }).join('');
+  var modelosItems = (p.modelos_doc).map(function(m,i){
+    return '<div class="linkrow">' +
+      '<div class="lr-top">' +
+        '<span style="font-size:13px;color:#666">Documento ' + (i+1) + '</span>' +
+        '<button class="mini del" title="Eliminar" onclick="delModeloDoc('+i+')">×</button>' +
+      '</div>' +
+      '<input type="text" placeholder="Título (ej: Modelo de presupuesto de hotel)" oninput="editando.modelos_doc['+i+'].titulo=this.value" value="'+esc(m.titulo||'')+'" style="margin-bottom:6px">' +
+      '<input type="text" placeholder="assets/nombre.png" oninput="editando.modelos_doc['+i+'].archivo=this.value" value="'+esc(m.archivo||'')+'">' +
     '</div>';
   }).join('');
   var incompItems = PROGS.filter(function(o){ return o.id !== p.id; }).map(function(o){
@@ -467,6 +478,13 @@ function renderEditor(esNuevo){
     '<h2>Documentación</h2>' +
     '<div id="lst-documentacion">' + listaItems('documentacion') + '</div>' +
     '<button class="mini add" onclick="addItem(\'documentacion\')">+ Agregar documento</button>' +
+  '</div>' +
+
+  '<div class="card">' +
+    '<h2>Modelos de presupuesto / Documentos modelo</h2>' +
+    '<p class="hint">Imágenes adjuntas que se muestran en la ficha del programa (ej: modelo de presupuesto). El archivo es un path relativo tipo <code>assets/nombre.png</code>.</p>' +
+    '<div id="lst-modelos_doc">' + modelosItems + '</div>' +
+    '<button class="mini add" onclick="addModeloDoc()">+ Agregar documento</button>' +
   '</div>' +
 
   '<div class="card">' +
@@ -534,6 +552,8 @@ function addItem(campo){ editando[campo].push(''); reRenderLista(campo); }
 function delItem(campo,i){ editando[campo].splice(i,1); reRenderLista(campo); }
 function addLink(){ editando.links.push({ texto:'', url:'', estilo:'primario' }); renderEditor(editIndex===-1); }
 function delLink(i){ editando.links.splice(i,1); renderEditor(editIndex===-1); }
+function addModeloDoc(){ editando.modelos_doc.push({ titulo:'', archivo:'' }); renderEditor(editIndex===-1); }
+function delModeloDoc(i){ editando.modelos_doc.splice(i,1); renderEditor(editIndex===-1); }
 function toggleIncomp(id){
   var a = editando.incompatible_con, k = a.indexOf(id);
   if (k === -1) a.push(id); else a.splice(k,1);
@@ -579,6 +599,10 @@ function aplicar(){
     p[c] = p[c].map(function(s){ return (s||'').trim(); }).filter(function(s){ return s; });
   });
   p.links = p.links.filter(function(l){ return (l.texto||'').trim() || (l.url||'').trim(); });
+  // modelos_doc: descartar items sin archivo y normalizar campos
+  p.modelos_doc = (p.modelos_doc || []).map(function(m){
+    return { titulo:(m.titulo||'').trim(), archivo:(m.archivo||'').trim() };
+  }).filter(function(m){ return m.archivo; });
 
   if (editIndex === -1) PROGS.push(p); else PROGS[editIndex] = p;
   marcarDirty();

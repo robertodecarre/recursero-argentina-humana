@@ -290,6 +290,12 @@
         "vivir_en_casa"
       ],
       "nota_incompatibilidad": "No compatible con Vivir en Casa. Solo se puede cobrar uno de los dos. Abrí cada programa para comparar cuál se ajusta mejor a la situación.",
+      "modelos_doc": [
+        {
+          "titulo": "Modelo de presupuesto de hotel",
+          "archivo": "assets/presupuesto.png"
+        }
+      ],
       "validado": "2026-04-16",
       "elegibilidad": {
         "logica": "todas",

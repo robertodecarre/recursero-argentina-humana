@@ -2491,6 +2491,7 @@ function adaptarPrograma(j) {
     cont: j.contactos || [],
     incomp_con: j.incompatible_con || [],
     nota_incompat: j.nota_incompatibilidad || '',
+    modelos_doc: j.modelos_doc || [],
     validado: fmtFecha(j.validado),
     elegible: function(d){ return evalElegibilidad(j.elegibilidad, d); }
   };
@@ -2639,6 +2640,23 @@ function verDetalle(id, esInc) {
     return '<a href="' + l.u + '" target="_blank" class="' + cls + '">' + l.l + '</a>';
   }).join('');
 
+  // Documentos modelo (imagenes adjuntas, ej: modelo de presupuesto)
+  var modelosH = '';
+  if (p.modelos_doc && p.modelos_doc.length) {
+    var modelosItems = p.modelos_doc.map(function(m) {
+      if (!m || !m.archivo) return '';
+      var tit = m.titulo ? '<h4 style="margin:0 0 8px;font-size:15px;color:var(--az-oscuro)">' + m.titulo + '</h4>' : '';
+      return '<div style="background:#f6f7fb;border-radius:12px;padding:12px;margin-bottom:12px">' +
+        tit +
+        '<a href="' + m.archivo + '" target="_blank">' +
+        '<img src="' + m.archivo + '" alt="' + (m.titulo || 'Documento modelo') + '" style="display:block;width:100%;max-width:100%;height:auto;border-radius:10px;border:1px solid #e0e3ec">' +
+        '</a></div>';
+    }).join('');
+    if (modelosItems) {
+      modelosH = '<div class="div"></div><div class="det-sec"><h3>📄 Documentos modelo</h3>' + modelosItems + '</div>';
+    }
+  }
+
   var incBan = (esInc && p.nota_incompat) ? '<div class="inc-ban"><p>⚠️ <strong>Atencion:</strong> ' + p.nota_incompat + '</p></div>' : '';
   var validadoH = p.validado ? '<div class="det-validado">✔ Datos validados al: ' + p.validado + '</div>' : '';
 
@@ -2653,6 +2671,7 @@ function verDetalle(id, esInc) {
     '<div class="det-sec"><h3>✅ Requisitos</h3><ul>' + reqH + '</ul></div>' +
     '<div class="div"></div>' +
     '<div class="det-sec"><h3>📄 Documentación</h3><ul>' + docH + '</ul></div>' +
+    modelosH +
     '<div class="div"></div>' +
     '<div class="det-sec"><h3>📍 Cómo acceder</h3><p>' + p.acceso + '</p></div>' +
     '<div class="div"></div>' +
