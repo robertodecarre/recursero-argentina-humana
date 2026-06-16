@@ -37,7 +37,7 @@ header{background:var(--negro);color:var(--blanco);position:sticky;top:0;z-index
 .card h2{font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px;}
 
 label{display:block;font-size:.72rem;font-weight:700;color:var(--gris-txt);margin-bottom:4px;margin-top:14px;text-transform:uppercase;letter-spacing:.4px;}
-input[type=text],input[type=password],input[type=date],input[type=url],textarea,select{
+input[type=text],input[type=password],input[type=date],input[type=url],input[type=number],input[type=email],textarea,select{
   width:100%;padding:10px 12px;border:1.5px solid var(--gris-borde);border-radius:0;
   font-family:"Barlow",sans-serif;font-size:.9rem;color:var(--negro);background:var(--blanco);transition:border-color .15s;
 }
@@ -58,6 +58,12 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--celeste)
 .mini.add:hover{background:#d7f0fa;}
 .mini.del{background:transparent;color:var(--rojo);border:1.5px solid var(--gris-borde);padding:0 10px;flex-shrink:0;font-size:1.1rem;line-height:1;}
 .mini.del:hover{border-color:var(--rojo);background:#fdeceb;}
+
+/* selector de categorías (recursos) */
+.cat-bar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.cat-btn{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;font-size:.82rem;padding:8px 11px;border:1.5px solid var(--gris-borde);background:var(--blanco);color:var(--gris-txt);cursor:pointer;}
+.cat-btn.on{border-color:var(--celeste);background:var(--celeste);color:#fff;}
+.cat-n{font-size:.7rem;opacity:.7;}
 
 /* LISTA */
 .toolbar{display:flex;gap:8px;margin-bottom:12px;}
@@ -141,16 +147,32 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--celeste)
     </div>
   </div>
 
-  <!-- LISTA -->
+  <!-- MENÚ DE SECCIONES -->
+  <div id="p-menu" class="pant">
+    <div class="card">
+      <h2>¿Qué querés editar?</h2>
+      <button class="btn-p" onclick="irA('programas')">Programas sociales</button>
+      <button class="btn-p" style="margin-top:10px" onclick="irA('recursos')">Recursos territoriales</button>
+    </div>
+  </div>
+
+  <!-- LISTA PROGRAMAS -->
   <div id="p-lista" class="pant">
     <div class="toolbar">
-      <button class="btn-p" onclick="nuevo()">+ Nuevo programa</button>
+      <button class="btn-s" style="margin:0" onclick="mostrar('p-menu')">‹ Secciones</button>
+      <button class="btn-p" style="margin:0" onclick="nuevo()">+ Nuevo programa</button>
     </div>
     <div id="lista"></div>
   </div>
 
-  <!-- EDITOR -->
+  <!-- EDITOR PROGRAMA -->
   <div id="p-editor" class="pant"></div>
+
+  <!-- LISTA RECURSOS (selector de categoría + buscador + items) -->
+  <div id="p-rec-lista" class="pant"></div>
+
+  <!-- EDITOR RECURSO -->
+  <div id="p-rec-editor" class="pant"></div>
 
 </div>
 
@@ -176,6 +198,73 @@ var dirty = false;     // hay cambios sin guardar
 var AMBITOS = ['caba', 'nacional'];
 var ESTILOS = ['primario', 'secundario'];
 
+/* ===== Estado recursos ===== */
+var RDATA = null;          // objeto completo de recursos.json
+var redit = null;          // copia del recurso en edición
+var reditIndex = -1;       // índice dentro de la categoría (-1 = nuevo)
+var reditCat = 'dormir';   // categoría activa
+var filtroRec = '';        // texto del buscador
+var dirtyR = false;        // cambios sin guardar en recursos
+var seccionActual = 'programas';
+
+var CATS_REC = [
+  { k:'dormir',      label:'Dormir' },
+  { k:'comedores',   label:'Comedores' },
+  { k:'duchas',      label:'Duchas' },
+  { k:'roperos',     label:'Roperos' },
+  { k:'juridico',    label:'Jurídico' },
+  { k:'defensorias', label:'Defensorías' }
+];
+var COMUNAS = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+var GESTIONES = ['propio','gestion_asociada','conveniado',''];
+var FUEROS = ['CAyT','Unidades','PCyF','Secretarías'];
+
+// Esquema declarativo de campos por categoría. t: text|num|url|email|textarea|comuna|gestion|fuero
+var CAMPOS_COMUNES = [
+  { k:'comuna', l:'Comuna', t:'comuna' },
+  { k:'barrio', l:'Barrio', t:'text' },
+  { k:'nombre', l:'Nombre', t:'text' },
+  { k:'direccion', l:'Dirección', t:'text' },
+  { k:'contacto', l:'Contacto', t:'text' },
+  { k:'horario', l:'Horario', t:'text' },
+  { k:'maps_url', l:'Link de Google Maps', t:'url' }
+];
+var RECURSO_SCHEMA = {
+  dormir: [
+    { k:'comuna', l:'Comuna', t:'comuna' },
+    { k:'barrio', l:'Barrio', t:'text' },
+    { k:'nombre', l:'Nombre', t:'text' },
+    { k:'direccion', l:'Dirección', t:'text' },
+    { k:'contacto', l:'Contacto', t:'text' },
+    { k:'poblacion', l:'Población', t:'textarea' },
+    { k:'plazas', l:'Plazas', t:'num' },
+    { k:'gestion', l:'Gestión', t:'gestion' },
+    { k:'maps_url', l:'Link de Google Maps', t:'url' }
+  ],
+  comedores: CAMPOS_COMUNES,
+  duchas: CAMPOS_COMUNES,
+  roperos: CAMPOS_COMUNES,
+  juridico: [
+    { k:'comuna', l:'Comuna', t:'comuna' },
+    { k:'barrio', l:'Barrio', t:'text' },
+    { k:'nombre', l:'Nombre', t:'text' },
+    { k:'direccion', l:'Dirección', t:'text' },
+    { k:'contacto', l:'Contacto', t:'text' },
+    { k:'horario', l:'Horario', t:'text' },
+    { k:'temas', l:'Temas', t:'textarea' },
+    { k:'maps_url', l:'Link de Google Maps', t:'url' }
+  ],
+  defensorias: [
+    { k:'fuero', l:'Fuero', t:'fuero' },
+    { k:'nombre', l:'Nombre', t:'text' },
+    { k:'titular', l:'Titular', t:'text' },
+    { k:'contacto', l:'Contacto', t:'text' },
+    { k:'email', l:'Email', t:'email' },
+    { k:'direccion', l:'Dirección', t:'text' },
+    { k:'maps_url', l:'Link de Google Maps', t:'url' }
+  ]
+};
+
 /* ===== Utilidades ===== */
 function $(id){ return document.getElementById(id); }
 function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
@@ -185,9 +274,14 @@ function slug(s){
 }
 function mdPreview(s){ return esc(s).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>'); }
 function mostrar(id){
-  ['p-login','p-lista','p-editor'].forEach(function(p){ $(p).classList.remove('activa'); });
+  ['p-login','p-menu','p-lista','p-editor','p-rec-lista','p-rec-editor'].forEach(function(p){ $(p).classList.remove('activa'); });
   $(id).classList.add('activa');
-  $('savebar').style.display = (id === 'p-lista') ? 'block' : 'none';
+  if (id === 'p-lista' || id === 'p-editor') seccionActual = 'programas';
+  if (id === 'p-rec-lista' || id === 'p-rec-editor') seccionActual = 'recursos';
+  var enLista = (id === 'p-lista' || id === 'p-rec-lista');
+  $('savebar').style.display = enLista ? 'block' : 'none';
+  var d = (seccionActual === 'recursos') ? dirtyR : dirty;
+  $('dirty').textContent = d ? '● cambios sin guardar' : '';
   window.scrollTo(0,0);
 }
 function toast(msg, tipo){
@@ -206,18 +300,24 @@ function entrar(){
 }
 
 function cargar(){
-  fetch('programas.json', { cache: 'no-store' })
-    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-    .then(function(data){
-      DATA = data;
-      PROGS = data.programas || [];
-      DATA.programas = PROGS;
-      renderLista();
-      mostrar('p-lista');
-    })
-    .catch(function(e){
-      toast('No se pudo cargar programas.json: ' + e.message, 'err');
-    });
+  Promise.all([
+    fetch('programas.json', { cache:'no-store' }).then(function(r){ if(!r.ok) throw new Error('programas.json '+r.status); return r.json(); }),
+    fetch('recursos.json', { cache:'no-store' }).then(function(r){ if(!r.ok) throw new Error('recursos.json '+r.status); return r.json(); })
+  ]).then(function(res){
+    DATA = res[0];
+    PROGS = DATA.programas || [];
+    DATA.programas = PROGS;
+    RDATA = res[1];
+    CATS_REC.forEach(function(c){ RDATA[c.k] = RDATA[c.k] || []; });
+    mostrar('p-menu');
+  }).catch(function(e){
+    toast('No se pudo cargar: ' + e.message, 'err');
+  });
+}
+
+function irA(seccion){
+  if (seccion === 'programas'){ renderLista(); mostrar('p-lista'); }
+  else { reditCat = 'dormir'; filtroRec = ''; renderRecLista(); mostrar('p-rec-lista'); }
 }
 
 /* ===== Lista ===== */
@@ -475,21 +575,27 @@ function aplicar(){
 
 /* ===== Guardar en GitHub ===== */
 function guardar(){
-  if (!dirty){ toast('No hay cambios para guardar'); return; }
+  if (seccionActual === 'recursos') guardarRecursos();
+  else guardarProgramas();
+}
+
+// POST genérico: postea un payload a /api/guardar y maneja el botón/toasts.
+// onOk(j) corre cuando el guardado fue exitoso.
+function postGuardar(payload, onOk){
   var btn = $('btn-guardar');
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span> Guardando...';
   fetch('/api/guardar', {
     method:'POST',
     headers:{ 'Content-Type':'application/json' },
-    body: JSON.stringify({ password: PASS, version: DATA.version, programas: PROGS })
+    body: JSON.stringify(payload)
   })
   .then(function(r){ return r.json().then(function(j){ return { status:r.status, j:j }; }); })
   .then(function(res){
     btn.disabled = false; btn.textContent = 'Guardar cambios';
     if (res.j && res.j.ok){
-      dirty = false; $('dirty').textContent = '';
-      DATA.actualizado = res.j.actualizado;
+      $('dirty').textContent = '';
+      onOk(res.j);
       toast('Guardado ✓ Vercel va a redeployar en ~1 min', 'ok');
     } else {
       var msg = (res.j && res.j.error) || ('Error '+res.status);
@@ -501,6 +607,156 @@ function guardar(){
     btn.disabled = false; btn.textContent = 'Guardar cambios';
     toast('Error de red al guardar: ' + e.message, 'err');
   });
+}
+
+function guardarProgramas(){
+  if (!dirty){ toast('No hay cambios para guardar'); return; }
+  postGuardar(
+    { password: PASS, archivo:'programas.json', version: DATA.version, programas: PROGS },
+    function(j){ dirty = false; DATA.actualizado = j.actualizado; }
+  );
+}
+
+/* ===================== RECURSOS ===================== */
+function marcarDirtyR(){ dirtyR = true; if (seccionActual === 'recursos') $('dirty').textContent = '● cambios sin guardar'; }
+function labelCat(k){ var c = CATS_REC.filter(function(x){ return x.k === k; })[0]; return c ? c.label : k; }
+
+/* Lista de recursos: selector de categoría + buscador + items */
+function renderRecLista(){
+  var bar = CATS_REC.map(function(c){
+    var n = (RDATA[c.k] || []).length;
+    return '<button class="cat-btn'+(c.k===reditCat?' on':'')+'" onclick="setCat(\''+c.k+'\')">'+c.label+' <span class="cat-n">'+n+'</span></button>';
+  }).join('');
+  $('p-rec-lista').innerHTML =
+    '<div class="toolbar">' +
+      '<button class="btn-s" style="margin:0" onclick="mostrar(\'p-menu\')">‹ Secciones</button>' +
+      '<button class="btn-p" style="margin:0" onclick="recNuevo()">+ Nuevo recurso</button>' +
+    '</div>' +
+    '<div class="cat-bar">' + bar + '</div>' +
+    '<input type="text" id="rec-filtro" placeholder="Buscar por nombre, barrio o comuna..." value="'+esc(filtroRec)+'" oninput="filtroRec=this.value;renderRecItems()" style="margin-bottom:10px">' +
+    '<div id="rec-items"></div>';
+  renderRecItems();
+}
+function setCat(k){ reditCat = k; filtroRec = ''; renderRecLista(); }
+
+function renderRecItems(){
+  var cat = reditCat, arr = RDATA[cat] || [];
+  var f = (filtroRec || '').toLowerCase().trim();
+  var html = arr.map(function(it, i){ return { it:it, i:i }; })
+    .filter(function(o){
+      if (!f) return true;
+      var campos = (cat === 'defensorias')
+        ? [o.it.nombre, o.it.fuero, o.it.titular]
+        : [o.it.nombre, o.it.barrio, 'comuna ' + o.it.comuna];
+      return campos.join(' ').toLowerCase().indexOf(f) !== -1;
+    })
+    .map(function(o){
+      var it = o.it;
+      var meta = (cat === 'defensorias')
+        ? esc(it.fuero || '') + (it.titular ? ' · ' + esc(it.titular) : '')
+        : 'Comuna ' + esc(it.comuna) + (it.barrio ? ' · ' + esc(it.barrio) : '');
+      return '<div class="pli" onclick="recEditar('+o.i+')">' +
+        '<div><div class="pli-nom">'+esc(it.nombre || '(sin nombre)')+'</div>' +
+        '<div class="pli-meta">'+meta+'</div></div>' +
+        '<div style="color:#bbb;font-size:1.2rem">›</div></div>';
+    }).join('');
+  $('rec-items').innerHTML = html || '<div class="card">No hay resultados.</div>';
+}
+
+function recEditar(i){
+  reditIndex = i;
+  redit = JSON.parse(JSON.stringify(RDATA[reditCat][i]));
+  renderRecEditor(false);
+  mostrar('p-rec-editor');
+}
+function recNuevo(){
+  reditIndex = -1;
+  redit = nuevoRecurso(reditCat);
+  renderRecEditor(true);
+  mostrar('p-rec-editor');
+}
+function nuevoRecurso(cat){
+  var o = {};
+  RECURSO_SCHEMA[cat].forEach(function(f){
+    if (f.t === 'comuna') o[f.k] = 1;
+    else if (f.t === 'fuero') o[f.k] = FUEROS[0];
+    else o[f.k] = '';
+  });
+  return o;
+}
+
+function campoHTML(f){
+  var v = redit[f.k];
+  if (f.t === 'textarea'){
+    return '<label>'+f.l+'</label><textarea rows="3" oninput="redit.'+f.k+'=this.value">'+esc(v)+'</textarea>';
+  }
+  if (f.t === 'comuna'){
+    var oc = COMUNAS.map(function(c){ return '<option value="'+c+'"'+(Number(v)===c?' selected':'')+'>'+c+'</option>'; }).join('');
+    return '<label>'+f.l+'</label><select onchange="redit.'+f.k+'=Number(this.value)">'+oc+'</select>';
+  }
+  if (f.t === 'gestion'){
+    var og = GESTIONES.map(function(g){ var lab = (g === '' ? '(sin especificar)' : g); return '<option value="'+g+'"'+((v||'')===g?' selected':'')+'>'+lab+'</option>'; }).join('');
+    return '<label>'+f.l+'</label><select onchange="redit.'+f.k+'=this.value">'+og+'</select>';
+  }
+  if (f.t === 'fuero'){
+    var of = FUEROS.map(function(x){ return '<option value="'+esc(x)+'"'+((v||'')===x?' selected':'')+'>'+esc(x)+'</option>'; }).join('');
+    return '<label>'+f.l+'</label><select onchange="redit.'+f.k+'=this.value">'+of+'</select>';
+  }
+  if (f.t === 'num'){
+    return '<label>'+f.l+'</label><input type="number" oninput="redit.'+f.k+'=(this.value===\'\'?\'\':Number(this.value))" value="'+esc(v)+'">';
+  }
+  var tipo = (f.t === 'url' ? 'url' : (f.t === 'email' ? 'email' : 'text'));
+  return '<label>'+f.l+'</label><input type="'+tipo+'" oninput="redit.'+f.k+'=this.value" value="'+esc(v)+'">';
+}
+
+function renderRecEditor(esNuevo){
+  var campos = RECURSO_SCHEMA[reditCat].map(campoHTML).join('');
+  $('p-rec-editor').innerHTML =
+    '<div class="card">' +
+      '<h2>'+(esNuevo ? 'Nuevo recurso' : 'Editar recurso')+' · '+esc(labelCat(reditCat))+'</h2>' +
+      campos +
+    '</div>' +
+    '<div class="card">' +
+      '<button class="btn-p" onclick="recAplicar()">Aplicar cambios</button>' +
+      '<button class="btn-s" style="margin-top:8px" onclick="renderRecLista();mostrar(\'p-rec-lista\')">Cancelar</button>' +
+      (esNuevo ? '' : '<button class="btn-del" style="margin-top:16px" onclick="recEliminar()">Eliminar recurso</button>') +
+    '</div>';
+}
+
+function recAplicar(){
+  var cat = reditCat;
+  if (!redit.nombre || !String(redit.nombre).trim()){ toast('El nombre es obligatorio', 'err'); return; }
+  // Asegurar tipos numéricos (por si quedó algún string del input)
+  RECURSO_SCHEMA[cat].forEach(function(f){
+    if (f.t === 'comuna') redit[f.k] = Number(redit[f.k]) || redit[f.k];
+    if (f.t === 'num') redit[f.k] = (redit[f.k] === '' || redit[f.k] == null) ? '' : Number(redit[f.k]);
+  });
+  if (reditIndex === -1) RDATA[cat].push(redit); else RDATA[cat][reditIndex] = redit;
+  marcarDirtyR();
+  renderRecLista();
+  mostrar('p-rec-lista');
+  toast('Cambios aplicados (todavía no guardados)', 'ok');
+}
+
+function recEliminar(){
+  if (reditIndex === -1) return;
+  if (!confirm('¿Estás seguro? Esta acción no se puede deshacer.')) return;
+  RDATA[reditCat].splice(reditIndex, 1);
+  redit = null; reditIndex = -1;
+  marcarDirtyR();
+  renderRecLista();
+  mostrar('p-rec-lista');
+  toast('Recurso eliminado (todavía no guardado)', 'ok');
+}
+
+function guardarRecursos(){
+  if (!dirtyR){ toast('No hay cambios para guardar'); return; }
+  var recursos = {};
+  CATS_REC.forEach(function(c){ recursos[c.k] = RDATA[c.k] || []; });
+  postGuardar(
+    { password: PASS, archivo:'recursos.json', version: RDATA.version, recursos: recursos },
+    function(j){ dirtyR = false; RDATA.actualizado = j.actualizado; }
+  );
 }
 </script>
 </body>

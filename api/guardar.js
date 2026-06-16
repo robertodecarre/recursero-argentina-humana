@@ -1,6 +1,6 @@
 // api/guardar.js — Vercel Serverless Function
-// Recibe el programas.json completo desde el panel /admin y lo commitea
-// directamente a main en el repo, usando la API de GitHub.
+// Recibe el contenido completo de programas.json o recursos.json desde el panel
+// /admin y lo commitea directamente a main en el repo, usando la API de GitHub.
 //
 // Variables de entorno necesarias (cargar en el dashboard de Vercel):
 //   GITHUB_TOKEN    -> token fine-grained con permiso Contents: read/write sobre este repo
@@ -8,8 +8,12 @@
 
 const OWNER = 'robertodecarre';
 const REPO = 'recursero-argentina-humana';
-const PATH = 'programas.json';
 const BRANCH = 'main';
+
+// Solo se permite escribir estos archivos
+const ARCHIVOS_PERMITIDOS = ['programas.json', 'recursos.json'];
+// Orden canónico de las categorías de recursos.json
+const CATEGORIAS_RECURSOS = ['dormir', 'comedores', 'duchas', 'roperos', 'juridico', 'defensorias'];
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -34,38 +38,71 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const { password, programas, mensaje, version } = body;
+  const { password, programas, recursos, mensaje, version } = body;
+  const archivo = body.archivo || 'programas.json';
 
   if (password !== adminPassword) {
     res.status(401).json({ ok: false, error: 'Contraseña incorrecta' });
     return;
   }
 
-  if (!Array.isArray(programas) || programas.length === 0) {
-    res.status(400).json({ ok: false, error: 'Falta el array de programas o está vacío' });
+  if (ARCHIVOS_PERMITIDOS.indexOf(archivo) === -1) {
+    res.status(400).json({ ok: false, error: 'Archivo no permitido: ' + archivo });
     return;
   }
 
-  // Validación mínima de integridad antes de tocar el repo
-  for (const p of programas) {
-    if (!p || typeof p !== 'object' || !p.id || !p.nombre) {
-      res.status(400).json({ ok: false, error: 'Hay un programa sin id o sin nombre' });
+  const fecha = new Date().toISOString().slice(0, 10);
+  let out;
+
+  // ===== Construcción + validación según el archivo =====
+  if (archivo === 'programas.json') {
+    if (!Array.isArray(programas) || programas.length === 0) {
+      res.status(400).json({ ok: false, error: 'Falta el array de programas o está vacío' });
       return;
     }
-  }
-  const ids = programas.map(function (p) { return p.id; });
-  if (new Set(ids).size !== ids.length) {
-    res.status(400).json({ ok: false, error: 'Hay ids de programa repetidos' });
-    return;
+    for (const p of programas) {
+      if (!p || typeof p !== 'object' || !p.id || !p.nombre) {
+        res.status(400).json({ ok: false, error: 'Hay un programa sin id o sin nombre' });
+        return;
+      }
+    }
+    const ids = programas.map(function (p) { return p.id; });
+    if (new Set(ids).size !== ids.length) {
+      res.status(400).json({ ok: false, error: 'Hay ids de programa repetidos' });
+      return;
+    }
+    out = { version: typeof version === 'number' ? version : 1, actualizado: fecha, programas: programas };
+
+  } else { // recursos.json
+    if (!recursos || typeof recursos !== 'object' || Array.isArray(recursos)) {
+      res.status(400).json({ ok: false, error: 'Falta el objeto de recursos' });
+      return;
+    }
+    const cats = Object.keys(recursos);
+    if (cats.length === 0) {
+      res.status(400).json({ ok: false, error: 'No hay categorías de recursos' });
+      return;
+    }
+    for (const c of cats) {
+      if (!Array.isArray(recursos[c])) {
+        res.status(400).json({ ok: false, error: 'La categoría "' + c + '" no es una lista' });
+        return;
+      }
+    }
+    // Reconstruir en orden canónico (categorías conocidas primero, luego cualquier extra)
+    out = { version: typeof version === 'number' ? version : 1, actualizado: fecha };
+    CATEGORIAS_RECURSOS.forEach(function (c) { if (recursos[c]) out[c] = recursos[c]; });
+    cats.forEach(function (c) { if (typeof out[c] === 'undefined') out[c] = recursos[c]; });
   }
 
+  // ===== Commit a GitHub (lógica compartida) =====
   const ghHeaders = {
     'Authorization': 'Bearer ' + token,
     'Accept': 'application/vnd.github+json',
     'User-Agent': 'recursero-admin',
     'X-GitHub-Api-Version': '2022-11-28'
   };
-  const apiUrl = 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + PATH;
+  const apiUrl = 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + archivo;
 
   try {
     // 1) SHA actual del archivo (se relee justo antes de escribir para no pisar cambios externos)
@@ -82,18 +119,13 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    // 2) Construir el contenido nuevo, preservando metadatos de cabecera
-    const out = {
-      version: typeof version === 'number' ? version : 1,
-      actualizado: new Date().toISOString().slice(0, 10),
-      programas: programas
-    };
+    // 2) Contenido nuevo
     const contenido = JSON.stringify(out, null, 2) + '\n';
     const contentB64 = Buffer.from(contenido, 'utf8').toString('base64');
 
     // 3) PUT -> commit directo a main
     const putBody = {
-      message: mensaje || ('Actualizar programas.json desde el panel (' + out.actualizado + ')'),
+      message: mensaje || ('Actualizar ' + archivo + ' desde el panel (' + fecha + ')'),
       content: contentB64,
       branch: BRANCH
     };
@@ -110,7 +142,7 @@ module.exports = async function handler(req, res) {
       res.status(200).json({
         ok: true,
         commit: result.commit && result.commit.html_url,
-        actualizado: out.actualizado
+        actualizado: fecha
       });
     } else {
       const t = await putRes.text();
