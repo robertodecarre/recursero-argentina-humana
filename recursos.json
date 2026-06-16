@@ -2617,6 +2617,9 @@
       "direccion": "Hospital Ramos Mejía",
       "contacto": "IG: patriagrandecomuna3 ",
       "horario": "Martes 18.30hs - 🥐 Merienda en la puerta de la guardia",
+      "dias": [
+        "mar"
+      ],
       "maps_url": "https://maps.app.goo.gl/8AQ9TvrmHmrK7ZtRA"
     }
   ],
