@@ -337,7 +337,8 @@ function renderLista(){
       '<div style="color:#bbb;font-size:1.2rem">›</div>' +
     '</div>';
   }).join('');
-  $('lista').innerHTML = html || '<div class="card">No hay programas.</div>';
+  $('lista').innerHTML = (html || '<div class="card">No hay programas.</div>') +
+    '<button class="btn-s" style="margin-top:8px" onclick="mostrar(\'p-menu\')">‹ Secciones</button>';
 }
 
 /* ===== Editor ===== */
@@ -491,7 +492,7 @@ function renderEditor(esNuevo){
 
   '<div class="card">' +
     '<button class="btn-p" onclick="aplicar()">Aplicar cambios</button>' +
-    '<button class="btn-s" style="margin-top:8px" onclick="renderLista();mostrar(\'p-lista\')">Cancelar</button>' +
+    '<button class="btn-s" style="margin-top:8px" onclick="renderLista();mostrar(\'p-lista\')">Volver</button>' +
     (esNuevo ? '' : '<div id="del-zone">' + delZoneHTML() + '</div>') +
   '</div>';
 }
@@ -634,7 +635,8 @@ function renderRecLista(){
     '</div>' +
     '<div class="cat-bar">' + bar + '</div>' +
     '<input type="text" id="rec-filtro" placeholder="Buscar por nombre, barrio o comuna..." value="'+esc(filtroRec)+'" oninput="filtroRec=this.value;renderRecItems()" style="margin-bottom:10px">' +
-    '<div id="rec-items"></div>';
+    '<div id="rec-items"></div>' +
+    '<button class="btn-s" style="margin-top:8px" onclick="mostrar(\'p-menu\')">‹ Secciones</button>';
   renderRecItems();
 }
 function setCat(k){ reditCat = k; filtroRec = ''; renderRecLista(); }
@@ -718,7 +720,7 @@ function renderRecEditor(esNuevo){
     '</div>' +
     '<div class="card">' +
       '<button class="btn-p" onclick="recAplicar()">Aplicar cambios</button>' +
-      '<button class="btn-s" style="margin-top:8px" onclick="renderRecLista();mostrar(\'p-rec-lista\')">Cancelar</button>' +
+      '<button class="btn-s" style="margin-top:8px" onclick="renderRecLista();mostrar(\'p-rec-lista\')">Volver</button>' +
       (esNuevo ? '' : '<button class="btn-del" style="margin-top:16px" onclick="recEliminar()">Eliminar recurso</button>') +
     '</div>';
 }
