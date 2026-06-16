@@ -105,6 +105,12 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--celeste)
 .chk.sel .chk-box{background:var(--celeste);border-color:var(--celeste);}
 .chk-txt{font-size:.82rem;font-weight:500;}
 
+/* chips de días (comedores) */
+.dia-chks{display:flex;flex-wrap:wrap;gap:6px;}
+.dia-chk{flex:1 1 auto;min-width:42px;text-align:center;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;font-size:.85rem;padding:9px 8px;border:1.5px solid var(--gris-borde);background:#fff;color:var(--gris-txt);cursor:pointer;border-radius:0;transition:all .15s;}
+.dia-chk:hover{border-color:var(--celeste);}
+.dia-chk.on{background:var(--celeste);border-color:var(--celeste);color:#fff;}
+
 /* barra fija de guardado */
 .savebar{position:fixed;left:0;right:0;bottom:0;background:var(--negro);padding:10px 13px;z-index:200;box-shadow:0 -2px 10px rgba(0,0,0,.25);}
 .savebar-i{max-width:680px;margin:0 auto;display:flex;gap:10px;align-items:center;}
@@ -218,8 +224,13 @@ var CATS_REC = [
 var COMUNAS = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 var GESTIONES = ['propio','gestion_asociada','conveniado',''];
 var FUEROS = ['CAyT','Unidades','PCyF','Secretarías'];
+// Días en orden canónico (lun..dom) para el campo dias de los comedores
+var DIAS_SEMANA = [
+  { k:'lun', label:'Lun' }, { k:'mar', label:'Mar' }, { k:'mie', label:'Mié' },
+  { k:'jue', label:'Jue' }, { k:'vie', label:'Vie' }, { k:'sab', label:'Sáb' }, { k:'dom', label:'Dom' }
+];
 
-// Esquema declarativo de campos por categoría. t: text|num|url|email|textarea|comuna|gestion|fuero
+// Esquema declarativo de campos por categoría. t: text|num|url|email|textarea|comuna|gestion|fuero|dias
 var CAMPOS_COMUNES = [
   { k:'comuna', l:'Comuna', t:'comuna' },
   { k:'barrio', l:'Barrio', t:'text' },
@@ -241,7 +252,16 @@ var RECURSO_SCHEMA = {
     { k:'gestion', l:'Gestión', t:'gestion' },
     { k:'maps_url', l:'Link de Google Maps', t:'url' }
   ],
-  comedores: CAMPOS_COMUNES,
+  comedores: [
+    { k:'comuna', l:'Comuna', t:'comuna' },
+    { k:'barrio', l:'Barrio', t:'text' },
+    { k:'nombre', l:'Nombre', t:'text' },
+    { k:'direccion', l:'Dirección', t:'text' },
+    { k:'contacto', l:'Contacto', t:'text' },
+    { k:'horario', l:'Horario', t:'text' },
+    { k:'dias', l:'Días de funcionamiento', t:'dias' },
+    { k:'maps_url', l:'Link de Google Maps', t:'url' }
+  ],
   duchas: CAMPOS_COMUNES,
   roperos: CAMPOS_COMUNES,
   juridico: [
@@ -682,6 +702,7 @@ function nuevoRecurso(cat){
   RECURSO_SCHEMA[cat].forEach(function(f){
     if (f.t === 'comuna') o[f.k] = 1;
     else if (f.t === 'fuero') o[f.k] = FUEROS[0];
+    else if (f.t === 'dias') o[f.k] = [];
     else o[f.k] = '';
   });
   return o;
@@ -707,6 +728,14 @@ function campoHTML(f){
   if (f.t === 'num'){
     return '<label>'+f.l+'</label><input type="number" oninput="redit.'+f.k+'=(this.value===\'\'?\'\':Number(this.value))" value="'+esc(v)+'">';
   }
+  if (f.t === 'dias'){
+    var dd = Array.isArray(v) ? v : [];
+    var chips = DIAS_SEMANA.map(function(d){
+      var sel = dd.indexOf(d.k) !== -1;
+      return '<button type="button" class="dia-chk'+(sel?' on':'')+'" onclick="toggleDiaComedor(\''+d.k+'\',this)">'+d.label+'</button>';
+    }).join('');
+    return '<label>'+f.l+'</label><div class="dia-chks">'+chips+'</div>';
+  }
   var tipo = (f.t === 'url' ? 'url' : (f.t === 'email' ? 'email' : 'text'));
   return '<label>'+f.l+'</label><input type="'+tipo+'" oninput="redit.'+f.k+'=this.value" value="'+esc(v)+'">';
 }
@@ -725,6 +754,14 @@ function renderRecEditor(esNuevo){
     '</div>';
 }
 
+// Marca/desmarca un día en el comedor en edición (orden se canoniza al aplicar)
+function toggleDiaComedor(d, btn){
+  if (!Array.isArray(redit.dias)) redit.dias = [];
+  var k = redit.dias.indexOf(d);
+  if (k === -1) redit.dias.push(d); else redit.dias.splice(k, 1);
+  btn.classList.toggle('on');
+}
+
 function recAplicar(){
   var cat = reditCat;
   if (!redit.nombre || !String(redit.nombre).trim()){ toast('El nombre es obligatorio', 'err'); return; }
@@ -732,6 +769,12 @@ function recAplicar(){
   RECURSO_SCHEMA[cat].forEach(function(f){
     if (f.t === 'comuna') redit[f.k] = Number(redit[f.k]) || redit[f.k];
     if (f.t === 'num') redit[f.k] = (redit[f.k] === '' || redit[f.k] == null) ? '' : Number(redit[f.k]);
+    if (f.t === 'dias'){
+      var sel = Array.isArray(redit[f.k]) ? redit[f.k] : [];
+      redit[f.k] = DIAS_SEMANA.map(function(x){ return x.k; }).filter(function(k){ return sel.indexOf(k) !== -1; }); // orden canónico
+      // Mantener consistencia con el invariante dias:[] <=> revisar:true
+      if (redit[f.k].length > 0) delete redit.revisar; else redit.revisar = true;
+    }
   });
   if (reditIndex === -1) RDATA[cat].push(redit); else RDATA[cat][reditIndex] = redit;
   marcarDirtyR();
