@@ -704,6 +704,13 @@
       "direccion": "Villa 31 Manzana 30",
       "contacto": "11 3928-5021",
       "horario": "Lun a vie: desayuno 9 hs, almuerzo 13 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -713,6 +720,14 @@
       "direccion": "Suipacha 1241",
       "contacto": "4327-4549",
       "horario": "Dom a vie 8 hs. Alimentos: martes 9 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -722,6 +737,10 @@
       "direccion": "Flor de Otoño 301",
       "contacto": "11 2136-0302",
       "horario": "Sab y dom, de 10 a 11 hs",
+      "dias": [
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -731,6 +750,10 @@
       "direccion": "Hipólito Yrigoyen 1440",
       "contacto": "abrigarderechos@gmail.com",
       "horario": "Lun y jue: 10 hs y 13 hs",
+      "dias": [
+        "lun",
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -740,6 +763,11 @@
       "direccion": "Santiago del Estero 866",
       "contacto": "11 5636-9209",
       "horario": "Mar-jue-sab 12:30 hs; desayuno sab 11 hs",
+      "dias": [
+        "mar",
+        "jue",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -749,6 +777,9 @@
       "direccion": "Estados Unidos 553",
       "contacto": "11 3439-2506",
       "horario": "Domingos, 13 hs",
+      "dias": [
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -758,6 +789,14 @@
       "direccion": "Constitución 1407",
       "contacto": "11 4043-3895",
       "horario": "Lun a vie: almuerzo 11 hs; sab: merienda 14:45 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -767,6 +806,10 @@
       "direccion": "Paseo Colón (entre Independencia y Estados Unidos)",
       "contacto": "11 4173-6877",
       "horario": "Sab 13 hs; mie 18 hs (merienda)",
+      "dias": [
+        "mie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -776,6 +819,12 @@
       "direccion": "Humberto Primo 330",
       "contacto": "4361-1168",
       "horario": "Lun-mar-mie-vie 11 hs; viandas mie y vie 12 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -785,6 +834,8 @@
       "direccion": "Pedro Echagüe 1235",
       "contacto": "11 3777-0647",
       "horario": "Merienda 17 hs; cena 20 hs; recorrido con viandas",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -794,6 +845,15 @@
       "direccion": "Plaza de Mayo",
       "contacto": "4915-9470",
       "horario": "Lun a dom, de 19 a 21 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -803,6 +863,9 @@
       "direccion": "Parque Lezama (Brasil y Defensa)",
       "contacto": "IG: ollaparquelezama",
       "horario": "Lunes, 19 hs",
+      "dias": [
+        "lun"
+      ],
       "maps_url": ""
     },
     {
@@ -812,6 +875,9 @@
       "direccion": "Montevideo 1372",
       "contacto": "4812-1735",
       "horario": "Sabados, merienda 16 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -821,6 +887,8 @@
       "direccion": "Rodríguez Peña 840",
       "contacto": "11 2611-6281",
       "horario": "Merienda - consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -830,6 +898,8 @@
       "direccion": "Av. Rivadavia (Balvanera)",
       "contacto": "Consultar",
       "horario": "Almuerzo - consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -839,6 +909,8 @@
       "direccion": "Olavarría 486",
       "contacto": "4301-1155",
       "horario": "Consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -848,6 +920,8 @@
       "direccion": "Av. Vélez Sarsfield 1351",
       "contacto": "4911-9090",
       "horario": "Almuerzo - consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -857,6 +931,8 @@
       "direccion": "Virrey Liniers 897",
       "contacto": "Consultar",
       "horario": "Almuerzo - consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -866,6 +942,8 @@
       "direccion": "Av. Rivadavia (Caballito)",
       "contacto": "Consultar",
       "horario": "Consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -875,6 +953,8 @@
       "direccion": "Av. Rivadavia 4879",
       "contacto": "Consultar",
       "horario": "Consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -884,6 +964,8 @@
       "direccion": "Estrada 833",
       "contacto": "4923-3101",
       "horario": "Consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -893,6 +975,15 @@
       "direccion": "Cuzco 110",
       "contacto": "Consultar",
       "horario": "Almuerzo y merienda lun a dom. Alimentos no perecederos adultos mayores",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -902,6 +993,8 @@
       "direccion": "Bahía Blanca 363",
       "contacto": "Consultar",
       "horario": "Consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -911,6 +1004,8 @@
       "direccion": "Línea Mitre, Estación Urquiza",
       "contacto": "11 3170-3791",
       "horario": "Recorrida con entrega de viandas",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -920,6 +1015,8 @@
       "direccion": "Palermo",
       "contacto": "4824-8852",
       "horario": "Recorridas con entrega de viandas",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -929,6 +1026,13 @@
       "direccion": "Talampaya 2873",
       "contacto": "11 6193-0433",
       "horario": "Des, alm, merienda y cena lun a vie 9-17 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -938,6 +1042,11 @@
       "direccion": "Av. Rivadavia 851 (Casa de la Amistad)",
       "contacto": "IG: santegidioarg",
       "horario": "Viandas mié 19 hs, jue 19:30 hs, vie 19 hs",
+      "dias": [
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -947,6 +1056,13 @@
       "direccion": "Juncal 888",
       "contacto": "4393-1423",
       "horario": "Des (viandas) lun a vie 8 hs. Alimentos mar 9 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -956,6 +1072,10 @@
       "direccion": "Alpaca 1409",
       "contacto": "11 6737-2339",
       "horario": "Des y alm mar y jue 10-15 hs",
+      "dias": [
+        "mar",
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -965,6 +1085,8 @@
       "direccion": "Av. Independencia 1150",
       "contacto": "4371-5869",
       "horario": "Consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -974,6 +1096,10 @@
       "direccion": "Salta 2290",
       "contacto": "11 6617-7408",
       "horario": "Alm sáb 11:30 hs. Alimentos mié 14-16 hs",
+      "dias": [
+        "mie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -983,6 +1109,9 @@
       "direccion": "Constitución 1077",
       "contacto": "4305-6552",
       "horario": "Alm y alimentos sáb 12 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -992,6 +1121,13 @@
       "direccion": "Chacabuco 634",
       "contacto": "11 3822-4017",
       "horario": "Merienda lun a vie 16-17 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1001,6 +1137,13 @@
       "direccion": "Brasil 850",
       "contacto": "4300-2194",
       "horario": "Merienda y alimentos lun a vie 17 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1010,6 +1153,9 @@
       "direccion": "Piedras 539",
       "contacto": "11 2725-6354",
       "horario": "Cena (olla popular) mar 19 hs",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1019,6 +1165,9 @@
       "direccion": "Av. Rivadavia 4050",
       "contacto": "11 3432-7033",
       "horario": "Cena (viandas Solís y Yrigoyen) dom 20:30-21 hs",
+      "dias": [
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1028,6 +1177,9 @@
       "direccion": "Aimé Painé 1698",
       "contacto": "11 6285-4848",
       "horario": "Recorrido viandas jue 20 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1037,6 +1189,9 @@
       "direccion": "Tacuarí 870",
       "contacto": "4300-5547",
       "horario": "Alimentos jue 10 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1046,6 +1201,9 @@
       "direccion": "Adolfo Alsina 346",
       "contacto": "4331-0625",
       "horario": "Cena (viandas) vie 18 hs",
+      "dias": [
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1055,6 +1213,13 @@
       "direccion": "Larrea 1252",
       "contacto": "4824-0895",
       "horario": "Des 7-8:30 hs; alm 11 hs lun a vie (Beruti 2352)",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1064,6 +1229,13 @@
       "direccion": "Azcuénaga 1266",
       "contacto": "4822-1897",
       "horario": "Des lun a vie 7-8:30 hs; alm lun a vie 11-12:30 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1073,6 +1245,10 @@
       "direccion": "Bartolomé Mitre 2411",
       "contacto": "4802-5830",
       "horario": "Des sáb 9 hs; alm sáb 12 hs; merienda vie tarde (niños)",
+      "dias": [
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1082,6 +1258,14 @@
       "direccion": "Moreno 2472",
       "contacto": "4308-1829",
       "horario": "Des lun a sáb 3 turnos: 7:45, 8:20 y 8:55 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1091,6 +1275,13 @@
       "direccion": "Bartolomé Mitre 3366",
       "contacto": "IG: vientosdelibertad.mte",
       "horario": "Des y alm lun a vie 9-16 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1100,6 +1291,13 @@
       "direccion": "Estados Unidos 3150",
       "contacto": "4931-1317",
       "horario": "Merienda vie 18 hs; viandas sáb 11 hs; alimentos lun-mié 15-18 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1109,6 +1307,12 @@
       "direccion": "Riobamba 86",
       "contacto": "IG: patriagrandecomuna3",
       "horario": "Alm lun 12 hs; alimentos jue 16 hs; recorrido mar-jue-vie 15 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1118,6 +1322,14 @@
       "direccion": "Ecuador 462",
       "contacto": "11 5608-7175",
       "horario": "Recorridos nocturnos dom a vie 20-00:30 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1127,6 +1339,9 @@
       "direccion": "Av. Belgrano 2719",
       "contacto": "11 6961-2094",
       "horario": "Recorrido viandas jue 20-21:30 hs (Balvanera, Almagro, Palermo)",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1136,6 +1351,9 @@
       "direccion": "Plaza Once",
       "contacto": "11 3605-1352",
       "horario": "Cena (olla popular) mar 18 hs",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1145,6 +1363,15 @@
       "direccion": "Pasaje Guaraní 563",
       "contacto": "info@accioncomunitaria.org",
       "horario": "Recorridos \"Sopa de Letras\" (C1,3,4,5) lun a dom 18:30-22:30 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1154,6 +1381,8 @@
       "direccion": "Av. Sáenz 541",
       "contacto": "11 3013-9726",
       "horario": "Alm dom (3 veces/mes) 12-13 hs; viandas sáb (2 veces/mes) 17:30 hs",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -1163,6 +1392,13 @@
       "direccion": "Av. Osvaldo Cruz 3470",
       "contacto": "4302-3643",
       "horario": "Des y alm lun a vie 10 y 12:30 hs; alimentos vie 16 hs; recorrido lun 20 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1172,6 +1408,10 @@
       "direccion": "Olavarría 486",
       "contacto": "4301-1155",
       "horario": "Des dom 9-10 hs; alm dom 11:30 hs; viandas dom 10:30 hs; alimentos jue 8-10 hs",
+      "dias": [
+        "jue",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1181,6 +1421,9 @@
       "direccion": "Lamadrid 663",
       "contacto": "IG: somosbarriosdepie.c4",
       "horario": "Cena (olla popular) vie 18 hs",
+      "dias": [
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1190,6 +1433,13 @@
       "direccion": "H. Masantonio 3495",
       "contacto": "4911-9090",
       "horario": "Alm lun a vie 11:30-13:30 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1199,6 +1449,9 @@
       "direccion": "Av. Montes de Oca 550",
       "contacto": "11 2640-2528",
       "horario": "Alimentos y recorrido viandas jue 16:30 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1208,6 +1461,9 @@
       "direccion": "Sánchez de Bustamante 551",
       "contacto": "IG: casagatica",
       "horario": "Alm sábados 12 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1217,6 +1473,10 @@
       "direccion": "Av. Belgrano 3660",
       "contacto": "11 6461-9954",
       "horario": "Des y merienda: mié 16:30-18 hs y vie 9:30-11 hs",
+      "dias": [
+        "mie",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1226,6 +1486,9 @@
       "direccion": "Av. Rivadavia 4050",
       "contacto": "4981-4290",
       "horario": "Des y alm sáb 9:30-13:30 hs (mayores 40); merienda sáb 16:30 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1235,6 +1498,15 @@
       "direccion": "Presidente Perón y Agüero",
       "contacto": "11 6818-4807",
       "horario": "Alimentos todos los días 18 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1244,6 +1516,10 @@
       "direccion": "Av. H. Yrigoyen 3999",
       "contacto": "4981-4741",
       "horario": "Viandas y alimentos lun y jue 10-12 hs; alimentos último mar del mes 15 hs",
+      "dias": [
+        "lun",
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1253,6 +1529,10 @@
       "direccion": "Av. Medrano 752",
       "contacto": "4862-0825",
       "horario": "Cena vie 20:30 hs; merienda adultos mayores mié 17 hs",
+      "dias": [
+        "mie",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1262,6 +1542,9 @@
       "direccion": "Castro Barros 957",
       "contacto": "IG: patriagrandecomuna5",
       "horario": "Cena (olla popular) mié 19:30 hs",
+      "dias": [
+        "mie"
+      ],
       "maps_url": ""
     },
     {
@@ -1271,6 +1554,9 @@
       "direccion": "Sánchez de Bustamante 631",
       "contacto": "IG: espaciomayos",
       "horario": "Cena (olla popular) mié 19:30-20:30 hs",
+      "dias": [
+        "mie"
+      ],
       "maps_url": ""
     },
     {
@@ -1280,6 +1566,15 @@
       "direccion": "México 4050",
       "contacto": "4931-2139",
       "horario": "Des todos los días 18 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1289,6 +1584,10 @@
       "direccion": "Av. La Plata 286",
       "contacto": "4983-7944",
       "horario": "Alimentos no perecederos mar y vie 16 hs",
+      "dias": [
+        "mar",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1298,6 +1597,9 @@
       "direccion": "Acoyte y Rivadavia",
       "contacto": "IG: peronismosolidario.caballito",
       "horario": "Alm dom 12 hs",
+      "dias": [
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1307,6 +1609,10 @@
       "direccion": "Aranguren 691",
       "contacto": "4904-0590",
       "horario": "Des lun y jue 7:30 hs; cena jue 20 hs; alimentos último jue mes 17:30 hs",
+      "dias": [
+        "lun",
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1316,6 +1622,9 @@
       "direccion": "Av. Rivadavia 4879",
       "contacto": "4901-1811",
       "horario": "Cena (viandas) lun 20 hs; alimentos una vez por mes",
+      "dias": [
+        "lun"
+      ],
       "maps_url": ""
     },
     {
@@ -1325,6 +1634,9 @@
       "direccion": "Av. Donato Álvarez 2050",
       "contacto": "4581-2117",
       "horario": "Alimentos no perecederos jue 14-16:30 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1334,6 +1646,10 @@
       "direccion": "José María Moreno 446",
       "contacto": "IG: oeste_solidario",
       "horario": "Recorrido viandas lun y mar 21 hs (Caballito y Boedo)",
+      "dias": [
+        "lun",
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1343,6 +1659,9 @@
       "direccion": "Ambrosetti 279",
       "contacto": "IG: lc_caballito",
       "horario": "Cena (viandas) jue 20 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1352,6 +1671,9 @@
       "direccion": "Seguí 850",
       "contacto": "IG: plazairlandasolidaria",
       "horario": "Cena (viandas) jue 20 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1361,6 +1683,10 @@
       "direccion": "Méndez de Andes 614",
       "contacto": "IG: rondaollapopular",
       "horario": "Alm dom 12-14 hs; viandas lun 18 hs",
+      "dias": [
+        "lun",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1370,6 +1696,8 @@
       "direccion": "Rojas y las vías (est. Caballito)",
       "contacto": "IG: ferro_ddhh_y_accion_social",
       "horario": "Cena (viandas) último mié del mes 20 hs",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -1379,6 +1707,13 @@
       "direccion": "Av. Juan Bautista Alberdi 2509",
       "contacto": "11 6453-8187",
       "horario": "Des y alm (viandas) lun a vie 12-14 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1388,6 +1723,13 @@
       "direccion": "Miraflores 2278",
       "contacto": "11 2136-0302",
       "horario": "Des y alm lun a vie 9-16 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1397,6 +1739,13 @@
       "direccion": "Av. Perito Moreno y Av. Cruz - Barrio P. Ricciardelli",
       "contacto": "4139-0403",
       "horario": "Des 10 hs, alm 12 hs, cena 19 hs lun a vie; recorrido zona 11:30 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1406,6 +1755,14 @@
       "direccion": "Av. Rivadavia 6950",
       "contacto": "4637-1489",
       "horario": "Alm lun a vie 12 hs; cena mujeres/niños lun a vie 16:30 hs; viandas lun a sáb 10 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1415,6 +1772,9 @@
       "direccion": "Pergamino 63",
       "contacto": "4611-9463",
       "horario": "Cena y alimentos jue 19:30 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1424,6 +1784,8 @@
       "direccion": "Av. Nazca y Páez",
       "contacto": "11 3971-4015",
       "horario": "Viandas un sáb al mes",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -1433,6 +1795,10 @@
       "direccion": "Esteban Bonorino 1957",
       "contacto": "11 4034-9822",
       "horario": "Cena (olla popular) lun y vie 19:30 hs",
+      "dias": [
+        "lun",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1442,6 +1808,13 @@
       "direccion": "Mariano Acosta 3501",
       "contacto": "11 6137-8923",
       "horario": "Des lun-vie 8 hs; alm lun-vie 12 hs; alimentos último vie mes; recorrido mar 17 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1451,6 +1824,13 @@
       "direccion": "Saraza 6135",
       "contacto": "11 2650-7250",
       "horario": "Des, alm y merienda lun a vie 11-17 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1460,6 +1840,9 @@
       "direccion": "Montiel 3899",
       "contacto": "11 7369-7274",
       "horario": "Alm sáb 12:30-13:30 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1469,6 +1852,8 @@
       "direccion": "Miralla 3838",
       "contacto": "4638-5225",
       "horario": "Des 9-12 hs; alm 11-13 hs",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -1478,6 +1863,9 @@
       "direccion": "Av. Escalada 2858",
       "contacto": "11 7002-3257",
       "horario": "Alimentos no perecederos mar 17-19 hs",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1487,6 +1875,14 @@
       "direccion": "Eva Perón 6378, manzana 8 casa 1",
       "contacto": "4601-0423",
       "horario": "Des lun-vie 10 hs; alm lun-vie 13 hs; merienda lun-vie 16 hs; viandas sáb 11:30 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1496,6 +1892,15 @@
       "direccion": "Av. Mariano Acosta 2929",
       "contacto": "11 3017-1091",
       "horario": "Alm y merienda lun-dom 12 y 17 hs; alimentos adultos mayores último vie mes",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1505,6 +1910,8 @@
       "direccion": "Av. Lafuente 3242",
       "contacto": "11 5935-1160",
       "horario": "Alm 12 hs; cena 19 hs",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -1514,6 +1921,13 @@
       "direccion": "Av. de los Corrales 3420",
       "contacto": "11 6137-8923",
       "horario": "Alm lun a vie 11-16 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1523,6 +1937,15 @@
       "direccion": "Martínez Castro y Pasaje C",
       "contacto": "11 3963-4990",
       "horario": "Merienda y viandas todos los días; alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1532,6 +1955,9 @@
       "direccion": "Lugares rotativos",
       "contacto": "11 2136-0302",
       "horario": "Cena (olla popular) jue 19 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1541,6 +1967,10 @@
       "direccion": "Manzana 7, Barrio Fátima",
       "contacto": "Consultar",
       "horario": "Alimentos adultos mayores 2° jue mes; recorrido lun y jue 19-23 hs",
+      "dias": [
+        "lun",
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1550,6 +1980,9 @@
       "direccion": "Av. Larrazábal 2390",
       "contacto": "4635-0605",
       "horario": "Merienda sáb 18 hs; alimentos adultos mayores 2° jue mes 14 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1559,6 +1992,15 @@
       "direccion": "Av. Escalada 1150",
       "contacto": "4635-4012",
       "horario": "Alm (viandas) todos los días 12 hs; cena todos los días 20:30 hs; alimentos 1° sáb mes 8 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1568,6 +2010,11 @@
       "direccion": "José Enrique Rodó 4203",
       "contacto": "4671-1255",
       "horario": "Merienda (viandas) mié y dom 16 hs; alimentos mar por la tarde",
+      "dias": [
+        "mar",
+        "mie",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1577,6 +2024,9 @@
       "direccion": "Estación Liniers, Av. Rivadavia y Cuzco",
       "contacto": "IG: ollapopular_papafrancisco",
       "horario": "Cena (viandas) mar 19-21 hs",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1586,6 +2036,9 @@
       "direccion": "Av. Emilio Castro 6391",
       "contacto": "11 5040-4985",
       "horario": "Alm sáb 12 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1595,6 +2048,9 @@
       "direccion": "Olivera 1497",
       "contacto": "11 3287-8206",
       "horario": "Recorrido viandas (C7,9,10,11) lun 20-24 hs",
+      "dias": [
+        "lun"
+      ],
       "maps_url": ""
     },
     {
@@ -1604,6 +2060,9 @@
       "direccion": "C. Irigoyen 799",
       "contacto": "Consultar",
       "horario": "Alm y merienda sáb cada 15 días 12 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1613,6 +2072,8 @@
       "direccion": "Zelada 4771",
       "contacto": "4683-3102",
       "horario": "Consultar",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -1622,6 +2083,9 @@
       "direccion": "Bermúdez 2011",
       "contacto": "4566-5805",
       "horario": "Cena dom 19:30 hs; alimentos 2° mar de cada mes",
+      "dias": [
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1631,6 +2095,8 @@
       "direccion": "Av. Álvarez Jonte 5590",
       "contacto": "5584-4125",
       "horario": "Merienda y alimentos 4° mié del mes 17:30 hs",
+      "dias": [],
+      "revisar": true,
       "maps_url": ""
     },
     {
@@ -1640,6 +2106,9 @@
       "direccion": "Av. Juan B. Justo 7447",
       "contacto": "11 2388-4117",
       "horario": "Cena (viandas) mar 20 hs",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1649,6 +2118,9 @@
       "direccion": "Concordia 1047",
       "contacto": "IG: patriagrandecomuna11",
       "horario": "Recorrido viandas mar 19:30 hs",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1658,6 +2130,11 @@
       "direccion": "Fernández de Enciso 4521",
       "contacto": "11 2520-1047",
       "horario": "Des mar, jue y vie 8-9 hs",
+      "dias": [
+        "mar",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1667,6 +2144,13 @@
       "direccion": "Cervantes 2944",
       "contacto": "11 5910-9496",
       "horario": "Merienda y viandas lun a vie 15 hs; merienda mar a jue 19 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1676,6 +2160,15 @@
       "direccion": "Pedro Lozano 3167",
       "contacto": "4501-0723",
       "horario": "Alm lun a dom 11 hs; cena lun a dom 18 hs; alimentos lun y mié 16 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1685,6 +2178,10 @@
       "direccion": "Allende 2711",
       "contacto": "11 7368-1862",
       "horario": "Entrega frutas y verduras mar y vie 20-22 hs; recorridos C9,10,11",
+      "dias": [
+        "mar",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1694,6 +2191,9 @@
       "direccion": "Terrero 1590",
       "contacto": "11 6163-9844",
       "horario": "Viandas en el lugar vie 18-20 hs",
+      "dias": [
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1703,6 +2203,13 @@
       "direccion": "Epecuén 4882",
       "contacto": "11 4536-3813",
       "horario": "Merienda (viandas) lun a vie 15 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1712,6 +2219,13 @@
       "direccion": "Arias 4081",
       "contacto": "11 6442-4299",
       "horario": "Merienda niños lun a vie 16:30 hs; cena (viandas) vie 20 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1721,6 +2235,10 @@
       "direccion": "Plaza Casal (Triunvirato y Roosevelt)",
       "contacto": "11 2405-9511",
       "horario": "Merienda lun y vie 17-19:30 hs",
+      "dias": [
+        "lun",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1730,6 +2248,9 @@
       "direccion": "Línea Mitre, Plaza de la Est. Urquiza",
       "contacto": "Consultar",
       "horario": "Merienda mié 18 hs",
+      "dias": [
+        "mie"
+      ],
       "maps_url": ""
     },
     {
@@ -1739,6 +2260,9 @@
       "direccion": "Línea Mitre, Est. Pueyrredón (a J. L. Suárez)",
       "contacto": "IG: asambleavillapueyrredon",
       "horario": "Merienda mar 18:30 hs",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1748,6 +2272,9 @@
       "direccion": "Línea Mitre, Est. Villa Pueyrredón (Bolivia y Cabezón)",
       "contacto": "IG: abrazo_peronista",
       "horario": "Merienda mié 18:30-20:30 hs",
+      "dias": [
+        "mie"
+      ],
       "maps_url": ""
     },
     {
@@ -1757,6 +2284,9 @@
       "direccion": "Línea Mitre, Est. Urquiza",
       "contacto": "11 3170-3791",
       "horario": "Merienda jue 18:30 hs",
+      "dias": [
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1766,6 +2296,9 @@
       "direccion": "Lugones 4016",
       "contacto": "11 6281-0714",
       "horario": "Merienda mié 19 hs; otros días rotativos",
+      "dias": [
+        "mie"
+      ],
       "maps_url": ""
     },
     {
@@ -1775,6 +2308,13 @@
       "direccion": "Av. Balbín 3711",
       "contacto": "11 6006-8224",
       "horario": "Merienda lun a vie 16-20 hs; olla popular jue 18:30 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1784,6 +2324,15 @@
       "direccion": "Av. Ricardo Balbín 4221",
       "contacto": "11 7361-1145",
       "horario": "Merienda lun a vie 16-20 hs; sáb y dom 16-22 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1793,6 +2342,9 @@
       "direccion": "Pedro I. Rivera 4591",
       "contacto": "4521-3153",
       "horario": "Cena (viandas) vie 19 hs",
+      "dias": [
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1802,6 +2354,9 @@
       "direccion": "Larsen 2384",
       "contacto": "4572-5459",
       "horario": "Des (viandas) sáb 9-11 hs",
+      "dias": [
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1811,6 +2366,12 @@
       "direccion": "Ciudad de la Paz 3577",
       "contacto": "4702-4288",
       "horario": "Des y alimentos no perecederos lun a jue 7 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1820,6 +2381,11 @@
       "direccion": "Vidal 1745",
       "contacto": "4781-5886",
       "horario": "Des (viandas) sáb 7-9 hs; recorrido mar y mié 20 hs",
+      "dias": [
+        "mar",
+        "mie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1829,6 +2395,12 @@
       "direccion": "Av. Cabildo 3680",
       "contacto": "4702-1030",
       "horario": "Des y alimentos lun a jue 7-9 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue"
+      ],
       "maps_url": ""
     },
     {
@@ -1838,6 +2410,9 @@
       "direccion": "Virrey Loreto 2161",
       "contacto": "11 6708-7609",
       "horario": "Alimentos y recorrido viandas mar 20-21:45 hs",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1847,6 +2422,11 @@
       "direccion": "Av. Álvarez Thomas 795",
       "contacto": "4553-9567",
       "horario": "Viandas mié 17 hs, jue 18 hs, vie 17 hs",
+      "dias": [
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1856,6 +2436,14 @@
       "direccion": "Zavalía y Juramento / Juramento y Obligado",
       "contacto": "IG: comedor.barrancas.de.belgrano",
       "horario": "Cena lun-mar-jue-vie-sáb 20-21 hs; dom 19-20 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "jue",
+        "vie",
+        "sab",
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1865,6 +2453,14 @@
       "direccion": "Vuelta de Obligado 2042",
       "contacto": "4783-8008",
       "horario": "Cena y alimentos lun a sáb 18:15-19 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1874,6 +2470,12 @@
       "direccion": "General Lucio N. Mansilla 3847",
       "contacto": "4824-8852",
       "horario": "Merienda (viandas) lun, mié y vie 15-16 hs; vianda mar 19 hs (zona Palermo)",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1883,6 +2485,9 @@
       "direccion": "Bonpland 2077",
       "contacto": "11 4540-1691",
       "horario": "Recorrido viandas (Santa Fe, Dorrego, Córdoba, Thames) mié 20 hs",
+      "dias": [
+        "mie"
+      ],
       "maps_url": ""
     },
     {
@@ -1892,6 +2497,9 @@
       "direccion": "Gascón 1372",
       "contacto": "11 4245-2140",
       "horario": "Viandas dom 15-17 hs; alimentos 3° sáb del mes 10-12 hs",
+      "dias": [
+        "dom"
+      ],
       "maps_url": ""
     },
     {
@@ -1901,6 +2509,13 @@
       "direccion": "Ávalos 250",
       "contacto": "11 6239-5152",
       "horario": "Des, alm y merienda lun a vie 10, 12 y 16 hs; viandas lun a vie 10 y 12 hs",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1910,6 +2525,14 @@
       "direccion": "Ávalos 250",
       "contacto": "11 3320-4021",
       "horario": "Des, alm y merienda lun a vie 10, 12 y 16 hs; alimentos jue 12 hs; recorridos mié, jue y sáb",
+      "dias": [
+        "lun",
+        "mar",
+        "mie",
+        "jue",
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1919,6 +2542,10 @@
       "direccion": "Av. Salvador María del Carril 2458",
       "contacto": "11 5829-8772",
       "horario": "Merienda mié 16-18 hs; alm sáb 12:30 hs; recorrido (viandas) mié 20 hs",
+      "dias": [
+        "mie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1928,6 +2555,10 @@
       "direccion": "Raúl Scalabrini Ortiz 1073",
       "contacto": "4773-0716",
       "horario": "Alm sáb 12 hs; merienda y viandas vie 14 hs",
+      "dias": [
+        "vie",
+        "sab"
+      ],
       "maps_url": ""
     },
     {
@@ -1937,6 +2568,9 @@
       "direccion": "Av. Warnes y Av. Chorroarín",
       "contacto": "11 5117-5291",
       "horario": "Merienda vie 19:30 hs",
+      "dias": [
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1946,6 +2580,10 @@
       "direccion": "Gandhi 373",
       "contacto": "11 3556-3607",
       "horario": "Recorrido viandas mar 17:30 hs y vie 16 hs (Corrientes y Scalabrini Ortiz)",
+      "dias": [
+        "mar",
+        "vie"
+      ],
       "maps_url": ""
     },
     {
@@ -1955,6 +2593,9 @@
       "direccion": "General Manuel A. Rodríguez 2444",
       "contacto": "encarnaciondelsenor987@gmail.com",
       "horario": "Recorrido viandas mar 19:15 hs (hacia M. Rodríguez y Trellea)",
+      "dias": [
+        "mar"
+      ],
       "maps_url": ""
     },
     {
@@ -1964,6 +2605,9 @@
       "direccion": "Playón de Chacarita",
       "contacto": "11 2647-9112",
       "horario": "Cena (viandas) vie 20:30 hs",
+      "dias": [
+        "vie"
+      ],
       "maps_url": ""
     },
     {
