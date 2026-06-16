@@ -9,6 +9,8 @@
 const OWNER = 'robertodecarre';
 const REPO = 'recursero-argentina-humana';
 const BRANCH = 'main';
+// Deploy Hook de Vercel: se dispara tras el commit para forzar el redeploy (POST sin body ni auth)
+const VERCEL_DEPLOY_HOOK = 'https://api.vercel.com/v1/integrations/deploy/prj_b1VO46n9TNCrII9XHvkahxByFpcg/htlYzjbn6i';
 
 // Solo se permite escribir estos archivos
 const ARCHIVOS_PERMITIDOS = ['programas.json', 'recursos.json'];
@@ -139,10 +141,20 @@ module.exports = async function handler(req, res) {
 
     if (putRes.status === 200 || putRes.status === 201) {
       const result = await putRes.json();
+      // Disparar el redeploy de Vercel. No es crítico: el commit ya se hizo, así que
+      // si el hook falla igual respondemos OK al panel (solo lo registramos).
+      let deploy = true;
+      try {
+        const hookRes = await fetch(VERCEL_DEPLOY_HOOK, { method: 'POST' });
+        deploy = hookRes.ok;
+      } catch (e) {
+        deploy = false;
+      }
       res.status(200).json({
         ok: true,
         commit: result.commit && result.commit.html_url,
-        actualizado: fecha
+        actualizado: fecha,
+        deploy: deploy
       });
     } else {
       const t = await putRes.text();
