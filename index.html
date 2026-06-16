@@ -189,6 +189,11 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 #p-ducha .acord-hdr:hover{background:hsl(215,66%,55%);}
 #p-comer .acord-hdr{background:hsl(196,100%,77%);color:var(--negro);}
 #p-comer .acord-hdr:hover{background:hsl(196,100%,72%);}
+/* FILTRO POR DÍA (comedores) */
+.dia-filtro{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.dia-btn{flex:1 1 auto;min-width:42px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;font-size:.85rem;padding:8px 10px;border:1.5px solid var(--gris-borde);background:#fff;color:var(--gris-txt);cursor:pointer;border-radius:0;transition:all .15s;}
+.dia-btn:hover{border-color:var(--celeste);}
+.dia-btn.activo{background:var(--celeste);border-color:var(--celeste);color:#fff;}
 /* TARJETAS HOSPITAL */
 .hosp-card{background:var(--gris-fondo);border-radius:0;padding:12px;margin-bottom:8px;border-left:3px solid var(--celeste);}
 .hosp-card.hc-oculto{display:none;}
@@ -1921,6 +1926,16 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;flex-shrink:0;"><img src="assets/donde_comer.png" style="height:22px;width:auto;display:block;"></span> Dónde comer</span>
     <span id="cnt-comer" style="background:rgba(0,0,0,.2);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
+  <div id="filtro-comer" class="dia-filtro">
+    <button class="dia-btn activo" data-dia="" onclick="filtrarComer('')">Todos</button>
+    <button class="dia-btn" data-dia="lun" onclick="filtrarComer('lun')">Lun</button>
+    <button class="dia-btn" data-dia="mar" onclick="filtrarComer('mar')">Mar</button>
+    <button class="dia-btn" data-dia="mie" onclick="filtrarComer('mie')">Mié</button>
+    <button class="dia-btn" data-dia="jue" onclick="filtrarComer('jue')">Jue</button>
+    <button class="dia-btn" data-dia="vie" onclick="filtrarComer('vie')">Vie</button>
+    <button class="dia-btn" data-dia="sab" onclick="filtrarComer('sab')">Sáb</button>
+    <button class="dia-btn" data-dia="dom" onclick="filtrarComer('dom')">Dom</button>
+  </div>
   <div id="lista-comer"></div>
   <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
   <p class="aviso">Fuente: Recursero Defensoría CABA 2026 · mapadeloscomedores.com</p>
@@ -2627,7 +2642,32 @@ var CIS = [], COMEDORES = [], DUCHAS = [], ROPEROS = [], JURIDICO = [], DEFENSOR
 
 // Adapta un servicio por comuna (comedor/ducha/ropero) a la forma interna del render
 function adaptarServicio(o) {
-  return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario, maps_url: o.maps_url || '' };
+  return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario, dias: o.dias || [], maps_url: o.maps_url || '' };
+}
+
+// Filtro por día de la semana (comedores). '' = Todos.
+var diaComerFiltro = '';
+function filtrarComer(dia) {
+  diaComerFiltro = dia;
+  var btns = document.querySelectorAll('#filtro-comer .dia-btn');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].classList.toggle('activo', btns[i].getAttribute('data-dia') === dia);
+  }
+  renderComer();
+}
+// Renderiza la lista de comedores aplicando el filtro de día activo
+function renderComer() {
+  var cont = document.getElementById('lista-comer');
+  if (!cont) return;
+  cont.innerHTML = ''; // limpiar para forzar el re-render (renderPorComuna no re-renderiza si ya hay contenido)
+  var datos = COMEDORES.filter(function(d){
+    if (!diaComerFiltro) return true;            // Todos
+    if (!d.dias || d.dias.length === 0) return true; // sin dato: se muestra siempre
+    return d.dias.indexOf(diaComerFiltro) !== -1;
+  });
+  renderPorComuna(datos, 'lista-comer', 'comedor');
+  var cnt = document.getElementById('cnt-comer');
+  if (cnt) cnt.textContent = datos.length + ' lugares';
 }
 
 // Carga recursos.json, puebla los arrays y dispara el render
@@ -2661,7 +2701,7 @@ function cargarRecursos() {
 // Renderiza todas las secciones territoriales y actualiza los contadores
 function renderRecursos() {
   renderPorComuna(CIS, 'lista-dormir', 'cis');
-  renderPorComuna(COMEDORES, 'lista-comer', 'comedor');
+  renderComer();
   renderPorComuna(DUCHAS, 'lista-ducha', 'ducha');
   renderPorComuna(ROPEROS, 'lista-ropa', 'ropa');
   renderPlano(JURIDICO, 'lista-juridico');
