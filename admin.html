@@ -231,13 +231,15 @@ var DIAS_SEMANA = [
 ];
 
 // Esquema declarativo de campos por categoría. t: text|num|url|email|textarea|comuna|gestion|fuero|dias
-var CAMPOS_COMUNES = [
+// Campos compartidos por comedores, duchas y roperos (incluye el campo dias)
+var CAMPOS_CON_DIAS = [
   { k:'comuna', l:'Comuna', t:'comuna' },
   { k:'barrio', l:'Barrio', t:'text' },
   { k:'nombre', l:'Nombre', t:'text' },
   { k:'direccion', l:'Dirección', t:'text' },
   { k:'contacto', l:'Contacto', t:'text' },
   { k:'horario', l:'Horario', t:'text' },
+  { k:'dias', l:'Días de funcionamiento', t:'dias' },
   { k:'maps_url', l:'Link de Google Maps', t:'url' }
 ];
 var RECURSO_SCHEMA = {
@@ -252,18 +254,9 @@ var RECURSO_SCHEMA = {
     { k:'gestion', l:'Gestión', t:'gestion' },
     { k:'maps_url', l:'Link de Google Maps', t:'url' }
   ],
-  comedores: [
-    { k:'comuna', l:'Comuna', t:'comuna' },
-    { k:'barrio', l:'Barrio', t:'text' },
-    { k:'nombre', l:'Nombre', t:'text' },
-    { k:'direccion', l:'Dirección', t:'text' },
-    { k:'contacto', l:'Contacto', t:'text' },
-    { k:'horario', l:'Horario', t:'text' },
-    { k:'dias', l:'Días de funcionamiento', t:'dias' },
-    { k:'maps_url', l:'Link de Google Maps', t:'url' }
-  ],
-  duchas: CAMPOS_COMUNES,
-  roperos: CAMPOS_COMUNES,
+  comedores: CAMPOS_CON_DIAS,
+  duchas: CAMPOS_CON_DIAS,
+  roperos: CAMPOS_CON_DIAS,
   juridico: [
     { k:'comuna', l:'Comuna', t:'comuna' },
     { k:'barrio', l:'Barrio', t:'text' },

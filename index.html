@@ -1927,14 +1927,14 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <span id="cnt-comer" style="background:rgba(0,0,0,.2);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
   <div id="filtro-comer" class="dia-filtro">
-    <button class="dia-btn activo" data-dia="" onclick="filtrarComer('')">Todos</button>
-    <button class="dia-btn" data-dia="lun" onclick="filtrarComer('lun')">Lun</button>
-    <button class="dia-btn" data-dia="mar" onclick="filtrarComer('mar')">Mar</button>
-    <button class="dia-btn" data-dia="mie" onclick="filtrarComer('mie')">Mié</button>
-    <button class="dia-btn" data-dia="jue" onclick="filtrarComer('jue')">Jue</button>
-    <button class="dia-btn" data-dia="vie" onclick="filtrarComer('vie')">Vie</button>
-    <button class="dia-btn" data-dia="sab" onclick="filtrarComer('sab')">Sáb</button>
-    <button class="dia-btn" data-dia="dom" onclick="filtrarComer('dom')">Dom</button>
+    <button class="dia-btn activo" data-dia="" onclick="filtrarDia('comer','')">Todos</button>
+    <button class="dia-btn" data-dia="lun" onclick="filtrarDia('comer','lun')">Lun</button>
+    <button class="dia-btn" data-dia="mar" onclick="filtrarDia('comer','mar')">Mar</button>
+    <button class="dia-btn" data-dia="mie" onclick="filtrarDia('comer','mie')">Mié</button>
+    <button class="dia-btn" data-dia="jue" onclick="filtrarDia('comer','jue')">Jue</button>
+    <button class="dia-btn" data-dia="vie" onclick="filtrarDia('comer','vie')">Vie</button>
+    <button class="dia-btn" data-dia="sab" onclick="filtrarDia('comer','sab')">Sáb</button>
+    <button class="dia-btn" data-dia="dom" onclick="filtrarDia('comer','dom')">Dom</button>
   </div>
   <div id="lista-comer"></div>
   <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
@@ -1946,6 +1946,16 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px"><img src="assets/donde_ducharse.png" style="height:22px;width:auto;vertical-align:middle;margin-right:8px;filter:brightness(0) invert(1);"> Dónde ducharse</span>
     <span id="cnt-ducha" style="background:rgba(0,0,0,.25);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
   </div>
+  <div id="filtro-ducha" class="dia-filtro">
+    <button class="dia-btn activo" data-dia="" onclick="filtrarDia('ducha','')">Todos</button>
+    <button class="dia-btn" data-dia="lun" onclick="filtrarDia('ducha','lun')">Lun</button>
+    <button class="dia-btn" data-dia="mar" onclick="filtrarDia('ducha','mar')">Mar</button>
+    <button class="dia-btn" data-dia="mie" onclick="filtrarDia('ducha','mie')">Mié</button>
+    <button class="dia-btn" data-dia="jue" onclick="filtrarDia('ducha','jue')">Jue</button>
+    <button class="dia-btn" data-dia="vie" onclick="filtrarDia('ducha','vie')">Vie</button>
+    <button class="dia-btn" data-dia="sab" onclick="filtrarDia('ducha','sab')">Sáb</button>
+    <button class="dia-btn" data-dia="dom" onclick="filtrarDia('ducha','dom')">Dom</button>
+  </div>
   <div id="lista-ducha"></div>
   <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
   <p class="aviso">Fuente: Recursero Defensoría CABA 2026</p>
@@ -1955,6 +1965,16 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
   <div style="display:flex;align-items:center;justify-content:space-between;background:#1a7a3c;color:#fff;padding:11px 14px;margin-bottom:10px;">
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.3px"><img src="assets/ropa.png" style="height:22px;width:auto;vertical-align:middle;margin-right:8px;filter:brightness(0) invert(1);"> Ropero comunitario</span>
     <span id="cnt-ropa" style="background:rgba(0,0,0,.25);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;padding:2px 10px;">…</span>
+  </div>
+  <div id="filtro-ropa" class="dia-filtro">
+    <button class="dia-btn activo" data-dia="" onclick="filtrarDia('ropa','')">Todos</button>
+    <button class="dia-btn" data-dia="lun" onclick="filtrarDia('ropa','lun')">Lun</button>
+    <button class="dia-btn" data-dia="mar" onclick="filtrarDia('ropa','mar')">Mar</button>
+    <button class="dia-btn" data-dia="mie" onclick="filtrarDia('ropa','mie')">Mié</button>
+    <button class="dia-btn" data-dia="jue" onclick="filtrarDia('ropa','jue')">Jue</button>
+    <button class="dia-btn" data-dia="vie" onclick="filtrarDia('ropa','vie')">Vie</button>
+    <button class="dia-btn" data-dia="sab" onclick="filtrarDia('ropa','sab')">Sáb</button>
+    <button class="dia-btn" data-dia="dom" onclick="filtrarDia('ropa','dom')">Dom</button>
   </div>
   <div id="lista-ropa"></div>
   <button class="btn-s" style="margin-top:10px" onclick="navAtras()">← Volver</button>
@@ -2645,28 +2665,38 @@ function adaptarServicio(o) {
   return { com: o.comuna, bar: o.barrio, nom: o.nombre, dir: o.direccion, cont: o.contacto, hora: o.horario, dias: o.dias || [], maps_url: o.maps_url || '' };
 }
 
-// Filtro por día de la semana (comedores). '' = Todos.
-var diaComerFiltro = '';
-function filtrarComer(dia) {
-  diaComerFiltro = dia;
-  var btns = document.querySelectorAll('#filtro-comer .dia-btn');
+// Filtro por día de la semana (comedores/duchas/roperos). '' = Todos.
+var FILTRO_SECC = {
+  comer: { cont:'lista-comer', cnt:'cnt-comer', tipo:'comedor', dia:'' },
+  ducha: { cont:'lista-ducha', cnt:'cnt-ducha', tipo:'ducha',   dia:'' },
+  ropa:  { cont:'lista-ropa',  cnt:'cnt-ropa',  tipo:'ropa',    dia:'' }
+};
+function datosSeccion(seccion) {
+  return seccion === 'comer' ? COMEDORES : (seccion === 'ducha' ? DUCHAS : ROPEROS);
+}
+function filtrarDia(seccion, dia) {
+  var cfg = FILTRO_SECC[seccion];
+  if (!cfg) return;
+  cfg.dia = dia;
+  var btns = document.querySelectorAll('#filtro-' + seccion + ' .dia-btn');
   for (var i = 0; i < btns.length; i++) {
     btns[i].classList.toggle('activo', btns[i].getAttribute('data-dia') === dia);
   }
-  renderComer();
+  renderSeccionDias(seccion);
 }
-// Renderiza la lista de comedores aplicando el filtro de día activo
-function renderComer() {
-  var cont = document.getElementById('lista-comer');
+// Renderiza la lista de una sección aplicando su filtro de día activo
+function renderSeccionDias(seccion) {
+  var cfg = FILTRO_SECC[seccion];
+  var cont = document.getElementById(cfg.cont);
   if (!cont) return;
   cont.innerHTML = ''; // limpiar para forzar el re-render (renderPorComuna no re-renderiza si ya hay contenido)
-  var datos = COMEDORES.filter(function(d){
-    if (!diaComerFiltro) return true;            // Todos
+  var datos = datosSeccion(seccion).filter(function(d){
+    if (!cfg.dia) return true;                       // Todos
     if (!d.dias || d.dias.length === 0) return true; // sin dato: se muestra siempre
-    return d.dias.indexOf(diaComerFiltro) !== -1;
+    return d.dias.indexOf(cfg.dia) !== -1;
   });
-  renderPorComuna(datos, 'lista-comer', 'comedor');
-  var cnt = document.getElementById('cnt-comer');
+  renderPorComuna(datos, cfg.cont, cfg.tipo);
+  var cnt = document.getElementById(cfg.cnt);
   if (cnt) cnt.textContent = datos.length + ' lugares';
 }
 
@@ -2701,9 +2731,9 @@ function cargarRecursos() {
 // Renderiza todas las secciones territoriales y actualiza los contadores
 function renderRecursos() {
   renderPorComuna(CIS, 'lista-dormir', 'cis');
-  renderComer();
-  renderPorComuna(DUCHAS, 'lista-ducha', 'ducha');
-  renderPorComuna(ROPEROS, 'lista-ropa', 'ropa');
+  renderSeccionDias('comer');
+  renderSeccionDias('ducha');
+  renderSeccionDias('ropa');
   renderPlano(JURIDICO, 'lista-juridico');
   renderDefensorias(DEFENSORIAS, 'lista-defensorias');
   document.getElementById('cnt-dormir').textContent = CIS.length + ' lugares';
