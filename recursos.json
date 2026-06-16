@@ -2613,7 +2613,7 @@
     {
       "comuna": 3,
       "barrio": "Balvanera",
-      "nombre": "ARGENTINA HUMANA ",
+      "nombre": "ARGENTINA HUMANA - Hospital Ramos Mejía",
       "direccion": "Hospital Ramos Mejía",
       "contacto": "IG: patriagrandecomuna3 ",
       "horario": "Martes 18.30hs - 🥐 Merienda en la puerta de la guardia",
@@ -2621,6 +2621,18 @@
         "mar"
       ],
       "maps_url": "https://maps.app.goo.gl/8AQ9TvrmHmrK7ZtRA"
+    },
+    {
+      "comuna": 3,
+      "barrio": "Balvanera",
+      "nombre": "ARGENTINA HUMANA - Parque de la Estación",
+      "direccion": "Juan Domingo Perón 3326 - Parque de la Estación",
+      "contacto": "IG: patriagrandecomuna3",
+      "horario": "Miercoles 17.30hs - 🥐 Merienda en la puerta de la biblioteca",
+      "dias": [
+        "mie"
+      ],
+      "maps_url": "https://maps.app.goo.gl/FbG9xMCP9RwwbENs9"
     }
   ],
   "duchas": [
