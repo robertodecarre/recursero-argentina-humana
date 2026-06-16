@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "actualizado": "2026-06-15",
+  "actualizado": "2026-06-16",
   "dormir": [
     {
       "comuna": 1,
@@ -1965,6 +1965,15 @@
       "contacto": "11 2647-9112",
       "horario": "Cena (viandas) vie 20:30 hs",
       "maps_url": ""
+    },
+    {
+      "comuna": 1,
+      "barrio": "Balvanera",
+      "nombre": "PRUEBA ADMIN",
+      "direccion": "Prueba Admin 123",
+      "contacto": "pruebadeladmin@gmail.com",
+      "horario": "12pm a 13pm",
+      "maps_url": "https://maps.app.goo.gl/rUtDXjEHJJYPAggx7"
     }
   ],
   "duchas": [
