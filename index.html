@@ -192,8 +192,13 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 /* FILTRO POR DÍA (comedores) */
 .dia-filtro{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
 .dia-btn{flex:1 1 auto;min-width:42px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;font-size:.85rem;padding:8px 10px;border:1.5px solid var(--gris-borde);background:#fff;color:var(--gris-txt);cursor:pointer;border-radius:0;transition:all .15s;}
-.dia-btn:hover{border-color:var(--celeste);}
-.dia-btn.activo{background:var(--celeste);border-color:var(--celeste);color:#fff;}
+/* color de acento por sección (igual al del título): comedores celeste, duchas azul, roperos verde */
+#p-comer .dia-btn:hover{border-color:var(--celeste);}
+#p-comer .dia-btn.activo{background:var(--celeste);border-color:var(--celeste);color:#fff;}
+#p-ducha .dia-btn:hover{border-color:var(--az-oscuro);}
+#p-ducha .dia-btn.activo{background:var(--az-oscuro);border-color:var(--az-oscuro);color:#fff;}
+#p-ropa .dia-btn:hover{border-color:#1a7a3c;}
+#p-ropa .dia-btn.activo{background:#1a7a3c;border-color:#1a7a3c;color:#fff;}
 /* TARJETAS HOSPITAL */
 .hosp-card{background:var(--gris-fondo);border-radius:0;padding:12px;margin-bottom:8px;border-left:3px solid var(--celeste);}
 .hosp-card.hc-oculto{display:none;}
