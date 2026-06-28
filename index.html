@@ -270,6 +270,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     onblur="this.style.borderColor='var(--gris-borde)'">
   <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:1.1rem;pointer-events:none;">🔍</span>
 </div>
+<div id="bus-resultados" style="display:none"></div>
   <div class="inicio-grid">
     <div class="ib" onclick="navIr('p-form')">
       <div class="ib-icon"><img src="assets/formulario.png" alt="Formulario" style="height:80px;width:auto;display:block;margin:0 auto;"></div>
@@ -297,8 +298,6 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
     <div><strong>Emergencia en calle:</strong> Línea gratuita 24 hs. El equipo BAP va al lugar.</div>
   </div>
 </div>
-
-<div id="p-busqueda" class="pant"></div>
 
 <div id="p-form" class="pant">
   <div class="card">
@@ -2224,13 +2223,22 @@ const LABELS = {
   'p-emerg':'Ayuda urgente',
   'p-dormir':'Dónde dormir · CIS','p-comer':'Dónde comer',
   'p-ducha':'Dónde ducharse','p-ropa':'Ropero comunitario',
-  'p-juridico':'Asesoramiento jurídico',
-  'p-busqueda':'Resultados de búsqueda'
+  'p-juridico':'Asesoramiento jurídico'
 };
 var navStack = ['p-inicio'];
 history.replaceState({panel: 'p-inicio'}, '');
 
 function mostrarPantalla(id) {
+  if (id !== 'p-inicio') {
+    var inp = document.getElementById('buscador-input');
+    if (inp) inp.value = '';
+    var resDiv = document.getElementById('bus-resultados');
+    if (resDiv) { resDiv.style.display = 'none'; resDiv.innerHTML = ''; }
+    var grid = document.querySelector('#p-inicio .inicio-grid');
+    if (grid) grid.style.display = '';
+    var aviso = document.querySelector('#p-inicio .aviso108');
+    if (aviso) aviso.style.display = '';
+  }
   // Oculta TODAS las pantallas sin importar el stack
   document.querySelectorAll('.pant').forEach(function(p){ p.classList.remove('activa'); });
   // Muestra solo la destino
@@ -2405,17 +2413,6 @@ function nuevaConsulta() {
 
 window.addEventListener('popstate', function(e) {
   var panel = e.state && e.state.panel ? e.state.panel : 'p-inicio';
-
-  // Si venimos de p-busqueda hacia atrás, limpiar el input y volver a inicio
-  if (navStack[navStack.length - 1] === 'p-busqueda') {
-    navStack.pop();
-    var inp = document.getElementById('buscador-input');
-    if (inp) inp.value = '';
-    document.getElementById('p-busqueda').innerHTML = '';
-    mostrarPantalla('p-inicio');
-    return;
-  }
-
   var idx = navStack.lastIndexOf(panel);
   if (idx >= 0) {
     navStack = navStack.slice(0, idx + 1);
@@ -2893,71 +2890,67 @@ function renderDefensorias(datos, contId) {
 var _busTimer = null;
 function buscarGlobal(q) {
   clearTimeout(_busTimer);
-  var pBus = document.getElementById('p-busqueda');
+  var resDiv = document.getElementById('bus-resultados');
+  var grid = document.querySelector('#p-inicio .inicio-grid');
+  var aviso = document.querySelector('#p-inicio .aviso108');
   q = q.trim();
   if (!q) {
-    // Si hay texto borrado y estamos en p-busqueda, volver a inicio
-    if (navStack[navStack.length-1] === 'p-busqueda') {
-      navStack.pop();
-      mostrarPantalla('p-inicio');
-    }
+    resDiv.style.display = 'none';
+    resDiv.innerHTML = '';
+    grid.style.display = '';
+    aviso.style.display = '';
     return;
   }
+  grid.style.display = 'none';
+  aviso.style.display = 'none';
   _busTimer = setTimeout(function(){
     var ql = q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
     function match(s){
       if (!s) return false;
       var norm = s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-      // Coincide si ql aparece al inicio de cualquier palabra del string
       return norm.split(/[\s\-\/,\.()]+/).some(function(w){ return w.indexOf(ql) === 0; });
     }
     var resultados = [];
-    // Programas
     PROGS.forEach(function(p){
-      if (match(p.nombre) || match(p.desc_c)) {
+      if (match(p.nombre) || match(p.desc_c))
         resultados.push({ tipo:'programa', label: p.amb==='caba'?'CABA':p.amb==='pba'?'Pcia. Bs.As.':'Nacional', nom: p.nombre, sub: p.desc_c, id: p.id });
-      }
     });
-    // CIS (alojamiento)
     CIS.forEach(function(r){
-      if (match(r.nom) || match(r.bar)) {
-        resultados.push({ tipo:'cis', label:'Alojamiento · C'+r.com, nom: r.nom, sub: r.dir });
-      }
+      if (match(r.nom) || match(r.bar))
+        resultados.push({ tipo:'cis', label:'Alojamiento · C'+r.com, nom: r.nom, sub: r.bar });
     });
-    // Salud
+    COMEDORES.forEach(function(r){
+      if (match(r.nom) || match(r.bar))
+        resultados.push({ tipo:'comer', label:'Comedor · C'+r.com, nom: r.nom, sub: r.bar });
+    });
+    DUCHAS.forEach(function(r){
+      if (match(r.nom) || match(r.bar))
+        resultados.push({ tipo:'ducha', label:'Duchas · C'+r.com, nom: r.nom, sub: r.bar });
+    });
+    ROPEROS.forEach(function(r){
+      if (match(r.nom) || match(r.bar))
+        resultados.push({ tipo:'ropa', label:'Ropero · C'+r.com, nom: r.nom, sub: r.bar });
+    });
     SALUD_IDX.forEach(function(r){
-      if (match(r.nom) || match(r.bar)) {
-        resultados.push({ tipo:'salud', label:'Salud' + (r.comuna ? ' · C'+r.comuna : ''), nom: r.nom, sub: r.bar || 'Red de salud pública CABA' });
-      }
+      if (match(r.nom) || match(r.bar))
+        resultados.push({ tipo:'salud', label:'Salud'+(r.comuna?' · C'+r.comuna:''), nom: r.nom, sub: r.bar||'Red de salud pública CABA' });
     });
-    // Render
-    var html = '';
+
+    var html = '<div class="res-hdr" style="margin-bottom:8px"><h2>Resultados para "'+q+'"</h2><span class="badge">'+resultados.length+'</span></div>';
     if (resultados.length === 0) {
-      html = '<p style="padding:24px 16px;color:var(--gris-txt);">Sin resultados para "<strong>'+q+'</strong>".</p>';
+      html += '<div class="no-res">Sin resultados para "'+q+'"</div>';
     } else {
-      html = '<p style="padding:10px 16px 6px;font-size:.8rem;color:var(--gris-txt);">'+resultados.length+' resultado'+(resultados.length!==1?'s':'')+' para "<strong>'+q+'</strong>"</p>';
-      html += '<div style="display:flex;flex-direction:column;gap:8px;padding:0 0 16px;">';
+      var colores = { programa:'var(--celeste)', cis:'#B85C1A', comer:'var(--celeste)', ducha:'var(--az-oscuro)', ropa:'#1a7a3c', salud:'#c0392b' };
       resultados.forEach(function(r){
-        var borderCol = r.tipo==='programa' ? 'var(--celeste)' : r.tipo==='salud' ? '#c0392b' : 'var(--gris-borde)';
-        var onclickVal = r.tipo==='programa' ? 'verDetalle("'+r.id+'",false)' : r.tipo==='salud' ? 'navIr("p-salud")' : 'navIr("p-'+r.tipo+'")';
-        html += '<div class="ib" style="border-left:3px solid '+borderCol+';padding:12px 14px;cursor:pointer;" onclick="'+onclickVal+'">';
-        html += '<div style="font-size:.7rem;font-weight:700;letter-spacing:.5px;color:'+borderCol+';text-transform:uppercase;margin-bottom:2px;">'+r.label+'</div>';
-        html += '<div style="font-weight:700;font-size:.95rem;">'+r.nom+'</div>';
-        if (r.sub) html += '<div style="font-size:.82rem;color:var(--gris-txt);margin-top:2px;">'+r.sub+'</div>';
-        html += '</div>';
+        var onclick = r.tipo==='programa' ? 'verDetalle("'+r.id+'",false)' : r.tipo==='salud' ? 'navIr("p-salud")' : 'navIr("p-'+r.tipo+'")';
+        html += '<div class="pc" style="border-left-color:'+colores[r.tipo]+';cursor:pointer" onclick="'+onclick+'">' +
+          '<div class="pc-hdr"><div class="pc-nom">'+r.nom+'</div><span class="pc-amb">'+r.label+'</span></div>' +
+          '<div class="pc-desc">'+r.sub+'</div></div>';
       });
-      html += '</div>';
     }
-    pBus.innerHTML = html;
-    if (navStack[navStack.length-1] !== 'p-busqueda') {
-      navStack.push('p-busqueda');
-      history.pushState({panel:'p-busqueda'}, '');
-      mostrarPantalla('p-busqueda');
-    } else {
-      // Ya estamos en p-busqueda: actualizar el state sin agregar nueva entrada
-      history.replaceState({panel:'p-busqueda'}, '');
-    }
-  }, 250);
+    resDiv.innerHTML = html;
+    resDiv.style.display = 'block';
+  }, 200);
 }
 
 function indexarSalud() {
