@@ -2959,13 +2959,47 @@ function buscarGlobal(q) {
           } else if (res.tipo === 'salud') {
             irAHospital(res.nom);
           } else {
-            navIr('p-' + res.tipo);
+            irARecurso(res.tipo, res.nom);
           }
         };
       })(r));
       resDiv.appendChild(div);
     });
   }, 200);
+}
+
+function irARecurso(tipo, nom) {
+  var pantalla = 'p-' + tipo;
+  navIr(pantalla);
+  setTimeout(function(){
+    var listaId = tipo === 'cis' ? 'lista-dormir' :
+                  tipo === 'comer' ? 'lista-comer' :
+                  tipo === 'ducha' ? 'lista-ducha' :
+                  tipo === 'ropa'  ? 'lista-ropa'  :
+                  tipo === 'juridico' ? 'lista-juridico' : null;
+    if (!listaId) return;
+    var items = document.querySelectorAll('#' + listaId + ' .sc-nom');
+    var target = null;
+    items.forEach(function(el){
+      if (el.textContent.trim() === nom) target = el.closest('.sc');
+    });
+    if (!target) return;
+    var acord = target.closest('.acord-grupo');
+    if (acord) {
+      var hdr = acord.querySelector('.acord-hdr');
+      var body = acord.querySelector('.acord-body');
+      if (hdr && body && !body.classList.contains('visible')) {
+        body.classList.add('visible');
+        hdr.classList.add('abierto');
+      }
+    }
+    setTimeout(function(){
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.style.transition = 'background .2s';
+      target.style.background = '#e6f7fd';
+      setTimeout(function(){ target.style.background = ''; }, 1200);
+    }, 80);
+  }, 120);
 }
 
 function irAHospital(nom) {
