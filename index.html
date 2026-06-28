@@ -2709,6 +2709,7 @@ function verDetalle(id, esInc) {
 // DATOS SERVICIOS
 // DATOS TERRITORIALES — se cargan desde recursos.json
 var CIS = [], COMEDORES = [], DUCHAS = [], ROPEROS = [], JURIDICO = [], DEFENSORIAS = [];
+var SALUD_IDX = [];
 
 // Adapta un servicio por comuna (comedor/ducha/ropero) a la forma interna del render
 function adaptarServicio(o) {
@@ -2904,7 +2905,12 @@ function buscarGlobal(q) {
   }
   _busTimer = setTimeout(function(){
     var ql = q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-    function match(s){ return s && s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').indexOf(ql) !== -1; }
+    function match(s){
+      if (!s) return false;
+      var norm = s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      // Coincide si ql aparece al inicio de cualquier palabra del string
+      return norm.split(/[\s\-\/,\.()]+/).some(function(w){ return w.indexOf(ql) === 0; });
+    }
     var resultados = [];
     // Programas
     PROGS.forEach(function(p){
@@ -2914,8 +2920,14 @@ function buscarGlobal(q) {
     });
     // CIS (alojamiento)
     CIS.forEach(function(r){
-      if (match(r.nom) || match(r.dir) || match(r.bar)) {
+      if (match(r.nom) || match(r.bar)) {
         resultados.push({ tipo:'cis', label:'Alojamiento · C'+r.com, nom: r.nom, sub: r.dir });
+      }
+    });
+    // Salud
+    SALUD_IDX.forEach(function(r){
+      if (match(r.nom) || match(r.bar)) {
+        resultados.push({ tipo:'salud', label:'Salud' + (r.comuna ? ' · C'+r.comuna : ''), nom: r.nom, sub: r.bar || 'Red de salud pública CABA' });
       }
     });
     // Render
@@ -2926,9 +2938,10 @@ function buscarGlobal(q) {
       html = '<p style="padding:10px 16px 6px;font-size:.8rem;color:var(--gris-txt);">'+resultados.length+' resultado'+(resultados.length!==1?'s':'')+' para "<strong>'+q+'</strong>"</p>';
       html += '<div style="display:flex;flex-direction:column;gap:8px;padding:0 0 16px;">';
       resultados.forEach(function(r){
-        var clickAttr = r.id ? 'onclick="navIr(\'p-detalle\',\''+r.id+'\')"' : '';
-        html += '<div class="ib" style="border-left:3px solid var(--celeste);padding:12px 14px;cursor:'+(r.id?'pointer':'default')+';" '+clickAttr+'>';
-        html += '<div style="font-size:.7rem;font-weight:700;letter-spacing:.5px;color:var(--celeste);text-transform:uppercase;margin-bottom:2px;">'+r.label+'</div>';
+        var borderCol = r.tipo==='programa' ? 'var(--celeste)' : r.tipo==='salud' ? '#c0392b' : 'var(--gris-borde)';
+        var onclickVal = r.tipo==='programa' ? 'verDetalle("'+r.id+'",false)' : r.tipo==='salud' ? 'navIr("p-salud")' : 'navIr("p-'+r.tipo+'")';
+        html += '<div class="ib" style="border-left:3px solid '+borderCol+';padding:12px 14px;cursor:pointer;" onclick="'+onclickVal+'">';
+        html += '<div style="font-size:.7rem;font-weight:700;letter-spacing:.5px;color:'+borderCol+';text-transform:uppercase;margin-bottom:2px;">'+r.label+'</div>';
         html += '<div style="font-weight:700;font-size:.95rem;">'+r.nom+'</div>';
         if (r.sub) html += '<div style="font-size:.82rem;color:var(--gris-txt);margin-top:2px;">'+r.sub+'</div>';
         html += '</div>';
@@ -2947,9 +2960,24 @@ function buscarGlobal(q) {
   }, 250);
 }
 
+function indexarSalud() {
+  SALUD_IDX = [];
+  document.querySelectorAll('#p-salud .hosp-card').forEach(function(card) {
+    var nom = card.querySelector('.hosp-nom');
+    var bar = card.querySelector('.hosp-barrio');
+    if (!nom) return;
+    SALUD_IDX.push({
+      nom: nom.textContent.trim(),
+      bar: bar ? bar.textContent.trim() : '',
+      comuna: parseInt(card.dataset.comuna) || 0
+    });
+  });
+}
+
 window.addEventListener('load', function() {
   cargarProgramas();
   cargarRecursos();
+  indexarSalud();
 });
 </script>
 <footer style="text-align:center;padding:24px 16px 32px;background:var(--negro);">
