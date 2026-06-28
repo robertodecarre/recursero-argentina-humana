@@ -2405,6 +2405,17 @@ function nuevaConsulta() {
 
 window.addEventListener('popstate', function(e) {
   var panel = e.state && e.state.panel ? e.state.panel : 'p-inicio';
+
+  // Si venimos de p-busqueda hacia atrás, limpiar el input y volver a inicio
+  if (navStack[navStack.length - 1] === 'p-busqueda') {
+    navStack.pop();
+    var inp = document.getElementById('buscador-input');
+    if (inp) inp.value = '';
+    document.getElementById('p-busqueda').innerHTML = '';
+    mostrarPantalla('p-inicio');
+    return;
+  }
+
   var idx = navStack.lastIndexOf(panel);
   if (idx >= 0) {
     navStack = navStack.slice(0, idx + 1);
@@ -2927,11 +2938,11 @@ function buscarGlobal(q) {
     pBus.innerHTML = html;
     if (navStack[navStack.length-1] !== 'p-busqueda') {
       navStack.push('p-busqueda');
+      history.pushState({panel:'p-busqueda'}, '');
       mostrarPantalla('p-busqueda');
     } else {
-      // Ya estamos en p-busqueda, solo actualizar contenido sin empujar al stack
-      document.querySelectorAll('.pant').forEach(function(p){ p.classList.remove('activa'); });
-      pBus.classList.add('activa');
+      // Ya estamos en p-busqueda: actualizar el state sin agregar nueva entrada
+      history.replaceState({panel:'p-busqueda'}, '');
     }
   }, 250);
 }
