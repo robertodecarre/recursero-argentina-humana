@@ -260,6 +260,17 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <div class="ih-sub">Guía actualizada de consulta rápida para el abordaje territorial</div>
     </div>
   </div>
+  <div id="buscador-wrap" style="position:relative;margin-bottom:10px;">
+  <input type="search" id="buscador-input"
+    placeholder="Buscar programa, recurso, hospital…"
+    autocomplete="off" autocorrect="off" spellcheck="false"
+    style="width:100%;padding:13px 44px 13px 14px;font-family:'Barlow',sans-serif;font-size:1rem;border:2px solid var(--gris-borde);border-radius:0;background:var(--blanco);color:var(--negro);outline:none;-webkit-appearance:none;"
+    oninput="buscarGlobal(this.value)"
+    onfocus="this.style.borderColor='var(--celeste)'"
+    onblur="this.style.borderColor='var(--gris-borde)'">
+  <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:1.1rem;pointer-events:none;">🔍</span>
+</div>
+<div id="p-busqueda" class="pant"></div>
   <div class="inicio-grid">
     <div class="ib" onclick="navIr('p-form')">
       <div class="ib-icon"><img src="assets/formulario.png" alt="Formulario" style="height:80px;width:auto;display:block;margin:0 auto;"></div>
@@ -2212,7 +2223,8 @@ const LABELS = {
   'p-emerg':'Ayuda urgente',
   'p-dormir':'Dónde dormir · CIS','p-comer':'Dónde comer',
   'p-ducha':'Dónde ducharse','p-ropa':'Ropero comunitario',
-  'p-juridico':'Asesoramiento jurídico'
+  'p-juridico':'Asesoramiento jurídico',
+  'p-busqueda':'Resultados de búsqueda'
 };
 var navStack = ['p-inicio'];
 history.replaceState({panel: 'p-inicio'}, '');
@@ -2863,6 +2875,64 @@ function renderDefensorias(datos, contId) {
       '</div>';
     cont.appendChild(div);
   });
+}
+
+var _busTimer = null;
+function buscarGlobal(q) {
+  clearTimeout(_busTimer);
+  var pBus = document.getElementById('p-busqueda');
+  q = q.trim();
+  if (!q) {
+    // Si hay texto borrado y estamos en p-busqueda, volver a inicio
+    if (navStack[navStack.length-1] === 'p-busqueda') {
+      navStack.pop();
+      mostrarPantalla('p-inicio');
+    }
+    return;
+  }
+  _busTimer = setTimeout(function(){
+    var ql = q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    function match(s){ return s && s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').indexOf(ql) !== -1; }
+    var resultados = [];
+    // Programas
+    PROGS.forEach(function(p){
+      if (match(p.nombre) || match(p.desc_c)) {
+        resultados.push({ tipo:'programa', label: p.amb==='caba'?'CABA':p.amb==='pba'?'Pcia. Bs.As.':'Nacional', nom: p.nombre, sub: p.desc_c, id: p.id });
+      }
+    });
+    // CIS (alojamiento)
+    CIS.forEach(function(r){
+      if (match(r.nom) || match(r.dir) || match(r.bar)) {
+        resultados.push({ tipo:'cis', label:'Alojamiento · C'+r.com, nom: r.nom, sub: r.dir });
+      }
+    });
+    // Render
+    var html = '';
+    if (resultados.length === 0) {
+      html = '<p style="padding:24px 16px;color:var(--gris-txt);">Sin resultados para "<strong>'+q+'</strong>".</p>';
+    } else {
+      html = '<p style="padding:10px 16px 6px;font-size:.8rem;color:var(--gris-txt);">'+resultados.length+' resultado'+(resultados.length!==1?'s':'')+' para "<strong>'+q+'</strong>"</p>';
+      html += '<div style="display:flex;flex-direction:column;gap:8px;padding:0 0 16px;">';
+      resultados.forEach(function(r){
+        var clickAttr = r.id ? 'onclick="navIr(\'p-detalle\',\''+r.id+'\')"' : '';
+        html += '<div class="ib" style="border-left:3px solid var(--celeste);padding:12px 14px;cursor:'+(r.id?'pointer':'default')+';" '+clickAttr+'>';
+        html += '<div style="font-size:.7rem;font-weight:700;letter-spacing:.5px;color:var(--celeste);text-transform:uppercase;margin-bottom:2px;">'+r.label+'</div>';
+        html += '<div style="font-weight:700;font-size:.95rem;">'+r.nom+'</div>';
+        if (r.sub) html += '<div style="font-size:.82rem;color:var(--gris-txt);margin-top:2px;">'+r.sub+'</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+    }
+    pBus.innerHTML = html;
+    if (navStack[navStack.length-1] !== 'p-busqueda') {
+      navStack.push('p-busqueda');
+      mostrarPantalla('p-busqueda');
+    } else {
+      // Ya estamos en p-busqueda, solo actualizar contenido sin empujar al stack
+      document.querySelectorAll('.pant').forEach(function(p){ p.classList.remove('activa'); });
+      pBus.classList.add('activa');
+    }
+  }, 250);
 }
 
 window.addEventListener('load', function() {
