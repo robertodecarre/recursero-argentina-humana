@@ -2957,7 +2957,7 @@ function buscarGlobal(q) {
           if (res.tipo === 'programa') {
             verDetalle(res.id, false);
           } else if (res.tipo === 'salud') {
-            navIr('p-salud');
+            irAHospital(res.nom);
           } else {
             navIr('p-' + res.tipo);
           }
@@ -2966,6 +2966,37 @@ function buscarGlobal(q) {
       resDiv.appendChild(div);
     });
   }, 200);
+}
+
+function irAHospital(nom) {
+  navIr('p-salud');
+  setTimeout(function(){
+    var cards = document.querySelectorAll('#p-salud .hosp-card');
+    var target = null;
+    cards.forEach(function(card){
+      var n = card.querySelector('.hosp-nom');
+      if (n && n.textContent.trim() === nom) target = card;
+    });
+    if (!target) return;
+    // Abrir el acordeón padre si está cerrado
+    var acord = target.closest('.acord-grupo');
+    if (acord) {
+      var hdr = acord.querySelector('.acord-hdr');
+      var body = acord.querySelector('.acord-body');
+      if (hdr && body && !body.classList.contains('visible')) {
+        body.classList.add('visible');
+        hdr.classList.add('abierto');
+      }
+    }
+    // Scroll hasta la tarjeta
+    setTimeout(function(){
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Flash visual para identificar la tarjeta
+      target.style.transition = 'background .2s';
+      target.style.background = '#e6f7fd';
+      setTimeout(function(){ target.style.background = ''; }, 1200);
+    }, 80);
+  }, 120);
 }
 
 function indexarSalud() {
