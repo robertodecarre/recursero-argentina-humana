@@ -2939,17 +2939,32 @@ function buscarGlobal(q) {
     var html = '<div class="res-hdr" style="margin-bottom:8px"><h2>Resultados para "'+q+'"</h2><span class="badge">'+resultados.length+'</span></div>';
     if (resultados.length === 0) {
       html += '<div class="no-res">Sin resultados para "'+q+'"</div>';
-    } else {
-      var colores = { programa:'var(--celeste)', cis:'#B85C1A', comer:'var(--celeste)', ducha:'var(--az-oscuro)', ropa:'#1a7a3c', salud:'#c0392b' };
-      resultados.forEach(function(r){
-        var onclick = r.tipo==='programa' ? 'verDetalle("'+r.id+'",false)' : r.tipo==='salud' ? 'navIr("p-salud")' : 'navIr("p-'+r.tipo+'")';
-        html += '<div class="pc" style="border-left-color:'+colores[r.tipo]+';cursor:pointer" onclick="'+onclick+'">' +
-          '<div class="pc-hdr"><div class="pc-nom">'+r.nom+'</div><span class="pc-amb">'+r.label+'</span></div>' +
-          '<div class="pc-desc">'+r.sub+'</div></div>';
-      });
     }
     resDiv.innerHTML = html;
     resDiv.style.display = 'block';
+
+    var colores = { programa:'var(--celeste)', cis:'#B85C1A', comer:'var(--celeste)', ducha:'var(--az-oscuro)', ropa:'#1a7a3c', salud:'#c0392b' };
+    resultados.forEach(function(r){
+      var div = document.createElement('div');
+      div.className = 'pc';
+      div.style.borderLeftColor = colores[r.tipo] || 'var(--celeste)';
+      div.style.cursor = 'pointer';
+      div.innerHTML =
+        '<div class="pc-hdr"><div class="pc-nom">'+r.nom+'</div><span class="pc-amb">'+r.label+'</span></div>' +
+        '<div class="pc-desc">'+(r.sub||'')+'</div>';
+      div.addEventListener('click', (function(res){
+        return function(){
+          if (res.tipo === 'programa') {
+            verDetalle(res.id, false);
+          } else if (res.tipo === 'salud') {
+            navIr('p-salud');
+          } else {
+            navIr('p-' + res.tipo);
+          }
+        };
+      })(r));
+      resDiv.appendChild(div);
+    });
   }, 200);
 }
 
