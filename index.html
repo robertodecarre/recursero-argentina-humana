@@ -2949,8 +2949,10 @@ function buscarGlobal(q) {
       div.className = 'pc';
       div.style.borderLeftColor = colores[r.tipo] || 'var(--celeste)';
       div.style.cursor = 'pointer';
+      var bgBadge = { programa:'var(--celeste)', cis:'#B85C1A', comer:'var(--celeste)', ducha:'var(--az-oscuro)', ropa:'#1a7a3c', salud:'#c0392b' };
       div.innerHTML =
-        '<div class="pc-hdr"><div class="pc-nom">'+r.nom+'</div><span class="pc-amb">'+r.label+'</span></div>' +
+        '<div class="pc-hdr"><div class="pc-nom">'+r.nom+'</div>' +
+        '<span class="pc-amb" style="background:'+(bgBadge[r.tipo]||'var(--celeste)')+';color:#fff">'+r.label+'</span></div>' +
         '<div class="pc-desc">'+(r.sub||'')+'</div>';
       div.addEventListener('click', (function(res){
         return function(){
