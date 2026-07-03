@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "actualizado": "2026-06-15",
+  "actualizado": "2026-07-03",
   "programas": [
     {
       "id": "ciudadania_portena",
@@ -826,7 +826,7 @@
       "nombre": "PUAM - Prestación Universal Adulto Mayor",
       "ambito": "nacional",
       "descripcion_corta": "$304.243/mes (80% del haber mínimo) · Incluye PAMI · Extranjeros/as necesitan 20 años de residencia · Abril 2026.",
-      "descripcion_larga": "La **PUAM** es una prestación del **80% del haber mínimo** para personas de **65 años o más** sin jubilación ni pensión contributiva.\n\nPara **argentinos/as** no requiere aportes previos. Para **extranjeros/as** se requieren **20 años de residencia legal** en Argentina.\n\nIncluye **cobertura de PAMI**.",
+      "descripcion_larga": "-La **PUAM** es una prestación del **80% del haber mínimo** para personas de **65 años o más** sin jubilación ni pensión contributiva.\n\nPara **argentinos/as** no requiere aportes previos. Para **extranjeros/as** se requieren **20 años de residencia legal** en Argentina.\n\nIncluye **cobertura de PAMI**.",
       "requisitos": [
         "65 años o mas",
         "Sin jubilación ni pensión contributiva",
@@ -885,7 +885,8 @@
             ]
           }
         ]
-      }
+      },
+      "modelos_doc": []
     },
     {
       "id": "pension_disc",
