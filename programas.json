@@ -1,7 +1,7 @@
 {
   "version": 1,
   "actualizado": "2026-07-03",
-  "nota_pie_pagina": "Los montos corresponden a los valores vigentes a Julio de 2026, salvo que se indique otro mes específico en la ficha de cada programa. Los programas nacionales suben por IPC mensual y los de CABA por normativa específica. Recursos relevados por el Ministerio Público de la Defensa (Recursero 2026) y fuentes oficiales de CABA. Actualización a cargo de Argentina Humana.",
+  "nota_pie_pagina": "Los montos corresponden a los valores vigentes a Julio de 2026, salvo que \nse indique otro mes específico en la ficha de cada programa. Los programas \nnacionales (ANSES) se ajustan mensualmente por movilidad/IPC. Los \nprogramas de CABA tienen criterios de actualización dispares: algunos \n(como el Apoyo Habitacional Ley 6935) se indexan automáticamente por \nIDECBA cada abril y octubre; otros (Ciudadanía Porteña, Ticket Social, \nNuestras Familias, Vivir en Casa) no publican montos actualizados en su \nweb oficial y requieren consulta directa en sede. Recursos relevados por \nel Ministerio Público de la Defensa (Recursero 2026) y fuentes oficiales \nde CABA. Actualización a cargo de Argentina Humana.",
   "valores_referencia": {
     "mes_vigencia": "Mayo 2026",
     "fuente": "INDEC",
