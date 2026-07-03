@@ -825,13 +825,8 @@
       "activo": true,
       "nombre": "PUAM - Prestación Universal Adulto Mayor",
       "ambito": "nacional",
-<<<<<<< HEAD
       "descripcion_corta": "$329.591,46/mes + bono de $70.000 = $399.591,46 total (80% del haber mínimo) · Incluye PAMI · Extranjeros/as necesitan 20 años de residencia · Julio 2026.",
-      "descripcion_larga": "-La **PUAM** es una prestación del **80% del haber mínimo** para personas de **65 años o más** sin jubilación ni pensión contributiva.\n\nPara **argentinos/as** no requiere aportes previos. Para **extranjeros/as** se requieren **20 años de residencia legal** en Argentina.\n\nIncluye **cobertura de PAMI**.\n\n**Con el bono extraordinario de $70.000** (Decreto 532/2026), el total asciende a **$399.591,46/mes**.",
-=======
-      "descripcion_corta": "$329.591,46/mes (80% del haber mínimo) · Incluye PAMI · Extranjeros/as necesitan 20 años de residencia · Julio 2026.",
-      "descripcion_larga": "La **PUAM** es una prestación del **80% del haber mínimo** para personas de **65 años o más** sin jubilación ni pensión contributiva.\n\nPara **argentinos/as** no requiere aportes previos. Para **extranjeros/as** se requieren **20 años de residencia legal** en Argentina.\n\nIncluye **cobertura de PAMI**.",
->>>>>>> 5d26626 (data: actualizar montos de programas sociales a julio 2026)
+      "descripcion_larga": "La **PUAM** es una prestación del **80% del haber mínimo** para personas de **65 años o más** sin jubilación ni pensión contributiva.\n\nPara **argentinos/as** no requiere aportes previos. Para **extranjeros/as** se requieren **20 años de residencia legal** en Argentina.\n\nIncluye **cobertura de PAMI**.\n\n**Con el bono extraordinario de $70.000** (Decreto 532/2026), el total asciende a **$399.591,46/mes**.",
       "requisitos": [
         "65 años o mas",
         "Sin jubilación ni pensión contributiva",
@@ -861,13 +856,8 @@
         "pas",
         "pension_disc"
       ],
-<<<<<<< HEAD
-      "nota_incompatibilidad": "La PUAM ($304.243/mes, Abril 2026) no es compatible con el PAS ($78.000/mes). La PUAM es significativamente mayor e incluye además cobertura de PAMI.",
-      "validado": "2026-07-03",
-=======
       "nota_incompatibilidad": "La PUAM ($329.591,46/mes, Julio 2026) no es compatible con el PAS ($78.000/mes). La PUAM es significativamente mayor e incluye además cobertura de PAMI.",
-      "validado": "2026-07-02",
->>>>>>> 5d26626 (data: actualizar montos de programas sociales a julio 2026)
+      "validado": "2026-07-03",
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
@@ -904,13 +894,8 @@
       "activo": true,
       "nombre": "Pensión No Contributiva por Discapacidad",
       "ambito": "nacional",
-<<<<<<< HEAD
       "descripcion_corta": "$288.392,53/mes + bono de $70.000 = $358.392,53 total, para personas con CUD sin otros ingresos ni empleo formal · Julio 2026.",
-      "descripcion_larga": "Pensión mensual para personas con **Certificado Único de Discapacidad (CUD) vigente** que **no tienen otros ingresos ni empleo formal**.\n\nNo requiere aportes previos al sistema previsional.\n\n\\**Con el bono extraordinario de $70.000** (Decreto 532/2026), el total asciende a **$358.392,53/mes**.",
-=======
-      "descripcion_corta": "$288.392,53/mes para personas con CUD sin otros ingresos ni empleo formal · Julio 2026.",
-      "descripcion_larga": "Pensión mensual para personas con **Certificado Único de Discapacidad (CUD) vigente** que **no tienen otros ingresos ni empleo formal**.\n\nNo requiere aportes previos al sistema previsional.",
->>>>>>> 5d26626 (data: actualizar montos de programas sociales a julio 2026)
+      "descripcion_larga": "Pensión mensual para personas con **Certificado Único de Discapacidad (CUD) vigente** que **no tienen otros ingresos ni empleo formal**.\n\nNo requiere aportes previos al sistema previsional.\n\n**Con el bono extraordinario de $70.000** (Decreto 532/2026), el total asciende a **$358.392,53/mes**.",
       "requisitos": [
         "CUD (Certificado Unico de Discapacidad) vigente",
         "Sin jubilación ni pensión contributiva",
@@ -938,11 +923,7 @@
         "puam"
       ],
       "nota_incompatibilidad": "",
-<<<<<<< HEAD
       "validado": "2026-07-03",
-=======
-      "validado": "2026-07-02",
->>>>>>> 5d26626 (data: actualizar montos de programas sociales a julio 2026)
       "elegibilidad": {
         "logica": "todas",
         "condiciones": [
