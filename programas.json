@@ -1,6 +1,28 @@
 {
   "version": 1,
   "actualizado": "2026-07-03",
+  "nota_pie_pagina": "Los montos corresponden a los valores vigentes a Julio de 2026, salvo que se indique otro mes específico en la ficha de cada programa. Los programas nacionales suben por IPC mensual y los de CABA por normativa específica. Recursos relevados por el Ministerio Público de la Defensa (Recursero 2026) y fuentes oficiales de CABA. Actualización a cargo de Argentina Humana.",
+  "valores_referencia": {
+    "mes_vigencia": "Mayo 2026",
+    "fuente": "INDEC",
+    "fecha_fuente": "2026-06-15",
+    "linea_pobreza": {
+      "persona_sola": 485030,
+      "familia_3": 1193173,
+      "familia_3_desc": "adulta + joven + mayor",
+      "familia_4": 1498741,
+      "familia_4_desc": "2 adultos + 2 menores"
+    },
+    "linea_indigencia": {
+      "persona_sola": 220468,
+      "familia_4": 681246
+    },
+    "smvm": {
+      "monto": 372400,
+      "mes_vigencia": "Julio 2026",
+      "fuente": "Resolución 9/2025, Consejo del Salario"
+    }
+  },
   "programas": [
     {
       "id": "ciudadania_portena",

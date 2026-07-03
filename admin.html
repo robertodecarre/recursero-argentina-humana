@@ -159,7 +159,46 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--celeste)
       <h2>¿Qué querés editar?</h2>
       <button class="btn-p" onclick="irA('programas')">Programas sociales</button>
       <button class="btn-p" style="margin-top:10px" onclick="irA('recursos')">Recursos territoriales</button>
+      <button class="btn-p" style="margin-top:10px" onclick="irAValores()">Valores de referencia y nota al pie</button>
     </div>
+  </div>
+
+  <!-- PANEL VALORES DE REFERENCIA -->
+  <div id="p-valores" class="pant">
+    <div class="card">
+      <h2>Nota al pie de página</h2>
+      <label for="v-nota">Texto de la nota</label>
+      <textarea id="v-nota" rows="4" oninput="marcarDirtyV()"></textarea>
+    </div>
+    <div class="card">
+      <h2>Valores de referencia (INDEC / SMVM)</h2>
+      <label for="v-mes">Mes de vigencia (ej: Mayo 2026)</label>
+      <input type="text" id="v-mes" oninput="marcarDirtyV()">
+      <label for="v-fuente">Fuente</label>
+      <input type="text" id="v-fuente" oninput="marcarDirtyV()">
+      <label for="v-fecha-fuente">Fecha de publicación (YYYY-MM-DD)</label>
+      <input type="text" id="v-fecha-fuente" placeholder="2026-06-15" oninput="marcarDirtyV()">
+      <label style="margin-top:16px;font-size:.8rem;color:var(--az-oscuro)">LÍNEA DE POBREZA</label>
+      <label for="v-lp1">Persona sola</label>
+      <input type="number" id="v-lp1" oninput="marcarDirtyV()">
+      <label for="v-lp3">Familia de 3 (adulta + joven + mayor)</label>
+      <input type="number" id="v-lp3" oninput="marcarDirtyV()">
+      <label for="v-lp4">Familia de 4 (2 adultos + 2 menores)</label>
+      <input type="number" id="v-lp4" oninput="marcarDirtyV()">
+      <label style="margin-top:16px;font-size:.8rem;color:var(--az-oscuro)">LÍNEA DE INDIGENCIA</label>
+      <label for="v-li1">Persona sola</label>
+      <input type="number" id="v-li1" oninput="marcarDirtyV()">
+      <label for="v-li4">Familia de 4</label>
+      <input type="number" id="v-li4" oninput="marcarDirtyV()">
+      <label style="margin-top:16px;font-size:.8rem;color:var(--az-oscuro)">SMVM</label>
+      <label for="v-smvm">Monto SMVM</label>
+      <input type="number" id="v-smvm" oninput="marcarDirtyV()">
+      <label for="v-smvm-mes">Mes de vigencia del SMVM</label>
+      <input type="text" id="v-smvm-mes" oninput="marcarDirtyV()">
+      <label for="v-smvm-fuente">Fuente del SMVM (ej: Resolución 9/2025...)</label>
+      <input type="text" id="v-smvm-fuente" oninput="marcarDirtyV()">
+    </div>
+    <button class="btn-s" style="margin-bottom:12px" onclick="mostrar('p-menu')">‹ Secciones</button>
   </div>
 
   <!-- LISTA PROGRAMAS -->
@@ -200,6 +239,7 @@ var PASS = '';         // contraseña en memoria (no se persiste)
 var editando = null;   // copia del programa en edición
 var editIndex = -1;    // índice en PROGS (-1 = nuevo)
 var dirty = false;     // hay cambios sin guardar
+var dirtyV = false;    // cambios sin guardar en valores de referencia
 
 var AMBITOS = ['caba', 'nacional'];
 var ESTILOS = ['primario', 'secundario'];
@@ -287,13 +327,14 @@ function slug(s){
 }
 function mdPreview(s){ return esc(s).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>'); }
 function mostrar(id){
-  ['p-login','p-menu','p-lista','p-editor','p-rec-lista','p-rec-editor'].forEach(function(p){ $(p).classList.remove('activa'); });
+  ['p-login','p-menu','p-lista','p-editor','p-rec-lista','p-rec-editor','p-valores'].forEach(function(p){ $(p).classList.remove('activa'); });
   $(id).classList.add('activa');
   if (id === 'p-lista' || id === 'p-editor') seccionActual = 'programas';
   if (id === 'p-rec-lista' || id === 'p-rec-editor') seccionActual = 'recursos';
-  var enLista = (id === 'p-lista' || id === 'p-rec-lista');
+  if (id === 'p-valores') seccionActual = 'valores';
+  var enLista = (id === 'p-lista' || id === 'p-rec-lista' || id === 'p-valores');
   $('savebar').style.display = enLista ? 'block' : 'none';
-  var d = (seccionActual === 'recursos') ? dirtyR : dirty;
+  var d = (seccionActual === 'recursos') ? dirtyR : (seccionActual === 'valores') ? dirtyV : dirty;
   $('dirty').textContent = d ? '● cambios sin guardar' : '';
   window.scrollTo(0,0);
 }
@@ -614,6 +655,7 @@ function aplicar(){
 /* ===== Guardar en GitHub ===== */
 function guardar(){
   if (seccionActual === 'recursos') guardarRecursos();
+  else if (seccionActual === 'valores') guardarValores();
   else guardarProgramas();
 }
 
@@ -650,9 +692,78 @@ function postGuardar(payload, onOk){
 function guardarProgramas(){
   if (!dirty){ toast('No hay cambios para guardar'); return; }
   postGuardar(
-    { password: PASS, archivo:'programas.json', version: DATA.version, programas: PROGS },
+    { password: PASS, archivo:'programas.json', version: DATA.version,
+      nota_pie_pagina: DATA.nota_pie_pagina, valores_referencia: DATA.valores_referencia,
+      programas: PROGS },
     function(j){ dirty = false; DATA.actualizado = j.actualizado; }
   );
+}
+
+/* ===================== VALORES DE REFERENCIA ===================== */
+function marcarDirtyV(){ dirtyV = true; if (seccionActual === 'valores') $('dirty').textContent = '● cambios sin guardar'; }
+
+function renderValores(){
+  var v = DATA.valores_referencia || {};
+  var lp = v.linea_pobreza || {};
+  var li = v.linea_indigencia || {};
+  var sm = v.smvm || {};
+  $('v-nota').value       = DATA.nota_pie_pagina || '';
+  $('v-mes').value        = v.mes_vigencia || '';
+  $('v-fuente').value     = v.fuente || '';
+  $('v-fecha-fuente').value = v.fecha_fuente || '';
+  $('v-lp1').value        = lp.persona_sola || '';
+  $('v-lp3').value        = lp.familia_3 || '';
+  $('v-lp4').value        = lp.familia_4 || '';
+  $('v-li1').value        = li.persona_sola || '';
+  $('v-li4').value        = li.familia_4 || '';
+  $('v-smvm').value       = sm.monto || '';
+  $('v-smvm-mes').value   = sm.mes_vigencia || '';
+  $('v-smvm-fuente').value= sm.fuente || '';
+}
+
+function leerValoresForm(){
+  var v = DATA.valores_referencia || {};
+  var lp = v.linea_pobreza || {};
+  var li = v.linea_indigencia || {};
+  var sm = v.smvm || {};
+  return {
+    mes_vigencia:  $('v-mes').value.trim(),
+    fuente:        $('v-fuente').value.trim(),
+    fecha_fuente:  $('v-fecha-fuente').value.trim(),
+    linea_pobreza: {
+      persona_sola:    Number($('v-lp1').value) || 0,
+      familia_3:       Number($('v-lp3').value) || 0,
+      familia_3_desc:  lp.familia_3_desc || 'adulta + joven + mayor',
+      familia_4:       Number($('v-lp4').value) || 0,
+      familia_4_desc:  lp.familia_4_desc || '2 adultos + 2 menores'
+    },
+    linea_indigencia: {
+      persona_sola: Number($('v-li1').value) || 0,
+      familia_4:    Number($('v-li4').value) || 0
+    },
+    smvm: {
+      monto:       Number($('v-smvm').value) || sm.monto || 0,
+      mes_vigencia: $('v-smvm-mes').value.trim(),
+      fuente:      $('v-smvm-fuente').value.trim()
+    }
+  };
+}
+
+function guardarValores(){
+  if (!dirtyV){ toast('No hay cambios para guardar'); return; }
+  DATA.nota_pie_pagina = $('v-nota').value.trim();
+  DATA.valores_referencia = leerValoresForm();
+  postGuardar(
+    { password: PASS, archivo:'programas.json', version: DATA.version,
+      nota_pie_pagina: DATA.nota_pie_pagina, valores_referencia: DATA.valores_referencia,
+      programas: PROGS },
+    function(j){ dirtyV = false; DATA.actualizado = j.actualizado; }
+  );
+}
+
+function irAValores(){
+  renderValores();
+  mostrar('p-valores');
 }
 
 /* ===================== RECURSOS ===================== */

@@ -40,7 +40,7 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const { password, programas, recursos, mensaje, version } = body;
+  const { password, programas, recursos, mensaje, version, nota_pie_pagina, valores_referencia } = body;
   const archivo = body.archivo || 'programas.json';
 
   if (password !== adminPassword) {
@@ -73,7 +73,10 @@ module.exports = async function handler(req, res) {
       res.status(400).json({ ok: false, error: 'Hay ids de programa repetidos' });
       return;
     }
-    out = { version: typeof version === 'number' ? version : 1, actualizado: fecha, programas: programas };
+    out = { version: typeof version === 'number' ? version : 1, actualizado: fecha };
+    if (nota_pie_pagina !== undefined) out.nota_pie_pagina = nota_pie_pagina;
+    if (valores_referencia !== undefined) out.valores_referencia = valores_referencia;
+    out.programas = programas;
 
   } else { // recursos.json
     if (!recursos || typeof recursos !== 'object' || Array.isArray(recursos)) {

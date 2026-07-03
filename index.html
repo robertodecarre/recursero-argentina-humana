@@ -381,11 +381,11 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <label>Ingresos del grupo familiar (en relación al Salario Mínimo)</label>
       <select id="ingresos">
         <option value="">— Seleccionar —</option>
-        <option value="menos1">Menos de 1 SMVM (menos de $271.571)</option>
-        <option value="1a3">Entre 1 y 3 SMVM ($271.571 – $814.714)</option>
-        <option value="mas3">Más de 3 SMVM (más de $814.714)</option>
+        <option id="smvm-opt-menos1" value="menos1">Menos de 1 SMVM</option>
+        <option id="smvm-opt-1a3" value="1a3">Entre 1 y 3 SMVM</option>
+        <option id="smvm-opt-mas3" value="mas3">Más de 3 SMVM</option>
       </select>
-      <p style="font-size:.72rem;color:var(--gt);margin-top:5px;line-height:1.4">El SMVM actual es $271.571 (feb 2026). Los montos se actualizan periódicamente — verificar en argentina.gob.ar/trabajo.</p>
+      <p id="smvm-desc" style="font-size:.72rem;color:var(--gt);margin-top:5px;line-height:1.4">Los montos se actualizan periódicamente — verificar en argentina.gob.ar/trabajo.</p>
     </div>
   </div>
   <div class="card">
@@ -418,20 +418,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
       <div class="rb"><input type="radio" name="os" id="os_no" value="no"><label for="os_no">No</label></div>
     </div>
   </div>
-  <div class="card" style="background:var(--gris-fondo);border:1px solid var(--gris-borde);">
-    <h2><span class="ic" style="background:var(--gris-txt)">📊</span>Valores de referencia — Marzo 2026</h2>
-    <div style="font-size:.78rem;line-height:1.8;color:#444;">
-      <div><strong>Línea de pobreza (INDEC):</strong></div>
-      <div style="padding-left:10px">· Persona sola: <strong>$464.228</strong></div>
-      <div style="padding-left:10px">· Familia de 3 (adulta + joven + mayor): <strong>$1.142.000</strong></div>
-      <div style="padding-left:10px">· Familia de 4 (2 adultos + 2 menores): <strong>$1.434.464</strong></div>
-      <div style="margin-top:6px"><strong>Línea de indigencia (INDEC):</strong></div>
-      <div style="padding-left:10px">· Persona sola: <strong>$212.949</strong></div>
-      <div style="padding-left:10px">· Familia de 4: <strong>$658.011</strong></div>
-      <div style="margin-top:6px"><strong>SMVM:</strong> $271.571 (feb 2026 — actualizar)</div>
-    </div>
-    <p style="font-size:.68rem;color:var(--gris-txt);margin-top:8px">Fuente: INDEC, 14 de abril de 2026. Actualizar mensualmente.</p>
-  </div>
+  <div id="valores-ref-box" class="card" style="background:var(--gris-fondo);border:1px solid var(--gris-borde);"></div>
   <button class="btn-p" onclick="consultar()">🔍 Ver programas disponibles</button>
   <button class="btn-s" style="margin-top:8px" onclick="navIr('p-todos')">📖 Ver todos los programas sin filtrar</button>
   <p class="aviso">Los resultados son orientativos. Verificar vigencia en los organismos correspondientes.</p>
@@ -2207,8 +2194,7 @@ select:focus,input:focus{outline:none;border-color:var(--celeste);}
 
 
 <footer style="background:#f9f9f9;border-top:1px solid #ddd;padding:16px;margin-top:30px;text-align:center;font-size:.78rem;color:#666;line-height:1.6">
-  <strong>Nota importante sobre los montos:</strong> Los montos corresponden a los valores vigentes a Abril de 2026. Los programas nacionales suben por IPC mensual y los de CABA por normativa específica.
-  <br><br>Recursos relevados por el Ministerio Público de la Defensa (Recursero 2026) y fuentes oficiales de CABA. Actualización a cargo de Argentina Humana.
+  <span id="nota-pie-pagina"></span>
 </footer>
 
 </div>
@@ -2459,6 +2445,8 @@ function filtrarResidencia() {
 
 // BASE DE PROGRAMAS — los datos se cargan desde programas.json
 var PROGS = [];
+var VALS_REF = null;
+var NOTA_PIE = '';
 
 // Convierte Markdown simple (negrita **texto** y saltos de linea) a HTML
 function mdToHtml(s) {
@@ -2524,6 +2512,10 @@ function cargarProgramas() {
     .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function(data){
       PROGS = (data.programas || []).filter(function(p){ return p.activo !== false; }).map(adaptarPrograma);
+      VALS_REF = data.valores_referencia || null;
+      NOTA_PIE = data.nota_pie_pagina || '';
+      renderValoresRef();
+      renderNotaPie();
       var badge = document.getElementById('badge-todos');
       if (badge) badge.textContent = PROGS.length;
       // Si el usuario ya esta viendo "Todos los programas", refrescar la lista
@@ -2538,6 +2530,57 @@ function cargarProgramas() {
       var lista = document.getElementById('lista-todos');
       if (lista) lista.innerHTML = '<div class="no-res">⚠️ No se pudieron cargar los programas. Si abriste el archivo con doble clic (file://), hay que servirlo desde un servidor web o publicarlo (Vercel ya lo hace).</div>';
     });
+}
+
+function fmtMonto(n) {
+  return '$' + Number(n).toLocaleString('es-AR');
+}
+
+function renderValoresRef() {
+  var box = document.getElementById('valores-ref-box');
+  if (!box || !VALS_REF) return;
+  var lp = VALS_REF.linea_pobreza || {};
+  var li = VALS_REF.linea_indigencia || {};
+  var smvm = VALS_REF.smvm || {};
+  var smvmMonto = smvm.monto ? smvm.monto : null;
+  var smvmMes = smvm.mes_vigencia || '';
+  var mes = VALS_REF.mes_vigencia || '';
+  var fuente = VALS_REF.fuente || 'INDEC';
+  var fechaFuente = VALS_REF.fecha_fuente ? fmtFecha(VALS_REF.fecha_fuente) : '';
+
+  box.innerHTML =
+    '<h2><span class="ic" style="background:var(--gris-txt)">📊</span>Valores de referencia — ' + mes + '</h2>' +
+    '<div style="font-size:.78rem;line-height:1.8;color:#444;">' +
+      '<div><strong>Línea de pobreza (' + fuente + '):</strong></div>' +
+      (lp.persona_sola ? '<div style="padding-left:10px">· Persona sola: <strong>' + fmtMonto(lp.persona_sola) + '</strong></div>' : '') +
+      (lp.familia_3 ? '<div style="padding-left:10px">· Familia de 3 (' + (lp.familia_3_desc || '') + '): <strong>' + fmtMonto(lp.familia_3) + '</strong></div>' : '') +
+      (lp.familia_4 ? '<div style="padding-left:10px">· Familia de 4 (' + (lp.familia_4_desc || '2 adultos + 2 menores') + '): <strong>' + fmtMonto(lp.familia_4) + '</strong></div>' : '') +
+      '<div style="margin-top:6px"><strong>Línea de indigencia (' + fuente + '):</strong></div>' +
+      (li.persona_sola ? '<div style="padding-left:10px">· Persona sola: <strong>' + fmtMonto(li.persona_sola) + '</strong></div>' : '') +
+      (li.familia_4 ? '<div style="padding-left:10px">· Familia de 4: <strong>' + fmtMonto(li.familia_4) + '</strong></div>' : '') +
+      (smvmMonto ? '<div style="margin-top:6px"><strong>SMVM:</strong> ' + fmtMonto(smvmMonto) + (smvmMes ? ' (' + smvmMes + ')' : '') + '</div>' : '') +
+    '</div>' +
+    '<p style="font-size:.68rem;color:var(--gris-txt);margin-top:8px">Fuente: ' + fuente + (fechaFuente ? ', ' + fechaFuente : '') + '. Actualizar mensualmente.</p>';
+
+  // Actualizar opciones del selector de ingresos
+  if (smvmMonto) {
+    var s1 = smvmMonto;
+    var s3 = smvmMonto * 3;
+    var optMenos1 = document.getElementById('smvm-opt-menos1');
+    var opt1a3    = document.getElementById('smvm-opt-1a3');
+    var optMas3   = document.getElementById('smvm-opt-mas3');
+    if (optMenos1) optMenos1.textContent = 'Menos de 1 SMVM (menos de ' + fmtMonto(s1) + ')';
+    if (opt1a3)    opt1a3.textContent    = 'Entre 1 y 3 SMVM (' + fmtMonto(s1) + ' – ' + fmtMonto(s3) + ')';
+    if (optMas3)   optMas3.textContent   = 'Más de 3 SMVM (más de ' + fmtMonto(s3) + ')';
+    var desc = document.getElementById('smvm-desc');
+    if (desc) desc.textContent = 'El SMVM actual es ' + fmtMonto(s1) + (smvmMes ? ' (' + smvmMes + ')' : '') + '. Los montos se actualizan periódicamente — verificar en argentina.gob.ar/trabajo.';
+  }
+}
+
+function renderNotaPie() {
+  var el = document.getElementById('nota-pie-pagina');
+  if (!el || !NOTA_PIE) return;
+  el.textContent = NOTA_PIE;
 }
 
 // CONSULTAR
