@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "actualizado": "2026-07-03",
+  "actualizado": "2026-07-04",
   "nota_pie_pagina": "Los montos corresponden a los valores vigentes a Julio de 2026, salvo que \nse indique otro mes específico en la ficha de cada programa. Los programas \nnacionales (ANSES) se ajustan mensualmente por movilidad/IPC. Los \nprogramas de CABA tienen criterios de actualización dispares: algunos \n(como el Apoyo Habitacional Ley 6935) se indexan automáticamente por \nIDECBA cada abril y octubre; otros (Ciudadanía Porteña, Ticket Social, \nNuestras Familias, Vivir en Casa) no publican montos actualizados en su \nweb oficial y requieren consulta directa en sede. \nRecursos relevados por el Ministerio Público de la Defensa (Recursero 2026) y fuentes oficiales de CABA. \nActualización a cargo de Argentina Humana.",
   "valores_referencia": {
     "mes_vigencia": "Mayo 2026",
@@ -212,7 +212,7 @@
       "activo": true,
       "nombre": "Vivir en Casa",
       "ambito": "caba",
-      "descripcion_corta": "Subsidiooo del GCBA para alquiler para personas de 60 años o más en riesgo habitacional. ⚠️ El GCBA no publica el monto — consultarlo en vivirencasa@buenosaires.gob.ar o al 4342-8587 (lun a vie 9 a 15 hs).",
+      "descripcion_corta": "Subsidio del GCBA para alquiler para personas de 60 años o más en riesgo habitacional. ⚠️ El GCBA no publica el monto — consultarlo en vivirencasa@buenosaires.gob.ar o al 4342-8587 (lun a vie 9 a 15 hs).",
       "descripcion_larga": "Vivir en Casa es un **apoyo económico del GCBA** para gastos de **alquiler, expensas y servicios**, destinado a personas **mayores de 60 años** en riesgo habitacional que no tienen el beneficio por obra social.\n\n⚠️ **MONTO:** el GCBA no publica el monto actualizado en su web. Consultarlo en **vivirencasa@buenosaires.gob.ar** o llamando al **4342-8587** (lun a vie 9 a 15 hs) antes de informarlo.\n\n⚠️ **Diferencia con el subsidio habitacional (Ley 6935):** este programa es para personas de 60+ que tienen alquiler pero no pueden sostenerlo. Si la persona está en **situación de calle o riesgo inminente de desamparo**, el camino correcto es el **Apoyo Habitacional Ley 6935**, que no tiene límite de edad y cubre emergencias. Los dos programas son incompatibles entre sí al mismo tiempo.",
       "requisitos": [
         "60 años o más",
@@ -264,7 +264,8 @@
             "valor": 60
           }
         ]
-      }
+      },
+      "modelos_doc": []
     },
     {
       "id": "apoyo_habitacional_ley6935",
